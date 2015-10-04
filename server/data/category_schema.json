@@ -1,0 +1,139 @@
+{
+  "Auto & Transport": [
+     "Auto Insurance",
+     "Auto Payment",
+     "Gas & Fuel",
+     "Parking",
+     "Public Transportation",
+     "Service & Parts",
+     "Tickets & Fines"
+  ],
+  "Bills & Utilities": [
+     "Home Phone",
+     "Internet",
+     "Mobile Phone",
+     "Television",
+     "Utilities"
+  ],
+  "Business Services": [
+     "Advertising",
+     "Legal",
+     "Office Supplies",
+     "Printing",
+     "Shipping"
+  ],
+  "Education": [
+     "Books & Supplies",
+     "Student Loan",
+     "Test",
+     "Tuition"
+  ],
+  "Entertainment": [
+     "Amusement",
+     "Arts",
+     "Movies & DVDs",
+     "Music",
+     "Newspapers & Magazines"
+  ],
+  "Fees & Charges": [
+     "ATM Fee",
+     "Bank Fee",
+     "Finance Charge",
+     "Late Fee",
+     "Service Fee",
+     "Trade Commissions"
+  ],
+  "Financial": [
+     "Financial Advisor",
+     "Life Insurance"
+  ],
+  "Food & Dining": [
+     "Alcohol & Bars",
+     "Coffee Shops",
+     "Fast Food",
+     "Groceries",
+     "Restaurants"
+  ],
+  "Gifts & Donations": [
+     "Charity",
+     "Gift"
+  ],
+  "Health & Fitness": [
+     "Dentist",
+     "Doctor",
+     "Eyecare",
+     "Gym",
+     "Health Insurance",
+     "Nutrition Supplement",
+     "Pharmacy",
+     "Sports"
+  ],
+  "Home": [
+     "Furnishings",
+     "Home Improvement",
+     "Home Insurance",
+     "Home Services",
+     "Home Supplies",
+     "Lawn & Garden",
+     "Mortgage & Rent"
+  ],
+  "Income": [
+     "Bonus",
+     "Interest Income",
+     "Paycheck",
+     "Reimbursement",
+     "Rental Income",
+     "Returned Purchase"
+  ],
+  "Kids": [
+     "Allowance",
+     "Baby Supplies",
+     "Babysitter & Daycare",
+     "Child Support",
+     "Kids Activities",
+     "Toys"
+  ],
+  "Misc Expenses": [
+  ],
+  "Personal Care": [
+     "Hair",
+     "Laundry",
+     "Spa & Massage"
+  ],
+  "Pets": [
+     "Pet Food & Supplies",
+     "Pet Grooming",
+     "Veterinary"
+  ],
+  "Shopping": [
+     "Books",
+     "Clothing",
+     "Electronics & Software",
+     "Hobbies",
+     "Sporting Goods"
+  ],
+  "Taxes": [
+     "Federal Tax",
+     "Local Tax",
+     "Property Tax",
+     "Sales Tax",
+     "State Tax"
+  ],
+  "Transfer": [
+     "Credit Card Payment",
+     "Transfer for Cash Spending"
+  ],
+  "Travel": [
+     "Air Travel",
+     "Hotel",
+     "Parking and Tolls",
+     "Rental Car & Taxi",
+     "Vacation"
+  ],
+  "Uncategorized": [
+     "Cash & ATM",
+     "Check"
+  ],
+  "Hide from Budgets & Trends": [
+  ]
+}

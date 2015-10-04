@@ -1,0 +1,16 @@
+{
+  "name": "react-flux",
+  "version": "0.0.0",
+  "authors": [
+    "Robert Niimi <Robert Niimi>"
+  ],
+  "main": "app/main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
