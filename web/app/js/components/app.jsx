@@ -14,7 +14,6 @@ class App extends React.Component {
   render() {
     return (
       <div id='app-container'>
-        <h1>Spending Over Time</h1>
         <RouteHandler />
       </div>
     );

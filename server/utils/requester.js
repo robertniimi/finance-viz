@@ -1,3 +1,5 @@
+'use strict';
+
 var _ = require('lodash');
 var fs = require('fs');
 var HEADERS = require('../constants').HEADERS;
@@ -8,65 +10,54 @@ var request = require('request');
 
 var cookie_jar = request.jar();
 var request = request.defaults({ jar: cookie_jar, strickSSL: false });
-// var request = request.defaults({ jar: true });
-var Requester = function() {};
+class Requester {
+  constructor() {
 
-Requester.prototype = {
-  get: function(endpoint) {
-    return new Promise(function(resolve, reject) {
+  }
+
+  get(endpoint, options) {
+    return new Promise((resolve, reject) => {
       request({
-        headers: HEADERS,
+        cookie: options.cookies,
+        headers: options.headers,
         json: true,
         method: 'GET',
         url: endpoint
-      }, function(err, res, body) {
+      }, (err, res, body) => {
         if (err) { reject(err); }
-        resolve({ res: res, body: body });
+        resolve({ res, body });
       });
     });
-  },
-  post: function(endpoint, data) {
-    return new Promise(function(resolve, reject) {
+  }
+
+  post(endpoint, options) {
+    return new Promise((resolve, reject) => {
       request({
-        form: data,
-        headers: HEADERS,
+        cookie: options.cookies,
+        form: options.data,
+        headers: options.headers,
         json: true,
         method: 'POST',
         url: endpoint
-      }, function(err, res, body) {
+      }, (err, res, body) => {
         if (err) { reject(err); }
-        resolve({ res: res, body: body });
+        resolve({ res, body });
       });
     });
-  },
-  getFile: function(path, endpoint, cookies) {
-    return new Promise(function(resolve, reject) {
-      var reqCall = function() {
-        var data = '';
+  }
+
+  getFile(path, endpoint, options) {
+    return new Promise((resolve, reject) => {
+      let reqCall = () => {
         request({
           method: 'GET',
           url: endpoint,
-          headers: _.assign({}, HEADERS, {
-            'host': 'wwws.mint.com',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'cookie': cookies,
-            'connection': 'keep-alive',
-            'upgrade-insecure-requests': 1,
-            'accept-encoding': 'gzip, deflate, sdch',
-            'accept-language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4'
-          })
+          headers: options.headers
         })
           .pipe(fs.createWriteStream(path))
-          .on('close', function() {
-            console.log('[requester] closing stream');
+          .on('close', () => {
             resolve();
           });
-          // .on('response', function(response) {
-          //   console.log('[requester] got response');
-          //   var contentType = response.headers['content-type'];
-          //   resolve(response);
-          // })
-
       }
 
       reqCall();
@@ -74,7 +65,7 @@ Requester.prototype = {
 
     console.log('[requester] endpoint: ', endpoint);
   }
-}
 
+}
 
 module.exports = Requester;

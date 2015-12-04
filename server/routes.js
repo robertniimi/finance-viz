@@ -6,6 +6,7 @@ var path = require('path');
 var querystring = require('querystring');
 var url = require('url');
 
+
 var _filterTransactions = function(transactions, start, end) {
   // if no start or end date, no filtering is done
   if (!start || !end) { return transactions; }
@@ -27,24 +28,5 @@ var _filterTransactions = function(transactions, start, end) {
 module.exports = function(app) {
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/../web/app/index.html'));
-  });
-
-  app.get('/transactions', function(req, res) {
-    var urlParts = url.parse(req.url);
-    var query = querystring.parse(urlParts.query);
-
-    console.log('[routes] query: ', query);
-
-    // transactions = {
-    //   key: (string)
-    //   values: (array)
-    // }
-    fs.readFile('./data/transactions_by_category.json', function(err, transactions) {
-      if (err) { throw err; }
-      var parsedTransactions = JSON.parse(transactions);
-      var filteredTransactions = _filterTransactions(parsedTransactions, query.start, query.end);
-      // console.log('[routes] filteredTransactions: ', filteredTransactions);
-      res.send(filteredTransactions);
-    });
   });
 }

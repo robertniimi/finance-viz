@@ -1,4 +1,5 @@
 import nv from 'nvd3';
+import d3 from 'd3';
 
 (function() {
   let renderStackedAreaChart = function(selector, data, options) {
@@ -15,10 +16,18 @@ import nv from 'nvd3';
         return new Date(valueObj.date);
       });
 
+      let interpolation = d3.svg.line()
+        .interpolate('cardinal')
+        .tension(0.875);
+
+      chart.interpolate(function(points) {
+        return interpolation(points).substring(1);
+      });
+
       chart.xAxis
         .tickValues(tickMarks)
         .tickFormat(function(d) {
-          return d3.time.format('%b %e, %Y')(new Date(d));
+          return d3.time.format('%b %Y')(new Date(d));
         });
 
       chart.yAxis

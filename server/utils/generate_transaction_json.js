@@ -1,9 +1,22 @@
+'use strict';
+
 var _ = require('lodash');
-var categorySchema = require('./category_schema');
 var Converter = require('csvtojson').Converter;
 var fs = require('fs');
 var moment = require('moment');
 var path = require('path');
+
+var categorySchema = require('../data/category_schema');
+
+const EXCLUDE_TRANSACTION_TYPES = [
+  'Income',
+  'Gifts & Donations',
+  'Hide from Budgets & Trends',
+  'Pets',
+  'Kids',
+  'Taxes',
+  'Transfer'
+];
 
 // Normalizes date data to start of month
 var _normalizeDate = function(transactions) {
@@ -92,18 +105,8 @@ var _groupByCategory = function(transactions) {
     }
   });
 
-  var exclude = [
-    'Income',
-    'Gifts & Donations',
-    'Hide from Budgets & Trends',
-    'Pets',
-    'Kids',
-    'Taxes',
-    'Transfer'
-  ];
-
   _.remove(data, function(dataObj) {
-    return (exclude.indexOf(dataObj.key) !== -1);
+    return (EXCLUDE_TRANSACTION_TYPES.indexOf(dataObj.key) !== -1);
   });
 
   return data;
@@ -113,30 +116,21 @@ var _groupByCategory = function(transactions) {
 // module.exports = getTransactions();
 
 module.exports = function() {
-  var fileStream = fs.createReadStream(__dirname + '/transactions.csv');
+  var fileStream = fs.createReadStream(__dirname + '/../data/transactions.csv');
   var converter = new Converter();
 
   // var minDate, maxDate;
   converter.on('end_parsed', function(JSONTrans) {
+    // console.log('[generate_transaction_json] JSONTrans: ', JSONTrans);
     // Normalize the date by start of month
     var formattedTrans = _normalizeDate(JSONTrans);
     // Generate Data Grouped by Category
     var data = _groupByCategory(formattedTrans);
 
-    fs.writeFile(__dirname + '/transactions_by_category.json', JSON.stringify(data), function(err) {
+    fs.writeFile(__dirname + '/../data/transactions_by_category.json', JSON.stringify(data), function(err) {
       if (err) { throw (err); }
       console.log('[get_transactions.js] saved transactions_by_category.json!');
     });
-
-    // fs.writeFile(__dirname + '/monthly_transactions.json', JSON.stringify(monthlyTransactions), function (err) {
-    //   if (err) { throw new Error(err); }
-    //   console.log('[get_transactions.js] saved monthly_transactions.json!');
-    // });
-
-    // fs.writeFile(__dirname + '/monthly_transactions_details.json', JSON.stringify(monthlyTransactionArr), function (err) {
-    //   if (err) { throw new Error(err); }
-    //   console.log('[get_transactions.js] saved monthly_transactions.json!');
-    // });
   });
 
   fileStream.pipe(converter);

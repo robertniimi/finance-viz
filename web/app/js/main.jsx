@@ -1,11 +1,12 @@
 import Router from 'react-router';
 import App from './components/app';
-import AreaChart from './components/area_chart';
+import Finances from './components/finances';
+
 let { Route } = Router;
 
 var routes = (
-  <Route handler={ App }>
-    <Route path='area' handler={ AreaChart }/>
+  <Route path='/' handler={ App }>
+    <Route path='finances' handler={ Finances }/>
   </Route>
 );
 
