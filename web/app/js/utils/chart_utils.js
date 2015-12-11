@@ -35,6 +35,8 @@ import d3 from 'd3';
           return ('$' + d3.format(',.0f')(d));
         });
 
+      // chart.height(500);
+
       d3.select(selector)
         .datum(data)
         .call(chart);

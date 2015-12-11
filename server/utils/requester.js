@@ -7,9 +7,9 @@ var https = require('https');
 var Promise = require('bluebird');
 var request = require('request');
 
-
 var cookie_jar = request.jar();
 var request = request.defaults({ jar: cookie_jar, strickSSL: false });
+
 class Requester {
   constructor() {
 
@@ -17,29 +17,32 @@ class Requester {
 
   get(endpoint, options) {
     return new Promise((resolve, reject) => {
-      request({
-        cookie: options.cookies,
-        headers: options.headers,
+      request(_.assign({
+        cookie: null,
+        headers: null,
         json: true,
         method: 'GET',
         url: endpoint
-      }, (err, res, body) => {
+      }, options), (err, res, body) => {
         if (err) { reject(err); }
         resolve({ res, body });
       });
     });
   }
 
+  // options = {
+  //   cookie:
+  //   form:
+  //   headers:
+  //   json:
+  // }
   post(endpoint, options) {
     return new Promise((resolve, reject) => {
-      request({
-        cookie: options.cookies,
-        form: options.data,
-        headers: options.headers,
+      request(_.assign({
         json: true,
         method: 'POST',
         url: endpoint
-      }, (err, res, body) => {
+      }, options), (err, res, body) => {
         if (err) { reject(err); }
         resolve({ res, body });
       });
@@ -62,8 +65,6 @@ class Requester {
 
       reqCall();
     });
-
-    console.log('[requester] endpoint: ', endpoint);
   }
 
 }

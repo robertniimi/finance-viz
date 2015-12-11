@@ -122,14 +122,17 @@ module.exports = function() {
   // var minDate, maxDate;
   converter.on('end_parsed', function(JSONTrans) {
     // console.log('[generate_transaction_json] JSONTrans: ', JSONTrans);
+
     // Normalize the date by start of month
     var formattedTrans = _normalizeDate(JSONTrans);
     // Generate Data Grouped by Category
     var data = _groupByCategory(formattedTrans);
 
-    fs.writeFile(__dirname + '/../data/transactions_by_category.json', JSON.stringify(data), function(err) {
+    let path = __dirname + '/../data/transactions_by_category.json';
+
+    fs.writeFile(path, JSON.stringify(data), function(err) {
       if (err) { throw (err); }
-      console.log('[get_transactions.js] saved transactions_by_category.json!');
+      console.log(`[get_transactions.js] saved ${ path }`);
     });
   });
 

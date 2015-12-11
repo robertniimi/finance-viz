@@ -1,0 +1,5 @@
+const GET_TRANSACTIONS = 'GET_TRANSACTIONS';
+
+module.exports = {
+  GET_TRANSACTIONS
+};

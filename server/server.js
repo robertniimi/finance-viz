@@ -7,9 +7,9 @@ var fs = require('fs');
 var Mint = require('./clients/mint');
 var GenerateTransactionJson = require('./utils/generate_transaction_json');
 
-var mint = new Mint(process.env.MINT_USERNAME, process.env.MINT_PASSWORD);
-
 require('dotenv').load();
+
+var mint = new Mint(process.env.MINT_USERNAME, process.env.MINT_PASSWORD);
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +20,7 @@ mint
   .login()
   .then((resBod) => {
     console.log('[server] logged in');
-    return mint.downloadTransactions('./data/transactions.csv');
+    return mint.downloadTransactions('./data/transactions.csv', true);
   })
   .then((res) => {
     console.log('[server] downloadedTransactions');

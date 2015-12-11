@@ -8,8 +8,10 @@ module.exports = {
     vendor: [
       'jquery',
       'lodash',
-      'react/addons',
+      'react-addons-update',
       'react-router',
+      'react-dom',
+      'redux',
       'd3',
       'nvd3'
     ]
@@ -22,12 +24,18 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       _: 'lodash',
-      React: 'react/addons'
+      React: 'react'
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ],
   resolve: {
-    modulesDirectories: ['node_modules', 'bower_components', './app/js/utils'],
+    modulesDirectories: [
+      'node_modules',
+      'bower_components',
+      'app/js/actions',
+      'app/js/constants',
+      'app/js/utils'
+    ],
     extensions: ['', '.js', '.jsx', '.json']
   },
   module: {
@@ -39,7 +47,7 @@ module.exports = {
       exclude: /(node_modules|bower_components)/,
       loader: 'babel'
     }, {
-      test: require.resolve('react/addons'),
+      test: require.resolve('react'),
       loader: 'expose?React'
     }]
   }

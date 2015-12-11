@@ -4,11 +4,12 @@
  * @prop {object}  - PROP_DESCRIPTION
  */
 
-import { renderStackedArea } from '../utils/chart_utils';
+import { renderStackedAreaChart } from '../utils/chart_utils';
 import querystring from 'querystring';
 import moment from 'moment';
 import request from 'ajax_utils';
 import promise from 'bluebird';
+import numeral from 'numeral';
 
 const DATE_RANGES = {
   'All Time': null,
@@ -22,7 +23,8 @@ class Finances extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateRange: '1 Year'
+      dateRange: '1 Year',
+      uncategorized: []
     };
   }
 
@@ -34,20 +36,18 @@ class Finances extends React.Component {
     });
 
     // console.log('[finances] query: ', query);
-
-    request.get(`/mint/transactions?${ query }`)
+    request.get(`/mint/chart/transactions?${ query }`)
       .then((transactions) => {
         let options = {
           showLegend: false,
           useInteractiveGuideline: true
         };
 
-        console.log('[finances] transactions: ', transactions);
-
-        renderStackedFinances('#finances', transactions, options);
+        console.log('[finances] @mint/chart/transactions -> transactions: ', transactions);
+        renderStackedAreaChart('#finances', transactions, options);
       })
       .catch((e) => {
-        throw new Error('[finances] @_renderFinances response: e', e);
+        throw new Error('[finances] @_renderFinances -> e:', e);
       });
   }
 
@@ -71,9 +71,39 @@ class Finances extends React.Component {
 
   componentDidMount() {
     this._renderFinances();
-    request.get('/mint/getJsonData')
-      .then((jsonData) => {
-        console.log('[finances] jsonData: ', jsonData);
+    // request.get('/mint/getJsonData')
+    //   .then((jsonData) => {
+    //     console.log('[finances] jsonData: ', jsonData);
+    //   });
+
+    request.get(`/mint/categories`)
+      .then((categories) => {
+        console.log('[finances] @mint/categories -> categories: ', categories);
+      });
+
+
+    let transactionQuery = {
+      query: 'category: Uncategorized'
+    };
+
+    console.log('[finances] transactionQuery: ', transactionQuery);
+    console.log('[finances] querystring.stringify(transactionQuery): ', querystring.stringify(transactionQuery));
+    request.get(`/mint/transactions?${ querystring.stringify(transactionQuery) }`)
+      .then((transactions) => {
+        console.log('[finances] @mint/transactions -> transactions: ', transactions);
+        this.setState({
+          uncategorized: transactions.set[0].data
+        });
+      });
+
+
+    let listTransactionQuery = {
+      query: 'category: Uncategorized'
+    };
+
+    request.get(`/mint/listTransaction?${ querystring.stringify(listTransactionQuery) }`)
+      .then((transactions) => {
+        console.log('[finances] @mint/listTransaction -> transactions: ', transactions);
       });
   }
 
@@ -85,13 +115,42 @@ class Finances extends React.Component {
 
   render() {
     // console.log('[finances] this.state: ', this.state);
+    let { uncategorized } = this.state;
     let dateOptions = this._getDateOptions();
+
+
+    let uncategorizedRows = _.map(uncategorized, (transaction) => {
+      return (
+        <tr key={`${transaction.id}`}>
+          <td>{ transaction.date }</td>
+          <td>{ transaction.omerchant }</td>
+          <td>{ numeral(transaction.amount).format('$0,0.00') }</td>
+          <td>{ transaction.category }</td>
+        </tr>
+      );
+    });
+
+    let uncatTransTable = (
+      <table className="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Merchant</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {uncategorizedRows}
+        </tbody>
+      </table>
+    );
 
     return (
       <div className='finances-component'>
         <header className='header'>
           <div className='header-content'>
-            <h1>Spending</h1>
+            <h1>{'Finances'}</h1>
             <div className='header-actions'>
               <select
                 name='finances-date-range-select'
@@ -106,6 +165,9 @@ class Finances extends React.Component {
         <div className='content-wrapper'>
           <button onClick={ this._handleRefreshData.bind(this) }>{'Update Transactions'}</button>
           <svg id='finances'></svg>
+        </div>
+        <div className='content-wrapper'>
+          {uncatTransTable}
         </div>
       </div>
     );
