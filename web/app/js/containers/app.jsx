@@ -1,17 +1,25 @@
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import PersonalApp from './personal_app';
-import reducers from '../reducers/finances_reducer';
+// Components
+import FinancesContainer from './finances_container';
 
-const reducer = combineReducers([reducers]);
-const store = createStore(reducer);
+// Reducers
+import financesReducer from '../reducers/finances_reducer';
+
+const store = createStore(financesReducer);
+
+// console.log('[app] store.getState(): ', store.getState());
+
+let unsubscribe = store.subscribe(() => {
+  console.log('[app] store.getState(): ', store.getState());
+});
 
 class App extends React.Component {
   render() {
     return (
       <Provider store={ store }>
-        <PersonalApp />
+        <FinancesContainer />
       </Provider>
     );
   }

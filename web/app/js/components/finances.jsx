@@ -43,7 +43,7 @@ class Finances extends React.Component {
           useInteractiveGuideline: true
         };
 
-        console.log('[finances] @mint/chart/transactions -> transactions: ', transactions);
+        // console.log('[finances] @mint/chart/transactions -> transactions: ', transactions);
         renderStackedAreaChart('#finances', transactions, options);
       })
       .catch((e) => {
@@ -78,7 +78,7 @@ class Finances extends React.Component {
 
     request.get(`/mint/categories`)
       .then((categories) => {
-        console.log('[finances] @mint/categories -> categories: ', categories);
+        // console.log('[finances] @mint/categories -> categories: ', categories);
       });
 
 
@@ -86,11 +86,11 @@ class Finances extends React.Component {
       query: 'category: Uncategorized'
     };
 
-    console.log('[finances] transactionQuery: ', transactionQuery);
-    console.log('[finances] querystring.stringify(transactionQuery): ', querystring.stringify(transactionQuery));
+    // console.log('[finances] transactionQuery: ', transactionQuery);
+    // console.log('[finances] querystring.stringify(transactionQuery): ', querystring.stringify(transactionQuery));
     request.get(`/mint/transactions?${ querystring.stringify(transactionQuery) }`)
       .then((transactions) => {
-        console.log('[finances] @mint/transactions -> transactions: ', transactions);
+        // console.log('[finances] @mint/transactions -> transactions: ', transactions);
         this.setState({
           uncategorized: transactions.set[0].data
         });
@@ -103,7 +103,7 @@ class Finances extends React.Component {
 
     request.get(`/mint/listTransaction?${ querystring.stringify(listTransactionQuery) }`)
       .then((transactions) => {
-        console.log('[finances] @mint/listTransaction -> transactions: ', transactions);
+        // console.log('[finances] @mint/listTransaction -> transactions: ', transactions);
       });
   }
 

@@ -1,5 +1,7 @@
-import ActionTypes from 'action_types';
 import moment from 'moment';
+
+// Constants
+import ActionTypes from 'action_types';
 
 const DATE_RANGES = {
   'All Time': null,
@@ -27,22 +29,18 @@ let _fetchTransactions = () => {
 
 // do reducers modify the actual state?
 function personalApp(state = initialState, action) {
+  console.log('[finances_reducer] state: ', state);
   console.log('[finances_reducer] @personalApp -> action: ', action);
   switch (action.type) {
     case ActionTypes.CHANGE_DATE_RANGE:
       // modify date range here, then refetch
       return dateRange;
 
-    case ActionTypes.GET_TRANSACTIONS:
-      console.log('[finances_reducer] state.transactions: ', state.transactions);
-      return _.cloneDeep(state.transactions);
-
     case ActionTypes.FETCH_TRANSACTIONS:
       console.log('[finances_reducer] @personalApp.FETCH_TRANSACTIONS -> action: ', action);
       return;
 
     case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
-
       return;
 
     default:

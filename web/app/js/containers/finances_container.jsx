@@ -1,11 +1,11 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchTransactions } from 'finances_actions';
-import financesReducer from '../reducers/finances_reducer';
+
+// Constants
 import ActionTypes from 'action_types';
 
 // Actions
-import FinancesActions from 'finances_actions';
+import { fetchTransactions, changeDateRange } from 'finances_actions';
 
 // Components
 import Finances from '../components/finances';
@@ -16,11 +16,7 @@ class SomeApp extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <Finances {...this.props} />
-      </div>
-    );
+    return (<Finances {...this.props} />);
   }
 }
 
@@ -29,7 +25,10 @@ SomeApp.propTypes = {
 };
 
 module.exports = connect((state) => {
+  console.log('[personal_app] @connect -> state: ', state);
   return {
-    transactions: financesReducer(state, { type: ActionTypes.GET_TRANSACTIONS })
+    dateRange: state.dateRange,
+    chartData: state.chartData,
+    transactions: state.transactions
   }
 })(SomeApp);
