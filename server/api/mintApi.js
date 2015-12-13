@@ -8,20 +8,27 @@ var path = require('path');
 var querystring = require('querystring');
 var url = require('url');
 
-var _filterTransactions = function(transactions, start, end) {
-  // if no start or end date, no filtering is done
-  if (!start || !end) { return transactions; }
-
-  var startDate = new Date(start);
-  var endDate = new Date(end);
-  return _.map(transactions, function(transactionObj, idx) {
-    transactionObj.values = _.filter(transactionObj.values, function(valueObj) {
-      var date = new Date(valueObj.date);
-      // console.log('[routes] date: ', date);
-      return (date >= startDate && date <= endDate);
+var _filterTransactions = function(transactions, query) {
+  // Filter by date range
+  if (query.start && query.end) {
+    var startDate = new Date(query.start);
+    var endDate = new Date(query.end);
+    transactions = _.map(transactions, function(transactionObj, idx) {
+      transactionObj.values = _.filter(transactionObj.values, function(valueObj) {
+        var date = new Date(valueObj.date);
+        // console.log('[routes] date: ', date);
+        return (date >= startDate && date <= endDate);
+      });
+      return transactionObj;
     });
-    return transactionObj;
-  });
+  }
+
+  // Filter by query
+  if (query.query) {
+
+  };
+
+  return transactions;
 };
 
 module.exports = (app, mint) => {
@@ -43,9 +50,28 @@ module.exports = (app, mint) => {
         throw err;
       }
       let parsedTransactions = JSON.parse(transactions);
-      let filteredTransactions = _filterTransactions(parsedTransactions, query.start, query.end);
+      let filteredTransactions = _filterTransactions(parsedTransactions, query);
       res.send(filteredTransactions);
     });
+  });
+
+
+  app.get('/mint/chart/transactions', (req, res) => {
+    console.log('[mintApi] @mint/chart/transactions');
+    if (!mint || !mint.transactions) {
+
+      res.send([]);
+    };
+
+    // filter transactions
+    let transactions = mint.transactions;
+    if (req && req.query) {
+      if (req.query.to && req.query.from) {
+        transactions = _filterTransactions(transactions, query.start, query.end);
+      }
+    }
+
+    res.send(transactions);
   });
 
   app.get('/mint/refreshAccounts', (req, res) => {
@@ -61,26 +87,6 @@ module.exports = (app, mint) => {
       });
   });
 
-  app.get('/mint/chart/transactions', (req, res) => {
-    if (!mint || !mint.transactions) {
-      res.send([]);
-    };
-
-    // filter transactions
-    let transactions = mint.transactions;
-    if (req && req.query) {
-      let query = req.query;
-      transactions = _.filter(transactions, (transaction) => {
-        let shouldInclude = true;
-          if (query.category) {
-            shouldInclude = shouldInclude && transaction.Category === query.category;
-          };
-        return shouldInclude;
-      });
-    }
-
-    res.send(transactions);
-  });
 
   app.get('/mint/listTransaction', (req, res) => {
     // query category

@@ -19675,7 +19675,7 @@ webpackJsonp([0],[
 
 	var _personal_app2 = _interopRequireDefault(_personal_app);
 
-	var _reducersFinances_reducer = __webpack_require__(448);
+	var _reducersFinances_reducer = __webpack_require__(347);
 
 	var _reducersFinances_reducer2 = _interopRequireDefault(_reducersFinances_reducer);
 
@@ -20344,9 +20344,21 @@ webpackJsonp([0],[
 
 	var _finances_actions = __webpack_require__(345);
 
+	var _reducersFinances_reducer = __webpack_require__(347);
+
+	var _reducersFinances_reducer2 = _interopRequireDefault(_reducersFinances_reducer);
+
+	var _action_types = __webpack_require__(346);
+
+	var _action_types2 = _interopRequireDefault(_action_types);
+
+	// Actions
+
 	var _finances_actions2 = _interopRequireDefault(_finances_actions);
 
-	var _componentsFinances = __webpack_require__(347);
+	// Components
+
+	var _componentsFinances = __webpack_require__(437);
 
 	var _componentsFinances2 = _interopRequireDefault(_componentsFinances);
 
@@ -20356,7 +20368,7 @@ webpackJsonp([0],[
 	  function SomeApp() {
 	    _classCallCheck(this, SomeApp);
 
-	    _get(Object.getPrototypeOf(SomeApp.prototype), 'constructor', this).apply(this, arguments);
+	    _get(Object.getPrototypeOf(SomeApp.prototype), 'constructor', this).call(this);
 	  }
 
 	  _createClass(SomeApp, [{
@@ -20365,7 +20377,7 @@ webpackJsonp([0],[
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(_componentsFinances2['default'], null)
+	        React.createElement(_componentsFinances2['default'], this.props)
 	      );
 	    }
 	  }]);
@@ -20373,7 +20385,15 @@ webpackJsonp([0],[
 	  return SomeApp;
 	})(React.Component);
 
-	module.exports = SomeApp;
+	SomeApp.propTypes = {
+	  transactions: React.PropTypes.array
+	};
+
+	module.exports = (0, _reactRedux.connect)(function (state) {
+	  return {
+	    transactions: (0, _reducersFinances_reducer2['default'])(state, { type: _action_types2['default'].GET_TRANSACTIONS })
+	  };
+	})(SomeApp);
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
@@ -20388,13 +20408,23 @@ webpackJsonp([0],[
 
 	var _action_types2 = _interopRequireDefault(_action_types);
 
-	console.log('[finances_actions] ActionTypes: ', _action_types2['default']);
-
 	module.exports = {
-	  getTransactions: function getTransactions(queryObj) {
+	  fetchTransactions: function fetchTransactions(query) {
 	    return {
-	      type: _action_types2['default'].GET_TRANSACTIONS,
-	      payload: queryObj
+	      type: _action_types2['default'].FETCH_TRANSACTIONS,
+	      query: query
+	    };
+	  },
+	  fetchTransactionsSuccess: function fetchTransactionsSuccess(transactions) {
+	    return {
+	      type: _action_types2['default'].FETCH_TRANSACTIONS_SUCCESS,
+	      transactions: transactions
+	    };
+	  },
+	  changeDateRange: function changeDateRange(dateRange) {
+	    return {
+	      type: _action_types2['default'].CHANGE_DATE_RANGE,
+	      dateRange: dateRange
 	    };
 	  }
 	};
@@ -20405,55 +20435,28 @@ webpackJsonp([0],[
 
 	'use strict';
 
-	var GET_TRANSACTIONS = 'GET_TRANSACTIONS';
-
 	module.exports = {
-	  GET_TRANSACTIONS: GET_TRANSACTIONS
+	  GET_TRANSACTIONS: 'GET_TRANSACTIONS',
+	  FETCH_TRANSACTIONS: 'FETCH_TRANSACTIONS',
+	  FETCH_TRANSACTIONS_SUCCESS: 'FETCH_TRANSACTIONS_SUCCESS',
+	  CHANGE_DATE_RANGE: 'CHANGE_DATE_RANGE'
 	};
 
 /***/ },
 /* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, _, $) {/**
-	 * DESCRIPTION
-	 *
-	 * @prop {object}  - PROP_DESCRIPTION
-	 */
-
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	/* WEBPACK VAR INJECTION */(function(_) {'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	var _action_types = __webpack_require__(346);
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	var _action_types2 = _interopRequireDefault(_action_types);
 
-	var _utilsChart_utils = __webpack_require__(351);
-
-	var _querystring = __webpack_require__(354);
-
-	var _querystring2 = _interopRequireDefault(_querystring);
-
-	var _moment = __webpack_require__(357);
+	var _moment = __webpack_require__(350);
 
 	var _moment2 = _interopRequireDefault(_moment);
-
-	var _ajax_utils = __webpack_require__(444);
-
-	var _ajax_utils2 = _interopRequireDefault(_ajax_utils);
-
-	var _bluebird = __webpack_require__(445);
-
-	var _bluebird2 = _interopRequireDefault(_bluebird);
-
-	var _numeral = __webpack_require__(447);
-
-	var _numeral2 = _interopRequireDefault(_numeral);
 
 	var DATE_RANGES = {
 	  'All Time': null,
@@ -20463,236 +20466,49 @@ webpackJsonp([0],[
 	  '2 Year': (0, _moment2['default'])().subtract(2, 'years').toISOString()
 	};
 
-	var Finances = (function (_React$Component) {
-	  _inherits(Finances, _React$Component);
+	var DEFAULT_DATE_RANGE = '1 Year';
 
-	  function Finances(props) {
-	    _classCallCheck(this, Finances);
-
-	    _get(Object.getPrototypeOf(Finances.prototype), 'constructor', this).call(this, props);
-	    this.state = {
-	      dateRange: '1 Year',
-	      uncategorized: []
-	    };
+	var initialState = {
+	  transactions: [],
+	  chartData: [],
+	  dateRange: DEFAULT_DATE_RANGE,
+	  query: {
+	    end: new Date().toISOString(),
+	    start: DATE_RANGES[DEFAULT_DATE_RANGE]
 	  }
+	};
 
-	  // fetch transactions and set as new date
+	var _fetchTransactions = function _fetchTransactions() {};
 
-	  _createClass(Finances, [{
-	    key: '_renderFinances',
-	    value: function _renderFinances() {
-	      var query = _querystring2['default'].stringify({
-	        end: new Date().toISOString(),
-	        start: DATE_RANGES[this.state.dateRange]
-	      });
+	// do reducers modify the actual state?
+	function personalApp(state, action) {
+	  if (state === undefined) state = initialState;
 
-	      // console.log('[finances] query: ', query);
-	      _ajax_utils2['default'].get('/mint/chart/transactions?' + query).then(function (transactions) {
-	        var options = {
-	          showLegend: false,
-	          useInteractiveGuideline: true
-	        };
+	  console.log('[finances_reducer] @personalApp -> action: ', action);
+	  switch (action.type) {
+	    case _action_types2['default'].CHANGE_DATE_RANGE:
+	      // modify date range here, then refetch
+	      return dateRange;
 
-	        console.log('[finances] @mint/chart/transactions -> transactions: ', transactions);
-	        (0, _utilsChart_utils.renderStackedAreaChart)('#finances', transactions, options);
-	      })['catch'](function (e) {
-	        throw new Error('[finances] @_renderFinances -> e:', e);
-	      });
-	    }
-	  }, {
-	    key: '_onChangeDate',
-	    value: function _onChangeDate(e) {
-	      e.preventDefault();
-	      var value = e.target.value;
-	      this.setState({ dateRange: value });
-	    }
-	  }, {
-	    key: '_getDateOptions',
-	    value: function _getDateOptions() {
-	      return _.map(DATE_RANGES, function (date, key) {
-	        return React.createElement(
-	          'option',
-	          { value: key, key: key },
-	          key
-	        );
-	      });
-	    }
-	  }, {
-	    key: '_handleRefreshData',
-	    value: function _handleRefreshData() {
-	      _ajax_utils2['default'].get('/mint/refreshAccounts');
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this = this;
+	    case _action_types2['default'].GET_TRANSACTIONS:
+	      console.log('[finances_reducer] state.transactions: ', state.transactions);
+	      return _.cloneDeep(state.transactions);
 
-	      this._renderFinances();
-	      // request.get('/mint/getJsonData')
-	      //   .then((jsonData) => {
-	      //     console.log('[finances] jsonData: ', jsonData);
-	      //   });
+	    case _action_types2['default'].FETCH_TRANSACTIONS:
+	      console.log('[finances_reducer] @personalApp.FETCH_TRANSACTIONS -> action: ', action);
+	      return;
 
-	      _ajax_utils2['default'].get('/mint/categories').then(function (categories) {
-	        console.log('[finances] @mint/categories -> categories: ', categories);
-	      });
+	    case _action_types2['default'].FETCH_TRANSACTIONS_SUCCESS:
 
-	      var transactionQuery = {
-	        query: 'category: Uncategorized'
-	      };
+	      return;
 
-	      console.log('[finances] transactionQuery: ', transactionQuery);
-	      console.log('[finances] querystring.stringify(transactionQuery): ', _querystring2['default'].stringify(transactionQuery));
-	      _ajax_utils2['default'].get('/mint/transactions?' + _querystring2['default'].stringify(transactionQuery)).then(function (transactions) {
-	        console.log('[finances] @mint/transactions -> transactions: ', transactions);
-	        _this.setState({
-	          uncategorized: transactions.set[0].data
-	        });
-	      });
+	    default:
+	      return state;
+	  }
+	}
 
-	      var listTransactionQuery = {
-	        query: 'category: Uncategorized'
-	      };
-
-	      _ajax_utils2['default'].get('/mint/listTransaction?' + _querystring2['default'].stringify(listTransactionQuery)).then(function (transactions) {
-	        console.log('[finances] @mint/listTransaction -> transactions: ', transactions);
-	      });
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate() {
-	      // $('#finances').empty();
-	      $('.nvtooltip').remove();
-	      this._renderFinances();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      // console.log('[finances] this.state: ', this.state);
-	      var uncategorized = this.state.uncategorized;
-
-	      var dateOptions = this._getDateOptions();
-
-	      var uncategorizedRows = _.map(uncategorized, function (transaction) {
-	        return React.createElement(
-	          'tr',
-	          { key: '' + transaction.id },
-	          React.createElement(
-	            'td',
-	            null,
-	            transaction.date
-	          ),
-	          React.createElement(
-	            'td',
-	            null,
-	            transaction.omerchant
-	          ),
-	          React.createElement(
-	            'td',
-	            null,
-	            (0, _numeral2['default'])(transaction.amount).format('$0,0.00')
-	          ),
-	          React.createElement(
-	            'td',
-	            null,
-	            transaction.category
-	          )
-	        );
-	      });
-
-	      var uncatTransTable = React.createElement(
-	        'table',
-	        { className: 'table table-striped table-hover' },
-	        React.createElement(
-	          'thead',
-	          null,
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'th',
-	              null,
-	              'Date'
-	            ),
-	            React.createElement(
-	              'th',
-	              null,
-	              'Merchant'
-	            ),
-	            React.createElement(
-	              'th',
-	              null,
-	              'Amount'
-	            ),
-	            React.createElement(
-	              'th',
-	              null,
-	              'Date'
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          'tbody',
-	          null,
-	          uncategorizedRows
-	        )
-	      );
-
-	      return React.createElement(
-	        'div',
-	        { className: 'finances-component' },
-	        React.createElement(
-	          'header',
-	          { className: 'header' },
-	          React.createElement(
-	            'div',
-	            { className: 'header-content' },
-	            React.createElement(
-	              'h1',
-	              null,
-	              'Finances'
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'header-actions' },
-	              React.createElement(
-	                'select',
-	                {
-	                  name: 'finances-date-range-select',
-	                  onChange: this._onChangeDate.bind(this),
-	                  value: this.state.dateRange
-	                },
-	                dateOptions
-	              )
-	            )
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'content-wrapper' },
-	          React.createElement(
-	            'button',
-	            { onClick: this._handleRefreshData.bind(this) },
-	            'Update Transactions'
-	          ),
-	          React.createElement('svg', { id: 'finances' })
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'content-wrapper' },
-	          uncatTransTable
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Finances;
-	})(React.Component);
-
-	Finances.displayName = 'Finances';
-
-	module.exports = Finances;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(348), __webpack_require__(350)))
+	module.exports = personalApp;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(348)))
 
 /***/ },
 /* 348 */
@@ -33055,18 +32871,389 @@ webpackJsonp([0],[
 /***/ },
 /* 349 */,
 /* 350 */,
-/* 351 */
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, _, $) {/**
+	 * DESCRIPTION
+	 *
+	 * @prop {object}  - PROP_DESCRIPTION
+	 */
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _utilsChart_utils = __webpack_require__(439);
+
+	var _querystring = __webpack_require__(442);
+
+	var _querystring2 = _interopRequireDefault(_querystring);
+
+	var _moment = __webpack_require__(350);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _ajax_utils = __webpack_require__(445);
+
+	var _ajax_utils2 = _interopRequireDefault(_ajax_utils);
+
+	var _bluebird = __webpack_require__(446);
+
+	var _bluebird2 = _interopRequireDefault(_bluebird);
+
+	var _numeral = __webpack_require__(448);
+
+	var _numeral2 = _interopRequireDefault(_numeral);
+
+	var DATE_RANGES = {
+	  'All Time': null,
+	  '3 Months': (0, _moment2['default'])().subtract(3, 'months').toISOString(),
+	  '6 Months': (0, _moment2['default'])().subtract(6, 'months').toISOString(),
+	  '1 Year': (0, _moment2['default'])().subtract(1, 'year').toISOString(),
+	  '2 Year': (0, _moment2['default'])().subtract(2, 'years').toISOString()
+	};
+
+	var Finances = (function (_React$Component) {
+	  _inherits(Finances, _React$Component);
+
+	  function Finances(props) {
+	    _classCallCheck(this, Finances);
+
+	    _get(Object.getPrototypeOf(Finances.prototype), 'constructor', this).call(this, props);
+	    this.state = {
+	      dateRange: '1 Year',
+	      uncategorized: []
+	    };
+	  }
+
+	  // fetch transactions and set as new date
+
+	  _createClass(Finances, [{
+	    key: '_renderFinances',
+	    value: function _renderFinances() {
+	      var query = _querystring2['default'].stringify({
+	        end: new Date().toISOString(),
+	        start: DATE_RANGES[this.state.dateRange]
+	      });
+
+	      // console.log('[finances] query: ', query);
+	      _ajax_utils2['default'].get('/mint/chart/transactions?' + query).then(function (transactions) {
+	        var options = {
+	          showLegend: false,
+	          useInteractiveGuideline: true
+	        };
+
+	        console.log('[finances] @mint/chart/transactions -> transactions: ', transactions);
+	        (0, _utilsChart_utils.renderStackedAreaChart)('#finances', transactions, options);
+	      })['catch'](function (e) {
+	        throw new Error('[finances] @_renderFinances -> e:', e);
+	      });
+	    }
+	  }, {
+	    key: '_onChangeDate',
+	    value: function _onChangeDate(e) {
+	      e.preventDefault();
+	      var value = e.target.value;
+	      this.setState({ dateRange: value });
+	    }
+	  }, {
+	    key: '_getDateOptions',
+	    value: function _getDateOptions() {
+	      return _.map(DATE_RANGES, function (date, key) {
+	        return React.createElement(
+	          'option',
+	          { value: key, key: key },
+	          key
+	        );
+	      });
+	    }
+	  }, {
+	    key: '_handleRefreshData',
+	    value: function _handleRefreshData() {
+	      _ajax_utils2['default'].get('/mint/refreshAccounts');
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this = this;
+
+	      this._renderFinances();
+	      // request.get('/mint/getJsonData')
+	      //   .then((jsonData) => {
+	      //     console.log('[finances] jsonData: ', jsonData);
+	      //   });
+
+	      _ajax_utils2['default'].get('/mint/categories').then(function (categories) {
+	        console.log('[finances] @mint/categories -> categories: ', categories);
+	      });
+
+	      var transactionQuery = {
+	        query: 'category: Uncategorized'
+	      };
+
+	      console.log('[finances] transactionQuery: ', transactionQuery);
+	      console.log('[finances] querystring.stringify(transactionQuery): ', _querystring2['default'].stringify(transactionQuery));
+	      _ajax_utils2['default'].get('/mint/transactions?' + _querystring2['default'].stringify(transactionQuery)).then(function (transactions) {
+	        console.log('[finances] @mint/transactions -> transactions: ', transactions);
+	        _this.setState({
+	          uncategorized: transactions.set[0].data
+	        });
+	      });
+
+	      var listTransactionQuery = {
+	        query: 'category: Uncategorized'
+	      };
+
+	      _ajax_utils2['default'].get('/mint/listTransaction?' + _querystring2['default'].stringify(listTransactionQuery)).then(function (transactions) {
+	        console.log('[finances] @mint/listTransaction -> transactions: ', transactions);
+	      });
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      // $('#finances').empty();
+	      $('.nvtooltip').remove();
+	      this._renderFinances();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      // console.log('[finances] this.state: ', this.state);
+	      console.log('[finances] this.props: ', this.props);
+	      var uncategorized = this.state.uncategorized;
+
+	      var dateOptions = this._getDateOptions();
+
+	      var uncategorizedRows = _.map(uncategorized, function (transaction) {
+	        return React.createElement(
+	          'tr',
+	          { key: '' + transaction.id },
+	          React.createElement(
+	            'td',
+	            null,
+	            transaction.date
+	          ),
+	          React.createElement(
+	            'td',
+	            null,
+	            transaction.omerchant
+	          ),
+	          React.createElement(
+	            'td',
+	            null,
+	            (0, _numeral2['default'])(transaction.amount).format('$0,0.00')
+	          ),
+	          React.createElement(
+	            'td',
+	            null,
+	            transaction.category
+	          )
+	        );
+	      });
+
+	      var uncatTransTable = React.createElement(
+	        'table',
+	        { className: 'table table-striped table-hover' },
+	        React.createElement(
+	          'thead',
+	          null,
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'th',
+	              null,
+	              'Date'
+	            ),
+	            React.createElement(
+	              'th',
+	              null,
+	              'Merchant'
+	            ),
+	            React.createElement(
+	              'th',
+	              null,
+	              'Amount'
+	            ),
+	            React.createElement(
+	              'th',
+	              null,
+	              'Date'
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          'tbody',
+	          null,
+	          uncategorizedRows
+	        )
+	      );
+
+	      return React.createElement(
+	        'div',
+	        { className: 'finances-component' },
+	        React.createElement(
+	          'header',
+	          { className: 'header' },
+	          React.createElement(
+	            'div',
+	            { className: 'header-content' },
+	            React.createElement(
+	              'h1',
+	              null,
+	              'Finances'
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'header-actions' },
+	              React.createElement(
+	                'select',
+	                {
+	                  name: 'finances-date-range-select',
+	                  onChange: this._onChangeDate.bind(this),
+	                  value: this.state.dateRange
+	                },
+	                dateOptions
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'content-wrapper' },
+	          React.createElement(
+	            'button',
+	            { onClick: this._handleRefreshData.bind(this) },
+	            'Update Transactions'
+	          ),
+	          React.createElement('svg', { id: 'finances' })
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'content-wrapper' },
+	          uncatTransTable
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Finances;
+	})(React.Component);
+
+	Finances.displayName = 'Finances';
+
+	module.exports = Finances;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(348), __webpack_require__(438)))
+
+/***/ },
+/* 438 */,
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(_) {'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _nvd3 = __webpack_require__(352);
+	var _nvd3 = __webpack_require__(440);
 
 	var _nvd32 = _interopRequireDefault(_nvd3);
 
-	var _d3 = __webpack_require__(353);
+	var _d3 = __webpack_require__(441);
 
 	var _d32 = _interopRequireDefault(_d3);
 
@@ -33118,19 +33305,19 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(348)))
 
 /***/ },
-/* 352 */,
-/* 353 */,
-/* 354 */
+/* 440 */,
+/* 441 */,
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	exports.decode = exports.parse = __webpack_require__(355);
-	exports.encode = exports.stringify = __webpack_require__(356);
+	exports.decode = exports.parse = __webpack_require__(443);
+	exports.encode = exports.stringify = __webpack_require__(444);
 
 
 /***/ },
-/* 355 */
+/* 443 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -33216,7 +33403,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 356 */
+/* 444 */
 /***/ function(module, exports) {
 
 	// Copyright Joyent, Inc. and other Node contributors.
@@ -33286,101 +33473,14 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _bluebird = __webpack_require__(445);
+	var _bluebird = __webpack_require__(446);
 
 	var _bluebird2 = _interopRequireDefault(_bluebird);
 
@@ -33395,10 +33495,10 @@ webpackJsonp([0],[
 	    });
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(350)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(438)))
 
 /***/ },
-/* 445 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process, global, setImmediate) {/* @preserve
@@ -38288,45 +38388,7 @@ webpackJsonp([0],[
 
 	},{"./es5.js":14}]},{},[4])(4)
 	});                    ;if (typeof window !== 'undefined' && window !== null) {                               window.P = window.Promise;                                                     } else if (typeof self !== 'undefined' && self !== null) {                             self.P = self.Promise;                                                         }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), (function() { return this; }()), __webpack_require__(446).setImmediate))
-
-/***/ },
-/* 446 */,
-/* 447 */,
-/* 448 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
-
-	var _action_types = __webpack_require__(346);
-
-	var _action_types2 = _interopRequireDefault(_action_types);
-
-	console.log('[finances_reducer] hello');
-
-	var initialState = [{
-	  payload: {}
-	}];
-
-	function personalApp(state, action) {
-	  if (state === undefined) state = initialState;
-
-	  switch (action.type) {
-	    case _action_types2['default'].GET_TRANSACTIONS:
-	      return [{
-	        payload: action.payload
-	      }].concat(_toConsumableArray(state));
-
-	    default:
-	      return state;
-	  }
-	}
-
-	module.exports = personalApp;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), (function() { return this; }()), __webpack_require__(447).setImmediate))
 
 /***/ }
 ]);

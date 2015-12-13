@@ -1,21 +1,53 @@
 import ActionTypes from 'action_types';
+import moment from 'moment';
 
-console.log('[finances_reducer] hello');
+const DATE_RANGES = {
+  'All Time': null,
+  '3 Months': moment().subtract(3, 'months').toISOString(),
+  '6 Months': moment().subtract(6, 'months').toISOString(),
+  '1 Year': moment().subtract(1, 'year').toISOString(),
+  '2 Year': moment().subtract(2, 'years').toISOString()
+};
 
-const initialState = [{
-  payload: {}
-}];
+const DEFAULT_DATE_RANGE = '1 Year';
 
-function personalApp(state = initialState, action) {
-  switch (action.type) {
-  case ActionTypes.GET_TRANSACTIONS:
-    return [{
-      payload: action.payload
-    }, ...state];
-
-  default:
-    return state;
+const initialState = {
+  transactions: [],
+  chartData: [],
+  dateRange: DEFAULT_DATE_RANGE,
+  query: {
+    end: (new Date()).toISOString(),
+    start: DATE_RANGES[DEFAULT_DATE_RANGE]
   }
+};
+
+let _fetchTransactions = () => {
+
+};
+
+// do reducers modify the actual state?
+function personalApp(state = initialState, action) {
+  console.log('[finances_reducer] @personalApp -> action: ', action);
+  switch (action.type) {
+    case ActionTypes.CHANGE_DATE_RANGE:
+      // modify date range here, then refetch
+      return dateRange;
+
+    case ActionTypes.GET_TRANSACTIONS:
+      console.log('[finances_reducer] state.transactions: ', state.transactions);
+      return _.cloneDeep(state.transactions);
+
+    case ActionTypes.FETCH_TRANSACTIONS:
+      console.log('[finances_reducer] @personalApp.FETCH_TRANSACTIONS -> action: ', action);
+      return;
+
+    case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
+
+      return;
+
+    default:
+      return state;
+    }
 }
 
 module.exports = personalApp;

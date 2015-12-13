@@ -115,6 +115,7 @@ class Finances extends React.Component {
 
   render() {
     // console.log('[finances] this.state: ', this.state);
+    console.log('[finances] this.props: ', this.props);
     let { uncategorized } = this.state;
     let dateOptions = this._getDateOptions();
 

@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import PersonalApp from '../reducers/finances_reducer';
+import personalApp from '../reducers/finances_reducer';
 let store = createStore(personalApp);
 
 console.log('[finances_store] store.getState(): ', store.getState());

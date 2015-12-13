@@ -1,11 +1,22 @@
 import ActionTypes from 'action_types';
-console.log('[finances_actions] ActionTypes: ', ActionTypes);
 
 module.exports = {
-  getTransactions: function(queryObj) {
+  fetchTransactions: (query) => {
     return {
-      type: ActionTypes.GET_TRANSACTIONS,
-      payload: queryObj
+      type: ActionTypes.FETCH_TRANSACTIONS,
+      query
     };
+  },
+  fetchTransactionsSuccess: (transactions) => {
+    return {
+      type: ActionTypes.FETCH_TRANSACTIONS_SUCCESS,
+      transactions
+    }
+  },
+  changeDateRange: (dateRange) => {
+    return {
+      type: ActionTypes.CHANGE_DATE_RANGE,
+      dateRange
+    }
   }
 };

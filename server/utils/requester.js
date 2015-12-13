@@ -50,7 +50,6 @@ class Requester {
   }
 
   getFile(path, endpoint, options) {
-    console.log('[requester] @getFile -> path: ', path);
     return new Promise((resolve, reject) => {
       let reqCall = () => {
         request({

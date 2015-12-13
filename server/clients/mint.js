@@ -40,6 +40,8 @@ class Mint {
     }, {});
   }
 
+  //
+  //
   login() {
     let _self = this;
     let cache;
@@ -76,6 +78,8 @@ class Mint {
     });
   }
 
+  //
+  //
   downloadTransactions(path, saveAsJson) {
     let _self = this;
     let headers = _.assign({}, HEADERS, {
@@ -112,6 +116,10 @@ class Mint {
       });
   }
 
+
+  // dataObj = {
+  //
+  // }
   updateTransaction(dataObj) {
     console.log('[mint] @updateTransactions -> dataObj: ', dataObj);
     let data = {
@@ -166,6 +174,8 @@ class Mint {
     // token:8141308IDwnDov0TvtzO6iUFDmuRm4Dncu3UbDSrfmLl0uw
   }
 
+  // Arguments
+  // =========
   // queryObj = {
   //   accountId:0
   //   query:category: Uncategorized
@@ -196,6 +206,8 @@ class Mint {
     });
   }
 
+  // Response:
+  //
   getJsonTransactions(queryObj) {
     let query = _.assign({
       accountId: 0,
@@ -227,6 +239,8 @@ class Mint {
     });
   }
 
+  // Response:
+  //
   getJsonCategories() {
     let query = {
       task: 'categories',
@@ -251,6 +265,8 @@ class Mint {
     })
   }
 
+  // Response:
+  //
   refreshAccounts() {
     console.log('[mint] refreshAccounts');
     this.login()
@@ -267,6 +283,8 @@ class Mint {
     // token: TOKEN
   }
 
+  // Response:
+  //
   refreshJob() {
     return new Promise((resolve, reject) => {
       this.login()
