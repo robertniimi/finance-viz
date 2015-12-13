@@ -1,2 +1,5 @@
 .env
 /node_modules
+/data/transactions.csv
+/data/transactions.json
+/transactions_by_category.json

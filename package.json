@@ -1,0 +1,26 @@
+{
+  "name": "finance-viz",
+  "version": "0.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Robert Niimi",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-nodemon": "^2.0.4",
+    "webpack-stream": "^3.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertn702/finance-viz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robertn702/finance-viz/issues"
+  },
+  "homepage": "https://github.com/robertn702/finance-viz#readme",
+  "description": ""
+}
