@@ -32,7 +32,9 @@
     "webpack": "^1.12.9",
     "webpack-stream": "^3.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-plugin-react": "^3.11.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robertn702/finance-viz.git"

@@ -54,7 +54,8 @@ class Finances extends React.Component {
   _onChangeDate(e) {
     e.preventDefault();
     let value = e.target.value;
-    this.setState({ dateRange: value });
+    this.props.onChangeDateRange(value);
+    // this.setState({ dateRange: value });
   }
 
   _getDateOptions() {
@@ -156,7 +157,7 @@ class Finances extends React.Component {
               <select
                 name='finances-date-range-select'
                 onChange={ this._onChangeDate.bind(this) }
-                value={ this.state.dateRange }
+                value={ this.props.selectedDateRange }
               >
                 { dateOptions }
               </select>

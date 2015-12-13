@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ActionTypes from 'action_types';
 
 // Actions
-import { fetchTransactions, changeDateRange } from 'finances_actions';
+import FinancesActions from 'finances_actions';
 
 // Components
 import Finances from '../components/finances';
@@ -15,8 +15,45 @@ class SomeApp extends React.Component {
     super()
   }
 
+  _fetchTransactions(dateRange, query) {
+    let { fetchTransactions, fetchTransactionsSuccess, fetchTransactionsError } = bindActionCreators(FinancesActions, this.props.dispatch);
+    fetchTransactions({}, fetchTransactionsSuccess, fetchTransactionsError);
+  }
+
+  _fetchChartTransactions(dateRange, query) {
+    let { fetchChartTransactions, fetchChartTransactionsSuccess, fetchChartTransactionsError } = bindActionCreators(FinancesActions, this.props.dispatch);
+    console.log('[finances_container] FETCHING CHART TRANSACTIONS');
+    fetchChartTransactions(dateRange, fetchChartTransactionsSuccess, fetchChartTransactionsError);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('[finances_container] this.props.finances.dateRange: ', this.props.finances.dateRange);
+    if (prevProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
+      this._fetchTransactions();
+      this._fetchChartTransactions(this.props.finances.dateRange);
+    };
+  }
+
+  componentDidMount() {
+    this._fetchTransactions();
+    this._fetchChartTransactions(this.props.finances.dateRange);
+  }
+
   render() {
-    return (<Finances {...this.props} />);
+    console.log('[finances_container] this.props: ', this.props);
+    let {
+      dispatch,
+      finances
+    } = this.props;
+
+    return (
+      <Finances
+        { ...finances }
+        onChangeDateRange={(selectedDateRange) => {
+          dispatch(FinancesActions.changeDateRange(selectedDateRange));
+        }}
+      />
+    );
   }
 }
 
@@ -25,10 +62,12 @@ SomeApp.propTypes = {
 };
 
 module.exports = connect((state) => {
-  console.log('[personal_app] @connect -> state: ', state);
   return {
-    dateRange: state.dateRange,
-    chartData: state.chartData,
-    transactions: state.transactions
+    finances: {
+      selectedDateRange: state.selectedDateRange,
+      dateRange: state.dateRange,
+      stackedAreaChart: state.stackedAreaChart,
+      transactions: state.transactions
+    }
   }
 })(SomeApp);

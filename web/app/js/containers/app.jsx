@@ -12,7 +12,7 @@ const store = createStore(financesReducer);
 // console.log('[app] store.getState(): ', store.getState());
 
 let unsubscribe = store.subscribe(() => {
-  console.log('[app] store.getState(): ', store.getState());
+  // console.log('[app] store.getState(): ', store.getState());
 });
 
 class App extends React.Component {
