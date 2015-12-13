@@ -1,5 +1,7 @@
 import ActionTypes from 'action_types';
 
+console.log('[finances_reducer] hello');
+
 const initialState = [{
   payload: {}
 }];

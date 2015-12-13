@@ -4,22 +4,29 @@ var
 
 module.exports = {
   entry: {
-    app: './app/js/main',
+    app: __dirname + '/app/js/main',
     vendor: [
+      'bluebird',
+      'd3',
+      'history',
       'jquery',
       'lodash',
+      'moment',
+      'numeral',
+      'nvd3',
       'react-addons-update',
-      'react-router',
       'react-dom',
-      'redux',
-      'd3',
-      'nvd3'
+      'react-redux',
+      'react-router',
+      'redux'
     ]
   },
   output: {
     path: __dirname + '/app',
     filename: 'bundle.js'
   },
+  watch: true,
+  debug: true,
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',

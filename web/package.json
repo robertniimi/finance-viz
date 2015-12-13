@@ -18,21 +18,8 @@
   },
   "dependencies": {
     "babel": "^5.8.23",
-    "bluebird": "^2.10.1",
-    "d3": "^3.5.6",
-    "jquery": "^2.1.4",
-    "lodash": "^3.10.1",
-    "moment": "^2.10.6",
     "node-sass": "^3.3.3",
     "normalize.css": "^3.0.3",
-    "numeral": "^1.5.3",
-    "nvd3": "^1.8.1",
-    "react": "^0.14.3",
-    "react-addons-update": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-redux": "^4.0.0",
-    "react-router": "^0.13.3",
-    "redux": "^3.0.4",
     "redux-router": "^0.1.0",
     "request": "^2.64.0"
   }

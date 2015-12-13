@@ -3,7 +3,6 @@ var webpack = require('webpack-stream');
 var $ = require('gulp-load-plugins')();
 
 var webpackConfig = require('./web/webpack.config');
-console.log('[gulpfile] webpackConfig: ', webpackConfig);
 
 // PATHS
 
@@ -12,11 +11,11 @@ gulp.task('default', () => {
 });
 
 gulp.task('webpack', () => {
-  return gulp.src('./web/app/js/main')
+  return gulp.src('web/app/js/**/*')
     .pipe($.plumber())
-    .pipe(webpack())
+    .pipe(webpack(webpackConfig))
     .pipe($.plumber.stop())
-    .pipe(gulp.dest('./web/app'))
+    .pipe(gulp.dest('web/app'))
     ;
 });
 
@@ -25,6 +24,5 @@ gulp.task('serve', () => {
     script: './server/server.js',
     ignore: ['./server/data/']
   })
-  .pipe($.plumber())
   ;
 });
