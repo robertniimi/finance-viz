@@ -20,7 +20,7 @@ mint
   .login()
   .then((resBod) => {
     console.log('[server] logged in');
-    return mint.downloadTransactions('./data/transactions.csv', true);
+    return mint.downloadTransactions(__dirname + '/data/transactions.csv', true);
   })
   .then((res) => {
     console.log('[server] downloadedTransactions');

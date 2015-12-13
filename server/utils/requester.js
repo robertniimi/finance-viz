@@ -50,6 +50,7 @@ class Requester {
   }
 
   getFile(path, endpoint, options) {
+    console.log('[requester] @getFile -> path: ', path);
     return new Promise((resolve, reject) => {
       let reqCall = () => {
         request({
@@ -60,6 +61,9 @@ class Requester {
           .pipe(fs.createWriteStream(path))
           .on('close', () => {
             resolve();
+          })
+          .on('error', (err) => {
+            reject(err);
           });
       }
 

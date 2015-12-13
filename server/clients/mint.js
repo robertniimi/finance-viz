@@ -77,8 +77,6 @@ class Mint {
   }
 
   downloadTransactions(path, saveAsJson) {
-    console.log('[mint] @downloadTransactions');
-
     let _self = this;
     let headers = _.assign({}, HEADERS, {
       'host': 'wwws.mint.com',
@@ -108,6 +106,9 @@ class Mint {
 
           fileStream.pipe(converter);
         }
+      })
+      .catch((err) => {
+        throw new Error('[mint] @downloadTransactions -> ERR: ', err);
       });
   }
 

@@ -8,9 +8,10 @@
   "author": "Robert Niimi",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^3.9.0",
     "gulp-load-plugins": "^1.1.0",
     "gulp-nodemon": "^2.0.4",
+    "gulp-plumber": "^1.0.1",
+    "inflight": "^1.0.4",
     "webpack-stream": "^3.0.0"
   },
   "devDependencies": {},
