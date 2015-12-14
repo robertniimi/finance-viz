@@ -43,6 +43,7 @@
     "redux-router": "^0.1.0",
     "request": "^2.64.0",
     "sass-mq": "^3.2.5",
+    "urlencode": "^1.1.0",
     "webpack-stream": "^3.0.0"
   },
   "devDependencies": {

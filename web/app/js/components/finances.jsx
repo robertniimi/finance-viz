@@ -10,6 +10,8 @@ import moment from 'moment';
 import request from 'ajax_utils';
 import promise from 'bluebird';
 import numeral from 'numeral';
+import classnames from 'classnames';
+import urlencode from 'urlencode';
 
 // Components
 import Select from 'react-select';
@@ -128,11 +130,16 @@ class Finances extends React.Component {
     }, []);
 
     console.log('[finances] categoryOptions: ', categoryOptions);
+    console.log('[finances] uncategorized: ', uncategorized);
     let uncategorizedRows = _.map(uncategorized, (transaction) => {
       return (
         <tr key={`${transaction.id}`}>
           <td>{ transaction.date }</td>
-          <td>{ transaction.omerchant }</td>
+          <td>
+            <a href={`https://www.google.com/#safe=off&q=${ urlencode(transaction.omerchant) }`} target='_blank'>
+              { transaction.omerchant }
+            </a>
+          </td>
           <td>{ numeral(transaction.amount).format('$0,0.00') }</td>
           <td>{ transaction.category }</td>
           <td>
@@ -157,7 +164,8 @@ class Finances extends React.Component {
             <th>Date</th>
             <th>Merchant</th>
             <th>Amount</th>
-            <th>Date</th>
+            <th>Category</th>
+            <th>Change Category</th>
           </tr>
         </thead>
         <tbody>
@@ -170,7 +178,7 @@ class Finances extends React.Component {
       <div className='finances-component'>
         <header className='header'>
           <div className='header-content'>
-            <h1>{'Finances'}</h1>
+            <h2>{'Finances'}</h2>
             <div className='header-actions'>
               <select
                 name='finances-date-range-select'
@@ -183,7 +191,12 @@ class Finances extends React.Component {
           </div>
         </header>
         <div className='content-wrapper'>
-          <button onClick={ this._handleRefreshData.bind(this) }>{'Update Transactions'}</button>
+          <button
+            className={ classnames('btn', 'waves-effect', 'waves-light') }
+            onClick={ this._handleRefreshData.bind(this) }
+          >
+            {'Update Transactions'}
+          </button>
           <svg id='finances'></svg>
         </div>
         <div className='content-wrapper'>

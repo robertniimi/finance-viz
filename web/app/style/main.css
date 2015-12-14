@@ -9302,13 +9302,6 @@ html, body {
 body {
   background-color: #CCC; }
 
-#app-container {
-  height: 100%;
-  width: 100%; }
-  #app-container .finances-component {
-    height: 500px;
-    width: 100%; }
-
 header {
   height: 50px;
   width: 100%;
@@ -9332,11 +9325,11 @@ header {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   background-color: #FFF; }
 
-/*select {
-  margin-left: auto;
-}
-*/
-/*select {
-  float: right;
-}
-*/
+.finances-component {
+  width: 100%; }
+  .finances-component .content-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #FFF; }

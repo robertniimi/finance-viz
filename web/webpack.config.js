@@ -33,6 +33,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       _: 'lodash',
+      jQuery: 'jquery',
       React: 'react'
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
