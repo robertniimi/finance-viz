@@ -11,6 +11,7 @@ module.exports = {
       'history',
       'jquery',
       'lodash',
+      'materialize-css/dist/js/materialize',
       'moment',
       'numeral',
       'nvd3',
@@ -18,6 +19,7 @@ module.exports = {
       'react-dom',
       'react-redux',
       'react-router',
+      'react-select',
       'redux'
     ]
   },

@@ -11,6 +11,9 @@ import request from 'ajax_utils';
 import promise from 'bluebird';
 import numeral from 'numeral';
 
+// Components
+import Select from 'react-select';
+
 const DATE_RANGES = {
   'All Time': null,
   '3 Months': moment().subtract(3, 'months').toISOString(),
@@ -87,6 +90,12 @@ class Finances extends React.Component {
       });
   }
 
+  _handleInputChange(txnId) {
+    return (selectValue) => {
+      console.log('[finances] @_handleInputChange -> selectValue: ', selectValue);
+    }
+  }
+
   componentDidUpdate() {
     // $('#finances').empty();
     $('.nvtooltip').remove();
@@ -99,7 +108,26 @@ class Finances extends React.Component {
     let { uncategorized } = this.state;
     let dateOptions = this._getDateOptions();
 
+    let categoryOptions = _.reduce(this.props.categories, (result, category, idx) => {
+      result.push({
+        label: category.value,
+        value: category.value,
+        id: category.id
+      });
+      // result.push(category.value);
+      if (category.children) {
+        _.forEach(category.children, (subcategory, idx) => {
+          result.push({
+            label: `${ category.value } > ${ subcategory.value }`,
+            value: subcategory.value,
+            id: subcategory.id
+          });
+        });
+      };
+      return result;
+    }, []);
 
+    console.log('[finances] categoryOptions: ', categoryOptions);
     let uncategorizedRows = _.map(uncategorized, (transaction) => {
       return (
         <tr key={`${transaction.id}`}>
@@ -107,9 +135,20 @@ class Finances extends React.Component {
           <td>{ transaction.omerchant }</td>
           <td>{ numeral(transaction.amount).format('$0,0.00') }</td>
           <td>{ transaction.category }</td>
+          <td>
+            <Select
+              options={ categoryOptions }
+              onInputChange={ this._handleInputChange(transaction.id).bind(this) }
+              // displayOptions={ (option) => { return option.value } }
+            />
+          </td>
         </tr>
       );
     });
+
+    // label ->
+    // value -> original value
+    // id -> id
 
     let uncatTransTable = (
       <table className="table table-striped table-hover">

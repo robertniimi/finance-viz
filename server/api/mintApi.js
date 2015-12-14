@@ -89,6 +89,17 @@ module.exports = (app, mint) => {
   });
 
 
+  app.post('/mint/transactions', (req, res) => {
+    console.log('[mintApi] @POST: transaction -> req.body: ', req.body);
+    // mint.upateTransaction()
+    //   .then(() => {
+
+    //   })
+    //   .catch(() => {
+
+    //   })
+  })
+
   app.get('/mint/listTransaction', (req, res) => {
     // query category
     mint.listTransaction(req.query)
@@ -129,4 +140,5 @@ module.exports = (app, mint) => {
 
       })
   })
+
 }

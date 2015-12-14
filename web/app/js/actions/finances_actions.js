@@ -9,10 +9,10 @@ module.exports = {
       query
     };
   },
-  fetchTransactionsSuccess: (transactions) => {
+  fetchTransactionsSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_TRANSACTIONS_SUCCESS,
-      transactions
+      result
     };
   },
   fetchTransactionsError: (error) => {
@@ -48,10 +48,10 @@ module.exports = {
       failure: failureAction
     };
   },
-  fetchCategoriesSuccess: (categories) => {
+  fetchCategoriesSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_CATEGORIES_SUCCESS,
-      categories
+      result
     };
   },
   fetchCategoriesError: (error) => {

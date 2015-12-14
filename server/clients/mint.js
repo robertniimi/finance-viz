@@ -15,6 +15,12 @@ var GenerateTransactionJson = require('../utils/generate_transaction_json');
 var URLS = require('../constants').URLS;
 var HEADERS = require('../constants').HEADERS;
 
+/**
+NOTES
+
+txn
+**/
+
 class Mint {
   constructor(username, password) {
     this.cookies = null;

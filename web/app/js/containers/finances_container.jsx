@@ -34,13 +34,13 @@ class SomeApp extends React.Component {
     if (prevProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
       this._fetchTransactions();
       this._fetchChartTransactions(this.props.finances.dateRange);
-      // this._fetchCategories();
     };
   }
 
   componentDidMount() {
     this._fetchTransactions();
     this._fetchChartTransactions(this.props.finances.dateRange);
+    this._fetchCategories();
   }
 
   render() {
@@ -68,6 +68,7 @@ SomeApp.propTypes = {
 module.exports = connect((state) => {
   return {
     finances: {
+      categories: state.categories,
       selectedDateRange: state.selectedDateRange,
       dateRange: state.dateRange,
       stackedAreaChart: state.stackedAreaChart,

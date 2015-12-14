@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var webpack = require('webpack-stream');
+var postcssImport = require('postcss-import');
 var $ = require('gulp-load-plugins')();
 
 var webpackConfig = require('./web/webpack.config');
@@ -10,7 +11,7 @@ gulp.task('default', () => {
 
 });
 
-gulp.task('webpack', () => {
+gulp.task('webpack', ['styles'], () => {
   return gulp.src('web/app/js/**/*')
     .pipe($.plumber())
     .pipe(webpack(webpackConfig))
@@ -26,3 +27,30 @@ gulp.task('serve', () => {
   })
   ;
 });
+
+gulp.task('_sass', () => {
+  return gulp.src('./web/app/style/sass/**/*.scss')
+    .pipe($.sass({
+      includePaths: ['./node_modules', './node_modules/support-for/sass'],
+      errLogToConsole: true
+    }))
+    .pipe(gulp.dest('./web/app/style'))
+    ;
+})
+
+gulp.task('_css', () => {
+  return gulp.src('./web/app/style/css/vendor_import.css')
+    .pipe($.postcss([
+      postcssImport
+    ]))
+    .pipe($.debug())
+    .pipe($.rename('vendor.css'))
+    .pipe(gulp.dest('./web/app/style'))
+    ;
+});
+
+gulp.task('styles', ['_sass', '_css']);
+
+gulp.task('sass:watch', () => {
+  gulp.watch('./web/app/style/**/*.scss', ['_sass']);
+})

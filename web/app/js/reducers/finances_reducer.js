@@ -49,13 +49,9 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_TRANSACTIONS:
       // console.log('[finances_reducer] @FETCH_TRANSACTIONS');
-      // FinancesDao.fetchTransactions(action.query, action.success, action.failure);
       FinancesDao.fetchTransactions(action.query)
-        .then((transactions) => {
-          let { data } = _.find(transactions.set, (setObj) => {
-            return setObj.id === 'transactions';
-          });
-          action.success(data);
+        .then((result) => {
+          action.success(result);
         })
         .catch((error) => {
           action.failure(error);
@@ -69,9 +65,14 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
       // console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.transactions: ', action.transactions);
+
+      let transactions = _.find(action.result.set, (setObj) => {
+        return setObj.id === 'transactions';
+      }).data;
+
       return update(state, {
         transactions: {
-          data: { $set: action.transactions },
+          data: { $set: transactions },
           loading: { $set: false }
         }
       });
@@ -121,8 +122,9 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_CATEGORIES:
       FinancesDao.fetchCategories()
-        .then((categories) => {
-          action.success(categories);
+        .then((result) => {
+          console.log('[finances_reducer] @FETCH_CATEGORIES -> result: ', result);
+          action.success(result);
         })
         .catch((error) => {
           action.failure(error);
@@ -130,8 +132,11 @@ function financesReducer(state = initialState, action) {
       return state;
 
     case ActionTypes.FETCH_CATEGORIES_SUCCESS:
+      let categories = _.find(action.result.set, (setObj) => {
+        return setObj.id === 'categories';
+      }).data;
       return update(state, {
-        categories: { $set: action.categories }
+        categories: { $set: categories }
       });
 
     case ActionTypes.FETCH_CATEGORIES_ERROR:
