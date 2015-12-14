@@ -79,6 +79,7 @@ module.exports = (app, mint) => {
     mint.refreshAccounts();
   });
 
+
   app.get('/mint/transactions', (req, res) => {
     console.log('[mintApi] req.query: ', req.query);
     mint.getJsonTransactions(req.query)
@@ -119,4 +120,13 @@ module.exports = (app, mint) => {
       });
   });
 
+  app.get('/mint/autosuggestFilter', (req, res) => {
+    mint.autosuggestFilter()
+      .then((suggestions) => {
+        res.send(suggestions);
+      })
+      .catch((err) => {
+
+      })
+  })
 }

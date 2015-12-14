@@ -22,15 +22,19 @@ class SomeApp extends React.Component {
 
   _fetchChartTransactions(dateRange, query) {
     let { fetchChartTransactions, fetchChartTransactionsSuccess, fetchChartTransactionsError } = bindActionCreators(FinancesActions, this.props.dispatch);
-    console.log('[finances_container] FETCHING CHART TRANSACTIONS');
     fetchChartTransactions(dateRange, fetchChartTransactionsSuccess, fetchChartTransactionsError);
   }
 
+  _fetchCategories() {
+    let { fetchCategories, fetchCategoriesSuccess, fetchCategoriesError } = bindActionCreators(FinancesActions, this.props.dispatch);
+    fetchCategories(fetchCategoriesSuccess, fetchCategoriesError);
+  }
+
   componentDidUpdate(prevProps, prevState) {
-    console.log('[finances_container] this.props.finances.dateRange: ', this.props.finances.dateRange);
     if (prevProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
       this._fetchTransactions();
       this._fetchChartTransactions(this.props.finances.dateRange);
+      // this._fetchCategories();
     };
   }
 

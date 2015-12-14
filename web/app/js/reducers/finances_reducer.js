@@ -7,6 +7,7 @@ import ActionTypes from 'action_types';
 // Daos
 import FinancesDao from '../dao/finances_dao';
 
+const DEFAULT_DATE_RANGE = '1 Year';
 const DATE_RANGES = {
   'All Time': null,
   '3 Months': moment().subtract(3, 'months').toISOString(),
@@ -14,8 +15,6 @@ const DATE_RANGES = {
   '1 Year': moment().subtract(1, 'year').toISOString(),
   '2 Year': moment().subtract(2, 'years').toISOString()
 };
-
-const DEFAULT_DATE_RANGE = '1 Year';
 
 const initialState = {
   transactions: {
@@ -28,8 +27,7 @@ const initialState = {
     loading: false,
     error: false
   },
-  // transactions: [],
-  chartData: [],
+  categories: [],
   selectedDateRange: DEFAULT_DATE_RANGE,
   dateRange: {
     end: (new Date()).toISOString(),
@@ -37,26 +35,23 @@ const initialState = {
   }
 };
 
-let _fetchTransactions = () => {
-
-};
-
-// do reducers modify the actual state?
 function financesReducer(state = initialState, action) {
   console.log('[finances_reducer] @financesReducer -> action: ', action);
   switch (action.type) {
     case ActionTypes.CHANGE_DATE_RANGE:
       // modify date range here, then refetch
       return update(state, {
-        selectedDateRange: { $set: action.selectedDateRange }
+        selectedDateRange: { $set: action.selectedDateRange },
+        dateRange: {
+          start: { $set: DATE_RANGES[action.selectedDateRange] }
+        }
       });
 
     case ActionTypes.FETCH_TRANSACTIONS:
-      console.log('[finances_reducer] @FETCH_TRANSACTIONS');
+      // console.log('[finances_reducer] @FETCH_TRANSACTIONS');
       // FinancesDao.fetchTransactions(action.query, action.success, action.failure);
       FinancesDao.fetchTransactions(action.query)
         .then((transactions) => {
-          console.log('[finances_reducer] @FETCH_TRANSACTIONS -> transactions: ', transactions);
           let { data } = _.find(transactions.set, (setObj) => {
             return setObj.id === 'transactions';
           });
@@ -73,7 +68,7 @@ function financesReducer(state = initialState, action) {
       });
 
     case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
-      console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.transactions: ', action.transactions);
+      // console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.transactions: ', action.transactions);
       return update(state, {
         transactions: {
           data: { $set: action.transactions },
@@ -91,15 +86,10 @@ function financesReducer(state = initialState, action) {
       });
 
     case ActionTypes.FETCH_CHART_TRANSACTIONS:
-      console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS');
-      // FinancesDao.fetchChartTransactions(action.query, action.success, action.failure);
+      // console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS');
       FinancesDao.fetchChartTransactions(action.query)
         .then((transactions) => {
-          console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS -> transactions: ', transactions);
-          let { data } = _.find(transactions.set, (setObj) => {
-            return setObj.id === 'transactions';
-          });
-          action.success(data);
+          action.success(transactions);
         })
         .catch((error) => {
           action.failure(error);
@@ -128,6 +118,24 @@ function financesReducer(state = initialState, action) {
           error: { $set: action.error }
         }
       });
+
+    case ActionTypes.FETCH_CATEGORIES:
+      FinancesDao.fetchCategories()
+        .then((categories) => {
+          action.success(categories);
+        })
+        .catch((error) => {
+          action.failure(error);
+        });
+      return state;
+
+    case ActionTypes.FETCH_CATEGORIES_SUCCESS:
+      return update(state, {
+        categories: { $set: action.categories }
+      });
+
+    case ActionTypes.FETCH_CATEGORIES_ERROR:
+      return state;
 
     default:
       return state;

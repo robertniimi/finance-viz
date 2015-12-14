@@ -40,7 +40,8 @@ class Mint {
     }, {});
   }
 
-  //
+  // Response
+  // ========
   //
   login() {
     let _self = this;
@@ -78,8 +79,10 @@ class Mint {
     });
   }
 
+  // Response
+  // ========
   //
-  //
+
   downloadTransactions(path, saveAsJson) {
     let _self = this;
     let headers = _.assign({}, HEADERS, {
@@ -174,6 +177,10 @@ class Mint {
     // token:8141308IDwnDov0TvtzO6iUFDmuRm4Dncu3UbDSrfmLl0uw
   }
 
+
+  // Response
+  // ========
+  //
   // Arguments
   // =========
   // queryObj = {
@@ -206,7 +213,8 @@ class Mint {
     });
   }
 
-  // Response:
+  // Response
+  // ========
   //
   getJsonTransactions(queryObj) {
     let query = _.assign({
@@ -239,7 +247,8 @@ class Mint {
     });
   }
 
-  // Response:
+  // Response
+  // ========
   //
   getJsonCategories() {
     let query = {
@@ -265,7 +274,8 @@ class Mint {
     })
   }
 
-  // Response:
+  // Response
+  // ========
   //
   refreshAccounts() {
     console.log('[mint] refreshAccounts');
@@ -283,7 +293,8 @@ class Mint {
     // token: TOKEN
   }
 
-  // Response:
+  // Response
+  // ========
   //
   refreshJob() {
     return new Promise((resolve, reject) => {
@@ -298,6 +309,9 @@ class Mint {
     });
   }
 
+  // Response
+  // ========
+  //
   // queryObj = {
   //   accountId: (number)
   //   filterType: (string) 'cash' ||
@@ -357,6 +371,39 @@ class Mint {
         })
     })
 
+  }
+
+  // {
+  // "totalResultsReturned":2,
+  // "results":[
+  //    {
+  //       "value":"description: Ko Catering Pies"
+  //    },
+  //    {
+  //       "value":"description: Purdue Memorial Union Catering"
+  //    }
+  // ],
+  // "totalResultsAvailable":2
+  // }
+  autocompleteFilter(query) {
+    let queryObj = {
+      query,
+      rnd: (new Date()).valueOf()
+    };
+
+    return new Promise(function(resolve, reject) {
+      this.login()
+        .then(() => {
+          return this.requester.get(`${ URLS.autoCompleteFilter }?${ querystring.stringify(queryObj) }`);
+        })
+        .then((suggestions) => {
+          resolve(suggestions);
+        })
+        .catch((err) => {
+          reject(err);
+        })
+    });
+    // https://wwws.mint.com/autocompleteFilter.xevent?query=cate&rnd=1450050382368
   }
 
 }

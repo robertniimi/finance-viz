@@ -30,32 +30,21 @@ class Finances extends React.Component {
 
   // fetch transactions and set as new date
   _renderFinances() {
-    let query = querystring.stringify({
-      end: (new Date()).toISOString(),
-      start: DATE_RANGES[this.state.dateRange]
-    });
+    if (_.isEmpty(this.props.stackedAreaChart.data)) {
+      return;
+    }
 
-    // console.log('[finances] query: ', query);
-    request.get(`/mint/chart/transactions?${ query }`)
-      .then((transactions) => {
-        let options = {
-          showLegend: false,
-          useInteractiveGuideline: true
-        };
-
-        // console.log('[finances] @mint/chart/transactions -> transactions: ', transactions);
-        renderStackedAreaChart('#finances', transactions, options);
-      })
-      .catch((e) => {
-        throw new Error('[finances] @_renderFinances -> e:', e);
-      });
+    let options = {
+      showLegend: false,
+      useInteractiveGuideline: true
+    };
+    renderStackedAreaChart('#finances', this.props.stackedAreaChart.data, options);
   }
 
   _onChangeDate(e) {
     e.preventDefault();
     let value = e.target.value;
     this.props.onChangeDateRange(value);
-    // this.setState({ dateRange: value });
   }
 
   _getDateOptions() {
@@ -72,16 +61,6 @@ class Finances extends React.Component {
 
   componentDidMount() {
     this._renderFinances();
-    // request.get('/mint/getJsonData')
-    //   .then((jsonData) => {
-    //     console.log('[finances] jsonData: ', jsonData);
-    //   });
-
-    request.get(`/mint/categories`)
-      .then((categories) => {
-        // console.log('[finances] @mint/categories -> categories: ', categories);
-      });
-
 
     let transactionQuery = {
       query: 'category: Uncategorized'
