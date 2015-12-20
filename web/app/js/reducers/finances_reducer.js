@@ -20,7 +20,8 @@ const initialState = {
   transactions: {
     data: [],
     loading: false,
-    error: false
+    error: false,
+    query: 'category: Uncategorized'
   },
   stackedAreaChart: {
     data: [],
@@ -44,6 +45,13 @@ function financesReducer(state = initialState, action) {
         selectedDateRange: { $set: action.selectedDateRange },
         dateRange: {
           start: { $set: DATE_RANGES[action.selectedDateRange] }
+        }
+      });
+
+    case ActionTypes.CHANGE_TABLE_FILTER:
+      return update(state, {
+        transactions: {
+          query: { $set: action.filter }
         }
       });
 
@@ -132,6 +140,7 @@ function financesReducer(state = initialState, action) {
       return state;
 
     case ActionTypes.FETCH_CATEGORIES_SUCCESS:
+      // console.log('[finances_reducer] @FETCH_CATEGORIES_SUCCESS -> action.result: ', action.result);
       let categories = _.find(action.result.set, (setObj) => {
         return setObj.id === 'categories';
       }).data;

@@ -36,7 +36,6 @@ import d3 from 'd3';
         });
 
       // chart.height(500);
-
       d3.select(selector)
         .datum(data)
         .call(chart);

@@ -1,3 +1,4 @@
 /* Import Vendor CSS Files */
+@import 'materialize-css/dist/css/materialize.css';
 @import 'nvd3/build/nv.d3.css';
 @import 'react-select/dist/react-select.css';

@@ -65,5 +65,11 @@ module.exports = {
       type: ActionTypes.CHANGE_DATE_RANGE,
       selectedDateRange
     };
+  },
+  changeTableFilter: (filter) => {
+    return {
+      type: ActionTypes.CHANGE_TABLE_FILTER,
+      filter
+    }
   }
 };

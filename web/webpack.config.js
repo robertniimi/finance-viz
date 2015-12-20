@@ -40,11 +40,12 @@ module.exports = {
   ],
   resolve: {
     modulesDirectories: [
-      'node_modules',
-      'bower_components',
       'app/js/actions',
+      'app/js/components/shared',
       'app/js/constants',
-      'app/js/utils'
+      'app/js/utils',
+      'bower_components',
+      'node_modules',
     ],
     extensions: ['', '.js', '.jsx', '.json']
   },

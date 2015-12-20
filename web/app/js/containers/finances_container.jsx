@@ -10,58 +10,78 @@ import FinancesActions from 'finances_actions';
 // Components
 import Finances from '../components/finances';
 
-class SomeApp extends React.Component {
+class FinancesApp extends React.Component {
   constructor() {
     super()
   }
 
-  _fetchTransactions(dateRange, query) {
-    let { fetchTransactions, fetchTransactionsSuccess, fetchTransactionsError } = bindActionCreators(FinancesActions, this.props.dispatch);
-    fetchTransactions({}, fetchTransactionsSuccess, fetchTransactionsError);
+  _fetchTransactions(query) {
+    let {
+      fetchTransactions,
+      fetchTransactionsSuccess,
+      fetchTransactionsError
+    } = bindActionCreators(FinancesActions, this.props.dispatch);
+
+    fetchTransactions({ query }, fetchTransactionsSuccess, fetchTransactionsError);
   }
 
   _fetchChartTransactions(dateRange, query) {
-    let { fetchChartTransactions, fetchChartTransactionsSuccess, fetchChartTransactionsError } = bindActionCreators(FinancesActions, this.props.dispatch);
+    let {
+      fetchChartTransactions,
+      fetchChartTransactionsSuccess,
+      fetchChartTransactionsError
+    } = bindActionCreators(FinancesActions, this.props.dispatch);
+
     fetchChartTransactions(dateRange, fetchChartTransactionsSuccess, fetchChartTransactionsError);
   }
 
   _fetchCategories() {
-    let { fetchCategories, fetchCategoriesSuccess, fetchCategoriesError } = bindActionCreators(FinancesActions, this.props.dispatch);
+    let {
+      fetchCategories,
+      fetchCategoriesSuccess,
+      fetchCategoriesError
+    } = bindActionCreators(FinancesActions, this.props.dispatch);
+
     fetchCategories(fetchCategoriesSuccess, fetchCategoriesError);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
-      this._fetchTransactions();
-      this._fetchChartTransactions(this.props.finances.dateRange);
+  componentWillUpdate(nextProps, nextState) {
+    if (nextProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
+      this._fetchChartTransactions(nextProps.finances.dateRange);
+    };
+
+    if (nextProps.finances.transactions.query !== this.props.finances.transactions.query) {
+      this._fetchTransactions(nextProps.finances.transactions.query);
     };
   }
 
   componentDidMount() {
-    this._fetchTransactions();
-    this._fetchChartTransactions(this.props.finances.dateRange);
     this._fetchCategories();
+    this._fetchChartTransactions(this.props.finances.dateRange);
+    this._fetchTransactions(this.props.finances.transactions.query);
   }
 
   render() {
     console.log('[finances_container] this.props: ', this.props);
+
     let {
       dispatch,
       finances
     } = this.props;
 
+    let { changeTableFilter, changeDateRange } = bindActionCreators(FinancesActions, dispatch);
+
     return (
       <Finances
         { ...finances }
-        onChangeDateRange={(selectedDateRange) => {
-          dispatch(FinancesActions.changeDateRange(selectedDateRange));
-        }}
+        onChangeTableFilter={changeTableFilter}
+        onChangeDateRange={changeDateRange}
       />
     );
   }
 }
 
-SomeApp.propTypes = {
+FinancesApp.propTypes = {
   transactions: React.PropTypes.array
 };
 
@@ -75,4 +95,4 @@ module.exports = connect((state) => {
       transactions: state.transactions
     }
   }
-})(SomeApp);
+})(FinancesApp);

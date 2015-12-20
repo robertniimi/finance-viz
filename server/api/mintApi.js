@@ -82,6 +82,7 @@ module.exports = (app, mint) => {
 
   app.get('/mint/transactions', (req, res) => {
     console.log('[mintApi] req.query: ', req.query);
+
     mint.getJsonTransactions(req.query)
       .then((transactions) => {
         res.send(transactions);

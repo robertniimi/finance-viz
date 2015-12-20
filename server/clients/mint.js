@@ -27,6 +27,7 @@ class Mint {
     this.requester = new Requester();
     this.token = null;
     this.transactions = null;
+    this.categories = [];
 
     this.username = username;
     this.password = password;
