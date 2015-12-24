@@ -76,14 +76,14 @@ class FinancesTransactionsTable extends React.Component {
     let transactionRows = _.map(this.props.data, (transaction) => {
       return (
         <tr key={`${transaction.id}`}>
-          <td>{ transaction.date }</td>
-          <td>
+          <td className='data-date'>{ transaction.date }</td>
+          <td className='data-merchant'>
             <a href={`https://www.google.com/#safe=off&q=${ urlencode(transaction.omerchant) }`} target='_blank'>
               { transaction.omerchant }
             </a>
           </td>
-          <td>{ numeral(transaction.amount).format('$0,0.00') }</td>
-          <td>
+          <td className='data-amount'>{ numeral(transaction.amount).format('$0,0.00') }</td>
+          <td className='data-category'>
             <Select
               value={ transaction.categoryId }
               name={`transaction-select-${transaction.id}`}
