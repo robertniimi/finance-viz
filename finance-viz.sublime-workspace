@@ -4,192 +4,16 @@
 		"selected_items":
 		[
 			[
-				"_handle",
-				"_handleTableCategoryChange"
-			],
-			[
-				"Trans",
-				"TransactionsTable"
-			],
-			[
-				"fetch",
-				"fetchTransactionsError"
-			],
-			[
-				"FETCH",
-				"FETCH_CATEGORIES_SUCCESS"
+				"EN",
+				"ENGAGIO_DATABASE_PORT"
 			],
 			[
 				"log",
-				"log	console.log('@ -> : ', ...)"
+				"log	console.log \"... :\", ..."
 			],
 			[
-				"subcate",
-				"subcategory"
-			],
-			[
-				"subcat",
-				"subcategory	(generate_transaction_json.js)"
-			],
-			[
-				"FETCH_CATE",
-				"FETCH_CATEGORIES"
-			],
-			[
-				"fetc",
-				"fetchCategories"
-			],
-			[
-				"_fetch",
-				"_fetchCategories"
-			],
-			[
-				"failure",
-				"failureAction"
-			],
-			[
-				"Finance",
-				"FinancesDao"
-			],
-			[
-				"stack",
-				"renderStackedAreaChart"
-			],
-			[
-				"bind",
-				"bindActionCreators"
-			],
-			[
-				"fetchChart",
-				"fetchChartTransactionsSuccess"
-			],
-			[
-				"fet",
-				"fetchTransactionsSuccess"
-			],
-			[
-				"FETH",
-				"FETCH_TRANSACTIONS_SUCCESS"
-			],
-			[
-				"fetchTran",
-				"fetchTransactionsError	(finances_actions.js)"
-			],
-			[
-				"FETCH_",
-				"FETCH_TRANSACTIONS"
-			],
-			[
-				"FETCH_TRA",
-				"FETCH_TRANSACTIONS_ERROR"
-			],
-			[
-				"success",
-				"successAction"
-			],
-			[
-				"fail",
-				"failureAction"
-			],
-			[
-				"succ",
-				"successAction"
-			],
-			[
-				"onChange",
-				"onChangeDateRange	(finances_container.jsx)"
-			],
-			[
-				"change",
-				"changeDateRange	(finances_actions.js)"
-			],
-			[
-				"FETCH_TRANSACTIONS_",
-				"FETCH_TRANSACTIONS_SUCCESS	(finances_reducer.js)"
-			],
-			[
-				"Action",
-				"ActionTypes"
-			],
-			[
-				"f",
-				"f	() => {}"
-			],
-			[
-				"Finances",
-				"FinancesActions"
-			],
-			[
-				"uncate",
-				"uncategorizedRows"
-			],
-			[
-				"getJson",
-				"getJsonTransactions"
-			],
-			[
-				"listTran",
-				"listTransactionQuery"
-			],
-			[
-				"unca",
-				"uncategorized"
-			],
-			[
-				"unc",
-				"uncategorized"
-			],
-			[
-				"trans",
-				"transactionQuery"
-			],
-			[
-				"refresh",
-				"refreshAccounts"
-			],
-			[
-				"err",
-				"err"
-			],
-			[
-				"fun",
-				"function	(chart_utils.js)"
-			],
-			[
-				"web",
-				"webpack	Webpack: Config (React/ES6)"
-			],
-			[
-				"rcc",
-				"rcc	React: class extends React.Component"
-			],
-			[
-				"client",
-				"clientTmpltPath"
-			],
-			[
-				"server",
-				"serverOptions"
-			],
-			[
-				"clientOp",
-				"clientOptions"
-			],
-			[
-				"templatesPath",
-				"templatesPathLength"
-			],
-			[
-				"doctype",
-				"doctype	HTML: <!doctype html>...</html>"
-			],
-			[
-				"req",
-				"require	require \"...\""
-			],
-			[
-				"apartmen",
-				"apartmentList"
+				"for",
+				"fori	Range Comprehension (inclusive)"
 			]
 		]
 	},
@@ -203,30 +27,10 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 307.0,
-		"last_filter": "move",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"move",
-				"File: Move"
-			],
-			[
-				"rename",
-				"File: Rename"
-			],
-			[
-				"del",
-				"File: Delete"
-			],
-			[
-				"duplic",
-				"File: Duplicate"
-			],
-			[
-				"snip",
-				"Snippet: readme"
-			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -236,41 +40,22 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"snippet: HTML",
-				"Snippet: DOCTYPE HTML"
+				"Snippet: ",
+				"Snippet: reactClass"
 			],
 			[
-				"snippet: <html",
-				"Snippet: JSX: <!DOCTYPE html>...</html>"
-			],
-			[
-				"ke",
-				"Preferences: Key Bindings - User"
-			],
-			[
-				"brow",
-				"Preferences: Browse Packages"
-			],
-			[
-				"preferences",
-				"Preferences: Settings - Default"
-			],
-			[
-				"key",
-				"Preferences: Key Bindings - User"
-			],
-			[
-				"find",
-				"Preferences: Key Bindings - Default"
+				"insta",
+				"Package Control: Install Package"
 			]
 		],
 		"width": 584.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -284,138 +69,29 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Robert/git/finance-viz"
+		"/Users/Robert/Github/finance-viz"
 	],
 	"file_history":
 	[
-		"/Users/Robert/git/finance-viz/.gitignore",
-		"/Users/Robert/git/finance-viz/web/app/js/components/finances-transaction_table.jsx",
-		"/Users/Robert/git/finance-viz/web/app/style/vendor.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/vendor_import.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/tmp/main.css",
-		"/Users/Robert/git/finance-viz/gulpfile.js",
-		"/Users/Robert/git/finance-viz/web/app/style/sass/main.scss",
-		"/Users/Robert/git/finance-viz/package.json",
-		"/Users/Robert/git/finance-viz/web/app/js/constants/action_types.js",
-		"/Users/Robert/git/finance-viz/web/app/js/actions/finances_actions.js",
-		"/Users/Robert/git/finance-viz/web/webpack.config.js",
-		"/Users/Robert/git/finance-viz/web/app/js/dao/finances_dao.js",
-		"/Users/Robert/git/finance-viz/web/app/js/reducers/finances_reducer.js",
-		"/Users/Robert/git/finance-viz/web/app/index.html",
-		"/Users/Robert/git/finance-viz/web/app/style/_finances.scss",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/finances_container.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/components/finances.jsx",
-		"/Users/Robert/git/finance-viz/web/app/style/tmp/main.css",
-		"/Users/Robert/git/finance-viz/web/app/style/main.scss",
-		"/Users/Robert/git/finance-viz/web/app/style/tmp/vendor.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/vendor.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/style.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/main.css",
-		"/Users/Robert/git/finance-viz/node_modules/normalize-scss/sass/_normalize.scss",
-		"/Users/Robert/git/finance-viz/README.md",
-		"/Users/Robert/git/finance-viz/.eslintrc.js",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/app.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/main.jsx",
-		"/Users/Robert/git/finance-viz/web/.gitignore",
-		"/Users/Robert/git/finance-viz/web/app/vendor.bundle.js",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/time_container.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/health_container.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/stores/finances_store.js",
-		"/Users/Robert/git/finance-viz/server/server.js",
-		"/Users/Robert/git/finance-viz/server/utils/requester.js",
-		"/Users/Robert/git/finance-viz/web/package.json",
-		"/Users/Robert/git/finance-viz/node_modules/nvd3/build/nv.d3.js",
-		"/Users/Robert/git/finance-viz/node_modules/webpack/lib/NormalModuleFactory.js",
-		"/Users/Robert/git/finance-viz/node_modules/normalize-package-data/test/fixtures/movefile.json",
-		"/Users/Robert/git/finance-viz/server/.gitignore",
-		"/Users/Robert/git/finance-viz/web/app/js/utils/chart_utils.js",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/personal_app.jsx",
-		"/Users/Robert/git/finance-viz/server/package.json",
-		"/Users/Robert/git/finance-viz/web/app/js/reducers/personal_app.js",
-		"/Users/Robert/git/finance-viz/web/app/css/style.css",
-		"/Users/Robert/git/finance-viz/server/data/transactions_by_category.json",
-		"/Users/Robert/git/finance-viz/server/constants.js",
-		"/Users/Robert/git/finance-viz/server/data/generate_transaction_json.js",
-		"/Users/Robert/git/finance-viz/server/routes.js",
-		"/Users/Robert/git/finance-viz/server/api/mintApi.js",
-		"/Users/Robert/git/finance-viz/server/utils/client.js",
-		"/Users/Robert/git/finance-viz/server/data/transactions.csv",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Bluebird/new_promise.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_groupBy.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/select.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/fs_write_file.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/html.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Misc/webpack_config.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/Router/new_router.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/express/node_route.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/Express/node_route.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/NPM/package_json.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/Shell/require_bash.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/XML/snippet.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/XML/launchd.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/textarea.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/deconstruct_import.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/import.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/hr.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_checkbox.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_select.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_textarea.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/wrapped_function.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/className.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_textbox.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/return.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/th.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/table.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/ul.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/td.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/p.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/img.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_pluck.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_uniq.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/function.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/for.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/if.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/return.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/tr.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_forEach.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_map.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_assign.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/span.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/svg.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_actions.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Gulp/gulp_task.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/li.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_store.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_source.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/email_template.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_source.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log_var.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/dispatch.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/update_state.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_controller.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/todo.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/context.sublime-snippet",
-		"/Users/Robert/Desktop/bootstrap_helpers.js",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/log_var.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/react_createComponent.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/React/CJSX/Bootstrap/bootstrap_checkbox.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/form.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/handleChange.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/log.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_row.sublime-snippet",
-		"/Users/Robert/git/personal-site/web/webpack.config.js",
-		"/Users/Robert/git/personal-site/server.js",
-		"/Users/Robert/git/personal-site/web/index.html",
-		"/Users/Robert/git/personal-site/web/app/css/style.css",
-		"/Users/Robert/git/personal-site/web/app/app.js",
-		"/Users/Robert/git/personal-site/web/app/index.html",
-		"/Users/Robert/git/personal-site/server/server.js",
-		"/Users/Robert/git/personal-site/app/index.html",
-		"/Users/Robert/Desktop/useful_scripts.js",
-		"/Users/Robert/git/functional-bash/functions.sh",
-		"/Users/Robert/bin/_each() {",
-		"/Users/Robert/bin/scaffold"
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/Server.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/metric/api/MetricApi.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/model/activity/Activity.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/uiquery/UIOperator.scala",
+		"/Users/Robert/Github/engagio/server/src/config/integration.yml",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/analytics/ReportApi.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/UserApi.scala",
+		"/Users/Robert/Github/engagio/server/.gitignore",
+		"/Users/Robert/Github/engagio/server/build.xml",
+		"/Users/Robert/Github/engagio/server/src/test/scala/com/engagio/analytics/TestAnalytics.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/analytics/ContactReportDef.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scripts/create_auth_db.sh",
+		"/Users/Robert/Github/engagio/web/.tmp/scripts/hello.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/hello.cjsx",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/program/ProgramTypeApi.scala",
+		"/Users/Robert/Github/engagio/web/app/index.html",
+		"/Users/Robert/Github/engagio/web/app/scripts/accounts/account_detail.cjsx",
+		"/Users/Robert/Library/Application Support/Sublime Text 3/Packages/User/coffee-react_createClass.sublime-snippet"
 	],
 	"find":
 	{
@@ -426,8 +102,7 @@
 		"height": 93.0,
 		"where_history":
 		[
-			"/Users/Robert/git/finance-viz/",
-			"/Users/Robert/git/finance-viz/web/app/js",
+			"/Users/Robert/Github/engagio/server",
 			""
 		]
 	},
@@ -436,134 +111,27 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"SomeApp",
-			"div",
-			"select",
-			"Select",
-			"uncatTransTable",
-			"uncategorizedRows",
-			"uncategorized",
-			", ",
-			"_handleInputChange",
-			"select",
-			"backgroun-color",
-			"content-wrapper",
-			"app-container",
-			"h1",
-			"postcssImport",
-			"categories",
-			"transactions",
-			"categories",
-			"rnd",
-			"categories",
-			"ChartTransactions",
-			"fetchChartTransactions",
-			"fetchTransactions",
-			"FETCH_CHART_TRANSACTIONS",
-			"SUCCESS",
-			"\n  ",
-			"FETCH_TRANSACTIONS",
-			"fetchChartTransactions",
-			"dateRange",
-			"query",
-			"dateRange",
-			"props",
-			"dateRange",
-			"transactions: {",
-			"transactions",
-			"areaChart",
-			"@FETCH_TRANSACTIONS",
-			".FETCH",
-			"FETCH_TRANSACTIONS",
-			"fetchTransactions",
-			"Transactions",
-			"actions",
-			"successAction",
-			"fetchTransactions",
-			"personalApp",
-			", ",
-			"_onChangeDate",
-			"PersonalApp",
-			"FETCH_TRANSACTIONS",
-			"GET_TRANSACTIONS",
-			"getTransactions",
-			"Date",
-			"startDate",
-			"parsedTransactions",
-			"dateRange",
-			"_filterTransactions",
-			"query",
-			"watchTransition(renderWatch, 'scatter: groups'",
-			"watchTransition",
-			"replace",
-			"request.replace",
-			"errno",
-			"path",
-			"inflight",
-			"someapp",
-			"SomeappActions",
-			"SdomeappActions",
-			"actions",
-			"getTransactions",
-			"Description",
-			"Date",
-			"_formatQuery",
-			"querystring",
-			"query",
-			"\"",
-			"console",
-			"console.log",
-			"options",
-			"options.cookies || ",
-			"options",
-			"query",
-			"uncategorized",
-			"req",
-			"query",
-			"JSONTrans",
-			"var",
-			"newPath",
-			"path",
-			"request",
-			"cookie_jar",
-			"renderStackedArea",
-			"_renderFinances",
-			"area_chart",
-			"area-chart",
-			"data",
-			"transactions",
-			"AreaChart",
-			" );",
-			"urlParts",
-			"function",
-			"_self",
-			"require",
-			"from",
-			"import",
-			"var",
-			": () =>",
-			"let",
-			"this",
-			"function",
-			"_self",
-			"_groupByCategory",
-			"exclude",
-			"chart",
-			"org.robert.upgradeWeekly",
-			"\"",
-			";",
-			"textbox",
-			"description",
-			",",
-			"\"",
-			"<tabTrigger>cn</tabTrigger>",
-			"<tabTrigger>cn<tabTrigger>",
-			"className",
-			"tr",
-			"li",
-			"i",
-			"pluck",
-			"assign"
+			"/admin",
+			"FieldDef",
+			"status",
+			"verify",
+			"profileSource/verify",
+			"verifyCredentials",
+			"crash@engagio.com",
+			"run-dev",
+			"/home",
+			"index.html",
+			"indext.html",
+			"com.engagio.analytics",
+			"<<<<<",
+			"HEAD",
+			"user/profileSource/verify",
+			"/accounts",
+			"index",
+			"index.html",
+			"/accounts",
+			"setStateFromProps",
+			"scope"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -592,7 +160,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -635,108 +203,80 @@
 		"selected_items":
 		[
 			[
-				"finances_dao",
-				"app/js/dao/finances_dao.js"
+				"salesforcesoap",
+				"src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala"
 			],
 			[
-				"gulpfile",
-				"gulpfile.js"
+				"server.scala",
+				"src/main/scala/com/engagio/server/Server.scala"
 			],
 			[
-				"finances_redu",
-				"web/app/js/reducers/finances_reducer.js"
+				"metricapi",
+				"src/main/scala/com/engagio/metric/api/MetricApi.scala"
 			],
 			[
-				"app.jsx",
-				"web/app/js/containers/app.jsx"
+				"activity",
+				"src/main/scala/com/engagio/model/activity/Activity.scala"
 			],
 			[
-				"finances.jsx",
-				"web/app/js/components/finances.jsx"
+				"activity.",
+				"src/main/scala/com/engagio/model/activity/Activity.scala"
 			],
 			[
-				"vendor_impo",
-				"web/app/style/css/vendor_import.css"
+				"uioper",
+				"src/main/scala/com/engagio/uiquery/UIOperator.scala"
 			],
 			[
-				"webpack",
-				"web/webpack.config.js"
+				"server.sca",
+				"src/main/scala/com/engagio/server/Server.scala"
 			],
 			[
-				"constants",
-				"server/constants.js"
+				"reportapi",
+				"src/main/scala/com/engagio/analytics/ReportApi.scala"
 			],
 			[
-				"action_types",
-				"web/app/js/constants/action_types.js"
+				"userapi",
+				"src/main/scala/com/engagio/server/UserApi.scala"
 			],
 			[
-				"finances_actions",
-				"web/app/js/actions/finances_actions.js"
+				"integration",
+				"src/config/integration.yml"
 			],
 			[
-				"finances",
-				"web/app/js/components/finances.jsx"
+				"build.xml",
+				"build.xml"
 			],
 			[
-				"nv.d3.js",
-				"node_modules/nvd3/build/nv.d3.js"
+				"inte",
+				"src/config/integration.yml"
 			],
 			[
-				"normalmodulefac",
-				"node_modules/webpack/lib/NormalModuleFactory.js"
+				"testanaly",
+				"src/test/scala/com/engagio/analytics/TestAnalytics.scala"
 			],
 			[
-				"requester",
-				"server/utils/requester.js"
+				"contactreportdef",
+				"src/main/scala/com/engagio/analytics/ContactReportDef.scala"
 			],
 			[
-				"move",
-				"node_modules/normalize-package-data/test/fixtures/movefile.json"
+				"server.s",
+				"src/main/scala/com/engagio/server/Server.scala"
 			],
 			[
-				"index.html",
+				"create",
+				"src/main/scripts/create_auth_db.sh"
+			],
+			[
+				"hell",
+				"web/app/scripts/hello.cjsx"
+			],
+			[
+				"hello",
+				"web/.tmp/scripts/hello.js"
+			],
+			[
+				"index",
 				"web/app/index.html"
-			],
-			[
-				"package",
-				"web/package.json"
-			],
-			[
-				"package.json",
-				"server/package.json"
-			],
-			[
-				"actions",
-				"web/app/js/actions/finances_actions.js"
-			],
-			[
-				"mint",
-				"server/api/mintApi.js"
-			],
-			[
-				"constant",
-				"server/constants.js"
-			],
-			[
-				"ser",
-				"server/server.js"
-			],
-			[
-				"table",
-				"JavaScript/React/JSX/table.sublime-snippet"
-			],
-			[
-				"server",
-				"server.js"
-			],
-			[
-				"sublime-keymap",
-				"Backup/20150602212744/BracketHighlighter/Default.sublime-keymap"
-			],
-			[
-				"pack",
-				"package.json"
 			]
 		],
 		"width": 0.0
@@ -747,6 +287,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Github/finance-viz/finance-viz_web.sublime-workspace"
+			],
+			[
+				"web",
+				"~/Sublime/Projects/Engagio/engagio_web.sublime-project"
+			],
+			[
+				"programs",
+				"~/Sublime/Projects/Engagio/engagio_web_programs.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
@@ -767,7 +319,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 190.0,
+	"side_bar_width": 147.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

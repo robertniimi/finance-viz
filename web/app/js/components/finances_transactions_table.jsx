@@ -31,9 +31,7 @@ class FinancesTransactionsTable extends React.Component {
   }
 
   render() {
-    // console.log('[finances_transactions_table] props: ', this.props);
-    // console.log('[finances_transactions_table] state: ', this.state);
-
+    console.log('[finances_transactions_table] this.props: ', this.props);
     if (this.props.loading) {
       return (
         <div>{'Loading'}</div>
@@ -43,8 +41,8 @@ class FinancesTransactionsTable extends React.Component {
     let selectOptions = _.reduce(this.props.categories, (result, category, idx) => {
       result.transaction.push({
         label: category.value,
-        value: category.value,
-        id: category.id
+        value: category.id,
+        name: category.value
       });
 
       result.filter.push({
@@ -52,12 +50,12 @@ class FinancesTransactionsTable extends React.Component {
         value: `category: ${ category.value }`
       });
 
-      // result.push(category.value);
       if (category.children) {
         _.forEach(category.children, (subcategory, idx) => {
           result.transaction.push({
             label: `${ category.value } > ${ subcategory.value }`,
-            value: subcategory.value,
+            value: subcategory.id,
+            name: subcategory.value,
             id: subcategory.id
           });
 
@@ -85,9 +83,9 @@ class FinancesTransactionsTable extends React.Component {
             </a>
           </td>
           <td>{ numeral(transaction.amount).format('$0,0.00') }</td>
-          <td>{ transaction.category }</td>
           <td>
             <Select
+              value={ transaction.categoryId }
               name={`transaction-select-${transaction.id}`}
               options={ selectOptions.transaction }
               onChange={ this._handleTransactionCategoryChange(transaction.id).bind(this) }
@@ -115,7 +113,6 @@ class FinancesTransactionsTable extends React.Component {
               <th>Merchant</th>
               <th>Amount</th>
               <th>Category</th>
-              <th>Change Category</th>
             </tr>
           </thead>
           <tbody>

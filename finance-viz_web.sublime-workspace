@@ -4,56 +4,12 @@
 		"selected_items":
 		[
 			[
+				"EN",
+				"ENGAGIO_DATABASE_PORT"
+			],
+			[
 				"log",
-				"log	console.log(...)"
-			],
-			[
-				"refr",
-				"refreshedLabels"
-			],
-			[
-				"wait",
-				"waitForElementPresent"
-			],
-			[
-				"DISPLAYED",
-				"DISPLAYED_CREDENTIAL_FIELDS"
-			],
-			[
-				"GENERAL",
-				"GENERAL_FIELDS"
-			],
-			[
-				"DISPLAY",
-				"DISPLAYED_CREDENTIAL_FIELDS"
-			],
-			[
-				"SELENIUM_SERVER",
-				"SELENIUM_SERVER_VERSION"
-			],
-			[
-				"waitForEle",
-				"waitForElementNotPresent"
-			],
-			[
-				"unfro",
-				"unfrozenListLength"
-			],
-			[
-				"unforz",
-				"unfrozenListLength"
-			],
-			[
-				"defaul",
-				"defaultLabels"
-			],
-			[
-				"updated",
-				"updatedLabels"
-			],
-			[
-				"SELEN",
-				"SELENIUM_SERVER_PATH"
+				"log	console.log \"... :\", ..."
 			],
 			[
 				"for",
@@ -71,29 +27,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 47.0,
-		"last_filter": "dupli",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"dupli",
-				"File: Duplicate"
-			],
-			[
-				"move",
-				"File: Move"
-			],
-			[
-				"rename",
-				"File: Rename"
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"remove",
 				"Package Control: Remove Package"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"Snippet: ",
@@ -123,57 +67,25 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/Robert/Github/finance-viz/web"
+	],
 	"file_history":
 	[
-		"/Users/Robert/Github/finance-viz/package.json",
-		"/Users/Robert/Github/finance-viz/server/package.json",
-		"/Users/Robert/Github/finance-viz/web/webpack.config.js",
-		"/Users/Robert/Github/finance-viz/.gitignore",
-		"/Users/Robert/Github/finance-viz/.env",
-		"/Users/Robert/Github/finance-viz/example.env",
-		"/Users/Robert/Github/engagio/Dockerfile",
-		"/Users/Robert/Github/engagio/README.md",
-		"/Users/Robert/Github/engagio/codeship.sh",
-		"/Users/Robert/Github/engagio/web/gulpfile.js",
-		"/Users/Robert/Github/engagio/.gitignore",
-		"/Users/Robert/Github/engagio/web/save_pid.txt",
-		"/Users/Robert/Github/engagio/web/nohup.out",
-		"/Users/Robert/Github/engagio/web/.gitignore",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/tests/persistence_test.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/profileSourceDetail/profile_source_edit_modal.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/profileSourceDetail/profile_source_detail.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/profile_source_page_store.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/dao/account_list_dao.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/sources/account_context_source.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/main_router.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/profileSourceEdit/profile_source_edit_controller.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/base_component.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/constants/profile_source_fields.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/profileSourceEdit/profile_source_edit.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/account_context_store.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/admin_oauth_callback.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/profileSourceEdit/profile_source_edit_form_fields.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/profileSourceDetail/profile_source_edit_form_fields.jsx",
-		"/Users/Robert/Github/engagio/web/app/scripts/actions/profile_source_actions.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/sources/profile_source_page_source.js",
-		"/Users/Robert/Github/engagio/web/webpack.config.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/pages/people/people_new.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/pages/people/people_engaged.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/utils/login_utils.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/pages/people/people.js",
-		"/Users/Robert/Github/engagio/web/nightwatch.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/custom_commands/login.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/tests/login_test.js",
-		"/Users/Robert/Github/engagio/web/test/nightwatch/data/globals.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_table/engagio_table_cell.jsx",
-		"/Users/Robert/Github/engagio/web/example.env",
-		"/Users/Robert/Github/engagio/web/.env",
-		"/Users/Robert/Github/engagio/web/dev/proxy.js",
-		"/Users/Robert/Github/engagio/app/styles/main.css",
-		"/Users/Robert/Github/engagio/deployment/docker/engagio-web-app.json-20150817",
-		"/Users/Robert/Github/engagio/deployment/docker/push_release.sh",
-		"/Users/Robert/Github/engagio/deployment/deployment.iml",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/Server.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/metric/api/MetricApi.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/model/activity/Activity.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/uiquery/UIOperator.scala",
+		"/Users/Robert/Github/engagio/server/src/config/integration.yml",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/analytics/ReportApi.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/UserApi.scala",
+		"/Users/Robert/Github/engagio/server/.gitignore",
+		"/Users/Robert/Github/engagio/server/build.xml",
+		"/Users/Robert/Github/engagio/server/src/test/scala/com/engagio/analytics/TestAnalytics.scala",
 		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/analytics/ContactReportDef.scala",
+		"/Users/Robert/Github/engagio/server/src/main/scripts/create_auth_db.sh",
 		"/Users/Robert/Github/engagio/web/.tmp/scripts/hello.js",
 		"/Users/Robert/Github/engagio/web/app/scripts/hello.cjsx",
 		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/program/ProgramTypeApi.scala",
@@ -190,93 +102,34 @@
 		"height": 93.0,
 		"where_history":
 		[
-			"/Users/Robert/Github/engagio/web"
+			"/Users/Robert/Github/engagio/server",
+			""
 		]
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
-			"post",
-			"jquery",
-			"2000",
-			"content",
-			"onVerifyError",
-			"getFormFields",
-			"result",
-			"initialState",
-			": (",
-			"_getInputFields",
-			"topAccountLists",
-			"onFetchAccountsSuccess",
-			"oauthCallbackHandler",
-			"_updateStateFromProfileSource",
-			"_getSource",
-			"credentialsVerified",
-			"getCredentials",
-			"_getSource",
-			"requestToken",
-			"ProfileSourceActions.initializeSource",
-			"requestToken",
-			"getURLParameter",
-			".context.router",
-			"_handleSubmit",
-			"onVerifyCredentials",
-			"'test/reports'",
-			"this",
-			"result",
-			"value",
-			"result.value",
-			"result",
-			"waitForElementPresent",
-			"canVerify",
-			"isVerified",
-			"canVerify",
-			"isVerifying",
-			"baseRoute",
-			"EMAIL",
-			"self",
-			"reportse",
-			"browser.globals.urls.root",
-			"baseRoute",
-			"username",
-			"name=",
-			"name",
-			"\"",
-			"waitForElementVisible",
-			"this",
-			"urls",
-			"require",
-			"urlContains",
-			"assert",
-			"browser",
-			" :",
-			"webdriver",
-			"\"",
-			"browser",
-			"_jest",
-			"test",
-			"console.log",
-			"_nightwatch",
-			"console.log",
-			"onError",
-			"runSequence",
-			"env",
-			"modernizr",
-			"const",
-			"_env-dev-proxy",
-			"_env",
-			"proxy",
-			"dev-proxy",
-			"serve",
-			"require",
-			"_nightwatch",
-			"nightwatch",
-			"test	",
-			"test",
-			"before_install",
-			"OAUTH",
+			"/admin",
+			"FieldDef",
+			"status",
+			"verify",
+			"profileSource/verify",
+			"verifyCredentials",
+			"crash@engagio.com",
+			"run-dev",
+			"/home",
+			"index.html",
+			"indext.html",
+			"com.engagio.analytics",
+			"<<<<<",
+			"HEAD",
+			"user/profileSource/verify",
+			"/accounts",
+			"index",
+			"index.html",
+			"/accounts",
 			"setStateFromProps",
 			"scope"
 		],
@@ -307,7 +160,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -350,132 +203,68 @@
 		"selected_items":
 		[
 			[
-				"mint",
-				"server/clients/mint.js"
+				"salesforcesoap",
+				"src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala"
 			],
 			[
-				"webpack",
-				"web/webpack.config.js"
+				"server.scala",
+				"src/main/scala/com/engagio/server/Server.scala"
 			],
 			[
-				"docker",
-				"Dockerfile"
+				"metricapi",
+				"src/main/scala/com/engagio/metric/api/MetricApi.scala"
 			],
 			[
-				"read",
-				"README.md"
+				"activity",
+				"src/main/scala/com/engagio/model/activity/Activity.scala"
 			],
 			[
-				"codeship",
-				"codeship.sh"
+				"activity.",
+				"src/main/scala/com/engagio/model/activity/Activity.scala"
 			],
 			[
-				"gulpfile",
-				"web/gulpfile.js"
+				"uioper",
+				"src/main/scala/com/engagio/uiquery/UIOperator.scala"
 			],
 			[
-				"save_pid",
-				"web/save_pid.txt"
+				"server.sca",
+				"src/main/scala/com/engagio/server/Server.scala"
 			],
 			[
-				"",
-				"codeship.sh"
+				"reportapi",
+				"src/main/scala/com/engagio/analytics/ReportApi.scala"
 			],
 			[
-				"persistence_test",
-				"web/test/nightwatch/tests/persistence_test.js"
+				"userapi",
+				"src/main/scala/com/engagio/server/UserApi.scala"
 			],
 			[
-				"profile_source_page_store",
-				"web/app/scripts/stores/admin/profile_source_page_store.js"
+				"integration",
+				"src/config/integration.yml"
 			],
 			[
-				"main_router",
-				"web/app/scripts/main_router.jsx"
+				"build.xml",
+				"build.xml"
 			],
 			[
-				"profile_source_store",
-				"web/app/scripts/stores/admin/profile_source_page_store.js"
+				"inte",
+				"src/config/integration.yml"
 			],
 			[
-				"profile_source_edit_modal",
-				"web/app/scripts/components/admin/profileSourceDetail/profile_source_edit_modal.jsx"
+				"testanaly",
+				"src/test/scala/com/engagio/analytics/TestAnalytics.scala"
 			],
 			[
-				"account_list_dao",
-				"web/app/scripts/dao/account_list_dao.js"
+				"contactreportdef",
+				"src/main/scala/com/engagio/analytics/ContactReportDef.scala"
 			],
 			[
-				"context_source",
-				"web/app/scripts/stores/accounts/sources/account_context_source.js"
+				"server.s",
+				"src/main/scala/com/engagio/server/Server.scala"
 			],
 			[
-				"account_context",
-				"web/app/scripts/stores/accounts/account_context_store.js"
-			],
-			[
-				"profile_source_edit",
-				"web/app/scripts/components/admin/profileSourceEdit/profile_source_edit.jsx"
-			],
-			[
-				"base_component",
-				"web/app/scripts/components/shared/base_component.jsx"
-			],
-			[
-				"profile_source_edit_controller",
-				"web/app/scripts/components/admin/profileSourceEdit/profile_source_edit_controller.jsx"
-			],
-			[
-				"source_store",
-				"web/app/scripts/stores/admin/profile_source_page_store.js"
-			],
-			[
-				"source_source",
-				"web/app/scripts/stores/admin/sources/profile_source_page_source.js"
-			],
-			[
-				"profile_source_actions",
-				"web/app/scripts/actions/profile_source_actions.js"
-			],
-			[
-				"oauth",
-				"web/app/scripts/components/admin/admin_oauth_callback.jsx"
-			],
-			[
-				"admin_oauth_callback",
-				"web/app/scripts/components/admin/admin_oauth_callback.jsx"
-			],
-			[
-				"login",
-				"web/test/nightwatch/utils/login_utils.js"
-			],
-			[
-				"profile_source",
-				"web/app/scripts/stores/admin/profile_source_page_store.js"
-			],
-			[
-				"login_utils",
-				"web/test/nightwatch/utils/login_utils.js"
-			],
-			[
-				"engagio_table_cell",
-				"web/app/scripts/components/shared/engagio_table/engagio_table_cell.jsx"
-			],
-			[
-				".env",
-				"web/.env"
-			],
-			[
-				"nightwat",
-				"web/nightwatch.json"
-			],
-			[
-				"push_",
-				"deployment/docker/push_release.sh"
-			],
-			[
-				"deployment",
-				"deployment/deployment.iml"
+				"create",
+				"src/main/scripts/create_auth_db.sh"
 			],
 			[
 				"hell",
@@ -498,6 +287,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Github/finance-viz/finance-viz_web.sublime-workspace"
+			],
 			[
 				"web",
 				"~/Sublime/Projects/Engagio/engagio_web.sublime-project"
