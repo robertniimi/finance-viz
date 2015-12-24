@@ -20,7 +20,8 @@ module.exports = {
       'react-redux',
       'react-router',
       'react-select',
-      'redux'
+      'redux',
+      'redux-thunk'
     ]
   },
   output: {

@@ -286,11 +286,18 @@ class Mint {
   //
   refreshAccounts() {
     console.log('[mint] refreshAccounts');
+    let formData = querystring.stringify({ token: this.token });
     this.login()
       .then(() => {
-        return this.requester.get(URLS.refreshAccounts, { token: this.token });
+        return this.requester.post(URLS.refreshAccounts, {
+          cookies: this.cookies,
+          headers: HEADERS,
+          form: formData
+        });
       })
-      .then(() => {
+      .then((response) => {
+        console.log('[mint] @refreshAccounts: SUCCESS');
+        console.log('[mint] @refreshAccounts -> response: ', response);
         GenerateTransactionJson();
       })
       .catch((err) => {
