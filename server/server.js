@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var express = require('express');
 var fs = require('fs');
 var Mint = require('./clients/mint');
@@ -12,6 +13,7 @@ require('dotenv').load();
 var mint = new Mint(process.env.MINT_USERNAME, process.env.MINT_PASSWORD);
 
 var app = express();
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var port = process.env.PORT || 8080;

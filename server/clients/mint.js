@@ -52,15 +52,13 @@ class Mint {
   //
   login() {
     let _self = this;
-    let cache;
 
     let options = {
       form: {
         task: 'L',
         username: this.username,
         password: this.password
-      },
-      headers: HEADERS
+      }
     }
 
     return new Promise((resolve, reject) => {
@@ -73,9 +71,6 @@ class Mint {
             reject('login failed');
           }
 
-          cache = _.cloneDeep(resBod);
-
-          _self.cookies = res.headers['set-cookie'][0];
           _self.token = body.sUser.token;
 
           resolve(resBod);
@@ -92,17 +87,7 @@ class Mint {
 
   downloadTransactions(path, saveAsJson) {
     let _self = this;
-    let headers = _.assign({}, HEADERS, {
-      'host': 'wwws.mint.com',
-      'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-      'cookie': this.cookies,
-      'connection': 'keep-alive',
-      'upgrade-insecure-requests': 1,
-      'accept-encoding': 'gzip, deflate, sdch',
-      'accept-language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4'
-    });
-
-    return this.requester.getFile(path, URLS.transactionDownload, { headers })
+    return this.requester.getFile(path, URLS.transactionDownload, {})
       .then(() => {
         if (saveAsJson) {
           let fileStream = fs.createReadStream(path);

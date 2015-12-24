@@ -14,6 +14,7 @@
     "cookie-parser": "^1.4.0",
     "cookieparser": "^0.1.0",
     "csvtojson": "^0.4.2",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "tough-cookie": "^2.2.1"
   }
 }
