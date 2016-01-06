@@ -1,5 +1,5 @@
 .env
 /node_modules
-*/transactions.csv
-*/transactions.json
-*/transactions_by_category.json
+transactions.csv
+transactions.json
+transactions_by_category.json
