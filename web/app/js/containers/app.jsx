@@ -1,5 +1,6 @@
-import { createStore, combineReducers } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 // Components
 import FinancesContainer from './finances_container';
@@ -7,7 +8,11 @@ import FinancesContainer from './finances_container';
 // Reducers
 import financesReducer from '../reducers/finances_reducer';
 
-const store = createStore(financesReducer);
+// const store = createStore(financesReducer);
+
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+
+const store = createStoreWithMiddleware(financesReducer);
 
 // console.log('[app] store.getState(): ', store.getState());
 

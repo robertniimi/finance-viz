@@ -20,8 +20,36 @@ class FinancesTransactionsTable extends React.Component {
   }
 
   _handleTransactionCategoryChange(txnId) {
-    return (selectValue) => {
-      console.log('[finances] @_handleInputChange -> selectValue: ', selectValue);
+    return (categoryId) => {
+      let { data, categories } = this.props;
+      console.log('[finances] @_handleInputChange -> categoryId: ', categoryId);
+      let transaction = _.find(data, (txn) => txn.id === txnId);
+
+      if (transaction.categoryId === categoryId) {
+        // user selected same category;
+        return;
+      };
+
+      let flatCategories = _.reduce(categories, (result, category, idx) => {
+        result.push(category);
+        if (category.children && !_.isEmpty(category.children)) {
+          result = result.concat(category.children);
+        };
+        return result;
+      }, []);
+
+      let category = _.find(flatCategories, (category, idx) => {
+        return category.id === categoryId;
+      });
+
+      console.log('[finances_transactions_table] transaction: ', transaction);
+      console.log('[finances_transactions_table] category: ', category);
+
+      if (!transaction || !category) {
+        throw new Error('[finances_transactions_table] @_handleTransactionCategoryChange: transaction change requires category and transaction');
+      };
+
+      this.props.onChangeTransactionCategory(transaction, category);
     }
   }
 
@@ -132,6 +160,7 @@ FinancesTransactionsTable.propTypes = {
   error: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.bool]),
   loading: React.PropTypes.bool,
   onChangeTableFilter: React.PropTypes.func,
+  onChangeTransactionCategory: React.PropTypes.func,
   query: React.PropTypes.string
 };
 

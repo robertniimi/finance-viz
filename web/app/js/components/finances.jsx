@@ -73,6 +73,7 @@ class Finances extends React.Component {
           <TransactionsTable
             categories={this.props.categories}
             onChangeTableFilter={this.props.onChangeTableFilter}
+            onChangeTransactionCategory={this.props.onChangeTransactionCategory}
             {...this.props.transactions}
           />
         </div>
@@ -87,6 +88,7 @@ Finances.propTypes = {
   categories: React.PropTypes.array,
   onChangeDateRange: React.PropTypes.func,
   onChangeTableFilter: React.PropTypes.func,
+  onChangeTransactionCategory: React.PropTypes.func,
   stackedAreaChart: React.PropTypes.object,
   transactions: React.PropTypes.object
 };

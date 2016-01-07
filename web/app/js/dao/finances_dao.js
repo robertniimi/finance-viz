@@ -23,9 +23,8 @@ module.exports = {
     return request.get(`/mint/autosuggestFilter?${ querystring.stringify(query) }`);
   },
 
-  updateTransaction: (transaction) => {
+  updateTransaction: (transaction, category) => {
     console.log('[finances_dao] @updateTransaction');
-    return request.post(`/mint/transactions`, { test: 'test' });
+    return request.post(`/mint/transactions`, { transaction, category });
   }
-
 };

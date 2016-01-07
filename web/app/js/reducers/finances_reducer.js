@@ -151,6 +151,14 @@ function financesReducer(state = initialState, action) {
     case ActionTypes.FETCH_CATEGORIES_ERROR:
       return state;
 
+    case ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS:
+      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_SUCCESS -> action.result: ', action.result);
+      return state;
+
+    case ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR:
+      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_ERROR -> action.error: ', action.error);
+      return state;
+
     default:
       return state;
     }

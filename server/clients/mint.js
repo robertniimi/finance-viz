@@ -6,6 +6,7 @@ var querystring = require('querystring');
 var fs = require('fs');
 var Promise = require('bluebird');
 var Converter = require('csvtojson').Converter;
+var moment = require('moment');
 
 // Utils
 var Requester = require('../utils/requester');
@@ -72,26 +73,35 @@ class Mint {
   }
 
 
-  // dataObj = {
+  // transaction = {
   //
   // }
-  updateTransaction(dataObj) {
-    console.log('[mint] @updateTransactions -> dataObj: ', dataObj);
+  updateTransaction(transaction, category) {
+    console.log('[mint] @updateTransactions -> transaction: ', transaction);
+
+    let date = moment(new Date(transaction.date));
+    if (date.year() === 2001) {
+      date.year(moment().year());
+    };
+
     let data = {
-      task: dataObj.task,
-      txnId: `${ dataObj.id }:${ dataObj.txnType }`,
-      date: dataObj.date,
-      merchant: dataObj.merchant,
-      category: dataObj.category,
-      catId: dataObj.categoryId,
-      categoryTypeFilter: null,
+      task: transaction.task || 'simpleEdit',
+      date: date.format('MM/DD/YYYY'),
+      merchant: transaction.merchant,
+      category: category.value,
+      catId: category.id,
+      categoryTypeFilter: 'null',
+      amount: null,
       token: this.token
     };
 
+    let stringifiedData = querystring.stringify(data) + `&txnId=${ transaction.id }:${ transaction.txnType }`;
+    console.log('[mint] stringifiedData: ', stringifiedData);
+
     return this.login()
       .then(() => {
-        this.requester.post(`${ URLS.updateTransaction }`, {
-          form: data
+        this.requester.post(URLS.updateTransaction, {
+          form: stringifiedData
         })
       });
 
@@ -106,6 +116,27 @@ class Mint {
     //   amount:
     //   token: this.token
     // });
+
+
+    // task=simpleEdit&
+    // txnId=1002764113%3A0&
+    // date=01%2F04%2F2016&
+    // merchant=Roses&
+    // category=Alcohol%20%26%20Bars&
+    // catId=708&
+    // categoryTypeFilter=null&
+    // amount=&
+    // token=8141308IDwcqBLfwIrwI9EqMI1bZdR0kwbjeTLP1jswONg
+
+    // task=simpleEdit&
+    // txnId=1003200585:0&
+    // date=01%2F06%2F2016&
+    // merchant=Hummus%20Med&
+    // category=Restaurants&
+    // catId=707&
+    // categoryTypeFilter=null&
+    // amount=&
+    // token=8141308IDXVQEN7KDrF0746ZJqR0OfOVbKi3C64GWxd03g
 
     // REQUEST BODY
     // task:simpleEdit

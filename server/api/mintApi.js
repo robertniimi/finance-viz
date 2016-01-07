@@ -91,14 +91,15 @@ module.exports = (app, mint) => {
 
 
   app.post('/mint/transactions', (req, res) => {
-    console.log('[mintApi] @POST: transaction -> req.body: ', req.body);
-    // mint.upateTransaction()
-    //   .then(() => {
+    console.log('[mintApi] @POST: transaction -> req.body.transaction: ', req.body.transaction);
+    console.log('[mintApi] @POST: category -> req.body.category: ', req.body.category);
+    mint.updateTransaction(req.body.transaction, req.body.category)
+      .then((result) => {
+        res.send(result);
+      })
+      .catch(() => {
 
-    //   })
-    //   .catch(() => {
-
-    //   })
+      })
   })
 
   app.get('/mint/listTransaction', (req, res) => {
@@ -108,7 +109,7 @@ module.exports = (app, mint) => {
         res.send(transactions);
       })
       .catch((err) => {
-
+        res.send(error);
       });
   });
 

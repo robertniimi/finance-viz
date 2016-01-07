@@ -11,5 +11,16 @@ module.exports = {
           reject(err);
         });
     });
+  },
+  post: function(url, data) {
+    return new Promise(function(resolve, reject) {
+      $.post(url, data)
+        .done(function(response) {
+          resolve(response);
+        })
+        .fail(function(err) {
+          reject(err);
+        });
+    });
   }
 };

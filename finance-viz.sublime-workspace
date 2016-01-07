@@ -290,10 +290,10 @@
 	],
 	"file_history":
 	[
+		"/Users/Robert/git/finance-viz/package.json",
 		"/Users/Robert/git/finance-viz/.gitignore",
 		"/Users/Robert/git/finance-viz/web/webpack.config.js",
 		"/Users/Robert/git/finance-viz/server/.gitignore",
-		"/Users/Robert/git/finance-viz/package.json",
 		"/Users/Robert/git/finance-viz/server/data/transactions_by_category.json",
 		"/Users/Robert/git/finance-viz/server/data/transactions.csv",
 		"/Users/Robert/git/finance-viz/web/app/js/components/finances-transaction_table.jsx",
@@ -637,12 +637,12 @@
 		"selected_items":
 		[
 			[
-				"webpack",
-				"web/webpack.config.js"
-			],
-			[
 				"package",
 				"package.json"
+			],
+			[
+				"webpack",
+				"web/webpack.config.js"
 			],
 			[
 				"finances_dao",

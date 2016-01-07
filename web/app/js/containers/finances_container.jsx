@@ -69,12 +69,13 @@ class FinancesApp extends React.Component {
       finances
     } = this.props;
 
-    let { changeTableFilter, changeDateRange } = bindActionCreators(FinancesActions, dispatch);
+    let { changeTableFilter, changeDateRange, changeTransactionCategory } = bindActionCreators(FinancesActions, dispatch);
 
     return (
       <Finances
         { ...finances }
         onChangeTableFilter={changeTableFilter}
+        onChangeTransactionCategory={changeTransactionCategory}
         onChangeDateRange={changeDateRange}
       />
     );
