@@ -99,6 +99,39 @@ let thunks = {
           dispatch(actions.changeTransactionCategoryError(err));
         });
     }
+  },
+  fetchCategories: () => {
+    return (dispatch) => {
+      return FinancesDao.fetchCategories()
+        .then((result) => {
+          dispatch(actions.fetchCategoriesSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchCategoriesError(err));
+        })
+    };
+  },
+  fetchChartTransactions: (query) => {
+    return (dispatch) => {
+      return FinancesDao.fetchChartTransactions(query)
+        .then((result) => {
+          dispatch(actions.fetchChartTransactionsSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchChartTransactionsError(err));
+        })
+    };
+  },
+  fetchTransactions: (query) => {
+    return (dispatch) => {
+      return FinancesDao.fetchTransactions(query)
+        .then((result) => {
+          dispatch(actions.fetchTransactionsSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchTransactionsError(err));
+        })
+    };
   }
 };
 

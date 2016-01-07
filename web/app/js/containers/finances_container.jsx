@@ -16,33 +16,15 @@ class FinancesApp extends React.Component {
   }
 
   _fetchTransactions(query) {
-    let {
-      fetchTransactions,
-      fetchTransactionsSuccess,
-      fetchTransactionsError
-    } = bindActionCreators(FinancesActions, this.props.dispatch);
-
-    fetchTransactions({ query }, fetchTransactionsSuccess, fetchTransactionsError);
+    this.props.dispatch(FinancesActions.fetchTransactions({ query }));
   }
 
-  _fetchChartTransactions(dateRange, query) {
-    let {
-      fetchChartTransactions,
-      fetchChartTransactionsSuccess,
-      fetchChartTransactionsError
-    } = bindActionCreators(FinancesActions, this.props.dispatch);
-
-    fetchChartTransactions(dateRange, fetchChartTransactionsSuccess, fetchChartTransactionsError);
+  _fetchChartTransactions(dateRange) {
+    this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));
   }
 
   _fetchCategories() {
-    let {
-      fetchCategories,
-      fetchCategoriesSuccess,
-      fetchCategoriesError
-    } = bindActionCreators(FinancesActions, this.props.dispatch);
-
-    fetchCategories(fetchCategoriesSuccess, fetchCategoriesError);
+    this.props.dispatch(FinancesActions.fetchCategories());
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -56,9 +38,10 @@ class FinancesApp extends React.Component {
   }
 
   componentDidMount() {
+    let {finances} = this.props;
     this._fetchCategories();
-    this._fetchChartTransactions(this.props.finances.dateRange);
-    this._fetchTransactions(this.props.finances.transactions.query);
+    this._fetchChartTransactions(finances.dateRange);
+    this._fetchTransactions(finances.transactions.query);
   }
 
   render() {
@@ -70,6 +53,8 @@ class FinancesApp extends React.Component {
     } = this.props;
 
     let { changeTableFilter, changeDateRange, changeTransactionCategory } = bindActionCreators(FinancesActions, dispatch);
+
+
 
     return (
       <Finances

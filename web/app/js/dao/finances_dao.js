@@ -3,12 +3,12 @@ import querystring from 'querystring';
 
 module.exports = {
   // queryObj
-  fetchTransactions: (queryObj, successAction, failureAction) => {
+  fetchTransactions: (queryObj) => {
     let query = querystring.stringify(queryObj);
     return request.get(`/mint/transactions?${ query }`);
   },
   // queryObj
-  fetchChartTransactions: (queryObj, successAction, failureAction) => {
+  fetchChartTransactions: (queryObj) => {
     let query = querystring.stringify(queryObj);
     return request.get(`/mint/chart/transactions?${ query }`);
   },

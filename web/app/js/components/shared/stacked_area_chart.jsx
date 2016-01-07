@@ -54,6 +54,7 @@ class StackedAreaChart extends React.Component {
           let { width } = this.props.chart;
           chartEl.style({ width })
         };
+
         if (this.props.chart.height) {
           let { height } = this.props.chart;
           chartEl.style({ height })
