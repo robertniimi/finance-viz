@@ -16,7 +16,7 @@ var URLS = require('../constants').URLS;
 var HEADERS = require('../constants').HEADERS;
 
 /**
-NOTES
+N
 
 txn
 **/
@@ -27,58 +27,18 @@ class Mint {
     this.requester = new Requester();
     this.token = null;
     this.transactions = null;
-    this.categories = [];
 
-    this.username = username;
-    this.password = password;
-  }
-
-  _formatQuery(queryObj) {
-    console.log('[mint] @_formatQuery -> queryObj: ', queryObj);
-    if (!queryObj || !queryObj.query) {
-      return {};
-    }
-
-    return _.reduce(queryObj.query, (result, value, key) => {
-      console.log('[mint] value: ', value);
-      console.log('[mint] key: ', key);
-      result.query = `${key}:${value}`;
-      return result;
-    }, {});
-  }
-
-  // Response
-  // ========
-  //
-  login() {
-    let _self = this;
-
-    let options = {
-      form: {
-        task: 'L',
-        username: this.username,
-        password: this.password
+    this.login = () => {
+      let options = {
+        form: {
+          task: 'L',
+          username: username,
+          password: password
+        }
       }
+
+      return this.requester.post(URLS.login, options, this);
     }
-
-    return new Promise((resolve, reject) => {
-      _self.requester.post(URLS.login, options)
-        .then((resBod) => {
-          let body = resBod.body;
-          let res = resBod.res;
-
-          if (!body || !body.sUser || !body.sUser.token) {
-            reject('login failed');
-          }
-
-          _self.token = body.sUser.token;
-
-          resolve(resBod);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
   }
 
   // Response
@@ -87,7 +47,7 @@ class Mint {
 
   downloadTransactions(path, saveAsJson) {
     let _self = this;
-    return this.requester.getFile(path, URLS.transactionDownload, {})
+    return this.requester.getFile(path, URLS.transactionDownload)
       .then(() => {
         if (saveAsJson) {
           let fileStream = fs.createReadStream(path);
@@ -128,22 +88,12 @@ class Mint {
       token: this.token
     };
 
-    return new Promise((resolve, reject) => {
-      this.login()
-        .then(() => {
-          this.requester.post(`${ URLS.updateTransaction }`, {
-            cookies: this.cookies,
-            headers: HEADERS,
-            form: data
-          })
+    return this.login()
+      .then(() => {
+        this.requester.post(`${ URLS.updateTransaction }`, {
+          form: data
         })
-        .then((success) => {
-          resolve(success);
-        })
-        .catch((err) => {
-          console.error('[mint] err: ', err);
-        })
-    });
+      });
 
     // return this.requester.post(URLS.updateTransaction, {
     //   task,
@@ -188,21 +138,10 @@ class Mint {
     console.log('[mint] getJsonData');
     let query = _.assign(queryObj);
 
-    return new Promise((resolve, reject) => {
-      this.login()
-        .then(() => {
-          return this.requester.get(`${ URLS.getJsonData }?${ query }`, {
-            cookies: this.cookies,
-            headers: HEADERS
-          });
-        })
-        .then((resBod) => {
-          resolve(resBod.body);
-        })
-        .catch((err) => {
-          reject(err);
-        });
-    });
+    return this.login()
+      .then(() => {
+        return this.requester.get(`${ URLS.getJsonData }?${ query }`);
+      });
   }
 
   // Response
@@ -221,22 +160,12 @@ class Mint {
     console.log('[mint] @getJsonTransactions -> query: ', query);
     console.log('[mint] @getJsonTransactions -> querystring.stringify(query): ', querystring.stringify(query));
 
-    return new Promise((resolve, reject) => {
-      this.login()
-        .then(() => {
-          return this.requester.get(`${ URLS.getJsonData }?${ querystring.stringify(query) }`, {
-            cookies: this.cookies,
-            headers: HEADERS,
-            token: this.token
-          });
-        })
-        .then((resBod) => {
-          resolve(resBod.body);
-        })
-        .catch((err) => {
-          reject(err);
+    return this.login()
+      .then(() => {
+        return this.requester.get(`${ URLS.getJsonData }?${ querystring.stringify(query) }`, {
+          token: this.token
         });
-    });
+      });
   }
 
   // Response
@@ -248,22 +177,12 @@ class Mint {
       rnd: (new Date()).valueOf()
     };
 
-    return new Promise((resolve, reject) => {
-      this.login()
-        .then(() => {
-          return this.requester.get(`${ URLS.getJsonData }?${ querystring.stringify(query) }`, {
-            cookies: this.cookies,
-            headers: HEADERS,
-            token: this.token
-          });
-        })
-        .then((resBod) => {
-          resolve(resBod.body);
-        })
-        .catch((err) => {
-          reject(err);
-        })
-    })
+    return this.login()
+      .then(() => {
+        return this.requester.get(`${ URLS.getJsonData }?${ querystring.stringify(query) }`, {
+          token: this.token
+        });
+      });
   }
 
   // Response
@@ -275,8 +194,6 @@ class Mint {
     this.login()
       .then(() => {
         return this.requester.post(URLS.refreshAccounts, {
-          cookies: this.cookies,
-          headers: HEADERS,
           form: formData
         });
       })
@@ -296,16 +213,10 @@ class Mint {
   // ========
   //
   refreshJob() {
-    return new Promise((resolve, reject) => {
-      this.login()
-        .then(() => {
-          return this.requester.get(URLS.refreshJob);
-        })
-        .then((resBod) => {
-          let body = resBod.body;
-          resolve(body);
-        });
-    });
+    return this.login()
+      .then(() => {
+        return this.requester.get(URLS.refreshJob);
+      });
   }
 
   // Response
@@ -355,20 +266,10 @@ class Mint {
     //   }
     // };
 
-    return new Promise((resolve, reject) => {
-      this.login()
-        .then(() => {
-          return this.requester.get(`${ URLS.listTransaction }?${ querystring.stringify(query) }`);
-        })
-        .then((resBod) => {
-          let body = resBod.body;
-          resolve(body);
-        })
-        .catch((err) => {
-          console.error('[mint] err: ', err);
-          reject(err);
-        })
-    })
+    return this.login()
+      .then(() => {
+        return this.requester.get(`${ URLS.listTransaction }?${ querystring.stringify(query) }`);
+      });
 
   }
 
@@ -390,18 +291,10 @@ class Mint {
       rnd: (new Date()).valueOf()
     };
 
-    return new Promise(function(resolve, reject) {
-      this.login()
-        .then(() => {
-          return this.requester.get(`${ URLS.autoCompleteFilter }?${ querystring.stringify(queryObj) }`);
-        })
-        .then((suggestions) => {
-          resolve(suggestions);
-        })
-        .catch((err) => {
-          reject(err);
-        })
-    });
+    return this.login()
+      .then(() => {
+        return this.requester.get(`${ URLS.autoCompleteFilter }?${ querystring.stringify(queryObj) }`);
+      });
     // https://wwws.mint.com/autocompleteFilter.xevent?query=cate&rnd=1450050382368
   }
 

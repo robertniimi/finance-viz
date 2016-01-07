@@ -24,9 +24,9 @@ class Requester {
         json: true,
         method: 'GET',
         url: endpoint
-      }, options), (err, res, body) => {
+      }, options || {}), (err, res, body) => {
         if (err) { reject(err); }
-        resolve({ res, body });
+        resolve(body);
       });
     });
   }
@@ -37,7 +37,7 @@ class Requester {
   //   headers:
   //   json:
   // }
-  post(endpoint, options) {
+  post(endpoint, options, client) {
     return new Promise((resolve, reject) => {
       request(_.assign({
         json: true,
@@ -47,12 +47,13 @@ class Requester {
       }, options), (err, res, body) => {
         if (err) { reject(err); }
         cookie = res.headers['set-cookie'][0];
-        resolve({ res, body });
+        if (client) { client.token = body.sUser.token; };
+        resolve(body);
       });
     });
   }
 
-  getFile(path, endpoint, options) {
+  getFile(path, endpoint) {
     let headers = _.assign({}, HEADERS, { cookie });
     return new Promise((resolve, reject) => {
       let reqCall = () => {
