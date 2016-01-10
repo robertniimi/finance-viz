@@ -46,10 +46,14 @@ class Requester {
         url: endpoint
       }, options), (err, res, body) => {
         if (err) { reject(err); }
-        if (res.headers && res.headers['set-cookie']) {
+        // Store cookies
+        if (res && res.headers && res.headers['set-cookie']) {
           cookie = res.headers['set-cookie'][0];
         };
-        if (client) { client.token = body.sUser.token; };
+        // Store token
+        if (client && body && body.sUser && body.sUser.token) {
+          client.token = body.sUser.token;
+        };
         resolve(body);
       });
     });

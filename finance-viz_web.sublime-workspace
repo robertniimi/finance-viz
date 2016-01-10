@@ -4,21 +4,356 @@
 		"selected_items":
 		[
 			[
-				"EN",
-				"ENGAGIO_DATABASE_PORT"
+				"fetch",
+				"fetchChartTransactionsError"
+			],
+			[
+				"fetchChart",
+				"fetchChartTransactions"
+			],
+			[
+				"Finances",
+				"FinancesDao"
+			],
+			[
+				"CHANGE",
+				"CHANGE_TRANSACTION_CATEGORY_ERROR	(finances_actions.js)"
 			],
 			[
 				"log",
-				"log	console.log \"... :\", ..."
+				"log	console.log('... : ', ...)"
 			],
 			[
-				"for",
-				"fori	Range Comprehension (inclusive)"
+				"onChange",
+				"onChangeTransactionCategory"
+			],
+			[
+				"changeTransac",
+				"changeTransactionCategoryError"
+			],
+			[
+				"thunk",
+				"thunkMiddleware"
+			],
+			[
+				"create",
+				"createStoreWithMiddleware"
+			],
+			[
+				"sst",
+				"sst	React: this.setState(…)"
+			],
+			[
+				"updte",
+				"updateTransaction"
+			],
+			[
+				"_handl",
+				"_handleTransactionCategoryChange"
+			],
+			[
+				"_han",
+				"_handleTransactionCategoryChange"
+			],
+			[
+				"UPDATE_TRANSACTION_",
+				"UPDATE_TRANSACTION_ERROR	(finances_actions.js)"
+			],
+			[
+				"update",
+				"updateTransaction	(finances_dao.js)"
+			],
+			[
+				"updateTra",
+				"updateTransactionError"
+			],
+			[
+				"updateT",
+				"updateTransactionSuccess"
+			],
+			[
+				"tick",
+				"tickValues"
+			],
+			[
+				"stacked",
+				"stackedAreaChart"
+			],
+			[
+				"onChan",
+				"onChangeTableFilter"
+			],
+			[
+				"CHAN",
+				"CHANGE_TABLE_FILTER"
+			],
+			[
+				"cate",
+				"categories"
+			],
+			[
+				"_handle",
+				"_handleTableCategoryChange"
+			],
+			[
+				"Trans",
+				"TransactionsTable"
+			],
+			[
+				"FETCH",
+				"FETCH_CATEGORIES_SUCCESS"
+			],
+			[
+				"subcate",
+				"subcategory"
+			],
+			[
+				"subcat",
+				"subcategory	(generate_transaction_json.js)"
+			],
+			[
+				"FETCH_CATE",
+				"FETCH_CATEGORIES"
+			],
+			[
+				"fetc",
+				"fetchCategories"
+			],
+			[
+				"_fetch",
+				"_fetchCategories"
+			],
+			[
+				"failure",
+				"failureAction"
+			],
+			[
+				"Finance",
+				"FinancesDao"
+			],
+			[
+				"stack",
+				"renderStackedAreaChart"
+			],
+			[
+				"bind",
+				"bindActionCreators"
+			],
+			[
+				"fet",
+				"fetchTransactionsSuccess"
+			],
+			[
+				"FETH",
+				"FETCH_TRANSACTIONS_SUCCESS"
+			],
+			[
+				"fetchTran",
+				"fetchTransactionsError	(finances_actions.js)"
+			],
+			[
+				"FETCH_",
+				"FETCH_TRANSACTIONS"
+			],
+			[
+				"FETCH_TRA",
+				"FETCH_TRANSACTIONS_ERROR"
+			],
+			[
+				"success",
+				"successAction"
+			],
+			[
+				"fail",
+				"failureAction"
+			],
+			[
+				"succ",
+				"successAction"
+			],
+			[
+				"change",
+				"changeDateRange	(finances_actions.js)"
+			],
+			[
+				"FETCH_TRANSACTIONS_",
+				"FETCH_TRANSACTIONS_SUCCESS	(finances_reducer.js)"
+			],
+			[
+				"Action",
+				"ActionTypes"
+			],
+			[
+				"f",
+				"f	() => {}"
+			],
+			[
+				"uncate",
+				"uncategorizedRows"
+			],
+			[
+				"getJson",
+				"getJsonTransactions"
+			],
+			[
+				"listTran",
+				"listTransactionQuery"
+			],
+			[
+				"unca",
+				"uncategorized"
+			],
+			[
+				"unc",
+				"uncategorized"
+			],
+			[
+				"trans",
+				"transactionQuery"
+			],
+			[
+				"refresh",
+				"refreshAccounts"
+			],
+			[
+				"err",
+				"err"
+			],
+			[
+				"fun",
+				"function	(chart_utils.js)"
+			],
+			[
+				"web",
+				"webpack	Webpack: Config (React/ES6)"
+			],
+			[
+				"rcc",
+				"rcc	React: class extends React.Component"
+			],
+			[
+				"client",
+				"clientTmpltPath"
+			],
+			[
+				"server",
+				"serverOptions"
+			],
+			[
+				"clientOp",
+				"clientOptions"
+			],
+			[
+				"templatesPath",
+				"templatesPathLength"
+			],
+			[
+				"doctype",
+				"doctype	HTML: <!doctype html>...</html>"
+			],
+			[
+				"req",
+				"require	require \"...\""
+			],
+			[
+				"apartmen",
+				"apartmentList"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "web/app/js/dao/finances_dao.js",
+			"settings":
+			{
+				"buffer_size": 882,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/actions/finances_actions.js",
+			"settings":
+			{
+				"buffer_size": 2878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/reducers/finances_reducer.js",
+			"settings":
+			{
+				"buffer_size": 4899,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/constants/action_types.js",
+			"settings":
+			{
+				"buffer_size": 629,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/containers/app.jsx",
+			"settings":
+			{
+				"buffer_size": 819,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import { bindActionCreators } from 'redux';\nimport { connect } from 'react-redux';\n\n// Constants\nimport ActionTypes from 'action_types';\n\n// Actions\nimport FinancesActions from 'finances_actions';\n\n// Components\nimport Finances from '../components/finances';\n\nclass FinancesApp extends React.Component {\n  constructor() {\n    super()\n  }\n\n  _fetchTransactions(query) {\n    this.props.dispatch(FinancesActions.fetchTransactions({ query }));\n  }\n\n  _fetchChartTransactions(dateRange) {\n    this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));\n  }\n\n  _fetchCategories() {\n    this.props.dispatch(FinancesActions.fetchCategories());\n  }\n\n  componentWillUpdate(nextProps, nextState) {\n    if (nextProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {\n      this._fetchChartTransactions(nextProps.finances.dateRange);\n    };\n\n    if (nextProps.finances.transactions.query !== this.props.finances.transactions.query) {\n      this._fetchTransactions(nextProps.finances.transactions.query);\n    };\n  }\n\n  componentDidMount() {\n    let {finances} = this.props;\n    this._fetchCategories();\n    this._fetchChartTransactions(finances.dateRange);\n    this._fetchTransactions(finances.transactions.query);\n  }\n\n  render() {\n    console.log('[finances_container] this.props: ', this.props);\n\n    let {\n      dispatch,\n      finances\n    } = this.props;\n\n    let { changeTableFilter, changeDateRange, changeTransactionCategory } = bindActionCreators(FinancesActions, dispatch);\n\n    return (\n      <Finances\n        { ...finances }\n        onChangeTableFilter={changeTableFilter}\n        onChangeTransactionCategory={changeTransactionCategory}\n        onChangeDateRange={changeDateRange}\n      />\n    );\n  }\n}\n\nFinancesApp.propTypes = {\n  transactions: React.PropTypes.array\n};\n\nmodule.exports = connect((state) => {\n  return {\n    finances: {\n      categories: state.categories,\n      selectedDateRange: state.selectedDateRange,\n      dateRange: state.dateRange,\n      stackedAreaChart: state.stackedAreaChart,\n      transactions: state.transactions\n    }\n  }\n})(FinancesApp);\n",
+			"file": "web/app/js/containers/finances_container.jsx",
+			"file_size": 2107,
+			"file_write_time": 130966606500000000,
+			"settings":
+			{
+				"buffer_size": 2105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/components/finances.jsx",
+			"settings":
+			{
+				"buffer_size": 2601,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/components/finances_transactions_table.jsx",
+			"settings":
+			{
+				"buffer_size": 5012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/components/finances_stacked_area_chart.jsx",
+			"settings":
+			{
+				"buffer_size": 1723,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/utils/chart_utils.js",
+			"settings":
+			{
+				"buffer_size": 1249,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/app/js/components/shared/stacked_area_chart.jsx",
+			"settings":
+			{
+				"buffer_size": 2394,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -27,10 +362,30 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "",
+		"height": 307.0,
+		"last_filter": "move",
 		"selected_items":
 		[
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"del",
+				"File: Delete"
+			],
+			[
+				"duplic",
+				"File: Duplicate"
+			],
+			[
+				"snip",
+				"Snippet: readme"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -40,22 +395,41 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"Snippet: ",
-				"Snippet: reactClass"
+				"snippet: HTML",
+				"Snippet: DOCTYPE HTML"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
+				"snippet: <html",
+				"Snippet: JSX: <!DOCTYPE html>...</html>"
+			],
+			[
+				"ke",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"preferences",
+				"Preferences: Settings - Default"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"find",
+				"Preferences: Key Bindings - Default"
 			]
 		],
 		"width": 584.0
 	},
 	"console":
 	{
-		"height": 126.0,
+		"height": 0.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -69,40 +443,159 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Robert/Github/finance-viz/web"
+		"/Users/Robert/git/finance-viz/web",
+		"/Users/Robert/git/finance-viz/web/app",
+		"/Users/Robert/git/finance-viz/web/app/js",
+		"/Users/Robert/git/finance-viz/web/app/js/actions",
+		"/Users/Robert/git/finance-viz/web/app/js/components",
+		"/Users/Robert/git/finance-viz/web/app/js/components/shared",
+		"/Users/Robert/git/finance-viz/web/app/js/containers",
+		"/Users/Robert/git/finance-viz/web/app/js/dao",
+		"/Users/Robert/git/finance-viz/web/app/js/utils",
+		"/Users/Robert/git/finance-viz/web/app/style"
 	],
 	"file_history":
 	[
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/Server.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/metric/api/MetricApi.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/model/activity/Activity.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/uiquery/UIOperator.scala",
-		"/Users/Robert/Github/engagio/server/src/config/integration.yml",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/analytics/ReportApi.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/UserApi.scala",
-		"/Users/Robert/Github/engagio/server/.gitignore",
-		"/Users/Robert/Github/engagio/server/build.xml",
-		"/Users/Robert/Github/engagio/server/src/test/scala/com/engagio/analytics/TestAnalytics.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/analytics/ContactReportDef.scala",
-		"/Users/Robert/Github/engagio/server/src/main/scripts/create_auth_db.sh",
-		"/Users/Robert/Github/engagio/web/.tmp/scripts/hello.js",
-		"/Users/Robert/Github/engagio/web/app/scripts/hello.cjsx",
-		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/program/ProgramTypeApi.scala",
-		"/Users/Robert/Github/engagio/web/app/index.html",
-		"/Users/Robert/Github/engagio/web/app/scripts/accounts/account_detail.cjsx",
-		"/Users/Robert/Library/Application Support/Sublime Text 3/Packages/User/coffee-react_createClass.sublime-snippet"
+		"/Users/Robert/git/finance-viz/web/app/js/utils/ajax_utils.js",
+		"/Users/Robert/git/finance-viz/web/app/js/components/finances_transactions_table.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/main.jsx",
+		"/Users/Robert/git/finance-viz/web/app/style/sass/_finances.scss",
+		"/Users/Robert/git/finance-viz/web/app/js/components/shared/state_wrapper.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/components/finances.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/dao/finances_dao.js",
+		"/Users/Robert/git/finance-viz/web/app/js/reducers/finances_reducer.js",
+		"/Users/Robert/git/finance-viz/web/app/js/constants/action_types.js",
+		"/Users/Robert/git/finance-viz/web/app/js/containers/finances_container.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/containers/app.jsx",
+		"/Users/Robert/git/finance-viz/web/webpack.config.js",
+		"/Users/Robert/git/finance-viz/web/app/index.html",
+		"/Users/Robert/git/finance-viz/web/app/js/components/finances_stacked_area_chart.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/components/shared/stacked_area_chart.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/actions/finances_actions.js",
+		"/Users/Robert/git/finance-viz/web/app/js/utils/chart_utils.js",
+		"/Users/Robert/git/finance-viz/web/.gitignore",
+		"/Users/Robert/git/finance-viz/web/app/style/css/vendor_import.css",
+		"/Users/Robert/git/finance-viz/web/app/style/sass/main.scss",
+		"/Users/Robert/git/finance-viz/web/app/js/components/finances-transaction_table.jsx",
+		"/Users/Robert/git/finance-viz/web/app/style/vendor.css",
+		"/Users/Robert/git/finance-viz/web/app/style/css/tmp/main.css",
+		"/Users/Robert/git/finance-viz/gulpfile.js",
+		"/Users/Robert/git/finance-viz/package.json",
+		"/Users/Robert/git/finance-viz/web/app/style/_finances.scss",
+		"/Users/Robert/git/finance-viz/web/app/style/tmp/main.css",
+		"/Users/Robert/git/finance-viz/web/app/style/main.scss",
+		"/Users/Robert/git/finance-viz/web/app/style/tmp/vendor.css",
+		"/Users/Robert/git/finance-viz/web/app/style/css/vendor.css",
+		"/Users/Robert/git/finance-viz/web/app/style/css/style.css",
+		"/Users/Robert/git/finance-viz/web/app/style/css/main.css",
+		"/Users/Robert/git/finance-viz/node_modules/normalize-scss/sass/_normalize.scss",
+		"/Users/Robert/git/finance-viz/README.md",
+		"/Users/Robert/git/finance-viz/.eslintrc.js",
+		"/Users/Robert/git/finance-viz/.gitignore",
+		"/Users/Robert/git/finance-viz/web/app/vendor.bundle.js",
+		"/Users/Robert/git/finance-viz/web/app/js/containers/time_container.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/containers/health_container.jsx",
+		"/Users/Robert/git/finance-viz/web/app/js/stores/finances_store.js",
+		"/Users/Robert/git/finance-viz/server/server.js",
+		"/Users/Robert/git/finance-viz/server/utils/requester.js",
+		"/Users/Robert/git/finance-viz/web/package.json",
+		"/Users/Robert/git/finance-viz/node_modules/nvd3/build/nv.d3.js",
+		"/Users/Robert/git/finance-viz/node_modules/webpack/lib/NormalModuleFactory.js",
+		"/Users/Robert/git/finance-viz/node_modules/normalize-package-data/test/fixtures/movefile.json",
+		"/Users/Robert/git/finance-viz/server/.gitignore",
+		"/Users/Robert/git/finance-viz/web/app/js/containers/personal_app.jsx",
+		"/Users/Robert/git/finance-viz/server/package.json",
+		"/Users/Robert/git/finance-viz/web/app/js/reducers/personal_app.js",
+		"/Users/Robert/git/finance-viz/web/app/css/style.css",
+		"/Users/Robert/git/finance-viz/server/data/transactions_by_category.json",
+		"/Users/Robert/git/finance-viz/server/constants.js",
+		"/Users/Robert/git/finance-viz/server/data/generate_transaction_json.js",
+		"/Users/Robert/git/finance-viz/server/routes.js",
+		"/Users/Robert/git/finance-viz/server/api/mintApi.js",
+		"/Users/Robert/git/finance-viz/server/utils/client.js",
+		"/Users/Robert/git/finance-viz/server/data/transactions.csv",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Bluebird/new_promise.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_groupBy.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/select.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/fs_write_file.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/html.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Misc/webpack_config.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/Router/new_router.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/express/node_route.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/Express/node_route.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/NPM/package_json.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/Shell/require_bash.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/XML/snippet.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/XML/launchd.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/textarea.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/deconstruct_import.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/import.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/hr.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_checkbox.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_select.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_textarea.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/wrapped_function.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/className.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_textbox.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/return.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/th.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/table.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/ul.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/td.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/p.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/img.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_pluck.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_uniq.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/function.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/for.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/if.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/return.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/tr.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_forEach.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_map.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_assign.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/span.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/svg.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_actions.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Gulp/gulp_task.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/li.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_store.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_source.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/email_template.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_source.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log_var.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/dispatch.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/update_state.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_controller.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/todo.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/context.sublime-snippet",
+		"/Users/Robert/Desktop/bootstrap_helpers.js",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/log_var.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/react_createComponent.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/React/CJSX/Bootstrap/bootstrap_checkbox.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/form.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/handleChange.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/log.sublime-snippet",
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_row.sublime-snippet",
+		"/Users/Robert/git/personal-site/web/webpack.config.js",
+		"/Users/Robert/git/personal-site/server.js",
+		"/Users/Robert/git/personal-site/web/index.html",
+		"/Users/Robert/git/personal-site/web/app/css/style.css",
+		"/Users/Robert/git/personal-site/web/app/app.js",
+		"/Users/Robert/git/personal-site/web/app/index.html"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
-			"/Users/Robert/Github/engagio/server",
+			"/Users/Robert/git/finance-viz/",
+			"/Users/Robert/git/finance-viz/web/app/js",
 			""
 		]
 	},
@@ -111,27 +604,134 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"/admin",
-			"FieldDef",
-			"status",
-			"verify",
-			"profileSource/verify",
-			"verifyCredentials",
-			"crash@engagio.com",
-			"run-dev",
-			"/home",
-			"index.html",
-			"indext.html",
-			"com.engagio.analytics",
-			"<<<<<",
-			"HEAD",
-			"user/profileSource/verify",
-			"/accounts",
-			"index",
-			"index.html",
-			"/accounts",
-			"setStateFromProps",
-			"scope"
+			"this.props",
+			"fetchChartTransactions",
+			"successAction",
+			"        .",
+			"successAction",
+			"_self",
+			"changeTransactionCategoryError",
+			"changeTransactionCategorySuccess",
+			"selectValue",
+			"result",
+			"_handleTransactionCategoryChange",
+			"changeTableFilter",
+			"onChangeTableFilter",
+			"_handleTableCategoryChange",
+			"_handleTransactionCategoryChange",
+			"className='date'",
+			"hammerjs",
+			" } >",
+			" }`",
+			"${ ",
+			"={ ",
+			"data",
+			"selectOptions",
+			"newCategory",
+			"_handleTransactionCategoryChange",
+			"selectOptions",
+			"updateTransactionError",
+			"fetchCategoriesError",
+			"selectValue",
+			"transactionObj",
+			"_handleTransactionCategoryChange",
+			"transactions",
+			"@FETCH_CHART",
+			"FETCH_CHART_TRANSACTIONS",
+			"transactions",
+			"FETCH_CHART_TRANSACTIONS",
+			"Action",
+			"successAction",
+			"this.props.chart && ",
+			"this.props.chart",
+			"if (",
+			"f (",
+			"width",
+			"chart",
+			"_renderFinances",
+			"querystring",
+			"moment",
+			"numeral",
+			"classnames",
+			"urlencode",
+			"promise",
+			"={",
+			"_handleSelectChange",
+			"state",
+			"_renderFinances",
+			"this",
+			"request",
+			"div",
+			"tickMarks",
+			"label",
+			"this.props",
+			"prevProps",
+			"onChangeDateRange",
+			"selectedDateRange",
+			"select",
+			"h2",
+			"categoryOptions",
+			"SomeApp",
+			"div",
+			"select",
+			"Select",
+			"uncatTransTable",
+			"uncategorizedRows",
+			"uncategorized",
+			", ",
+			"_handleInputChange",
+			"select",
+			"backgroun-color",
+			"content-wrapper",
+			"app-container",
+			"h1",
+			"postcssImport",
+			"categories",
+			"transactions",
+			"categories",
+			"rnd",
+			"categories",
+			"ChartTransactions",
+			"fetchChartTransactions",
+			"fetchTransactions",
+			"FETCH_CHART_TRANSACTIONS",
+			"SUCCESS",
+			"\n  ",
+			"FETCH_TRANSACTIONS",
+			"fetchChartTransactions",
+			"dateRange",
+			"query",
+			"dateRange",
+			"props",
+			"dateRange",
+			"transactions: {",
+			"transactions",
+			"areaChart",
+			"@FETCH_TRANSACTIONS",
+			".FETCH",
+			"FETCH_TRANSACTIONS",
+			"fetchTransactions",
+			"Transactions",
+			"actions",
+			"successAction",
+			"fetchTransactions",
+			"personalApp",
+			", ",
+			"_onChangeDate",
+			"PersonalApp",
+			"FETCH_TRANSACTIONS",
+			"GET_TRANSACTIONS",
+			"getTransactions",
+			"Date",
+			"startDate",
+			"parsedTransactions",
+			"dateRange",
+			"_filterTransactions",
+			"query",
+			"watchTransition(renderWatch, 'scatter: groups'",
+			"watchTransition",
+			"replace",
+			"request.replace"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -149,8 +749,999 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "web/app/js/dao/finances_dao.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							],
+							[
+								304,
+								304
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "web/app/js/actions/finances_actions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 761.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "web/app/js/reducers/finances_reducer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4505,
+								4505
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 442.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "web/app/js/constants/action_types.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 629,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								625,
+								625
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "web/app/js/containers/app.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								390,
+								390
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "web/app/js/containers/finances_container.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2105,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1035,
+								1035
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "web/app/js/components/finances.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2242,
+								2242
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 446.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "web/app/js/components/finances_transactions_table.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1483,
+								1483
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 95.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "web/app/js/components/finances_stacked_area_chart.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1208,
+								1208
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "web/app/js/utils/chart_utils.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								522
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "web/app/js/components/shared/stacked_area_chart.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2394,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1004,
+								1004
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 356.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -160,7 +1751,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -203,104 +1794,148 @@
 		"selected_items":
 		[
 			[
-				"salesforcesoap",
-				"src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala"
+				"action_typ",
+				"app/js/constants/action_types.js"
 			],
 			[
-				"server.scala",
-				"src/main/scala/com/engagio/server/Server.scala"
+				"web",
+				"webpack.config.js"
 			],
 			[
-				"metricapi",
-				"src/main/scala/com/engagio/metric/api/MetricApi.scala"
+				"index.html",
+				"app/index.html"
 			],
 			[
-				"activity",
-				"src/main/scala/com/engagio/model/activity/Activity.scala"
+				"webpack",
+				"webpack.config.js"
 			],
 			[
-				"activity.",
-				"src/main/scala/com/engagio/model/activity/Activity.scala"
+				"finances_stack",
+				"app/js/components/finances_stacked_area_chart.jsx"
 			],
 			[
-				"uioper",
-				"src/main/scala/com/engagio/uiquery/UIOperator.scala"
+				"stacked",
+				"app/js/components/shared/stacked_area_chart.jsx"
 			],
 			[
-				"server.sca",
-				"src/main/scala/com/engagio/server/Server.scala"
+				"ajax_utils",
+				"app/js/utils/ajax_utils.js"
 			],
 			[
-				"reportapi",
-				"src/main/scala/com/engagio/analytics/ReportApi.scala"
+				"finance_actions",
+				"app/js/actions/finances_actions.js"
 			],
 			[
-				"userapi",
-				"src/main/scala/com/engagio/server/UserApi.scala"
+				"chart_utils",
+				"app/js/utils/chart_utils.js"
 			],
 			[
-				"integration",
-				"src/config/integration.yml"
+				"finances_dao",
+				"app/js/dao/finances_dao.js"
 			],
 			[
-				"build.xml",
-				"build.xml"
+				"gulpfile",
+				"gulpfile.js"
 			],
 			[
-				"inte",
-				"src/config/integration.yml"
+				"finances_redu",
+				"web/app/js/reducers/finances_reducer.js"
 			],
 			[
-				"testanaly",
-				"src/test/scala/com/engagio/analytics/TestAnalytics.scala"
+				"app.jsx",
+				"web/app/js/containers/app.jsx"
 			],
 			[
-				"contactreportdef",
-				"src/main/scala/com/engagio/analytics/ContactReportDef.scala"
+				"finances.jsx",
+				"web/app/js/components/finances.jsx"
 			],
 			[
-				"server.s",
-				"src/main/scala/com/engagio/server/Server.scala"
+				"vendor_impo",
+				"web/app/style/css/vendor_import.css"
 			],
 			[
-				"create",
-				"src/main/scripts/create_auth_db.sh"
+				"constants",
+				"server/constants.js"
 			],
 			[
-				"hell",
-				"web/app/scripts/hello.cjsx"
+				"action_types",
+				"web/app/js/constants/action_types.js"
 			],
 			[
-				"hello",
-				"web/.tmp/scripts/hello.js"
+				"finances_actions",
+				"web/app/js/actions/finances_actions.js"
 			],
 			[
-				"index",
-				"web/app/index.html"
+				"finances",
+				"web/app/js/components/finances.jsx"
+			],
+			[
+				"nv.d3.js",
+				"node_modules/nvd3/build/nv.d3.js"
+			],
+			[
+				"normalmodulefac",
+				"node_modules/webpack/lib/NormalModuleFactory.js"
+			],
+			[
+				"requester",
+				"server/utils/requester.js"
+			],
+			[
+				"move",
+				"node_modules/normalize-package-data/test/fixtures/movefile.json"
+			],
+			[
+				"package",
+				"web/package.json"
+			],
+			[
+				"package.json",
+				"server/package.json"
+			],
+			[
+				"actions",
+				"web/app/js/actions/finances_actions.js"
+			],
+			[
+				"mint",
+				"server/api/mintApi.js"
+			],
+			[
+				"constant",
+				"server/constants.js"
+			],
+			[
+				"ser",
+				"server/server.js"
+			],
+			[
+				"table",
+				"JavaScript/React/JSX/table.sublime-snippet"
+			],
+			[
+				"server",
+				"server.js"
+			],
+			[
+				"sublime-keymap",
+				"Backup/20150602212744/BracketHighlighter/Default.sublime-keymap"
+			],
+			[
+				"pack",
+				"package.json"
 			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 500.0,
+		"height": 0.0,
 		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"",
-				"~/Github/finance-viz/finance-viz_web.sublime-workspace"
-			],
-			[
-				"web",
-				"~/Sublime/Projects/Engagio/engagio_web.sublime-project"
-			],
-			[
-				"programs",
-				"~/Sublime/Projects/Engagio/engagio_web_programs.sublime-project"
-			]
 		],
-		"width": 380.0
+		"width": 0.0
 	},
 	"select_symbol":
 	{
@@ -319,7 +1954,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 147.0,
+	"side_bar_width": 190.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
