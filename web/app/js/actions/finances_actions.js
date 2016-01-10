@@ -51,6 +51,30 @@ let actions = {
       filter
     }
   },
+  fetchNetIncomeSuccess: (result) => {
+    return {
+      type: ActionTypes.FETCH_NET_INCOME_SUCCESS,
+      result
+    }
+  },
+  fetchNetIncomeError: (error) => {
+    return {
+      type: ActionTypes.FETCH_NET_INCOME_ERROR,
+      error
+    }
+  },
+  fetchNetWorthSuccess: (result) => {
+    return {
+      type: ActionTypes.FETCH_NET_WORTH_SUCCESS,
+      result
+    }
+  },
+  fetchNetWorthError: (error) => {
+    return {
+      type: ActionTypes.FETCH_NET_WORTH_ERROR,
+      error
+    }
+  },
   changeTransactionCategorySuccess: (result) => {
     return {
       type: ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS,
@@ -62,7 +86,8 @@ let actions = {
       type: ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR,
       error
     }
-  }
+  },
+
 };
 
 let thunks = {
@@ -107,6 +132,28 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchTransactionsError(err));
+        })
+    };
+  },
+  fetchNetIncome: (dateRange) => {
+    return (dispatch) => {
+      return FinancesDao.fetchNetIncome(query)
+        .then((result) => {
+          dispatch(actions.fetchNetIncomeSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchNetIncomeError(err));
+        })
+    };
+  },
+  fetchNetWorth: (dateRange) => {
+    return (dispatch) => {
+      return FinancesDao.fetchNetWorth(dateRange)
+        .then((result) => {
+          dispatch(actions.fetchNetWorthSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchNetWorthError(err));
         })
     };
   }

@@ -12,6 +12,7 @@ import classnames from 'classnames';
 import Select from 'react-select';
 import TransactionsTable from './finances_transactions_table';
 import StackedAreaChart from './finances_stacked_area_chart';
+import NetIncomChart from './finances_net_income_chart';
 
 const DATE_RANGES = {
   'All Time': null,

@@ -23,6 +23,14 @@ class FinancesApp extends React.Component {
     this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));
   }
 
+  _fetchNetIncome(dateRange) {
+    this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));
+  }
+
+  _fetchNetWorth(dateRange) {
+    this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));
+  }
+
   _fetchCategories() {
     this.props.dispatch(FinancesActions.fetchCategories());
   }
@@ -30,6 +38,8 @@ class FinancesApp extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     if (nextProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
       this._fetchChartTransactions(nextProps.finances.dateRange);
+      this._fetchNetIncome(nextProps.finances.dateRange);
+      this._fetchNetWorth(nextProps.finances.dateRange);
     };
 
     if (nextProps.finances.transactions.query !== this.props.finances.transactions.query) {
@@ -53,8 +63,6 @@ class FinancesApp extends React.Component {
     } = this.props;
 
     let { changeTableFilter, changeDateRange, changeTransactionCategory } = bindActionCreators(FinancesActions, dispatch);
-
-
 
     return (
       <Finances

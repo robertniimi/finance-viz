@@ -8,15 +8,15 @@
 import d3 from 'd3';
 
 // Components
-import StackedAreaChart from 'stacked_area_chart';
+import LineChart from 'line_chart';
 
-class FinancesStackedAreaChart extends React.Component {
+class FinancesNetIncomeChart extends React.Component {
   constructor(props) {
     super(props);
   }
 
   _getChartOptions(data) {
-    console.log('[finances_stacked_area_chart] data: ', data);
+    console.log('[finances_net_income_chart] data: ', data);
     let tickValues = [];
     if (data && !_.isEmpty(data)) {
       tickValues = _.map(data[0].values, (valueObj, idx) => {
@@ -45,17 +45,17 @@ class FinancesStackedAreaChart extends React.Component {
   }
 
   render() {
-    console.log('[finances_stacked_area_chart] this.props: ', this.props);
+    console.log('[finances_net_income_chart] this.props: ', this.props);
     if (this.props.loading) {
       return (
-        <div className='finances-stacked-area-chart'>{'Loading'}</div>
+        <div className='finances-net-income-chart'>{'Loading'}</div>
       );
     };
 
     return (
-      <div className='finances-stacked-area-chart'>
-        <StackedAreaChart
-          selector={'finances-stacked'}
+      <div className='finances-net-income-chart'>
+        <LineChart
+          selector={'finances-net-income'}
           data={this.props.data}
           {...this._getChartOptions(this.props.data)}
         />
@@ -64,12 +64,12 @@ class FinancesStackedAreaChart extends React.Component {
   }
 }
 
-FinancesStackedAreaChart.displayName = 'FinancesStackedAreaChart';
+FinancesNetIncomeChart.displayName = 'FinancesNetIncomeChart';
 
-FinancesStackedAreaChart.propTypes = {
+FinancesNetIncomeChart.propTypes = {
   data: React.PropTypes.array,
   error: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.bool]),
   loading: React.PropTypes.bool
 };
 
-module.exports = FinancesStackedAreaChart;
+module.exports = FinancesNetIncomeChart;

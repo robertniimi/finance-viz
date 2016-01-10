@@ -17,6 +17,14 @@ module.exports = {
     return request.get(`/mint/categories`);
   },
 
+  fetchNetIncome: (dateRange) => {
+    return request.get(`/mint/chart/netIncome`);
+  },
+
+  fetchNetWorth: (dateRange) => {
+    return request.get(`/mint/chart/netWorth`);
+  },
+
   // query = (string)
   getAutosuggestFilters: (strQuery) => {
     let query = { query: strQuery };

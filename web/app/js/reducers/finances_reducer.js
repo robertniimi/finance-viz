@@ -28,6 +28,18 @@ const initialState = {
     loading: false,
     error: false
   },
+  lineChart: {
+    netIncome: {
+      data: [],
+      loading: false,
+      error: false
+    },
+    netWorth: {
+      data: [],
+      loading: false,
+      error: false
+    }
+  },
   categories: [],
   selectedDateRange: DEFAULT_DATE_RANGE,
   dateRange: {
@@ -55,25 +67,8 @@ function financesReducer(state = initialState, action) {
         }
       });
 
-    case ActionTypes.FETCH_TRANSACTIONS:
-      // console.log('[finances_reducer] @FETCH_TRANSACTIONS');
-      FinancesDao.fetchTransactions(action.query)
-        .then((result) => {
-          action.success(result);
-        })
-        .catch((error) => {
-          action.failure(error);
-        });
-
-      return update(state, {
-        transactions: {
-          loading: { $set: true }
-        }
-      });
-
     case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
       // console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.transactions: ', action.transactions);
-
       let transactions = _.find(action.result.set, (setObj) => {
         return setObj.id === 'transactions';
       }).data;
@@ -91,22 +86,6 @@ function financesReducer(state = initialState, action) {
         transactions: {
           loading: { $set: false },
           error: { $set: action.error }
-        }
-      });
-
-    case ActionTypes.FETCH_CHART_TRANSACTIONS:
-      // console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS');
-      FinancesDao.fetchChartTransactions(action.query)
-        .then((transactions) => {
-          action.success(transactions);
-        })
-        .catch((error) => {
-          action.failure(error);
-        });
-
-      return update(state, {
-        stackedAreaChart: {
-          loading: { $set: true }
         }
       });
 
@@ -128,25 +107,29 @@ function financesReducer(state = initialState, action) {
         }
       });
 
-    case ActionTypes.FETCH_CATEGORIES:
-      FinancesDao.fetchCategories()
-        .then((result) => {
-          console.log('[finances_reducer] @FETCH_CATEGORIES -> result: ', result);
-          action.success(result);
-        })
-        .catch((error) => {
-          action.failure(error);
-        });
-      return state;
-
     case ActionTypes.FETCH_CATEGORIES_SUCCESS:
       // console.log('[finances_reducer] @FETCH_CATEGORIES_SUCCESS -> action.result: ', action.result);
       let categories = _.find(action.result.set, (setObj) => {
         return setObj.id === 'categories';
       }).data;
+
       return update(state, {
         categories: { $set: categories }
       });
+
+    case ActionTypes.FETCH_NET_INCOME_SUCCESS:
+      console.log('[finances_reducer] @FETCH_NET_INCOME_SUCCESS -> action.result: ', action.result);
+      return state;
+
+    case ActionTypes.FETCH_NET_WORTH_SUCCESS:
+      console.log('[finances_reducer] @FETCH_NET_WORTH_SUCCESS -> action.result: ', action.result);
+      return state;
+
+    case ActionTypes.FETCH_NET_WORTH_ERROR:
+      return state;
+
+    case ActionTypes.FETCH_NET_INCOME_ERROR:
+      return state;
 
     case ActionTypes.FETCH_CATEGORIES_ERROR:
       return state;

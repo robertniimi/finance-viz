@@ -1,3 +1,4 @@
+
 'use strict';
 
 var _ = require('lodash');
@@ -74,6 +75,21 @@ module.exports = (app, mint) => {
     res.send(transactions);
   });
 
+  app.get('/mint/chart/netIncome', (req, res) => {
+    req.body.dateRange
+    mint.getTrendData(req.body.dateRange, 'NI')
+      .then((data) => {
+        res.send(data);
+      });
+  });
+
+  app.get('/mint/chart/netWorth', (req, res) => {
+    mint.getTrendData(req.body.dateRange, 'NW')
+      .then((data) => {
+        res.send(data);
+      });
+  });
+
   app.get('/mint/refreshAccounts', (req, res) => {
     console.log('[mintApi] refreshing accounts');
     mint.refreshAccounts();
@@ -89,6 +105,11 @@ module.exports = (app, mint) => {
       });
   });
 
+  app.get('/mint/trendData', (req, res) => {
+    console.log('[mintApi] req.query: ', req.query);
+    req.body
+    mint.getTrendData
+  })
 
   app.post('/mint/transactions', (req, res) => {
     console.log('[mintApi] @POST: transaction -> req.body.transaction: ', req.body.transaction);

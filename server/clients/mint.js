@@ -15,6 +15,7 @@ var GenerateTransactionJson = require('../utils/generate_transaction_json');
 // Consts
 var URLS = require('../constants').URLS;
 var HEADERS = require('../constants').HEADERS;
+var DATE_RANGES = require('../constants').dateRanges;
 
 /**
 N
@@ -104,50 +105,6 @@ class Mint {
           form: stringifiedData
         })
       });
-
-    // return this.requester.post(URLS.updateTransaction, {
-    //   task,
-    //   txnId:
-    //   date:
-    //   merchant:
-    //   category:
-    //   catId:
-    //   categoryTypeFilter:
-    //   amount:
-    //   token: this.token
-    // });
-
-
-    // task=simpleEdit&
-    // txnId=1002764113%3A0&
-    // date=01%2F04%2F2016&
-    // merchant=Roses&
-    // category=Alcohol%20%26%20Bars&
-    // catId=708&
-    // categoryTypeFilter=null&
-    // amount=&
-    // token=8141308IDwcqBLfwIrwI9EqMI1bZdR0kwbjeTLP1jswONg
-
-    // task=simpleEdit&
-    // txnId=1003200585:0&
-    // date=01%2F06%2F2016&
-    // merchant=Hummus%20Med&
-    // category=Restaurants&
-    // catId=707&
-    // categoryTypeFilter=null&
-    // amount=&
-    // token=8141308IDXVQEN7KDrF0746ZJqR0OfOVbKi3C64GWxd03g
-
-    // REQUEST BODY
-    // task:simpleEdit
-    // txnId:983040907:0
-    // date:11/15/2015
-    // merchant:Brewcade
-    // category:Alcohol & Bars -> getJsonData
-    // catId:708 -> getJsonData
-    // categoryTypeFilter:null
-    // amount:
-    // token:8141308IDwnDov0TvtzO6iUFDmuRm4Dncu3UbDSrfmLl0uw
   }
 
 
@@ -273,33 +230,44 @@ class Mint {
       rnd: (new Date()).valueOf()
     }, queryObj);
 
-    console.log('[mint] @listTransaction -> query: ', query);
-
-    // accountId:1607687
-    // filterType:
-    // queryNew:
-    // offset:0
-    // comparableType:8
-    // acctChanged:T
-    // rnd:627
-    // typeSort:8
-
-    // accountId:1607687
-    // query:category: Uncategorized
-    // offset:0
-    // comparableType:8
-    // acctChanged:T
-    // rnd:1449291130044
-
-    // if (queryObj) {
-    //   query = {
-
-    //   }
-    // };
-
     return this.login()
       .then(() => {
         return this.requester.get(`${ URLS.listTransaction }?${ querystring.stringify(query) }`);
+      });
+
+  }
+
+  getTrendData(dateRange, reportType) {
+    let data = {
+      searchQuery: {
+        'reportType': reportType,
+        'chartType': 'toggleable',
+        'comparison': '',
+        'matchAny': true,
+        'terms': [],
+        'accounts': {
+          'groupIds': ['AA'],
+          'accountIds': []
+        },
+        'dateRange': {
+          'period': {
+            'label': 'Last 3 months',
+            'value': 'L3M'
+          },
+          'start': '11/1/2015',
+          'end': '1/9/2016'
+        },
+        'drilldown': null,
+        'categoryTypeFilter': 'all'
+      },
+      token: this.token
+    };
+
+    return this.login()
+      .then(() => {
+        return this.requester.post(URLS.trendData, {
+          form: querystring.stringify(data)
+        })
       });
 
   }
