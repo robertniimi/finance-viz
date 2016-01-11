@@ -1,6 +1,16 @@
 import request from 'ajax_utils';
 import querystring from 'querystring';
 
+// Arg Defs
+// ========
+// dateRange = {
+//   label: (string)
+//   value: (string)
+//   start: (string)
+//   end: (string)
+// }
+
+
 module.exports = {
   // queryObj
   fetchTransactions: (queryObj) => {
@@ -8,9 +18,13 @@ module.exports = {
     return request.get(`/mint/transactions?${ query }`);
   },
   // queryObj
-  fetchChartTransactions: (queryObj) => {
-    let query = querystring.stringify(queryObj);
-    return request.get(`/mint/chart/transactions?${ query }`);
+  fetchChartTransactions: (dateRange) => {
+    let query = {
+      start: dateRange.start,
+      end: dateRange.end
+    };
+
+    return request.get(`/mint/chart/transactions?${ querystring.stringify(query) }`);
   },
 
   fetchCategories: () => {
@@ -18,11 +32,13 @@ module.exports = {
   },
 
   fetchNetIncome: (dateRange) => {
-    return request.get(`/mint/chart/netIncome`);
+    let query = dateRange;
+    return request.get(`/mint/chart/netIncome?${ querystring.stringify(query) }`);
   },
 
   fetchNetWorth: (dateRange) => {
-    return request.get(`/mint/chart/netWorth`);
+    let query = dateRange;
+    return request.get(`/mint/chart/netWorth?${ querystring.stringify(query) }`);
   },
 
   // query = (string)

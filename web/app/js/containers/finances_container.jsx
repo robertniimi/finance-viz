@@ -24,11 +24,11 @@ class FinancesApp extends React.Component {
   }
 
   _fetchNetIncome(dateRange) {
-    this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));
+    this.props.dispatch(FinancesActions.fetchNetIncome(dateRange));
   }
 
   _fetchNetWorth(dateRange) {
-    this.props.dispatch(FinancesActions.fetchChartTransactions(dateRange));
+    this.props.dispatch(FinancesActions.fetchNetWorth(dateRange));
   }
 
   _fetchCategories() {
@@ -36,22 +36,26 @@ class FinancesApp extends React.Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    if (nextProps.finances.selectedDateRange !== this.props.finances.selectedDateRange) {
-      this._fetchChartTransactions(nextProps.finances.dateRange);
-      this._fetchNetIncome(nextProps.finances.dateRange);
-      this._fetchNetWorth(nextProps.finances.dateRange);
+    if (nextProps.finances.dateRange.value !== this.props.finances.dateRange.value) {
+      let { dateRange } = nextProps.finances;
+      this._fetchChartTransactions(dateRange);
+      this._fetchNetIncome(dateRange);
+      this._fetchNetWorth(dateRange);
     };
 
     if (nextProps.finances.transactions.query !== this.props.finances.transactions.query) {
-      this._fetchTransactions(nextProps.finances.transactions.query);
+      let { query } = nextProps.finances.transactions;
+      this._fetchTransactions(query);
     };
   }
 
   componentDidMount() {
-    let {finances} = this.props;
+    let { finances: { transactions, dateRange } } = this.props;
     this._fetchCategories();
-    this._fetchChartTransactions(finances.dateRange);
-    this._fetchTransactions(finances.transactions.query);
+    this._fetchNetIncome(dateRange);
+    this._fetchNetWorth(dateRange);
+    this._fetchChartTransactions(dateRange);
+    this._fetchTransactions(transactions.query);
   }
 
   render() {

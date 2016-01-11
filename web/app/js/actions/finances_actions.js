@@ -137,7 +137,7 @@ let thunks = {
   },
   fetchNetIncome: (dateRange) => {
     return (dispatch) => {
-      return FinancesDao.fetchNetIncome(query)
+      return FinancesDao.fetchNetIncome(dateRange)
         .then((result) => {
           dispatch(actions.fetchNetIncomeSuccess(result));
         })

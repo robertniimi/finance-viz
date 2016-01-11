@@ -16,7 +16,6 @@ class FinancesStackedAreaChart extends React.Component {
   }
 
   _getChartOptions(data) {
-    console.log('[finances_stacked_area_chart] data: ', data);
     let tickValues = [];
     if (data && !_.isEmpty(data)) {
       tickValues = _.map(data[0].values, (valueObj, idx) => {
@@ -33,7 +32,7 @@ class FinancesStackedAreaChart extends React.Component {
       xAxis: {
         tickValues: tickValues,
         tickFormat: function(d) {
-          return d3.time.format('%b %Y')(new Date(d));
+          return d3.time.format('%b %y')(new Date(d));
         }
       },
       yAxis: {
@@ -45,7 +44,7 @@ class FinancesStackedAreaChart extends React.Component {
   }
 
   render() {
-    console.log('[finances_stacked_area_chart] this.props: ', this.props);
+    // console.log('[finances_stacked_area_chart] this.props: ', this.props);
     if (this.props.loading) {
       return (
         <div className='finances-stacked-area-chart'>{'Loading'}</div>

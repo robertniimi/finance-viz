@@ -76,16 +76,18 @@ module.exports = (app, mint) => {
   });
 
   app.get('/mint/chart/netIncome', (req, res) => {
-    req.body.dateRange
-    mint.getTrendData(req.body.dateRange, 'NI')
+    mint.getTrendData(req.query, 'NI')
       .then((data) => {
+        console.log('[mintApi] @netIncome -> data: ', data);
         res.send(data);
       });
   });
 
   app.get('/mint/chart/netWorth', (req, res) => {
-    mint.getTrendData(req.body.dateRange, 'NW')
+
+    mint.getTrendData(req.query, 'NW')
       .then((data) => {
+        console.log('[mintApi] @netWorth -> data: ', data);
         res.send(data);
       });
   });

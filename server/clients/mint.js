@@ -123,7 +123,6 @@ class Mint {
   //   rnd:1449293714918
   // }
   getJsonData(queryObj) {
-    console.log('[mint] getJsonData');
     let query = _.assign(queryObj);
 
     return this.login()
@@ -144,9 +143,6 @@ class Mint {
       task: 'transactions,txnfilters',
       rnd: (new Date()).valueOf()
     }, queryObj);
-
-    console.log('[mint] @getJsonTransactions -> query: ', query);
-    console.log('[mint] @getJsonTransactions -> querystring.stringify(query): ', querystring.stringify(query));
 
     return this.login()
       .then(() => {
@@ -237,10 +233,20 @@ class Mint {
 
   }
 
-  getTrendData(dateRange, reportType) {
+  getTrendData(query, reportType) {
+    let dateFormat = 'M/M/YYYY';
+    let dateRange = {
+      period: {
+        label: query.label,
+        value: query.value
+      },
+      start: moment(new Date(query.start)).format(dateFormat),
+      end: moment(new Date(query.end)).format(dateFormat)
+    };
+
     let data = {
-      searchQuery: {
-        'reportType': reportType,
+      searchQuery: JSON.stringify({
+        reportType,
         'chartType': 'toggleable',
         'comparison': '',
         'matchAny': true,
@@ -249,17 +255,10 @@ class Mint {
           'groupIds': ['AA'],
           'accountIds': []
         },
-        'dateRange': {
-          'period': {
-            'label': 'Last 3 months',
-            'value': 'L3M'
-          },
-          'start': '11/1/2015',
-          'end': '1/9/2016'
-        },
+        dateRange,
         'drilldown': null,
         'categoryTypeFilter': 'all'
-      },
+      }),
       token: this.token
     };
 
