@@ -42,7 +42,7 @@ class FinancesStackedAreaChart extends React.Component {
 
     return {
       chart: {
-        height: 500,
+        height: 300,
         showLegend: false,
         useInteractiveGuideline: true
       },

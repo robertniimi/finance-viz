@@ -15,6 +15,12 @@ let findDateRange = (rangeValue) => {
   return _.find(DateRanges, (range) => range.value === rangeValue);
 };
 
+const defaultChartProps = {
+  data: [],
+  loading: false,
+  error: false
+}
+
 const initialState = {
   transactions: {
     data: [],
@@ -22,17 +28,10 @@ const initialState = {
     error: false,
     query: 'category: Uncategorized'
   },
-  stackedAreaChart: {
-    data: [],
-    loading: false,
-    error: false
-  },
+  stackedAreaChart: _.clone(defaultChartProps),
   netAssetsChart: {
-    bankAssets: {
-      data: [],
-      loading: false,
-      error: false
-    }
+    bankAssets: _.clone(defaultChartProps),
+    investmentAssets: _.clone(defaultChartProps)
   },
   lineChart: {
     netIncome: {
@@ -131,14 +130,24 @@ function financesReducer(state = initialState, action) {
       return update(state, {
         netAssetsChart: {
           bankAssets: {
-            data: { $set: action.result.trendList }
+            data: { $set: action.result.bankAssets.trendList }
+          },
+          investmentAssets: {
+            data: { $set: action.result.investmentAssets.trendList }
           }
         }
       });
 
+    case ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS:
+      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_SUCCESS -> action.result: ', action.result);
+      return state;
+
+    case ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR:
+      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_ERROR -> action.error: ', action.error);
+      return state;
+
     case ActionTypes.FETCH_BANK_ASSETS_ERROR:
       console.log('[finances_reducer] @FETCH_BANK_ASSETS_ERROR -> action.error: ', action.error);
-
       return state;
 
     case ActionTypes.FETCH_NET_WORTH_ERROR:
@@ -150,13 +159,6 @@ function financesReducer(state = initialState, action) {
     case ActionTypes.FETCH_CATEGORIES_ERROR:
       return state;
 
-    case ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS:
-      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_SUCCESS -> action.result: ', action.result);
-      return state;
-
-    case ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR:
-      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_ERROR -> action.error: ', action.error);
-      return state;
 
     default:
       return state;

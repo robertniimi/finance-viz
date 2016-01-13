@@ -46,7 +46,11 @@ module.exports = {
     return request.get(`/mint/chart/bankAssets?${ querystring.stringify(query) }`);
   },
 
-  // query = (string)
+  fetchInvestmentAssets: (dateRange) => {
+    let query = dateRange;
+    return request.get(`/mint/chart/investmentAssets?${ querystring.stringify(query) }`);
+  },
+
   getAutosuggestFilters: (strQuery) => {
     let query = { query: strQuery };
     return request.get(`/mint/autosuggestFilter?${ querystring.stringify(query) }`);

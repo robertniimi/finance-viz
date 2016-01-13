@@ -16,34 +16,42 @@ class FinancesNetAssetsChart extends React.Component {
     super(props);
   }
 
-  _formatData(data) {
+  _formatData(data, tickValues) {
+    let { bankAssets, investmentAssets } = data;
+    let seriesIndex = 0;
     return _.map(data, (accountObj, key) => {
-      console.log('[finances_net_assets_chart] accountObj: ', accountObj);
-      return {
+      let series = {
         key,
-        values: _.map(accountObj.data, (dataObj, idx) => {
-          return _.assign({}, dataObj, {
-            x: moment(new Date(dataObj.date)).startOf('month').toISOString(),
-            y: dataObj.value
+        seriesIndex: seriesIndex,
+        values: _.map(tickValues, (tickValue, idx) => {
+          let dataPoint = _.find(accountObj.data, (dataObj) => {
+            return dataObj.startDate === tickValue;
           });
+
+          return {
+            x: tickValue,
+            y: (dataPoint && dataPoint.value) ? dataPoint.value : 0
+          };
         })
       }
+      seriesIndex++;
+      return series
     });
   }
 
-  _getChartOptions(data) {
-    let tickValues = [];
-    if (data && !_.isEmpty(data)) {
-      tickValues = _.map(data[0].values, (valueObj, idx) => {
-        return new Date(valueObj.x);
-      });
-    };
+  _getTickValues(data) {
+    let startDates = _.map(data, (dataObj, idx) => {
+      return (new Date(dataObj.startDate)).valueOf();
+    });
+    console.log('[finances_net_assets_chart] startDates: ', startDates);
 
-    console.log('[finances_net_assets_chart] tickValues: ', tickValues);
+    return _.uniq(startDates).sort();
+  }
 
+  _getChartOptions(data, tickValues) {
     return {
       chart: {
-        height: 500,
+        height: 300,
         showLegend: false,
         useInteractiveGuideline: true
       },
@@ -63,9 +71,9 @@ class FinancesNetAssetsChart extends React.Component {
 
   render() {
     console.log('[finances_net_assets_chart] this.props: ', this.props);
-    let formattedData = this._formatData({ bankAssets: this.props.bankAssets });
-    console.log('[finances_net_assets_chart] formattedData: ', formattedData);
-
+    let { bankAssets, investmentAssets } = this.props;
+    let tickValues = this._getTickValues(bankAssets.data.concat(investmentAssets.data));
+    let formattedData = this._formatData({ bankAssets, investmentAssets }, tickValues);
     let wrapperClass = 'finances-net-assets-chart';
 
     if (this.props.loading) {
@@ -79,7 +87,7 @@ class FinancesNetAssetsChart extends React.Component {
         <StackedAreaChart
           selector={'finances-net-assets'}
           data={formattedData}
-          {...this._getChartOptions(formattedData)}
+          {...this._getChartOptions(formattedData, tickValues)}
         />
       </div>
     );

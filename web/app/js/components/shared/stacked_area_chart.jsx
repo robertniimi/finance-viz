@@ -78,7 +78,7 @@ class StackedAreaChart extends React.Component {
   }
 
   render() {
-    console.log('[stacked_area_chart] this.props.data: ', this.props.data);
+    // console.log('[stacked_area_chart] this.props.data: ', this.props.data);
     if (!this.props.data || _.isEmpty(this.props.data)) {
       return (
         <div className={classnames(this.props.selector, 'no-data')}>{'No Data'}</div>

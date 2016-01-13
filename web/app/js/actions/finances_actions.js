@@ -171,7 +171,12 @@ let thunks = {
   },
   fetchBankAssets: (dateRange) => {
     return (dispatch) => {
-      return FinancesDao.fetchBankAssets(dateRange)
+      let props = {
+        bankAssets: FinancesDao.fetchBankAssets(dateRange),
+        investmentAssets: FinancesDao.fetchInvestmentAssets(dateRange)
+      };
+
+      return Promise.props(props)
         .then((result) => {
           dispatch(actions.fetchBankAssetsSuccess(result));
         })
