@@ -51,6 +51,12 @@ class Finances extends React.Component {
           </div>
         </header>
         <div className='content-wrapper'>
+          <button
+            className={classnames('btn', 'waves-effect', 'waves-light')}
+            onClick={this._handleRefreshData.bind(this)}
+          >
+            {'Update Transactions'}
+          </button>
           <Select
             className='finances-date-range-select'
             name='finances-date-range-select'
@@ -58,12 +64,6 @@ class Finances extends React.Component {
             onChange={this._onChangeDate.bind(this)}
             value={this.props.dateRange.value}
           />
-          <button
-            className={classnames('btn', 'waves-effect', 'waves-light')}
-            onClick={this._handleRefreshData.bind(this)}
-          >
-            {'Update Transactions'}
-          </button>
           <StackedAreaChart {...this.props.stackedAreaChart} />
           <NetAssetsChart {...this.props.netAssetsChart} />
           <TransactionsTable
