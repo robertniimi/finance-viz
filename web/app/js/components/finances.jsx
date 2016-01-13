@@ -13,6 +13,7 @@ import Select from 'react-select';
 import TransactionsTable from './finances_transactions_table';
 import StackedAreaChart from './finances_stacked_area_chart';
 import NetIncomChart from './finances_net_income_chart';
+import NetAssetsChart from './finances_net_assets_chart';
 
 // Constants
 import DateRanges from 'date_ranges';
@@ -64,6 +65,7 @@ class Finances extends React.Component {
             {'Update Transactions'}
           </button>
           <StackedAreaChart {...this.props.stackedAreaChart} />
+          <NetAssetsChart {...this.props.netAssetsChart} />
           <TransactionsTable
             categories={this.props.categories}
             onChangeTableFilter={this.props.onChangeTableFilter}
@@ -84,7 +86,8 @@ Finances.propTypes = {
   onChangeTableFilter: React.PropTypes.func,
   onChangeTransactionCategory: React.PropTypes.func,
   stackedAreaChart: React.PropTypes.object,
-  transactions: React.PropTypes.object
+  transactions: React.PropTypes.object,
+  bankAssets: React.PropTypes.array
 };
 
 module.exports = Finances;

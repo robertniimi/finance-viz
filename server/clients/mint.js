@@ -233,7 +233,57 @@ class Mint {
 
   }
 
-  getTrendData(query, reportType) {
+  getTrendData(query, reportType, groupIds, accountCount) {
+
+  //   {
+  //     "reportType":"AT",
+  //     "chartType":"H",
+  //     "comparison":"",
+  //     "matchAny":true,
+  //     "terms":[],
+  //     "accounts":{
+  //       "groupIds":["AI"],
+  //       "accountIds":[8706238],
+  //       "count":1
+  //     },
+  //     "dateRange":{
+  //       "period":{
+  //         "label":"Last 3 months",
+  //         "value":"L3M"
+  //       },
+  //       "start":"10/1/2015",
+  //       "end":"12/29/2015"
+  //     },
+  //     "drilldown":null,
+  //     "categoryTypeFilter":"all"
+  //   }
+
+  //   // All Accounts
+  //   searchQuery:{
+  //     "reportType":"AT",
+  //     "chartType":"H",
+  //     "comparison":"",
+  //     "matchAny":true,
+  //     "terms":[],
+  //     "accounts":{
+  //       "groupIds":["CS"],
+  //       "accountIds":[],
+  //       "count":2
+  //     },
+  //     "dateRange":{
+  //       "period":{
+  //         "label":"Last 3 months",
+  //         "value":"L3M"
+  //       },
+  //       "start":"10/1/2015",
+  //       "end":"12/29/2015"
+  //     },
+  //   "drilldown":null,
+  //   "categoryTypeFilter":"all"
+  // }
+
+  //   token:8141308ID1hg2F8jGMmvc8pFFkbEdxVlECxWPcoh56Aag
+
     let dateFormat = 'M/M/YYYY';
     let dateRange = {
       period: {
@@ -252,8 +302,9 @@ class Mint {
         'matchAny': true,
         'terms': [],
         'accounts': {
-          'groupIds': ['AA'],
-          'accountIds': []
+          'groupIds': groupIds,
+          'accountIds': [],
+          'count': accountCount || null
         },
         dateRange,
         'drilldown': null,

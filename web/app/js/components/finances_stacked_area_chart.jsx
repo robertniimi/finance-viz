@@ -15,11 +15,28 @@ class FinancesStackedAreaChart extends React.Component {
     super(props);
   }
 
+  _formatData(data) {
+    if (!data || _.isEmpty(data)) {
+      return;
+    }
+
+    return _.map(data, (dataObj, idx) => {
+      return _.assign({}, dataObj, {
+        values: _.map(dataObj.values, (valueObj, idx) => {
+          return _.assign({}, valueObj, {
+            x: valueObj.date,
+            y: valueObj.amount
+          });
+        })
+      });
+    });
+  }
+
   _getChartOptions(data) {
     let tickValues = [];
     if (data && !_.isEmpty(data)) {
       tickValues = _.map(data[0].values, (valueObj, idx) => {
-        return new Date(valueObj.date);
+        return new Date(valueObj.x);
       });
     };
 
@@ -51,12 +68,15 @@ class FinancesStackedAreaChart extends React.Component {
       );
     };
 
+    let formattedData = this._formatData(this.props.data);
+    console.log('[finances_stacked_area_chart] formattedData: ', formattedData);
+
     return (
       <div className='finances-stacked-area-chart'>
         <StackedAreaChart
           selector={'finances-stacked'}
-          data={this.props.data}
-          {...this._getChartOptions(this.props.data)}
+          data={formattedData}
+          {...this._getChartOptions(formattedData)}
         />
       </div>
     );

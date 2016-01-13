@@ -31,6 +31,10 @@ class FinancesApp extends React.Component {
     this.props.dispatch(FinancesActions.fetchNetWorth(dateRange));
   }
 
+  _fetchBankAssets(dateRange) {
+    this.props.dispatch(FinancesActions.fetchBankAssets(dateRange));
+  }
+
   _fetchCategories() {
     this.props.dispatch(FinancesActions.fetchCategories());
   }
@@ -41,6 +45,7 @@ class FinancesApp extends React.Component {
       this._fetchChartTransactions(dateRange);
       this._fetchNetIncome(dateRange);
       this._fetchNetWorth(dateRange);
+      this._fetchBankAssets(dateRange);
     };
 
     if (nextProps.finances.transactions.query !== this.props.finances.transactions.query) {
@@ -54,6 +59,7 @@ class FinancesApp extends React.Component {
     this._fetchCategories();
     this._fetchNetIncome(dateRange);
     this._fetchNetWorth(dateRange);
+    this._fetchBankAssets(dateRange);
     this._fetchChartTransactions(dateRange);
     this._fetchTransactions(transactions.query);
   }
@@ -90,7 +96,8 @@ module.exports = connect((state) => {
       selectedDateRange: state.selectedDateRange,
       dateRange: state.dateRange,
       stackedAreaChart: state.stackedAreaChart,
-      transactions: state.transactions
+      transactions: state.transactions,
+      netAssetsChart: state.netAssetsChart
     }
   }
 })(FinancesApp);

@@ -24,17 +24,17 @@ let dateRanges = [
   }, {
     label: 'Last 3 months',
     value: 'L3M',
-    start: moment().subtract(3, 'months').startOf('month'),
+    start: moment().subtract(2, 'months').startOf('month'),
     end: moment().endOf('day')
   }, {
     label: 'Last 6 months',
     value: 'L6M',
-    start: moment().subtract(6, 'months').startOf('month'),
+    start: moment().subtract(5, 'months').startOf('month'),
     end: moment().endOf('day')
   }, {
     label: 'Last 12 months',
     value: 'L12M',
-    start: moment().subtract(12, 'months').startOf('month'),
+    start: moment().subtract(11, 'months').startOf('month'),
     end: moment().endOf('day')
   }, {
     label: 'This year',

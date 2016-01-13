@@ -27,6 +27,13 @@ const initialState = {
     loading: false,
     error: false
   },
+  netAssetsChart: {
+    bankAssets: {
+      data: [],
+      loading: false,
+      error: false
+    }
+  },
   lineChart: {
     netIncome: {
       data: [],
@@ -46,7 +53,7 @@ const initialState = {
 
 
 function financesReducer(state = initialState, action) {
-  console.log('[finances_reducer] @financesReducer -> action: ', action);
+  // console.log('[finances_reducer] @financesReducer -> action: ', action);
   switch (action.type) {
     case ActionTypes.CHANGE_DATE_RANGE:
       let dateRange = findDateRange(action.selectedDateRange);
@@ -84,10 +91,10 @@ function financesReducer(state = initialState, action) {
       });
 
     case ActionTypes.FETCH_CHART_TRANSACTIONS_SUCCESS:
-      // console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS_SUCCESS -> action.transactions: ', action.transactions);
+      console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS_SUCCESS -> action.result: ', action.result);
       return update(state, {
         stackedAreaChart: {
-          data: { $set: action.transactions },
+          data: { $set: action.result },
           loading: { $set: false }
         }
       });
@@ -117,6 +124,21 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_NET_WORTH_SUCCESS:
       console.log('[finances_reducer] @FETCH_NET_WORTH_SUCCESS -> action.result: ', action.result);
+      return state;
+
+    case ActionTypes.FETCH_BANK_ASSETS_SUCCESS:
+      console.log('[finances_reducer] @FETCH_BANK_ASSETS_SUCCESS -> action.result: ', action.result);
+      return update(state, {
+        netAssetsChart: {
+          bankAssets: {
+            data: { $set: action.result.trendList }
+          }
+        }
+      });
+
+    case ActionTypes.FETCH_BANK_ASSETS_ERROR:
+      console.log('[finances_reducer] @FETCH_BANK_ASSETS_ERROR -> action.error: ', action.error);
+
       return state;
 
     case ActionTypes.FETCH_NET_WORTH_ERROR:

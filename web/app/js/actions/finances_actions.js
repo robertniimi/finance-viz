@@ -15,10 +15,10 @@ let actions = {
       error
     };
   },
-  fetchChartTransactionsSuccess: (transactions) => {
+  fetchChartTransactionsSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_CHART_TRANSACTIONS_SUCCESS,
-      transactions
+      result
     };
   },
   fetchChartTransactionsError: (error) => {
@@ -84,6 +84,18 @@ let actions = {
   changeTransactionCategoryError: (error) => {
     return {
       type: ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR,
+      error
+    }
+  },
+  fetchBankAssetsSuccess: (result) => {
+    return {
+      type: ActionTypes.FETCH_BANK_ASSETS_SUCCESS,
+      result
+    }
+  },
+  fetchBankAssetsError: (error) => {
+    return {
+      type: ActionTypes.FETCH_BANK_ASSETS_ERROR,
       error
     }
   },
@@ -154,6 +166,17 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchNetWorthError(err));
+        })
+    };
+  },
+  fetchBankAssets: (dateRange) => {
+    return (dispatch) => {
+      return FinancesDao.fetchBankAssets(dateRange)
+        .then((result) => {
+          dispatch(actions.fetchBankAssetsSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchBankAssetsError(err));
         })
     };
   }

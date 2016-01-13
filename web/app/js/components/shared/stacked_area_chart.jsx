@@ -29,8 +29,8 @@ class StackedAreaChart extends React.Component {
     nv.addGraph({
       generate: () => {
         this.chart
-          .x(function(d) { return new Date(d.date); })
-          .y(function(d) { return d.amount; });
+          .x(function(d) { return new Date(d.x); })
+          .y(function(d) { return d.y; });
 
         let interpolation = d3.svg.line()
           .interpolate('cardinal')
@@ -78,6 +78,7 @@ class StackedAreaChart extends React.Component {
   }
 
   render() {
+    console.log('[stacked_area_chart] this.props.data: ', this.props.data);
     if (!this.props.data || _.isEmpty(this.props.data)) {
       return (
         <div className={classnames(this.props.selector, 'no-data')}>{'No Data'}</div>

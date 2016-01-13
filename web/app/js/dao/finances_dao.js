@@ -41,6 +41,11 @@ module.exports = {
     return request.get(`/mint/chart/netWorth?${ querystring.stringify(query) }`);
   },
 
+  fetchBankAssets: (dateRange) => {
+    let query = dateRange;
+    return request.get(`/mint/chart/bankAssets?${ querystring.stringify(query) }`);
+  },
+
   // query = (string)
   getAutosuggestFilters: (strQuery) => {
     let query = { query: strQuery };
