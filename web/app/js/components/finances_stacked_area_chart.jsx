@@ -49,7 +49,7 @@ class FinancesStackedAreaChart extends React.Component {
       xAxis: {
         tickValues: tickValues,
         tickFormat: function(d) {
-          return d3.time.format('%b %y')(new Date(d));
+          return d3.time.format('%b \'%y')(new Date(d));
         }
       },
       yAxis: {
