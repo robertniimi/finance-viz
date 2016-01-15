@@ -35,11 +35,9 @@ class Finances extends React.Component {
   }
 
   _handleRefreshData() {
-    console.log('[finances] TODO: REFRESH DATA');
   }
 
   render() {
-    console.log('[finances] this.props: ', this.props);
 
     return (
       <div className='finances-component'>
@@ -64,6 +62,7 @@ class Finances extends React.Component {
             onChange={this._onChangeDate.bind(this)}
             value={this.props.dateRange.value}
           />
+          <NetIncomChart {...this.props.netIncomeChart} />
           <StackedAreaChart {...this.props.stackedAreaChart} />
           <NetAssetsChart {...this.props.netAssetsChart} />
           <TransactionsTable

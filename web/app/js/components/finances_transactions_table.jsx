@@ -22,7 +22,7 @@ class FinancesTransactionsTable extends React.Component {
   _handleTransactionCategoryChange(txnId) {
     return (categoryId) => {
       let { data, categories } = this.props;
-      console.log('[finances] @_handleInputChange -> categoryId: ', categoryId);
+      // console.log('[finances] @_handleInputChange -> categoryId: ', categoryId);
       let transaction = _.find(data, (txn) => txn.id === txnId);
 
       if (transaction.categoryId === categoryId) {
@@ -42,8 +42,8 @@ class FinancesTransactionsTable extends React.Component {
         return category.id === categoryId;
       });
 
-      console.log('[finances_transactions_table] transaction: ', transaction);
-      console.log('[finances_transactions_table] category: ', category);
+      // console.log('[finances_transactions_table] transaction: ', transaction);
+      // console.log('[finances_transactions_table] category: ', category);
 
       if (!transaction || !category) {
         throw new Error('[finances_transactions_table] @_handleTransactionCategoryChange: transaction change requires category and transaction');
@@ -54,12 +54,12 @@ class FinancesTransactionsTable extends React.Component {
   }
 
   _handleTableCategoryChange(category) {
-    console.log('[finances_transactions_table] @_handleTableCategoryChange -> category: ', category);
+    // console.log('[finances_transactions_table] @_handleTableCategoryChange -> category: ', category);
     this.props.onChangeTableFilter(category);
   }
 
   render() {
-    console.log('[finances_transactions_table] this.props: ', this.props);
+    // console.log('[finances_transactions_table] this.props: ', this.props);
     if (this.props.loading) {
       return (
         <div>{'Loading'}</div>
@@ -99,7 +99,7 @@ class FinancesTransactionsTable extends React.Component {
       transaction: []
     });
 
-    console.log('[finances_transactions_table] selectOptions: ', selectOptions);
+    // console.log('[finances_transactions_table] selectOptions: ', selectOptions);
 
     let transactionRows = _.map(this.props.data, (transaction) => {
       return (

@@ -29,8 +29,8 @@ class LineChart extends React.Component {
     nv.addGraph({
       generate: () => {
         this.chart
-          .x(function(d) { return new Date(d.date); })
-          .y(function(d) { return d.amount; });
+          .x(function(d) { return new Date(d.x); })
+          .y(function(d) { return d.y; });
 
         let interpolation = d3.svg.line()
           .interpolate('cardinal')
@@ -40,7 +40,7 @@ class LineChart extends React.Component {
           return interpolation(points).substring(1);
         });
 
-        console.log('[stacked_area_chart] this.props.chart: ', this.props.chart);
+        // console.log('[stacked_area_chart] this.props.chart: ', this.props.chart);
         this._addOptions(this.chart, this.props.chart);
         this._addOptions(this.chart.xAxis, this.props.xAxis);
         this._addOptions(this.chart.yAxis, this.props.yAxis);

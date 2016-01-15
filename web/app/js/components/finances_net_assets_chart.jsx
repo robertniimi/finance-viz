@@ -43,7 +43,6 @@ class FinancesNetAssetsChart extends React.Component {
     let startDates = _.map(data, (dataObj, idx) => {
       return (new Date(dataObj.startDate)).valueOf();
     });
-    console.log('[finances_net_assets_chart] startDates: ', startDates);
 
     return _.uniq(startDates).sort();
   }
@@ -51,14 +50,14 @@ class FinancesNetAssetsChart extends React.Component {
   _getChartOptions(data, tickValues) {
     return {
       chart: {
-        height: 300,
+        height: 400,
         showLegend: false,
         useInteractiveGuideline: true
       },
       xAxis: {
         tickValues: tickValues,
         tickFormat: function(d) {
-          return d3.time.format('%b %y')(new Date(d));
+          return d3.time.format('%b \'%y')(new Date(d));
         }
       },
       yAxis: {
@@ -70,7 +69,6 @@ class FinancesNetAssetsChart extends React.Component {
   }
 
   render() {
-    console.log('[finances_net_assets_chart] this.props: ', this.props);
     let { bankAssets, investmentAssets } = this.props;
     let tickValues = this._getTickValues(bankAssets.data.concat(investmentAssets.data));
     let formattedData = this._formatData({ bankAssets, investmentAssets }, tickValues);

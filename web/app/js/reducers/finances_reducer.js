@@ -19,7 +19,7 @@ const defaultChartProps = {
   data: [],
   loading: false,
   error: false
-}
+};
 
 const initialState = {
   transactions: {
@@ -33,22 +33,10 @@ const initialState = {
     bankAssets: _.clone(defaultChartProps),
     investmentAssets: _.clone(defaultChartProps)
   },
-  lineChart: {
-    netIncome: {
-      data: [],
-      loading: false,
-      error: false
-    },
-    netWorth: {
-      data: [],
-      loading: false,
-      error: false
-    }
-  },
+  netIncomeChart: _.assign(_.clone(defaultChartProps), { goal: 2917 }),
   categories: [],
   dateRange: findDateRange(DEFAULT_DATE_RANGE)
 };
-
 
 
 function financesReducer(state = initialState, action) {
@@ -76,6 +64,7 @@ function financesReducer(state = initialState, action) {
       return update(state, {
         transactions: {
           data: { $set: transactions },
+          error: { $set: false },
           loading: { $set: false }
         }
       });
@@ -94,6 +83,7 @@ function financesReducer(state = initialState, action) {
       return update(state, {
         stackedAreaChart: {
           data: { $set: action.result },
+          error: { $set: false },
           loading: { $set: false }
         }
       });
@@ -119,7 +109,15 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_NET_INCOME_SUCCESS:
       console.log('[finances_reducer] @FETCH_NET_INCOME_SUCCESS -> action.result: ', action.result);
-      return state;
+      return update(state, {
+        netIncomeChart: {
+          startDate: { $set: moment(action.result.startDate) },
+          endDate: { $set: moment(action.result.endDate) },
+          data: { $set: action.result.trendList },
+          error: { $set: false },
+          loading: { $set: false }
+        }
+      });
 
     case ActionTypes.FETCH_NET_WORTH_SUCCESS:
       console.log('[finances_reducer] @FETCH_NET_WORTH_SUCCESS -> action.result: ', action.result);

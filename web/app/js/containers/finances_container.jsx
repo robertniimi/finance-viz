@@ -93,11 +93,12 @@ module.exports = connect((state) => {
   return {
     finances: {
       categories: state.categories,
-      selectedDateRange: state.selectedDateRange,
       dateRange: state.dateRange,
+      netAssetsChart: state.netAssetsChart,
+      netIncomeChart: state.netIncomeChart,
+      selectedDateRange: state.selectedDateRange,
       stackedAreaChart: state.stackedAreaChart,
-      transactions: state.transactions,
-      netAssetsChart: state.netAssetsChart
+      transactions: state.transactions
     }
   }
 })(FinancesApp);
