@@ -22,6 +22,7 @@ class FinancesNetIncomeChart extends React.Component {
     let expenseData = [];
 
     let dataObj = _.reduce(data, (result, [incomeObj, expenseObj], idx) => {
+      console.log('[finances_net_income_chart] incomeObj.type: ', incomeObj.type);
       result.incomeData.push({
         x: incomeObj.startDate,
         y: incomeObj.value
@@ -78,7 +79,7 @@ class FinancesNetIncomeChart extends React.Component {
     let tickValues = [];
     if (data && !_.isEmpty(data)) {
       tickValues = _.map(data[0].values, (valueObj, idx) => {
-        console.log('[finances_net_income_chart] new Date(valueObj.x): ', new Date(valueObj.x));
+        return valueObj.x;
         return valueObj.x;
       });
     };
