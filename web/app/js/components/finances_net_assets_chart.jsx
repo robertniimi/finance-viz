@@ -16,27 +16,72 @@ class FinancesNetAssetsChart extends React.Component {
     super(props);
   }
 
-  _formatData(data, tickValues) {
-    let { bankAssets, investmentAssets } = data;
-    let seriesIndex = 0;
-    return _.map(data, (accountObj, key) => {
-      let series = {
-        key,
-        seriesIndex: seriesIndex,
-        values: _.map(tickValues, (tickValue, idx) => {
-          let dataPoint = _.find(accountObj.data, (dataObj) => {
-            return dataObj.startDate === tickValue;
-          });
-
-          return {
-            x: tickValue,
-            y: (dataPoint && dataPoint.value) ? dataPoint.value : 0
-          };
-        })
-      }
-      seriesIndex++;
-      return series
+  _findDataPoint(data, tickValue) {
+    return _.find(data, (dataObj) => {
+      return dataObj.startDate === tickValue;
     });
+
+  }
+
+  _formatData(data, tickValues) {
+    let { bankAssets, investmentAssets, debts } = data;
+
+    // let series =
+    return [{
+      key: 'Bank Assets',
+      seriesIndex: 0,
+      values: _.map(tickValues, (tickValue, idx) => {
+        let bankAssetsDataPoint = this._findDataPoint(bankAssets.data, tickValue);
+        let debtsDataPoint = this._findDataPoint(debts.data, tickValue);
+        let y = 0;
+        if (bankAssetsDataPoint && debtsDataPoint) {
+          y = bankAssetsDataPoint.value - debtsDataPoint.value;
+        } else if (bankAssetsDataPoint) {
+          y = bankAssetsDataPoint.value;
+        } else if (debtsDataPoint) {
+          y = -debtsDataPoint.value;
+        }
+
+        return {
+          x: tickValue,
+          y
+        };
+      })
+    }, {
+      key: 'Investment Assets',
+      seriesIndex: 1,
+      values: _.map(tickValues, (tickValue, idx) => {
+        let dataPoint = this._findDataPoint(investmentAssets.data, tickValue);
+        // _.find(investmentAssets.data, (dataObj) => {
+        //   return dataObj.startDate === tickValue;
+        // });
+
+        return {
+          x: tickValue,
+          y: (dataPoint && dataPoint.value) ? dataPoint.value : 0
+        };
+      })
+    }]
+
+    // let seriesIndex = 0;
+    // return _.map(data, (accountObj, key) => {
+    //   let series = {
+    //     key,
+    //     seriesIndex: seriesIndex,
+    //     values: _.map(tickValues, (tickValue, idx) => {
+    //       let dataPoint = _.find(accountObj.data, (dataObj) => {
+    //         return dataObj.startDate === tickValue;
+    //       });
+
+    //       return {
+    //         x: tickValue,
+    //         y: (dataPoint && dataPoint.value) ? dataPoint.value : 0
+    //       };
+    //     })
+    //   }
+    //   seriesIndex++;
+    //   return series
+    // });
   }
 
   _getTickValues(data) {
@@ -69,9 +114,9 @@ class FinancesNetAssetsChart extends React.Component {
   }
 
   render() {
-    let { bankAssets, investmentAssets } = this.props;
+    const { bankAssets, investmentAssets, debts } = this.props;
     let tickValues = this._getTickValues(bankAssets.data.concat(investmentAssets.data));
-    let formattedData = this._formatData({ bankAssets, investmentAssets }, tickValues);
+    let formattedData = this._formatData({ bankAssets, investmentAssets, debts }, tickValues);
     let wrapperClass = 'finances-net-assets-chart';
 
     if (this.props.loading) {
