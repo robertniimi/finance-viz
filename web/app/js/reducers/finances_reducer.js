@@ -15,10 +15,14 @@ let findDateRange = (rangeValue) => {
   return _.find(DateRanges, (range) => range.value === rangeValue);
 };
 
-const defaultChartProps = {
-  data: [],
-  loading: false,
-  error: false
+const defaultChartProps = (props) => {
+  let defaultProps = {
+    data: [],
+    loading: false,
+    error: false
+  };
+
+  return _.assign({}, defaultProps, props || {});
 };
 
 const defaultSuccess = {
@@ -27,28 +31,24 @@ const defaultSuccess = {
 };
 
 const defaultError = (error) => {
-  loading: false,
-  error
+  return {
+    loading: false,
+    error
+  };
 };
 
 const initialState = {
-  accounts: {},
-  transactions: {
-    data: [],
-    loading: false,
-    error: false,
-    query: 'category: Uncategorized'
-  },
-  stackedAreaChart: _.clone(defaultChartProps),
+  accounts: [],
+  transactions: defaultChartProps({query: 'category: Uncategorized'}),
+  stackedAreaChart: defaultChartProps(),
   netAssetsChart: {
-    bankAssets: _.clone(defaultChartProps),
-    investmentAssets: _.clone(defaultChartProps)
+    bankAssets: defaultChartProps(),
+    investmentAssets: defaultChartProps()
   },
-  netIncomeChart: _.assign(_.clone(defaultChartProps), { goal: 2917 }),
+  netIncomeChart: defaultChartProps({ goal: 2917 }),
   categories: [],
   dateRange: findDateRange(DEFAULT_DATE_RANGE)
 };
-
 
 function financesReducer(state = initialState, action) {
   // console.log('[finances_reducer] @financesReducer -> action: ', action);
