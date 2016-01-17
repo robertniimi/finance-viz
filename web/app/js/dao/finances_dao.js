@@ -51,6 +51,10 @@ module.exports = {
     return request.get(`/mint/chart/investmentAssets?${ querystring.stringify(query) }`);
   },
 
+  fetchAccounts: () => {
+    return request.get('/mint/accounts');
+  },
+
   getAutosuggestFilters: (strQuery) => {
     let query = { query: strQuery };
     return request.get(`/mint/autosuggestFilter?${ querystring.stringify(query) }`);

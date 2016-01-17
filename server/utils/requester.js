@@ -37,12 +37,12 @@ class Requester {
   //   headers:
   //   json:
   // }
-  post(endpoint, options, client) {
+  post(endpoint, options, client, token) {
     return new Promise((resolve, reject) => {
       request(_.assign({
         json: true,
         method: 'POST',
-        headers: HEADERS,
+        headers: (token) ? _.assign({}, HEADERS, {token}) : HEADERS,
         url: endpoint
       }, options), (err, res, body) => {
         if (err) { reject(err); }

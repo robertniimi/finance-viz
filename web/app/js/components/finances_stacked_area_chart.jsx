@@ -61,7 +61,6 @@ class FinancesStackedAreaChart extends React.Component {
   }
 
   render() {
-    // console.log('[finances_stacked_area_chart] this.props: ', this.props);
     if (this.props.loading) {
       return (
         <div className='finances-stacked-area-chart'>{'Loading'}</div>
@@ -69,7 +68,6 @@ class FinancesStackedAreaChart extends React.Component {
     };
 
     let formattedData = this._formatData(this.props.data);
-    console.log('[finances_stacked_area_chart] formattedData: ', formattedData);
 
     return (
       <div className='finances-stacked-area-chart'>

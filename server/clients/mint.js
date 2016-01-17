@@ -17,12 +17,6 @@ var URLS = require('../constants').URLS;
 var HEADERS = require('../constants').HEADERS;
 var DATE_RANGES = require('../constants').dateRanges;
 
-/**
-N
-
-txn
-**/
-
 class Mint {
   constructor(username, password) {
     this.cookies = null;
@@ -74,11 +68,8 @@ class Mint {
   }
 
 
-  // transaction = {
-  //
-  // }
   updateTransaction(transaction, category) {
-    console.log('[mint] @updateTransactions -> transaction: ', transaction);
+    // console.log('[mint] @updateTransactions -> transaction: ', transaction);
 
     let date = moment(new Date(transaction.date));
     if (date.year() === 2001) {
@@ -169,9 +160,7 @@ class Mint {
       });
   }
 
-  // Response
-  // ========
-  //
+  // TODO: Get working
   refreshAccounts() {
     console.log('[mint] refreshAccounts');
     let formData = querystring.stringify({ token: this.token });
@@ -189,13 +178,9 @@ class Mint {
       .catch((err) => {
         console.log('[client] err: ', err);
       });
-    // REQUEST BODY
-    // token: TOKEN
   }
 
-  // Response
-  // ========
-  //
+  // TODO: Get working
   refreshJob() {
     return this.login()
       .then(() => {
@@ -203,18 +188,6 @@ class Mint {
       });
   }
 
-  // Response
-  // ========
-  //
-  // queryObj = {
-  //   accountId: (number)
-  //   filterType: (string) 'cash' ||
-  //   queryNew:
-  //   offset: (number)
-  //   comparableType: (number)
-  //   acctChanged: (string) 'T' || 'F'
-  //   rnd: (date value number)
-  // }
   listTransaction(queryObj) {
     let query = _.assign({
       accountId: 0,
@@ -234,56 +207,6 @@ class Mint {
   }
 
   getTrendData(query, reportType, groupIds, accountCount) {
-
-  //   {
-  //     "reportType":"AT",
-  //     "chartType":"H",
-  //     "comparison":"",
-  //     "matchAny":true,
-  //     "terms":[],
-  //     "accounts":{
-  //       "groupIds":["AI"],
-  //       "accountIds":[8706238],
-  //       "count":1
-  //     },
-  //     "dateRange":{
-  //       "period":{
-  //         "label":"Last 3 months",
-  //         "value":"L3M"
-  //       },
-  //       "start":"10/1/2015",
-  //       "end":"12/29/2015"
-  //     },
-  //     "drilldown":null,
-  //     "categoryTypeFilter":"all"
-  //   }
-
-  //   // All Accounts
-  //   searchQuery:{
-  //     "reportType":"AT",
-  //     "chartType":"H",
-  //     "comparison":"",
-  //     "matchAny":true,
-  //     "terms":[],
-  //     "accounts":{
-  //       "groupIds":["CS"],
-  //       "accountIds":[],
-  //       "count":2
-  //     },
-  //     "dateRange":{
-  //       "period":{
-  //         "label":"Last 3 months",
-  //         "value":"L3M"
-  //       },
-  //       "start":"10/1/2015",
-  //       "end":"12/29/2015"
-  //     },
-  //   "drilldown":null,
-  //   "categoryTypeFilter":"all"
-  // }
-
-  //   token:8141308ID1hg2F8jGMmvc8pFFkbEdxVlECxWPcoh56Aag
-
     let dateFormat = 'M/M/YYYY';
     let dateRange = {
       period: {
@@ -322,18 +245,33 @@ class Mint {
 
   }
 
-  // {
-  // "totalResultsReturned":2,
-  // "results":[
-  //    {
-  //       "value":"description: Ko Catering Pies"
-  //    },
-  //    {
-  //       "value":"description: Purdue Memorial Union Catering"
-  //    }
-  // ],
-  // "totalResultsAvailable":2
-  // }
+
+  bundledServiceController(service, task, id, args) {
+    if (service == null || task == null || id == null) {
+      throw new Error('[mint] @bundledServiceController: requires valid service, task, and id');
+    }
+
+    let _self = this;
+
+    let data = {
+      input: JSON.stringify([
+        {
+          args: args || {},
+          service,
+          task,
+          id
+        }
+      ])
+    }
+
+    return this.login()
+      .then(() => {
+        return this.requester.post(`${ URLS.bundledServiceController }?legacy=false`, {
+          form: querystring.stringify(data)
+        }, null, _self.token);
+      });
+  }
+
   autocompleteFilter(query) {
     let queryObj = {
       query,
@@ -344,7 +282,6 @@ class Mint {
       .then(() => {
         return this.requester.get(`${ URLS.autoCompleteFilter }?${ querystring.stringify(queryObj) }`);
       });
-    // https://wwws.mint.com/autocompleteFilter.xevent?query=cate&rnd=1450050382368
   }
 
 }

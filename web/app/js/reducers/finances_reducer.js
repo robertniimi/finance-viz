@@ -21,7 +21,18 @@ const defaultChartProps = {
   error: false
 };
 
+const defaultSuccess = {
+  loading: false,
+  error: false
+};
+
+const defaultError = (error) => {
+  loading: false,
+  error
+};
+
 const initialState = {
+  accounts: {},
   transactions: {
     data: [],
     loading: false,
@@ -64,8 +75,7 @@ function financesReducer(state = initialState, action) {
       return update(state, {
         transactions: {
           data: { $set: transactions },
-          error: { $set: false },
-          loading: { $set: false }
+          $merge: defaultSuccess
         }
       });
 
@@ -73,8 +83,7 @@ function financesReducer(state = initialState, action) {
       console.error('[finances_reducer] @FETCH_TRANSACTIONS_ERROR -> error: ', action.error);
       return update(state, {
         transactions: {
-          loading: { $set: false },
-          error: { $set: action.error }
+          $merge: defaultError(action.error)
         }
       });
 
@@ -83,8 +92,7 @@ function financesReducer(state = initialState, action) {
       return update(state, {
         stackedAreaChart: {
           data: { $set: action.result },
-          error: { $set: false },
-          loading: { $set: false }
+          $merge: defaultSuccess
         }
       });
 
@@ -92,8 +100,7 @@ function financesReducer(state = initialState, action) {
       console.error('[finances_reducer] @FETCH_CHART_TRANSACTIONS_ERROR -> error: ', action.error);
       return update(state, {
         stackedAreaChart: {
-          loading: { $set: false },
-          error: { $set: action.error }
+          $merge: defaultError(action.error)
         }
       });
 
@@ -114,8 +121,7 @@ function financesReducer(state = initialState, action) {
           startDate: { $set: moment(action.result.startDate) },
           endDate: { $set: moment(action.result.endDate) },
           data: { $set: action.result.trendList },
-          error: { $set: false },
-          loading: { $set: false }
+          $merge: defaultSuccess
         }
       });
 
@@ -135,6 +141,15 @@ function financesReducer(state = initialState, action) {
           }
         }
       });
+
+    case ActionTypes.FETCH_ACCOUNTS_SUCCESS:
+      console.log('[finances_reducer] @FETCH_ACCOUNTS_SUCCESS -> action.result: ', action.result);
+      return update(state, {
+        accounts: { $set: action.result.response.accounts.response }
+      });
+
+    case ActionTypes.FETCH_ACCOUNTS_ERROR:
+      return state;
 
     case ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS:
       console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_SUCCESS -> action.result: ', action.result);

@@ -99,6 +99,18 @@ let actions = {
       error
     }
   },
+  fetchAccountsSuccess: (result) => {
+    return {
+      type: ActionTypes.FETCH_ACCOUNTS_SUCCESS,
+      result
+    }
+  },
+  fetchAccountsError: (error) => {
+    return {
+      type: ActionTypes.FETCH_ACCOUNTS_ERROR,
+      error
+    }
+  },
 
 };
 
@@ -166,6 +178,17 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchNetWorthError(err));
+        })
+    };
+  },
+  fetchAccounts: () => {
+    return (dispatch) => {
+      return FinancesDao.fetchAccounts()
+        .then((result) => {
+          dispatch(actions.fetchAccountsSuccess(result));
+        })
+        .catch((err) => {
+          dispatch(actions.fetchAccountsError(err));
         })
     };
   },

@@ -75,6 +75,30 @@ module.exports = (app, mint) => {
     res.send(transactions);
   });
 
+  app.get('/mint/accounts', (req, res) => {
+    let service = 'MintAccountService';
+    let task = 'getAccountsSortedByBalanceDescending';
+    let id = 'accounts';
+    let args = {
+      types: [
+        'BANK',
+        'CREDIT',
+        'INVESTMENT',
+        'LOAN',
+        'MORTGAGE',
+        'OTHER_PROPERTY',
+        'REAL_ESTATE',
+        'VEHICLE',
+        'UNCLASSIFIED'
+      ]
+    };
+
+    mint.bundledServiceController(service, task, id, args)
+      .then((data) => {
+        res.send(data);
+      })
+  });
+
   app.get('/mint/chart/netIncome', (req, res) => {
     mint.getTrendData(req.query, 'NI', ['AA'])
       .then((data) => {
@@ -104,14 +128,12 @@ module.exports = (app, mint) => {
   })
 
   app.get('/mint/refreshAccounts', (req, res) => {
-    console.log('[mintApi] refreshing accounts');
+    // console.log('[mintApi] refreshing accounts');
     mint.refreshAccounts();
   });
 
-
   app.get('/mint/transactions', (req, res) => {
-    console.log('[mintApi] req.query: ', req.query);
-
+    // console.log('[mintApi] req.query: ', req.query);
     mint.getJsonTransactions(req.query)
       .then((transactions) => {
         res.send(transactions);
@@ -119,21 +141,18 @@ module.exports = (app, mint) => {
   });
 
   app.get('/mint/trendData', (req, res) => {
-    console.log('[mintApi] req.query: ', req.query);
+    // console.log('[mintApi] req.query: ', req.query);
     req.body
     mint.getTrendData
   })
 
   app.post('/mint/transactions', (req, res) => {
-    console.log('[mintApi] @POST: transaction -> req.body.transaction: ', req.body.transaction);
-    console.log('[mintApi] @POST: category -> req.body.category: ', req.body.category);
+    // console.log('[mintApi] @POST: transaction -> req.body.transaction: ', req.body.transaction);
+    // console.log('[mintApi] @POST: category -> req.body.category: ', req.body.category);
     mint.updateTransaction(req.body.transaction, req.body.category)
       .then((result) => {
         res.send(result);
-      })
-      .catch(() => {
-
-      })
+      });
   })
 
   app.get('/mint/listTransaction', (req, res) => {

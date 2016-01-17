@@ -39,6 +39,10 @@ class FinancesApp extends React.Component {
     this.props.dispatch(FinancesActions.fetchCategories());
   }
 
+  _fetchAccounts() {
+    this.props.dispatch(FinancesActions.fetchAccounts());
+  }
+
   componentWillUpdate(nextProps, nextState) {
     if (nextProps.finances.dateRange.value !== this.props.finances.dateRange.value) {
       let { dateRange } = nextProps.finances;
@@ -57,6 +61,8 @@ class FinancesApp extends React.Component {
   componentDidMount() {
     let { finances: { transactions, dateRange } } = this.props;
     this._fetchCategories();
+    this._fetchAccounts();
+
     this._fetchNetIncome(dateRange);
     this._fetchNetWorth(dateRange);
     this._fetchBankAssets(dateRange);
@@ -92,6 +98,7 @@ FinancesApp.propTypes = {
 module.exports = connect((state) => {
   return {
     finances: {
+      accounts: state.accounts,
       categories: state.categories,
       dateRange: state.dateRange,
       netAssetsChart: state.netAssetsChart,

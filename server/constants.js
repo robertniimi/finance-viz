@@ -3,6 +3,7 @@ var _ = require('lodash');
 module.exports = {
   URLS: {
     autocompleteFilter: 'https://wwws.mint.com/autocompleteFilter.xevent',
+    bundledServiceController: 'https://wwws.mint.com/bundledServiceController.xevent',
     getJsonData: 'https://wwws.mint.com/app/getJsonData.xevent',
     listTransaction: 'https://wwws.mint.com/listTransaction.xevent',
     login: 'https://wwws.mint.com/loginUserSubmit.xevent',

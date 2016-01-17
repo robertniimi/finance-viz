@@ -14,6 +14,7 @@ import TransactionsTable from './finances_transactions_table';
 import StackedAreaChart from './finances_stacked_area_chart';
 import NetIncomChart from './finances_net_income_chart';
 import NetAssetsChart from './finances_net_assets_chart';
+import AccountsTable from './finances_accounts_table';
 
 // Constants
 import DateRanges from 'date_ranges';
@@ -38,7 +39,6 @@ class Finances extends React.Component {
   }
 
   render() {
-
     return (
       <div className='finances-component'>
         <header className='header'>
@@ -55,6 +55,7 @@ class Finances extends React.Component {
           >
             {'Update Transactions'}
           </button>
+          <AccountsTable accounts={this.props.accounts} />
           <Select
             className='finances-date-range-select'
             name='finances-date-range-select'
@@ -80,6 +81,7 @@ class Finances extends React.Component {
 Finances.displayName = 'Finances';
 
 Finances.propTypes = {
+  accounts: React.PropTypes.array,
   categories: React.PropTypes.array,
   onChangeDateRange: React.PropTypes.func,
   onChangeTableFilter: React.PropTypes.func,

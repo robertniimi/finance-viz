@@ -16,13 +16,11 @@ class FinancesNetIncomeChart extends React.Component {
   }
 
   _formatData(data, tickValues) {
-    console.log('[finances_net_income_chart] data: ', data);
     let seriesIndex = 0;
     let incomeData = [];
     let expenseData = [];
 
     let dataObj = _.reduce(data, (result, [incomeObj, expenseObj], idx) => {
-      console.log('[finances_net_income_chart] incomeObj.type: ', incomeObj.type);
       result.incomeData.push({
         x: incomeObj.startDate,
         y: incomeObj.value
@@ -106,10 +104,8 @@ class FinancesNetIncomeChart extends React.Component {
   }
 
   render() {
-    // console.log('[finances_net_income_chart] this.props: ', this.props);
 
     let formattedData = this._formatData(this.props.data);
-    console.log('[finances_net_income_chart] formattedData: ', formattedData);
     let wrapperClass = 'finances-net-income-chart';
 
     return (
