@@ -33,7 +33,7 @@ mint
   });
 
 require('./routes')(app);
-require('./api/mintApi.js')(app, mint);
+require('./api/mint_api.js')(app, mint);
 
 app.use(express.static(__dirname + '/../web/app'));
 

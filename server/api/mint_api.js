@@ -1,4 +1,3 @@
-
 'use strict';
 
 var _ = require('lodash');
@@ -8,6 +7,10 @@ var moment = require('moment');
 var path = require('path');
 var querystring = require('querystring');
 var url = require('url');
+
+// Endpoints
+var trendData = require('./mint_api_trend_data');
+var getJson = require('./mint_api_get_json');
 
 var _filterTransactions = function(transactions, query) {
   // Filter by date range
@@ -33,9 +36,8 @@ var _filterTransactions = function(transactions, query) {
 };
 
 module.exports = (app, mint) => {
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, '/../web/app/index.html'));
-  // });
+  trendData(app, mint);
+  getJson(app, mint);
 
   app.get('/mint/chart/transactions', (req, res) => {
     let query = req.query;
@@ -99,52 +101,10 @@ module.exports = (app, mint) => {
       })
   });
 
-  app.get('/mint/chart/netIncome', (req, res) => {
-    mint.getTrendData(req.query, 'NI', ['AA'])
-      .then((data) => {
-        res.send(data);
-      });
-  });
-
-  app.get('/mint/chart/netWorth', (req, res) => {
-    mint.getTrendData(req.query, 'NW', ['AA'])
-      .then((data) => {
-        res.send(data);
-      });
-  });
-
-  app.get('/mint/chart/bankAssets', (req, res) => {
-    mint.getTrendData(req.query, 'AT', ['CS'], 2)
-      .then((data) => {
-        res.send(data);
-      })
-  });
-
-  app.get('/mint/chart/investmentAssets', (req, res) => {
-    mint.getTrendData(req.query, 'AT', ['AI'], 1)
-      .then((data) => {
-        res.send(data);
-      })
-  })
-
   app.get('/mint/refreshAccounts', (req, res) => {
     // console.log('[mintApi] refreshing accounts');
     mint.refreshAccounts();
   });
-
-  app.get('/mint/transactions', (req, res) => {
-    // console.log('[mintApi] req.query: ', req.query);
-    mint.getJsonTransactions(req.query)
-      .then((transactions) => {
-        res.send(transactions);
-      });
-  });
-
-  app.get('/mint/trendData', (req, res) => {
-    // console.log('[mintApi] req.query: ', req.query);
-    req.body
-    mint.getTrendData
-  })
 
   app.post('/mint/transactions', (req, res) => {
     // console.log('[mintApi] @POST: transaction -> req.body.transaction: ', req.body.transaction);
@@ -166,25 +126,6 @@ module.exports = (app, mint) => {
       });
   });
 
-  app.get('/mint/categories', (req, res) => {
-    mint.getJsonCategories(req.query)
-      .then((categories) => {
-        res.send(categories);
-      })
-      .catch((err) => {
-
-      });
-  })
-
-  app.get('/mint/getJsonData', (req, res) => {
-    mint.getJsonData()
-      .then((jsonData) => {
-        res.send(jsonData);
-      })
-      .catch((err) => {
-        // console.log('[mintApi] err: ', err);
-      });
-  });
 
   app.get('/mint/autosuggestFilter', (req, res) => {
     mint.autosuggestFilter()

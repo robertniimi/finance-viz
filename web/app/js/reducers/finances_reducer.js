@@ -43,7 +43,8 @@ const initialState = {
   stackedAreaChart: defaultChartProps(),
   netAssetsChart: {
     bankAssets: defaultChartProps(),
-    investmentAssets: defaultChartProps()
+    investmentAssets: defaultChartProps(),
+    debts: defaultChartProps()
   },
   netIncomeChart: defaultChartProps({ goal: 2917 }),
   categories: [],
@@ -138,6 +139,9 @@ function financesReducer(state = initialState, action) {
           },
           investmentAssets: {
             data: { $set: action.result.investmentAssets.trendList }
+          },
+          debts: {
+            data: { $set: action.result.debts.trendList }
           }
         }
       });

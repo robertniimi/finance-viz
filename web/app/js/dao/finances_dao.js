@@ -41,6 +41,11 @@ module.exports = {
     return request.get(`/mint/chart/netWorth?${ querystring.stringify(query) }`);
   },
 
+  fetchDebts: (dateRange) => {
+    let query = dateRange;
+    return request.get(`/mint/chart/debts?${ querystring.stringify(query) }`);
+  },
+
   fetchBankAssets: (dateRange) => {
     let query = dateRange;
     return request.get(`/mint/chart/bankAssets?${ querystring.stringify(query) }`);

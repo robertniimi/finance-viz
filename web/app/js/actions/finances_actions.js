@@ -196,7 +196,8 @@ let thunks = {
     return (dispatch) => {
       let props = {
         bankAssets: FinancesDao.fetchBankAssets(dateRange),
-        investmentAssets: FinancesDao.fetchInvestmentAssets(dateRange)
+        investmentAssets: FinancesDao.fetchInvestmentAssets(dateRange),
+        debts: FinancesDao.fetchDebts(dateRange)
       };
 
       return Promise.props(props)

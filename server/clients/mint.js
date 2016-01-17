@@ -207,6 +207,30 @@ class Mint {
   }
 
   getTrendData(query, reportType, groupIds, accountCount) {
+    // Debts
+    // {
+    //   "reportType":"DT",
+    //   "chartType":"H",
+    //   "comparison":"",
+    //   "matchAny":true,
+    //   "terms":[],
+    //   "accounts":{
+    //     "groupIds":["AA"],
+    //     "accountIds":[]
+    //   },
+    //   "dateRange":{
+    //     "period":{
+    //       "label":"Last 6 months",
+    //       "value":"L6M"
+    //     },
+    //     "start":"8/1/2015",
+    //     "end":"1/9/2016"
+    //   },
+    //   "drilldown":null,
+    //   "categoryTypeFilter":"all"
+    // }
+
+
     let dateFormat = 'M/M/YYYY';
     let dateRange = {
       period: {
