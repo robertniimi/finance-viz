@@ -17,23 +17,21 @@ class FinancesNetAssetsChart extends React.Component {
   }
 
   _findDataPoint(data, tickValue) {
-    return _.find(data, (dataObj) => {
-      return dataObj.startDate === tickValue;
-    });
-
+    return _.find(data, (dataObj) => dataObj.startDate === tickValue);
   }
 
   _formatData(data, tickValues) {
     let { bankAssets, investmentAssets, debts } = data;
 
-    // let series =
     return [{
       key: 'Bank Assets',
       seriesIndex: 0,
       values: _.map(tickValues, (tickValue, idx) => {
         let bankAssetsDataPoint = this._findDataPoint(bankAssets.data, tickValue);
         let debtsDataPoint = this._findDataPoint(debts.data, tickValue);
+        let x = tickValue;
         let y = 0;
+
         if (bankAssetsDataPoint && debtsDataPoint) {
           y = bankAssetsDataPoint.value - debtsDataPoint.value;
         } else if (bankAssetsDataPoint) {
@@ -42,46 +40,19 @@ class FinancesNetAssetsChart extends React.Component {
           y = -debtsDataPoint.value;
         }
 
-        return {
-          x: tickValue,
-          y
-        };
+        return { x, y };
       })
     }, {
       key: 'Investment Assets',
       seriesIndex: 1,
       values: _.map(tickValues, (tickValue, idx) => {
         let dataPoint = this._findDataPoint(investmentAssets.data, tickValue);
-        // _.find(investmentAssets.data, (dataObj) => {
-        //   return dataObj.startDate === tickValue;
-        // });
+        let x = tickValue;
+        let y = (dataPoint && dataPoint.value) ? dataPoint.value : 0;
 
-        return {
-          x: tickValue,
-          y: (dataPoint && dataPoint.value) ? dataPoint.value : 0
-        };
+        return { x, y };
       })
-    }]
-
-    // let seriesIndex = 0;
-    // return _.map(data, (accountObj, key) => {
-    //   let series = {
-    //     key,
-    //     seriesIndex: seriesIndex,
-    //     values: _.map(tickValues, (tickValue, idx) => {
-    //       let dataPoint = _.find(accountObj.data, (dataObj) => {
-    //         return dataObj.startDate === tickValue;
-    //       });
-
-    //       return {
-    //         x: tickValue,
-    //         y: (dataPoint && dataPoint.value) ? dataPoint.value : 0
-    //       };
-    //     })
-    //   }
-    //   seriesIndex++;
-    //   return series
-    // });
+    }];
   }
 
   _getTickValues(data) {
