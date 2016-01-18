@@ -11,7 +11,8 @@ import FinancesDao from '../dao/finances_dao';
 
 // Constants
 const DEFAULT_DATE_RANGE = 'L12M'; // Last 12 Months
-const NET_ASSET_GOAL = 54137;
+const NET_ASSET_GOAL = 54137; // net asset goal for the end of 2016
+
 const defaultSuccess = {
   loading: false,
   error: false

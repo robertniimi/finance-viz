@@ -19,7 +19,6 @@ var DATE_RANGES = require('../constants').dateRanges;
 
 class Mint {
   constructor(username, password) {
-    this.cookies = null;
     this.requester = new Requester();
     this.token = null;
     this.transactions = null;
@@ -70,7 +69,6 @@ class Mint {
 
   updateTransaction(transaction, category) {
     // console.log('[mint] @updateTransactions -> transaction: ', transaction);
-
     let date = moment(new Date(transaction.date));
     if (date.year() === 2001) {
       date.year(moment().year());
@@ -87,17 +85,13 @@ class Mint {
       token: this.token
     };
 
-    let stringifiedData = querystring.stringify(data) + `&txnId=${ transaction.id }:${ transaction.txnType }`;
-    console.log('[mint] stringifiedData: ', stringifiedData);
-
     return this.login()
       .then(() => {
         this.requester.post(URLS.updateTransaction, {
-          form: stringifiedData
+          form: querystring.stringify(data) + `&txnId=${ transaction.id }:${ transaction.txnType }`
         })
       });
   }
-
 
   // Response
   // ========
@@ -115,7 +109,6 @@ class Mint {
   // }
   getJsonData(queryObj) {
     let query = _.assign(queryObj);
-
     return this.login()
       .then(() => {
         return this.requester.get(`${ URLS.getJsonData }?${ query }`);
@@ -171,7 +164,6 @@ class Mint {
         });
       })
       .then((response) => {
-        console.log('[mint] @refreshAccounts: SUCCESS');
         console.log('[mint] @refreshAccounts -> response: ', response);
         GenerateTransactionJson();
       })
@@ -203,34 +195,9 @@ class Mint {
       .then(() => {
         return this.requester.get(`${ URLS.listTransaction }?${ querystring.stringify(query) }`);
       });
-
   }
 
   getTrendData(query, reportType, groupIds, accountCount) {
-    // Debts
-    // {
-    //   "reportType":"DT",
-    //   "chartType":"H",
-    //   "comparison":"",
-    //   "matchAny":true,
-    //   "terms":[],
-    //   "accounts":{
-    //     "groupIds":["AA"],
-    //     "accountIds":[]
-    //   },
-    //   "dateRange":{
-    //     "period":{
-    //       "label":"Last 6 months",
-    //       "value":"L6M"
-    //     },
-    //     "start":"8/1/2015",
-    //     "end":"1/9/2016"
-    //   },
-    //   "drilldown":null,
-    //   "categoryTypeFilter":"all"
-    // }
-
-
     let dateFormat = 'M/M/YYYY';
     let dateRange = {
       period: {
@@ -266,9 +233,7 @@ class Mint {
           form: querystring.stringify(data)
         })
       });
-
   }
-
 
   bundledServiceController(service, task, id, args) {
     if (service == null || task == null || id == null) {
@@ -276,7 +241,6 @@ class Mint {
     }
 
     let _self = this;
-
     let data = {
       input: JSON.stringify([
         {

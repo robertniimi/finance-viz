@@ -10,7 +10,7 @@ var categorySchema = require('../data/category_schema');
 
 const EXCLUDE_TRANSACTION_TYPES = [
   'Income',
-  'Gifts & Donations',
+  // 'Gifts & Donations',
   'Hide from Budgets & Trends',
   'Pets',
   'Kids',
