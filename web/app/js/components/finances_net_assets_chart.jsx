@@ -43,7 +43,7 @@ class FinancesNetAssetsChart extends React.Component {
         return { x, y };
       })
     }, {
-      key: 'Investment Assets',
+      key: 'Investments',
       seriesIndex: 1,
       values: _.map(tickValues, (tickValue, idx) => {
         let dataPoint = this._findDataPoint(investmentAssets.data, tickValue);
