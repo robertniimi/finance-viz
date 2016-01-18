@@ -6,15 +6,15 @@ import ActionTypes from 'action_types';
 import DateRanges from 'date_ranges';
 import DisplayedAccountTypes from 'displayed_account_types';
 
-// Daos
+// DAOs
 import FinancesDao from '../dao/finances_dao';
 
-// const DEFAULT_DATE_RANGE = '1 Year';
-const DEFAULT_DATE_RANGE = 'L12M';
+// Constants
+const DEFAULT_DATE_RANGE = 'L12M'; // Last 12 Months
 const NET_ASSET_GOAL = 54137;
-
-let findDateRange = (rangeValue) => {
-  return _.find(DateRanges, (range) => range.value === rangeValue);
+const defaultSuccess = {
+  loading: false,
+  error: false
 };
 
 const defaultChartProps = (props) => {
@@ -27,16 +27,15 @@ const defaultChartProps = (props) => {
   return _.assign({}, defaultProps, props || {});
 };
 
-const defaultSuccess = {
-  loading: false,
-  error: false
-};
-
 const defaultError = (error) => {
   return {
     loading: false,
     error
   };
+};
+
+let findDateRange = (rangeValue) => {
+  return _.find(DateRanges, (range) => range.value === rangeValue);
 };
 
 const initialState = {
@@ -49,7 +48,7 @@ const initialState = {
     investmentAssets: defaultChartProps(),
     debts: defaultChartProps()
   },
-  netIncomeChart: defaultChartProps({ goal: 2917 }),
+  netIncomeChart: defaultChartProps({ goal: 0 }),
   categories: [],
   dateRange: findDateRange(DEFAULT_DATE_RANGE)
 };
@@ -170,23 +169,15 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_ACCOUNTS_SUCCESS:
       console.log('[finances_reducer] @FETCH_ACCOUNTS_SUCCESS -> action.result: ', action.result);
-      let accounts = action.result.response.accounts.response;
+      let accounts = _.filter(action.result.response.accounts.response, (accountObj, idx) => {
+        return _.includes(DisplayedAccountTypes, accountObj.accountType) && accountObj.accountSystemStatus === 'ACTIVE';
+      });
+
       let netAssets = _.reduce(accounts, (result, accountObj, idx) => {
-        if (_.includes(DisplayedAccountTypes, accountObj.accountType) && accountObj.accountSystemStatus === 'ACTIVE') {
-          return accountObj.value + result;
-        }
-        return result;
+        return accountObj.value + result;
       }, 0);
 
-      // let currentMonth = moment().month();
-      // console.log('[finances_reducer] currentMonth: ', currentMonth);
-      // let netIncomeGoal = (NET_ASSET_GOAL - netAssets) / (12 - currentMonth);
-      // console.log('[finances_reducer] netIncomeGoal: ', netIncomeGoal);
-
       return update(state, {
-        // netIncomeChart: {
-        //   goal: { $set: netIncomeGoal }
-        // },
         netAssets: { $set: netAssets },
         accounts: { $set: accounts }
       });
@@ -213,19 +204,18 @@ function financesReducer(state = initialState, action) {
         }
       });
     case ActionTypes.FETCH_ACCOUNTS_ERROR:
-      console.log('[finances_reducer] @FETCH_ACCOUNTS_ERROR -> action.error: ', action.error);
+      console.error('[finances_reducer] @FETCH_ACCOUNTS_ERROR -> action.error: ', action.error);
     case ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR:
-      console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_ERROR -> action.error: ', action.error);
+      console.error('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_ERROR -> action.error: ', action.error);
     case ActionTypes.FETCH_BANK_ASSETS_ERROR:
-      console.log('[finances_reducer] @FETCH_BANK_ASSETS_ERROR -> action.error: ', action.error);
+      console.error('[finances_reducer] @FETCH_BANK_ASSETS_ERROR -> action.error: ', action.error);
     case ActionTypes.FETCH_NET_WORTH_ERROR:
-      console.log('[finances_reducer] @FETCH_NET_WORTH_ERROR -> action.error: ', action.error);
+      console.error('[finances_reducer] @FETCH_NET_WORTH_ERROR -> action.error: ', action.error);
     case ActionTypes.FETCH_NET_INCOME_ERROR:
-      console.log('[finances_reducer] @FETCH_NET_INCOME_ERROR -> action.error: ', action.error);
+      console.error('[finances_reducer] @FETCH_NET_INCOME_ERROR -> action.error: ', action.error);
     case ActionTypes.FETCH_CATEGORIES_ERROR:
-      console.log('[finances_reducer] @FETCH_CATEGORIES_ERROR -> action.error: ', action.error);
+      console.error('[finances_reducer] @FETCH_CATEGORIES_ERROR -> action.error: ', action.error);
       return state;
-
 
     default:
       return state;

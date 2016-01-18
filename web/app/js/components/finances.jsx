@@ -49,12 +49,12 @@ class Finances extends React.Component {
           </div>
         </header>
         <div className='content-wrapper'>
-          <button
+{/*          <button
             className={classnames('btn', 'waves-effect', 'waves-light')}
             onClick={this._handleRefreshData.bind(this)}
           >
             {'Update Transactions'}
-          </button>
+          </button>*/}
           <AccountsTable accounts={this.props.accounts} />
           <Select
             className='finances-date-range-select'
