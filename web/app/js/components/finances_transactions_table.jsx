@@ -42,9 +42,6 @@ class FinancesTransactionsTable extends React.Component {
         return category.id === categoryId;
       });
 
-      // console.log('[finances_transactions_table] transaction: ', transaction);
-      // console.log('[finances_transactions_table] category: ', category);
-
       if (!transaction || !category) {
         throw new Error('[finances_transactions_table] @_handleTransactionCategoryChange: transaction change requires category and transaction');
       };
@@ -105,12 +102,12 @@ class FinancesTransactionsTable extends React.Component {
       return (
         <tr key={`${transaction.id}`}>
           <td className='data-date'>{ transaction.date }</td>
+          <td className='data-amount'>{ numeral(transaction.amount).format('$0,0.00') }</td>
           <td className='data-merchant'>
             <a href={`https://www.google.com/#safe=off&q=${ urlencode(transaction.omerchant) }`} target='_blank'>
               { transaction.omerchant }
             </a>
           </td>
-          <td className='data-amount'>{ numeral(transaction.amount).format('$0,0.00') }</td>
           <td className='data-category'>
             <Select
               value={ transaction.categoryId }
@@ -138,8 +135,8 @@ class FinancesTransactionsTable extends React.Component {
           <thead>
             <tr>
               <th>Date</th>
-              <th>Merchant</th>
               <th>Amount</th>
+              <th>Merchant</th>
               <th>Category</th>
             </tr>
           </thead>
