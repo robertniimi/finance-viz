@@ -16,7 +16,7 @@ class FinancesApp extends React.Component {
   }
 
   _fetchTransactions(query) {
-    this.props.dispatch(FinancesActions.fetchTransactions({query }));
+    this.props.dispatch(FinancesActions.fetchTransactions({query}));
   }
 
   _fetchChartTransactions(dateRange) {

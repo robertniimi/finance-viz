@@ -24,7 +24,7 @@ gulp.task('webpack', ['styles'], () => {
 
 gulp.task('sass:watch', () => {
   gulp.watch('./web/app/style/**/*.scss', ['_sass']);
-})
+});
 
 /* ========== Server Tasks ========== */
 gulp.task('serve', () => {
@@ -46,13 +46,11 @@ gulp.task('_sass', () => {
     }))
     .pipe(gulp.dest('./web/app/style'))
     ;
-})
+});
 
 gulp.task('_css', () => {
   return gulp.src('./web/app/style/css/vendor_import.css')
-    .pipe($.postcss([
-      postcssImport
-    ]))
+    .pipe($.postcss([postcssImport]))
     .pipe($.debug())
     .pipe($.rename('vendor.css'))
     .pipe(gulp.dest('./web/app/style'))
