@@ -26,10 +26,21 @@ var _filterTransactions = function(transactions, start, end) {
 };
 
 module.exports = function(app) {
-  app.get('/', function(req, res) {
-    console.log('[routes] GETTING INDEX.HTML');
-    console.log('[routes] __dirname: ', __dirname);
-    console.log('[routes] path.join(__dirname, "/../web/app/index.html"): ', path.join(__dirname, '/../web/app/index.html'));
+
+  var sendIndex = (req, res) => {
     res.sendFile(path.join(__dirname, '/../web/app/index.html'));
-  });
+  }
+
+  app.get('/', sendIndex);
+  app.get('/finances', sendIndex);
+
+  // app.get('/finances', function(req, res) {
+  //   console.log('[routes] ROUTE /finances');
+  //   res.sendFile(path.join(__dirname, '/../web/app/index.html'));
+  // });
+
+  // app.get('/*', function(req, res) {
+  //   console.log('[routes] ROUTE /*');
+  //   res.sendFile(path.join(__dirname, '/../web/app/index.html'));
+  // });
 }
