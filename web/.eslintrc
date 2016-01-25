@@ -12,7 +12,8 @@
   "ecmaFeatures": {
     "jsx": true,
     "modules": true,
-    "blockBindings": true
+    "blockBindings": true,
+    "classes": false
   },
   "rules": {
     // standard defaults

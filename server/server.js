@@ -34,6 +34,7 @@ mint
 
 require('./routes')(app);
 require('./api/mint_api.js')(app, mint);
+// require('./api/')
 
 app.use(express.static(__dirname + '/../web/app'));
 

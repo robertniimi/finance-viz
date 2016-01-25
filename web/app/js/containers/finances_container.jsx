@@ -96,16 +96,17 @@ FinancesApp.propTypes = {
 };
 
 module.exports = connect((state) => {
+  console.log('[finances_container] state: ', state);
   return {
     finances: {
-      accounts: state.accounts,
-      categories: state.categories,
-      dateRange: state.dateRange,
-      netAssetsChart: state.netAssetsChart,
-      netIncomeChart: state.netIncomeChart,
-      selectedDateRange: state.selectedDateRange,
-      stackedAreaChart: state.stackedAreaChart,
-      transactions: state.transactions,
+      accounts: state.finances.accounts,
+      categories: state.finances.categories,
+      dateRange: state.finances.dateRange,
+      netAssetsChart: state.finances.netAssetsChart,
+      netIncomeChart: state.finances.netIncomeChart,
+      selectedDateRange: state.finances.selectedDateRange,
+      stackedAreaChart: state.finances.stackedAreaChart,
+      transactions: state.finances.transactions,
     },
   };
 })(FinancesApp);

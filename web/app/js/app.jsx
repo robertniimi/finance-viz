@@ -10,6 +10,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('[app] this.props: ', this.props);
     return (
       <div className='app'>
         {/* Insert App header / nav here */}
