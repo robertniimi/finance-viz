@@ -7,22 +7,23 @@ import DateRanges from 'date_ranges';
 import DisplayedAccountTypes from 'displayed_account_types';
 
 // DAOs
-import FinancesDao from '../dao/finances_dao';
+// import FinancesDao from '../dao/finances_dao';
 
 // Constants
 const DEFAULT_DATE_RANGE = 'L12M'; // Last 12 Months
 const NET_ASSET_GOAL = 54137; // net asset goal for the end of 2016
+const DEFAULT_TRANSACTION_QUERY = '';
 
 const defaultSuccess = {
   loading: false,
-  error: false
+  error: false,
 };
 
 const defaultChartProps = (props) => {
   let defaultProps = {
     data: [],
     loading: false,
-    error: false
+    error: false,
   };
 
   return _.assign({}, defaultProps, props || {});
@@ -31,7 +32,7 @@ const defaultChartProps = (props) => {
 const defaultError = (error) => {
   return {
     loading: false,
-    error
+    error,
   };
 };
 
@@ -42,16 +43,16 @@ let findDateRange = (rangeValue) => {
 const initialState = {
   netAssets: 0,
   accounts: [],
-  transactions: defaultChartProps({query: 'category: Uncategorized'}),
+  transactions: defaultChartProps({query: DEFAULT_TRANSACTION_QUERY}),
   stackedAreaChart: defaultChartProps(),
   netAssetsChart: {
     bankAssets: defaultChartProps(),
     investmentAssets: defaultChartProps(),
-    debts: defaultChartProps()
+    debts: defaultChartProps(),
   },
-  netIncomeChart: defaultChartProps({ goal: 0 }),
+  netIncomeChart: defaultChartProps({goal: 0}),
   categories: [],
-  dateRange: findDateRange(DEFAULT_DATE_RANGE)
+  dateRange: findDateRange(DEFAULT_DATE_RANGE),
 };
 
 function financesReducer(state = initialState, action) {
@@ -60,14 +61,14 @@ function financesReducer(state = initialState, action) {
     case ActionTypes.CHANGE_DATE_RANGE:
       let dateRange = findDateRange(action.selectedDateRange);
       return update(state, {
-        dateRange: { $set: dateRange }
+        dateRange: {$set: dateRange},
       });
 
     case ActionTypes.CHANGE_TABLE_FILTER:
       return update(state, {
         transactions: {
-          query: { $set: action.filter }
-        }
+          query: {$set: action.filter},
+        },
       });
 
     case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
@@ -78,18 +79,18 @@ function financesReducer(state = initialState, action) {
 
       return update(state, {
         transactions: {
-          data: { $set: transactions },
-          $merge: defaultSuccess
-        }
+          data: {$set: transactions},
+          $merge: defaultSuccess,
+        },
       });
 
     case ActionTypes.FETCH_CHART_TRANSACTIONS_SUCCESS:
       console.log('[finances_reducer] @FETCH_CHART_TRANSACTIONS_SUCCESS -> action.result: ', action.result);
       return update(state, {
         stackedAreaChart: {
-          data: { $set: action.result },
-          $merge: defaultSuccess
-        }
+          data: {$set: action.result},
+          $merge: defaultSuccess,
+        },
       });
 
     case ActionTypes.FETCH_CATEGORIES_SUCCESS:
@@ -99,18 +100,18 @@ function financesReducer(state = initialState, action) {
       }).data;
 
       return update(state, {
-        categories: { $set: categories }
+        categories: {$set: categories},
       });
 
     case ActionTypes.FETCH_NET_INCOME_SUCCESS:
       console.log('[finances_reducer] @FETCH_NET_INCOME_SUCCESS -> action.result: ', action.result);
       return update(state, {
         netIncomeChart: {
-          startDate: { $set: moment(action.result.startDate) },
-          endDate: { $set: moment(action.result.endDate) },
-          data: { $set: action.result.trendList },
-          $merge: defaultSuccess
-        }
+          startDate: {$set: moment(action.result.startDate)},
+          endDate: {$set: moment(action.result.endDate)},
+          data: {$set: action.result.trendList},
+          $merge: defaultSuccess,
+        },
       });
 
     case ActionTypes.FETCH_NET_WORTH_SUCCESS:
@@ -120,10 +121,10 @@ function financesReducer(state = initialState, action) {
     case ActionTypes.FETCH_BANK_ASSETS_SUCCESS:
       console.log('[finances_reducer] @FETCH_BANK_ASSETS_SUCCESS -> action.result: ', action.result);
 
-      const { bankAssets, investmentAssets, debts } = action.result;
+      const {bankAssets, investmentAssets, debts} = action.result;
 
       let findLastMonthAssets = (trendList) => {
-        return _.find(trendList, (assetObj, idx) => {
+        return _.find(trendList, (assetObj) => {
           let assetDate = moment(new Date(assetObj.startDate));
           let assetMonth = assetDate.month();
           let assetYear = assetDate.year();
@@ -135,10 +136,10 @@ function financesReducer(state = initialState, action) {
           if (currentDate.month() === 0) {
             return (assetMonth === 11) && (assetYear === (currentYear - 1));
           } else {
-            return (assetMonth === (currentMonth - 1)) && (assetYear === currentYear)
+            return (assetMonth === (currentMonth - 1)) && (assetYear === currentYear);
           }
         });
-      }
+      };
 
       let lastMonthBankAssets = findLastMonthAssets(bankAssets.trendList);
       let lastMonthInvestmentAssets = findLastMonthAssets(investmentAssets.trendList);
@@ -153,34 +154,34 @@ function financesReducer(state = initialState, action) {
 
       return update(state, {
         netIncomeChart: {
-          goal: { $set: netIncomeGoal }
+          goal: {$set: netIncomeGoal},
         },
         netAssetsChart: {
           bankAssets: {
-            data: { $set: bankAssets.trendList }
+            data: {$set: bankAssets.trendList},
           },
           investmentAssets: {
-            data: { $set: investmentAssets.trendList }
+            data: {$set: investmentAssets.trendList},
           },
           debts: {
-            data: { $set: debts.trendList }
-          }
-        }
+            data: {$set: debts.trendList},
+          },
+        },
       });
 
     case ActionTypes.FETCH_ACCOUNTS_SUCCESS:
       console.log('[finances_reducer] @FETCH_ACCOUNTS_SUCCESS -> action.result: ', action.result);
-      let accounts = _.filter(action.result.response.accounts.response, (accountObj, idx) => {
+      let accounts = _.filter(action.result.response.accounts.response, (accountObj) => {
         return _.includes(DisplayedAccountTypes, accountObj.accountType) && accountObj.accountSystemStatus === 'ACTIVE';
       });
 
-      let netAssets = _.reduce(accounts, (result, accountObj, idx) => {
+      let netAssets = _.reduce(accounts, (result, accountObj) => {
         return accountObj.value + result;
       }, 0);
 
       return update(state, {
-        netAssets: { $set: netAssets },
-        accounts: { $set: accounts }
+        netAssets: {$set: netAssets},
+        accounts: {$set: accounts},
       });
 
     case ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS:
@@ -193,34 +194,45 @@ function financesReducer(state = initialState, action) {
       console.error('[finances_reducer] @FETCH_CHART_TRANSACTIONS_ERROR -> action.error: ', action.error);
       return update(state, {
         stackedAreaChart: {
-          $merge: defaultError(action.error)
-        }
+          $merge: defaultError(action.error),
+        },
       });
 
     case ActionTypes.FETCH_TRANSACTIONS_ERROR:
       console.error('[finances_reducer] @FETCH_TRANSACTIONS_ERROR -> error: ', action.error);
       return update(state, {
         transactions: {
-          $merge: defaultError(action.error)
-        }
+          $merge: defaultError(action.error),
+        },
       });
+
     case ActionTypes.FETCH_ACCOUNTS_ERROR:
       console.error('[finances_reducer] @FETCH_ACCOUNTS_ERROR -> action.error: ', action.error);
+      return state;
+
     case ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR:
       console.error('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_ERROR -> action.error: ', action.error);
+      return state;
+
     case ActionTypes.FETCH_BANK_ASSETS_ERROR:
       console.error('[finances_reducer] @FETCH_BANK_ASSETS_ERROR -> action.error: ', action.error);
+      return state;
+
     case ActionTypes.FETCH_NET_WORTH_ERROR:
       console.error('[finances_reducer] @FETCH_NET_WORTH_ERROR -> action.error: ', action.error);
+      return state;
+
     case ActionTypes.FETCH_NET_INCOME_ERROR:
       console.error('[finances_reducer] @FETCH_NET_INCOME_ERROR -> action.error: ', action.error);
+      return state;
+
     case ActionTypes.FETCH_CATEGORIES_ERROR:
       console.error('[finances_reducer] @FETCH_CATEGORIES_ERROR -> action.error: ', action.error);
       return state;
 
     default:
       return state;
-    }
+  }
 }
 
 module.exports = financesReducer;

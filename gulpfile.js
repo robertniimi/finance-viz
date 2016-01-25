@@ -5,12 +5,14 @@ var $ = require('gulp-load-plugins')();
 
 var webpackConfig = require('./web/webpack.config');
 
-// PATHS
+/* ========== JS Tasks ========== */
+
 
 gulp.task('default', () => {
 
 });
 
+/* ========== JS Tasks ========== */
 gulp.task('webpack', ['styles'], () => {
   return gulp.src('web/app/js/**/*')
     .pipe($.plumber())
@@ -20,6 +22,11 @@ gulp.task('webpack', ['styles'], () => {
     ;
 });
 
+gulp.task('sass:watch', () => {
+  gulp.watch('./web/app/style/**/*.scss', ['_sass']);
+})
+
+/* ========== Server Tasks ========== */
 gulp.task('serve', () => {
   return $.nodemon({
     script: './server/server.js',
@@ -27,6 +34,9 @@ gulp.task('serve', () => {
   })
   ;
 });
+
+/* ========== Style Tasks ========== */
+gulp.task('styles', ['_sass', '_css']);
 
 gulp.task('_sass', () => {
   return gulp.src('./web/app/style/sass/**/*.scss')
@@ -48,9 +58,3 @@ gulp.task('_css', () => {
     .pipe(gulp.dest('./web/app/style'))
     ;
 });
-
-gulp.task('styles', ['_sass', '_css']);
-
-gulp.task('sass:watch', () => {
-  gulp.watch('./web/app/style/**/*.scss', ['_sass']);
-})
