@@ -33,6 +33,7 @@ module.exports = function(app) {
 
   app.get('/', sendIndex);
   app.get('/finances', sendIndex);
+  app.get('/health', sendIndex);
 
   // app.get('/finances', function(req, res) {
   //   console.log('[routes] ROUTE /finances');
