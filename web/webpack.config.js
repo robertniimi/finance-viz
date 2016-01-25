@@ -1,5 +1,5 @@
 var
-  path = require('path'),
+  // path = require('path'),
   webpack = require('webpack');
 
 module.exports = {
@@ -22,12 +22,12 @@ module.exports = {
       'react-router-redux',
       'react-select',
       'redux',
-      'redux-thunk'
-    ]
+      'redux-thunk',
+    ],
   },
   output: {
     path: __dirname + '/app',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   watch: true,
   debug: true,
@@ -36,9 +36,9 @@ module.exports = {
       $: 'jquery',
       _: 'lodash',
       jQuery: 'jquery',
-      React: 'react'
+      React: 'react',
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ],
   resolve: {
     modulesDirectories: [
@@ -49,19 +49,19 @@ module.exports = {
       'bower_components',
       'node_modules',
     ],
-    extensions: ['', '.js', '.jsx', '.json']
+    extensions: ['', '.js', '.jsx', '.json'],
   },
   module: {
     loaders: [{
       test: /\.json$/,
-      loader: 'json-loader'
+      loader: 'json-loader',
     }, {
       test: /\.jsx?$/,
       exclude: /(node_modules|bower_components)/,
-      loader: 'babel'
+      loader: 'babel',
     }, {
       test: require.resolve('react'),
-      loader: 'expose?React'
-    }]
-  }
+      loader: 'expose?React',
+    }],
+  },
 };

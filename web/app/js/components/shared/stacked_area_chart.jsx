@@ -5,7 +5,7 @@
  */
 
 // Libraries
-import nvd3 from 'nvd3';
+import nv from 'nvd3';
 import d3 from 'd3';
 import classnames from 'classnames';
 
@@ -18,7 +18,7 @@ class StackedAreaChart extends React.Component {
   _addOptions(object, options) {
     if (!object || !options || _.isEmpty(options)) {
       return;
-    };
+    }
 
     _.forEach(options, (optionValue, optionKey) => {
       object[optionKey](optionValue);
@@ -51,25 +51,25 @@ class StackedAreaChart extends React.Component {
           .call(this.chart);
 
         if (this.props.chart.width) {
-          let { width } = this.props.chart;
-          chartEl.style({ width })
-        };
+          let {width} = this.props.chart;
+          chartEl.style({width});
+        }
 
         if (this.props.chart.height) {
-          let { height } = this.props.chart;
-          chartEl.style({ height })
-        };
+          let {height} = this.props.chart;
+          chartEl.style({height});
+        }
 
         nv.utils.windowResize(this.chart.update);
         return this.chart;
       },
       callback: () => {
 
-      }
-    })
+      },
+    });
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate() {
     this._updateChart();
   }
 
@@ -83,7 +83,7 @@ class StackedAreaChart extends React.Component {
       return (
         <div className={classnames(this.props.selector, 'no-data')}>{'No Data'}</div>
       );
-    };
+    }
 
     return (
       <svg id={this.props.selector}></svg>
@@ -98,7 +98,7 @@ StackedAreaChart.propTypes = {
   data: React.PropTypes.array,
   selector: React.PropTypes.string,
   xAxis: React.PropTypes.object,
-  yAxis: React.PropTypes.object
+  yAxis: React.PropTypes.object,
 };
 
 module.exports = StackedAreaChart;

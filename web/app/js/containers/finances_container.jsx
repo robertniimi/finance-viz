@@ -1,5 +1,5 @@
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 // Constants
 import ActionTypes from 'action_types';
@@ -12,11 +12,11 @@ import Finances from '../components/finances';
 
 class FinancesApp extends React.Component {
   constructor() {
-    super()
+    super();
   }
 
   _fetchTransactions(query) {
-    this.props.dispatch(FinancesActions.fetchTransactions({ query }));
+    this.props.dispatch(FinancesActions.fetchTransactions({query }));
   }
 
   _fetchChartTransactions(dateRange) {
@@ -43,23 +43,23 @@ class FinancesApp extends React.Component {
     this.props.dispatch(FinancesActions.fetchAccounts());
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps) {
     if (nextProps.finances.dateRange.value !== this.props.finances.dateRange.value) {
-      let { dateRange } = nextProps.finances;
+      let {dateRange} = nextProps.finances;
       this._fetchChartTransactions(dateRange);
       this._fetchNetIncome(dateRange);
       // this._fetchNetWorth(dateRange);
       this._fetchBankAssets(dateRange);
-    };
+    }
 
     if (nextProps.finances.transactions.query !== this.props.finances.transactions.query) {
-      let { query } = nextProps.finances.transactions;
+      let {query} = nextProps.finances.transactions;
       this._fetchTransactions(query);
-    };
+    }
   }
 
   componentDidMount() {
-    let { finances: { transactions, dateRange } } = this.props;
+    let {finances: {transactions, dateRange}} = this.props;
     this._fetchCategories();
     this._fetchAccounts();
 
@@ -75,10 +75,10 @@ class FinancesApp extends React.Component {
 
     let {
       dispatch,
-      finances
+      finances,
     } = this.props;
 
-    let { changeTableFilter, changeDateRange, changeTransactionCategory } = bindActionCreators(FinancesActions, dispatch);
+    let {changeTableFilter, changeDateRange, changeTransactionCategory} = bindActionCreators(FinancesActions, dispatch);
 
     return (
       <Finances
@@ -92,7 +92,7 @@ class FinancesApp extends React.Component {
 }
 
 FinancesApp.propTypes = {
-  transactions: React.PropTypes.array
+  transactions: React.PropTypes.array,
 };
 
 module.exports = connect((state) => {
@@ -105,7 +105,7 @@ module.exports = connect((state) => {
       netIncomeChart: state.netIncomeChart,
       selectedDateRange: state.selectedDateRange,
       stackedAreaChart: state.stackedAreaChart,
-      transactions: state.transactions
-    }
-  }
+      transactions: state.transactions,
+    },
+  };
 })(FinancesApp);

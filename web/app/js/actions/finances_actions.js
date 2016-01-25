@@ -6,110 +6,110 @@ let actions = {
   fetchTransactionsSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_TRANSACTIONS_SUCCESS,
-      result
+      result,
     };
   },
   fetchTransactionsError: (error) => {
     return {
       type: ActionTypes.FETCH_TRANSACTIONS_ERROR,
-      error
+      error,
     };
   },
   fetchChartTransactionsSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_CHART_TRANSACTIONS_SUCCESS,
-      result
+      result,
     };
   },
   fetchChartTransactionsError: (error) => {
     return {
       type: ActionTypes.FETCH_CHART_TRANSACTIONS_ERROR,
-      error
+      error,
     };
   },
   fetchCategoriesSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_CATEGORIES_SUCCESS,
-      result
+      result,
     };
   },
   fetchCategoriesError: (error) => {
     return {
       type: ActionTypes.FETCH_CATEGORIES_ERROR,
-      error
+      error,
     };
   },
   changeDateRange: (selectedDateRange) => {
     return {
       type: ActionTypes.CHANGE_DATE_RANGE,
-      selectedDateRange
+      selectedDateRange,
     };
   },
   changeTableFilter: (filter) => {
     return {
       type: ActionTypes.CHANGE_TABLE_FILTER,
-      filter
-    }
+      filter,
+    };
   },
   fetchNetIncomeSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_NET_INCOME_SUCCESS,
-      result
-    }
+      result,
+    };
   },
   fetchNetIncomeError: (error) => {
     return {
       type: ActionTypes.FETCH_NET_INCOME_ERROR,
-      error
-    }
+      error,
+    };
   },
   fetchNetWorthSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_NET_WORTH_SUCCESS,
-      result
-    }
+      result,
+    };
   },
   fetchNetWorthError: (error) => {
     return {
       type: ActionTypes.FETCH_NET_WORTH_ERROR,
-      error
-    }
+      error,
+    };
   },
   changeTransactionCategorySuccess: (result) => {
     return {
       type: ActionTypes.CHANGE_TRANSACTION_CATEGORY_SUCCESS,
-      result
-    }
+      result,
+    };
   },
   changeTransactionCategoryError: (error) => {
     return {
       type: ActionTypes.CHANGE_TRANSACTION_CATEGORY_ERROR,
-      error
-    }
+      error,
+    };
   },
   fetchBankAssetsSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_BANK_ASSETS_SUCCESS,
-      result
-    }
+      result,
+    };
   },
   fetchBankAssetsError: (error) => {
     return {
       type: ActionTypes.FETCH_BANK_ASSETS_ERROR,
-      error
-    }
+      error,
+    };
   },
   fetchAccountsSuccess: (result) => {
     return {
       type: ActionTypes.FETCH_ACCOUNTS_SUCCESS,
-      result
-    }
+      result,
+    };
   },
   fetchAccountsError: (error) => {
     return {
       type: ActionTypes.FETCH_ACCOUNTS_ERROR,
-      error
-    }
+      error,
+    };
   },
 
 };
@@ -124,7 +124,7 @@ let thunks = {
         .catch((err) => {
           dispatch(actions.changeTransactionCategoryError(err));
         });
-    }
+    };
   },
   fetchCategories: () => {
     return (dispatch) => {
@@ -134,7 +134,7 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchCategoriesError(err));
-        })
+        });
     };
   },
   fetchChartTransactions: (query) => {
@@ -145,7 +145,7 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchChartTransactionsError(err));
-        })
+        });
     };
   },
   fetchTransactions: (query) => {
@@ -156,7 +156,7 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchTransactionsError(err));
-        })
+        });
     };
   },
   fetchNetIncome: (dateRange) => {
@@ -167,7 +167,7 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchNetIncomeError(err));
-        })
+        });
     };
   },
   fetchNetWorth: (dateRange) => {
@@ -178,7 +178,7 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchNetWorthError(err));
-        })
+        });
     };
   },
   fetchAccounts: () => {
@@ -189,7 +189,7 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchAccountsError(err));
-        })
+        });
     };
   },
   fetchBankAssets: (dateRange) => {
@@ -197,7 +197,7 @@ let thunks = {
       let props = {
         bankAssets: FinancesDao.fetchBankAssets(dateRange),
         investmentAssets: FinancesDao.fetchInvestmentAssets(dateRange),
-        debts: FinancesDao.fetchDebts(dateRange)
+        debts: FinancesDao.fetchDebts(dateRange),
       };
 
       return Promise.props(props)
@@ -206,9 +206,9 @@ let thunks = {
         })
         .catch((err) => {
           dispatch(actions.fetchBankAssetsError(err));
-        })
+        });
     };
-  }
+  },
 };
 
 module.exports = _.assign({}, actions, thunks);

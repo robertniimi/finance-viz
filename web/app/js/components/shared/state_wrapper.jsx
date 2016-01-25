@@ -7,13 +7,9 @@
 class StateWrapper extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {  };
   }
 
   render() {
-    // console.log('[state_wrapper] props: ', this.props);
-    // console.log('[state_wrapper] state: ', this.state);
-
     let content = null;
     if (this.props.loading) {
       content = (
@@ -46,8 +42,7 @@ StateWrapper.propTypes = {
   children: React.PropTypes.node,
   error: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.bool]),
   onRetry: React.PropTypes.func,
-  onReset: React.PropTypes.func
-  // React.PropTypes
+  onReset: React.PropTypes.func,
 };
 
 module.exports = StateWrapper;
