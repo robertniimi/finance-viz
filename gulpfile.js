@@ -26,10 +26,10 @@ var ALL_CSS = ALL + '.css';
 var ALL_JS = ALL + '.js';
 var ALL_SCSS = ALL + '.scss';
 
-/* ========== Tasks ========== */
-gulp.task('dev', () => {
+gulp.task('build', ['scripts', 'styles']);
 
-  // gulp.watch(APP_JS, [])
+/* ========== Dev Tasks ========== */
+gulp.task('dev', ['build'], () => {
   gulp.watch(APP_JS + ALL_JS, ['scripts']);
   gulp.watch(APP_STYLE + ALL_CSS, ['styles']);
 });
