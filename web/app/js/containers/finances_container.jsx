@@ -10,7 +10,7 @@ import FinancesActions from 'finances_actions';
 // Components
 import Finances from '../components/finances';
 
-class FinancesApp extends React.Component {
+class FinancesContainer extends React.Component {
   constructor() {
     super();
   }
@@ -91,8 +91,11 @@ class FinancesApp extends React.Component {
   }
 }
 
-FinancesApp.propTypes = {
-  transactions: React.PropTypes.array,
+FinancesContainer.displayName = 'FinancesContainer';
+
+FinancesContainer.propTypes = {
+  dispatch: React.PropTypes.func,
+  finances: React.PropTypes.object,
 };
 
 module.exports = connect((state) => {
@@ -109,4 +112,4 @@ module.exports = connect((state) => {
       transactions: state.finances.transactions,
     },
   };
-})(FinancesApp);
+})(FinancesContainer);
