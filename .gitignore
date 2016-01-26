@@ -1,6 +1,12 @@
 .env
 .DS_Store
+
+# Directories
 node_modules/
+.tmp/
+dist/
+
+# File Types
 *.orig
 *.log
 *.sublime-project

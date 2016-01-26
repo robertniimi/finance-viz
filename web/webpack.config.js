@@ -11,11 +11,11 @@ module.exports = {
       'history',
       'jquery',
       'lodash',
-      'materialize-css/dist/js/materialize',
       'moment',
       'numeral',
       'nvd3',
       'react-addons-update',
+      'react-bootstrap',
       'react-dom',
       'react-redux',
       'react-router',
@@ -29,7 +29,7 @@ module.exports = {
     path: __dirname + '/app',
     filename: 'bundle.js',
   },
-  watch: true,
+  // watch: true,
   debug: true,
   plugins: [
     new webpack.ProvidePlugin({
