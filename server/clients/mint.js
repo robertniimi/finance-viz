@@ -10,7 +10,7 @@ var moment = require('moment');
 
 // Utils
 var Requester = require('../utils/requester');
-var GenerateTransactionJson = require('../utils/generate_transaction_json');
+var generateTransactionJson = require('../utils/generate_transaction_json');
 
 // Consts
 var URLS = require('../constants').URLS;
@@ -28,8 +28,8 @@ class Mint {
         form: {
           task: 'L',
           username: username,
-          password: password
-        }
+          password: password,
+        },
       }
 
       return this.requester.post(URLS.login, options, this);
@@ -82,13 +82,13 @@ class Mint {
       catId: category.id,
       categoryTypeFilter: 'null',
       amount: null,
-      token: this.token
+      token: this.token,
     };
 
     return this.login()
       .then(() => {
         this.requester.post(URLS.updateTransaction, {
-          form: querystring.stringify(data) + `&txnId=${ transaction.id }:${ transaction.txnType }`
+          form: querystring.stringify(data) + `&txnId=${ transaction.id }:${ transaction.txnType }`,
         })
       });
   }
@@ -125,13 +125,13 @@ class Mint {
       comparableType: 8,
       acctChanged: 'T',
       task: 'transactions,txnfilters',
-      rnd: (new Date()).valueOf()
+      rnd: (new Date()).valueOf(),
     }, queryObj);
 
     return this.login()
       .then(() => {
         return this.requester.get(`${ URLS.getJsonData }?${ querystring.stringify(query) }`, {
-          token: this.token
+          token: this.token,
         });
       });
   }
@@ -142,13 +142,13 @@ class Mint {
   getJsonCategories() {
     let query = {
       task: 'categories',
-      rnd: (new Date()).valueOf()
+      rnd: (new Date()).valueOf(),
     };
 
     return this.login()
       .then(() => {
         return this.requester.get(`${ URLS.getJsonData }?${ querystring.stringify(query) }`, {
-          token: this.token
+          token: this.token,
         });
       });
   }
@@ -156,16 +156,16 @@ class Mint {
   // TODO: Get working
   refreshAccounts() {
     console.log('[mint] refreshAccounts');
-    let formData = querystring.stringify({ token: this.token });
+    let formData = querystring.stringify({token: this.token});
     this.login()
       .then(() => {
         return this.requester.post(URLS.refreshAccounts, {
-          form: formData
+          form: formData,
         });
       })
       .then((response) => {
         console.log('[mint] @refreshAccounts -> response: ', response);
-        GenerateTransactionJson();
+        generateTransactionJson();
       })
       .catch((err) => {
         console.log('[client] err: ', err);
@@ -188,7 +188,7 @@ class Mint {
       offset: 0,
       comparableType: 8,
       acctChanged: 'T',
-      rnd: (new Date()).valueOf()
+      rnd: (new Date()).valueOf(),
     }, queryObj);
 
     return this.login()
@@ -202,10 +202,10 @@ class Mint {
     let dateRange = {
       period: {
         label: query.label,
-        value: query.value
+        value: query.value,
       },
       start: moment(new Date(query.start)).format(dateFormat),
-      end: moment(new Date(query.end)).format(dateFormat)
+      end: moment(new Date(query.end)).format(dateFormat),
     };
 
     let data = {
@@ -218,19 +218,19 @@ class Mint {
         'accounts': {
           'groupIds': groupIds,
           'accountIds': [],
-          'count': accountCount || null
+          'count': accountCount || null,
         },
         dateRange,
         'drilldown': null,
-        'categoryTypeFilter': 'all'
+        'categoryTypeFilter': 'all',
       }),
-      token: this.token
+      token: this.token,
     };
 
     return this.login()
       .then(() => {
         return this.requester.post(URLS.trendData, {
-          form: querystring.stringify(data)
+          form: querystring.stringify(data),
         })
       });
   }
@@ -247,15 +247,15 @@ class Mint {
           args: args || {},
           service,
           task,
-          id
-        }
-      ])
+          id,
+        },
+      ]),
     }
 
     return this.login()
       .then(() => {
         return this.requester.post(`${ URLS.bundledServiceController }?legacy=false`, {
-          form: querystring.stringify(data)
+          form: querystring.stringify(data),
         }, null, _self.token);
       });
   }
@@ -263,7 +263,7 @@ class Mint {
   autocompleteFilter(query) {
     let queryObj = {
       query,
-      rnd: (new Date()).valueOf()
+      rnd: (new Date()).valueOf(),
     };
 
     return this.login()

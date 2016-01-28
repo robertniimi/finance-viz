@@ -11,9 +11,6 @@ module.exports = (app, mint) => {
     mint.getJsonCategories(req.query)
       .then((categories) => {
         res.send(categories);
-      })
-      .catch((err) => {
-
       });
   })
 
@@ -21,9 +18,6 @@ module.exports = (app, mint) => {
     mint.getJsonData()
       .then((jsonData) => {
         res.send(jsonData);
-      })
-      .catch((err) => {
-        // console.log('[mintApi] err: ', err);
       });
   });
 }

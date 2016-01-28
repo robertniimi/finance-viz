@@ -91,8 +91,8 @@ module.exports = (app, mint) => {
         'OTHER_PROPERTY',
         'REAL_ESTATE',
         'VEHICLE',
-        'UNCLASSIFIED'
-      ]
+        'UNCLASSIFIED',
+      ],
     };
 
     mint.bundledServiceController(service, task, id, args)

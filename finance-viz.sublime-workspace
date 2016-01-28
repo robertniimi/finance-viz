@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"token",
+				"tokenSecret"
+			],
+			[
+				"log",
+				"log	console.log('... : ', ...)"
+			],
+			[
+				"netAss",
+				"netAssetsChart"
+			],
+			[
+				"Finances",
+				"FinancesActionTypes"
+			],
+			[
 				"_handle",
 				"_handleTableCategoryChange"
 			],
@@ -18,10 +34,6 @@
 			[
 				"FETCH",
 				"FETCH_CATEGORIES_SUCCESS"
-			],
-			[
-				"log",
-				"log	console.log('@ -> : ', ...)"
 			],
 			[
 				"subcate",
@@ -116,10 +128,6 @@
 				"f	() => {}"
 			],
 			[
-				"Finances",
-				"FinancesActions"
-			],
-			[
 				"uncate",
 				"uncategorizedRows"
 			],
@@ -203,8 +211,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 307.0,
-		"last_filter": "move",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -214,6 +222,14 @@
 			[
 				"rename",
 				"File: Rename"
+			],
+			[
+				"dupli",
+				"File: Duplicate"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"del",
@@ -226,10 +242,6 @@
 			[
 				"snip",
 				"Snippet: readme"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"remove",
@@ -264,7 +276,7 @@
 				"Preferences: Key Bindings - Default"
 			]
 		],
-		"width": 584.0
+		"width": 539.0
 	},
 	"console":
 	{
@@ -285,11 +297,45 @@
 	"expanded_folders":
 	[
 		"/Users/Robert/Github/finance-viz",
+		"/Users/Robert/Github/finance-viz/server",
+		"/Users/Robert/Github/finance-viz/server/api",
+		"/Users/Robert/Github/finance-viz/server/api/mint",
+		"/Users/Robert/Github/finance-viz/server/api/strava",
+		"/Users/Robert/Github/finance-viz/server/clients",
+		"/Users/Robert/Github/finance-viz/server/data",
 		"/Users/Robert/Github/finance-viz/web",
-		"/Users/Robert/Github/finance-viz/web/app"
+		"/Users/Robert/Github/finance-viz/web/app/js",
+		"/Users/Robert/Github/finance-viz/web/app/js/components",
+		"/Users/Robert/Github/finance-viz/web/app/js/components/running",
+		"/Users/Robert/Github/finance-viz/web/app/js/constants",
+		"/Users/Robert/Github/finance-viz/web/app/js/containers",
+		"/Users/Robert/Github/finance-viz/web/app/js/reducers"
 	],
 	"file_history":
 	[
+		"/Users/Robert/Github/finance-viz/server/server.js",
+		"/Users/Robert/Github/finance-viz/server/clients/mint.js",
+		"/Users/Robert/Github/finance-viz/server/clients/strava.js",
+		"/Users/Robert/Github/finance-viz/server/api/mint_api.js",
+		"/Users/Robert/Github/finance-viz/server/api/strava/strava_api.js",
+		"/Users/Robert/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Robert/Github/finance-viz/web/app/js/components/finances/finances.jsx",
+		"/Users/Robert/Github/finance-viz/web/app/js/reducers/finances_reducer.js",
+		"/Users/Robert/Github/finance-viz/web/app/js/constants/action_types_running.js",
+		"/Users/Robert/Github/finance-viz/web/webpack.config.js",
+		"/Users/Robert/Github/finance-viz/web/app/js/containers/finances_container.jsx",
+		"/Users/Robert/Github/finance-viz/web/app/js/containers/running_container.jsx",
+		"/Users/Robert/Github/finance-viz/web/app/js/components/running/running.jsx",
+		"/Users/Robert/Github/finance-viz/server/api/strava_api.js",
+		"/Users/Robert/Github/finance-viz/server/constants.js",
+		"/Users/Robert/Github/finance-viz/server/routes.js",
+		"/Users/Robert/Github/finance-viz/.env",
+		"/Users/Robert/Github/finance-viz/web/app/js/reducers/running_reducer.js",
+		"/Users/Robert/Github/finance-viz/web/app/js/app.jsx",
+		"/Users/Robert/Github/finance-viz/web/app/js/main.jsx",
+		"/Users/Robert/Github/finance-viz/web/app/js/constants/date_ranges.js",
+		"/Users/Robert/Github/finance-viz/web/app/js/constants/action_types.js",
+		"/Users/Robert/Github/finance-viz/web/app/js/constants/action_types_finances.js",
 		"/Users/Robert/git/finance-viz/package.json",
 		"/Users/Robert/git/finance-viz/.gitignore",
 		"/Users/Robert/git/finance-viz/web/webpack.config.js",
@@ -394,30 +440,7 @@
 		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log_var.sublime-snippet",
 		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/dispatch.sublime-snippet",
 		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/update_state.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_controller.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/todo.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/context.sublime-snippet",
-		"/Users/Robert/Desktop/bootstrap_helpers.js",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/log_var.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/react_createComponent.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/React/CJSX/Bootstrap/bootstrap_checkbox.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/form.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/handleChange.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/log.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_row.sublime-snippet",
-		"/Users/Robert/git/personal-site/web/webpack.config.js",
-		"/Users/Robert/git/personal-site/server.js",
-		"/Users/Robert/git/personal-site/web/index.html",
-		"/Users/Robert/git/personal-site/web/app/css/style.css",
-		"/Users/Robert/git/personal-site/web/app/app.js",
-		"/Users/Robert/git/personal-site/web/app/index.html",
-		"/Users/Robert/git/personal-site/server/server.js",
-		"/Users/Robert/git/personal-site/app/index.html",
-		"/Users/Robert/Desktop/useful_scripts.js",
-		"/Users/Robert/git/functional-bash/functions.sh",
-		"/Users/Robert/bin/_each() {",
-		"/Users/Robert/bin/scaffold"
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_controller.sublime-snippet"
 	],
 	"find":
 	{
@@ -438,6 +461,15 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"GenerateTransactionJson",
+			"_self",
+			"GenerateTransactionJson",
+			"TWITTER",
+			"finances",
+			"end",
+			"DateRanges",
+			"findDateRange",
+			"\"",
 			"SomeApp",
 			"div",
 			"select",
@@ -556,16 +588,7 @@
 			";",
 			"textbox",
 			"description",
-			",",
-			"\"",
-			"<tabTrigger>cn</tabTrigger>",
-			"<tabTrigger>cn<tabTrigger>",
-			"className",
-			"tr",
-			"li",
-			"i",
-			"pluck",
-			"assign"
+			","
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -637,12 +660,36 @@
 		"selected_items":
 		[
 			[
-				"package",
-				"package.json"
+				"server",
+				"server/server.js"
+			],
+			[
+				"mint_api",
+				"server/api/mint_api.js"
+			],
+			[
+				"routes",
+				"server/routes.js"
 			],
 			[
 				"webpack",
 				"web/webpack.config.js"
+			],
+			[
+				"date_ranges",
+				"web/app/js/constants/date_ranges.js"
+			],
+			[
+				"finances_reducer",
+				"web/app/js/reducers/finances_reducer.js"
+			],
+			[
+				"actiontyp",
+				"web/app/js/constants/action_types.js"
+			],
+			[
+				"package",
+				"package.json"
 			],
 			[
 				"finances_dao",
@@ -729,10 +776,6 @@
 				"JavaScript/React/JSX/table.sublime-snippet"
 			],
 			[
-				"server",
-				"server.js"
-			],
-			[
 				"sublime-keymap",
 				"Backup/20150602212744/BracketHighlighter/Default.sublime-keymap"
 			],
@@ -746,9 +789,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "finance",
 		"selected_items":
 		[
+			[
+				"finance",
+				"~/Github/finance-viz/finance-viz_server.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

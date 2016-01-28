@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 module.exports = {
   URLS: {
     autocompleteFilter: 'https://wwws.mint.com/autocompleteFilter.xevent',
