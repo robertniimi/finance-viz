@@ -23,9 +23,12 @@ class RunningContainer extends React.Component {
   }
 
   render() {
+    const {dispatch, running} = this.props;
 
     return (
-      <div className='running-container'></div>
+      <Running
+        {...running}
+      />
     );
   }
 }
@@ -42,6 +45,6 @@ module.exports = connect((state) => {
   return {
     running: {
 
-    }
+    },
   };
 })(RunningContainer);

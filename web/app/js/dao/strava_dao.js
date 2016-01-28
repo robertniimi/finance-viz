@@ -2,6 +2,6 @@ const request = require('request');
 
 module.exports = {
   authenticateStrava() {
-    request.get()
+    return request.get('/strava/auth');
   },
 };

@@ -27,6 +27,7 @@ var ALL = '**/*';
 var ALL_HTML = '.html';
 var ALL_CSS = ALL + '.css';
 var ALL_JS = ALL + '.js';
+var ALL_JSX = ALL + '.jsx';
 var ALL_SCSS = ALL + '.scss';
 
 gulp.task('build', [
@@ -38,7 +39,7 @@ gulp.task('build', [
 
 /* ========== Dev Tasks ========== */
 gulp.task('dev', ['build'], () => {
-  gulp.watch(APP_JS + ALL_JS, ['scripts']);
+  gulp.watch([APP_JS + ALL_JS, APP_JS + ALL_JSX], ['scripts']);
   gulp.watch(APP_STYLE + ALL_CSS, ['styles']);
   gulp.watch(APP + '*.html', ['html']);
 });
