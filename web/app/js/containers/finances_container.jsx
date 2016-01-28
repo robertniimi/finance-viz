@@ -8,7 +8,7 @@ import ActionTypes from 'action_types';
 import FinancesActions from 'finances_actions';
 
 // Components
-import Finances from '../components/finances';
+import Finances from '../components/finances/finances';
 
 class FinancesContainer extends React.Component {
   constructor() {
@@ -99,7 +99,6 @@ FinancesContainer.propTypes = {
 };
 
 module.exports = connect((state) => {
-  console.log('[finances_container] state: ', state);
   return {
     finances: {
       accounts: state.finances.accounts,

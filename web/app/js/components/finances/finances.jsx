@@ -22,7 +22,7 @@ import DateRanges from 'date_ranges';
 const DATE_OPTIONS = _.map(DateRanges, (range) => {
   return {
     label: range.label,
-    value: range.value
+    value: range.value,
   };
 });
 
@@ -83,12 +83,20 @@ Finances.displayName = 'Finances';
 Finances.propTypes = {
   accounts: React.PropTypes.array,
   categories: React.PropTypes.array,
+  dateRange: React.PropTypes.shape({
+    label: React.PropTypes.string,
+    value: React.PropTypes.string,
+    start: React.PropTypes.object,
+    end: React.PropTypes.object,
+  }),
+  netIncomeChart: React.PropTypes.object,
+  netAssetsChart: React.PropTypes.object,
   onChangeDateRange: React.PropTypes.func,
   onChangeTableFilter: React.PropTypes.func,
   onChangeTransactionCategory: React.PropTypes.func,
   stackedAreaChart: React.PropTypes.object,
   transactions: React.PropTypes.object,
-  bankAssets: React.PropTypes.array
+  bankAssets: React.PropTypes.array,
 };
 
 module.exports = Finances;

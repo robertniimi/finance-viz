@@ -3,7 +3,7 @@ import update from 'react-addons-update';
 
 // Constants
 import ActionTypes from 'action_types';
-import DateRanges from 'date_ranges';
+import DATE_RANGES from 'date_ranges';
 import DisplayedAccountTypes from 'displayed_account_types';
 
 // DAOs
@@ -37,7 +37,7 @@ const defaultError = (error) => {
 };
 
 let findDateRange = (rangeValue) => {
-  return _.find(DateRanges, (range) => range.value === rangeValue);
+  return _.find(DATE_RANGES, (range) => range.value === rangeValue);
 };
 
 const initialState = {
