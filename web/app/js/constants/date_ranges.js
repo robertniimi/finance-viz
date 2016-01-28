@@ -51,10 +51,10 @@ let dateRanges = [
     value: 'AT',
     start: moment().year(2000).startOf('year'),
     end: moment().endOf('day'),
-  }
+  },
 ];
 
 module.exports = _.forEach(dateRanges, (range) => {
   range.start = range.start.toISOString();
-  range.end = range.end.toISOString();,
+  range.end = range.end.toISOString();
 });

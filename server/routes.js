@@ -27,7 +27,7 @@ var _filterTransactions = function(transactions, start, end) {
 
 module.exports = function(app) {
   var sendIndex = (req, res) => {
-    res.sendFile(path.join(__dirname, '/../web/app/index.html'));
+    res.sendFile(path.join(__dirname, '/../web/dist/index.html'));
   }
 
   app.get('/', sendIndex);

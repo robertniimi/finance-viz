@@ -1,4 +1,4 @@
-module.exports = (app, strava) => {
+module.exports = (app, strava, passport) => {
   // ===== AUTHENTICATION ===== //
   app.get('/strava/auth',
     passport.authenticate('strava')

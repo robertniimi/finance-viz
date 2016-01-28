@@ -21,17 +21,19 @@ var APP_STYLE_SASS = APP_STYLE + 'sass/';
 // var APP_IMAGES = APP + 'images';
 // var APP_FONTS = APP + 'fonts';
 
-var ALL = '**/*'
+var ALL = '**/*';
+var ALL_HTML = '.html';
 var ALL_CSS = ALL + '.css';
 var ALL_JS = ALL + '.js';
 var ALL_SCSS = ALL + '.scss';
 
-gulp.task('build', ['scripts', 'styles']);
+gulp.task('build', ['scripts', 'styles', 'html']);
 
 /* ========== Dev Tasks ========== */
 gulp.task('dev', ['build'], () => {
   gulp.watch(APP_JS + ALL_JS, ['scripts']);
   gulp.watch(APP_STYLE + ALL_CSS, ['styles']);
+  gulp.watch(APP + ALL_HTML, ['html']);
 });
 
 /* ========== JS Tasks ========== */
@@ -65,7 +67,7 @@ gulp.task('_sass', () => {
     .pipe($.plumber())
     .pipe($.sass({
       includePaths: ['./node_modules', './node_modules/support-for/sass'],
-      errLogToConsole: true
+      errLogToConsole: true,
     }))
     .pipe($.plumber.stop())
     .pipe(gulp.dest(TMP_STYLE))
@@ -90,7 +92,7 @@ gulp.task('_minify-css', ['_sass', '_css'], () => {
     .pipe($.cssnano())
     .pipe($.rename({
       dirname: 'static',
-      extname: '.min.css'
+      extname: '.min.css',
     }))
     .pipe($.plumber.stop())
     .pipe(gulp.dest(DIST))
@@ -98,10 +100,24 @@ gulp.task('_minify-css', ['_sass', '_css'], () => {
 });
 
 /* ========== Server Tasks ========== */
+gulp.task('html', ['_minify-html']);
+
+gulp.task('_minify-html', function() {
+  return gulp.src(APP + '*.html')
+    .pipe($.plumber())
+    .pipe($.htmlmin({collapseWhitespace: true}))
+    // .pipe($.htmlmin())
+    .pipe($.debug())
+    .pipe($.plumber.stop())
+    .pipe($.debug())
+    .pipe(gulp.dest('./web/dist'))
+});
+
+/* ========== Server Tasks ========== */
 gulp.task('serve', () => {
   return $.nodemon({
     script: './server/server.js',
-    ignore: ['./server/data/']
+    ignore: ['./server/data/'],
   })
   ;
 });
