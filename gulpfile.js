@@ -42,6 +42,11 @@ gulp.task('dev', ['build'], () => {
   gulp.watch([APP_JS + ALL_JS, APP_JS + ALL_JSX], ['scripts']);
   gulp.watch(APP_STYLE + ALL_CSS, ['styles']);
   gulp.watch(APP + '*.html', ['html']);
+  gulp.watch([
+    APP_IMAGES + '*.png',
+    APP_IMAGES + '*.svg',
+    APP_IMAGES + '.jpg',
+  ], ['images']);
 });
 
 /* ========== JS Tasks ========== */
