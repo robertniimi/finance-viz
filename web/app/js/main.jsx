@@ -22,7 +22,7 @@ import runningReducer from './reducers/running_reducer';
 const reduxRouterMiddleware = syncHistory(browserHistory);
 const createStoreWithMiddleware = applyMiddleware(thunk, reduxRouterMiddleware)(createStore);
 
-const reducer = combineReducers(Object.assign({}, {
+const reducer = combineReducers(_.assign({}, {
   routing: routeReducer,
   running: runningReducer,
   finances: financesReducer,

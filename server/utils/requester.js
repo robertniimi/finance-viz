@@ -9,7 +9,7 @@ var request = require('request');
 
 var cookie;
 var cookieJar = request.jar();
-var request = request.defaults({ jar: cookieJar, strickSSL: false });
+var request = request.defaults({jar: cookieJar, strickSSL: false});
 
 class Requester {
   constructor() {
@@ -23,7 +23,7 @@ class Requester {
         headers: headers,
         json: true,
         method: 'GET',
-        url: endpoint
+        url: endpoint,
       }, options || {}), (err, res, body) => {
         if (err) { reject(err); }
         resolve(body);
@@ -43,7 +43,7 @@ class Requester {
         json: true,
         method: 'POST',
         headers: (token) ? _.assign({}, HEADERS, {token}) : HEADERS,
-        url: endpoint
+        url: endpoint,
       }, options), (err, res, body) => {
         if (err) { reject(err); }
         // Store cookies
@@ -67,7 +67,7 @@ class Requester {
           method: 'GET',
           jar: cookieJar,
           url: endpoint,
-          headers: headers
+          headers: headers,
         })
           .pipe(fs.createWriteStream(path))
           .on('close', () => {

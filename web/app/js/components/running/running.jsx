@@ -4,7 +4,7 @@
  * @prop {type} PROP - PROP_DESCRIPTION
  */
 
-class Running extends Component {
+class Running extends React.Component {
   constructor(props) {
     super(props);
   }

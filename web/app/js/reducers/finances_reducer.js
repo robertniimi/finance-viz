@@ -36,7 +36,7 @@ const defaultError = (error) => {
   };
 };
 
-let findDateRange = (rangeValue) => {
+const findDateRange = (rangeValue) => {
   return _.find(DATE_RANGES, (range) => range.value === rangeValue);
 };
 

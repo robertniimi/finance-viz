@@ -24,7 +24,7 @@ class App extends React.Component {
 App.displayName = 'App';
 
 App.propTypes = {
-  children: React.PropTypes.object
+  children: React.PropTypes.object,
 };
 
 module.exports = App;

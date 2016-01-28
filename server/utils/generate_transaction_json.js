@@ -14,7 +14,7 @@ const EXCLUDE_TRANSACTION_TYPES = [
   'Pets',
   'Kids',
   'Taxes',
-  'Transfer'
+  'Transfer',
 ];
 
 // Normalizes date data to start of month
@@ -41,7 +41,7 @@ var _getDefaultDataValues = function(transactions) {
   for (var i = minDate; i <= maxDate; i.add(1, 'month')) {
     defaultValues.push({
       date: i.toJSON(),
-      amount: 0
+      amount: 0,
     });
   }
   return defaultValues;
@@ -53,7 +53,7 @@ var _groupByCategory = function(transactions) {
   var data = _.map(categorySchema, function(subCategories, category) {
     return {
       key: category,
-      values: _.cloneDeep(defaultValues)
+      values: _.cloneDeep(defaultValues),
     }
   });
 
@@ -96,11 +96,11 @@ var _groupByCategory = function(transactions) {
         //
         dataValue.amount += transaction.Amount;
       } else {
-        throw ('[get_transactions] @_groupByCategory: dataValue object not found');
+        throw Error('[get_transactions] @_groupByCategory: dataValue object not found');
       }
 
     } else {
-      throw ('[get_transactions] @_groupByCategory: categoryData object not found');
+      throw Error('[get_transactions] @_groupByCategory: categoryData object not found');
     }
   });
 

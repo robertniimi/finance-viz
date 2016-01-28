@@ -46,7 +46,7 @@ module.exports = (app, mint) => {
     //   key: (string)
     //   values: (array)
     // }
-    fs.readFile(__dirname + '/../data/transactions_by_category.json', (err, transactions) => {
+    fs.readFile(__dirname + '/../../data/transactions_by_category.json', (err, transactions) => {
       // console.log('[mintApi] transactions: ', transactions);
       if (err) {
         console.log('[mintApi] err: ', err);

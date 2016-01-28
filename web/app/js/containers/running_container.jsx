@@ -16,7 +16,7 @@ import Running from '../components/running/running';
  * @prop {type} PROP - PROP_DESCRIPTION
  */
 
-class RunningContainer extends Component {
+class RunningContainer extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {  };

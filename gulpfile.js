@@ -33,7 +33,7 @@ gulp.task('build', ['scripts', 'styles', 'html']);
 gulp.task('dev', ['build'], () => {
   gulp.watch(APP_JS + ALL_JS, ['scripts']);
   gulp.watch(APP_STYLE + ALL_CSS, ['styles']);
-  gulp.watch(APP + ALL_HTML, ['html']);
+  gulp.watch(APP + '*.html', ['html']);
 });
 
 /* ========== JS Tasks ========== */
@@ -55,7 +55,7 @@ gulp.task('_webpack', () => {
     .pipe(webpack(webpackConfig))
     .pipe($.plumber.stop())
     .pipe(gulp.dest(TMP_JS))
-    .pipe(gulp.dest(TMP_STYLE))
+    .pipe(gulp.dest(DIST_STATIC))
     ;
 });
 
@@ -106,10 +106,7 @@ gulp.task('_minify-html', function() {
   return gulp.src(APP + '*.html')
     .pipe($.plumber())
     .pipe($.htmlmin({collapseWhitespace: true}))
-    // .pipe($.htmlmin())
-    .pipe($.debug())
     .pipe($.plumber.stop())
-    .pipe($.debug())
     .pipe(gulp.dest('./web/dist'))
 });
 

@@ -57,7 +57,7 @@ require('./routes')(app);
 require('./api/mint/mint_api.js')(app, mint);
 require('./api/strava/strava_api.js')(app, null, passport);
 
-app.use(express.static(__dirname + '/../web/app'));
+app.use(express.static(__dirname + '/../web/dist'));
 
 app.listen(port);
 
