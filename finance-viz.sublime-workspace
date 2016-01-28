@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"_minify",
+				"_minify-images"
+			],
+			[
+				"DIST_ST",
+				"DIST_STATIC_IMAGES"
+			],
+			[
 				"token",
 				"tokenSecret"
 			],
@@ -299,21 +307,25 @@
 		"/Users/Robert/Github/finance-viz",
 		"/Users/Robert/Github/finance-viz/server",
 		"/Users/Robert/Github/finance-viz/server/api",
-		"/Users/Robert/Github/finance-viz/server/api/mint",
-		"/Users/Robert/Github/finance-viz/server/api/strava",
 		"/Users/Robert/Github/finance-viz/server/clients",
 		"/Users/Robert/Github/finance-viz/server/data",
 		"/Users/Robert/Github/finance-viz/web",
-		"/Users/Robert/Github/finance-viz/web/app/js",
-		"/Users/Robert/Github/finance-viz/web/app/js/components",
-		"/Users/Robert/Github/finance-viz/web/app/js/components/running",
-		"/Users/Robert/Github/finance-viz/web/app/js/constants",
-		"/Users/Robert/Github/finance-viz/web/app/js/containers",
-		"/Users/Robert/Github/finance-viz/web/app/js/reducers"
+		"/Users/Robert/Github/finance-viz/web/app",
+		"/Users/Robert/Github/finance-viz/web/app/images",
+		"/Users/Robert/Github/finance-viz/web/app/style",
+		"/Users/Robert/Github/finance-viz/web/dist",
+		"/Users/Robert/Github/finance-viz/web/dist/static",
+		"/Users/Robert/Github/finance-viz/web/dist/static/images"
 	],
 	"file_history":
 	[
+		"/Users/Robert/Github/finance-viz/gulpfile.js",
+		"/Users/Robert/Github/finance-viz/web/webpack.config.js",
+		"/Users/Robert/Github/finance-viz/web/dist/static/vendor.css",
 		"/Users/Robert/Github/finance-viz/server/server.js",
+		"/Users/Robert/Github/finance-viz/server/routes.js",
+		"/Users/Robert/Github/finance-viz/web/app/index.html",
+		"/Users/Robert/Github/finance-viz/web/dist/index.html",
 		"/Users/Robert/Github/finance-viz/server/clients/mint.js",
 		"/Users/Robert/Github/finance-viz/server/clients/strava.js",
 		"/Users/Robert/Github/finance-viz/server/api/mint_api.js",
@@ -322,13 +334,11 @@
 		"/Users/Robert/Github/finance-viz/web/app/js/components/finances/finances.jsx",
 		"/Users/Robert/Github/finance-viz/web/app/js/reducers/finances_reducer.js",
 		"/Users/Robert/Github/finance-viz/web/app/js/constants/action_types_running.js",
-		"/Users/Robert/Github/finance-viz/web/webpack.config.js",
 		"/Users/Robert/Github/finance-viz/web/app/js/containers/finances_container.jsx",
 		"/Users/Robert/Github/finance-viz/web/app/js/containers/running_container.jsx",
 		"/Users/Robert/Github/finance-viz/web/app/js/components/running/running.jsx",
 		"/Users/Robert/Github/finance-viz/server/api/strava_api.js",
 		"/Users/Robert/Github/finance-viz/server/constants.js",
-		"/Users/Robert/Github/finance-viz/server/routes.js",
 		"/Users/Robert/Github/finance-viz/.env",
 		"/Users/Robert/Github/finance-viz/web/app/js/reducers/running_reducer.js",
 		"/Users/Robert/Github/finance-viz/web/app/js/app.jsx",
@@ -436,11 +446,7 @@
 		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_store.sublime-snippet",
 		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_source.sublime-snippet",
 		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/email_template.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_source.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log_var.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/dispatch.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/update_state.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_controller.sublime-snippet"
+		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_source.sublime-snippet"
 	],
 	"find":
 	{
@@ -461,6 +467,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"scripts",
+			"html",
+			"_minify",
+			"htmlmin",
 			"GenerateTransactionJson",
 			"_self",
 			"GenerateTransactionJson",
@@ -584,11 +594,7 @@
 			"exclude",
 			"chart",
 			"org.robert.upgradeWeekly",
-			"\"",
-			";",
-			"textbox",
-			"description",
-			","
+			"\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -660,6 +666,14 @@
 		"selected_items":
 		[
 			[
+				"gulpfile",
+				"gulpfile.js"
+			],
+			[
+				"webpa",
+				"web/webpack.config.js"
+			],
+			[
 				"server",
 				"server/server.js"
 			],
@@ -694,10 +708,6 @@
 			[
 				"finances_dao",
 				"app/js/dao/finances_dao.js"
-			],
-			[
-				"gulpfile",
-				"gulpfile.js"
 			],
 			[
 				"finances_redu",

@@ -69,10 +69,23 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Robert/Github/finance-viz/server"
+		"/Users/Robert/Github/finance-viz/server",
+		"/Users/Robert/Github/finance-viz/server/api",
+		"/Users/Robert/Github/finance-viz/server/api/mint",
+		"/Users/Robert/Github/finance-viz/server/api/strava",
+		"/Users/Robert/Github/finance-viz/server/clients",
+		"/Users/Robert/Github/finance-viz/server/data",
+		"/Users/Robert/Github/finance-viz/server/utils"
 	],
 	"file_history":
 	[
+		"/Users/Robert/Github/finance-viz/server/api/mint/mint_api_get_json.js",
+		"/Users/Robert/Github/finance-viz/server/utils/requester.js",
+		"/Users/Robert/Github/finance-viz/server/utils/generate_transaction_json.js",
+		"/Users/Robert/Github/finance-viz/server/server.js",
+		"/Users/Robert/Github/finance-viz/server/api/strava/strava_api.js",
+		"/Users/Robert/Github/finance-viz/server/api/mint/mint_api.js",
+		"/Users/Robert/Github/finance-viz/server/api/mint_api.js",
 		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/integration/salesforce/SalesforceSoapApiClient.scala",
 		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/server/Server.scala",
 		"/Users/Robert/Github/engagio/server/src/main/scala/com/engagio/metric/api/MetricApi.scala",
@@ -95,7 +108,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -319,7 +332,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 147.0,
+	"side_bar_width": 196.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
