@@ -13,7 +13,7 @@ class App extends React.Component {
     console.log('[app] this.props: ', this.props);
     return (
       <div className='app'>
-        <header>{'APP'}</header>
+        <header>{'Finding Niimi'}</header>
         {/* Insert App header / nav here */}
         {this.props.children}
       </div>

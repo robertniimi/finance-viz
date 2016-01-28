@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var webpack = require('webpack-stream');
 var postcssImport = require('postcss-import');
+var pngquant = require('imagemin-pngquant');
 var $ = require('gulp-load-plugins')();
 
 var webpackConfig = require('./web/webpack.config');
@@ -8,6 +9,7 @@ var webpackConfig = require('./web/webpack.config');
 // DIRECTORY CONSTANTS
 var DIST = './web/dist/';
 var DIST_STATIC = DIST + 'static/';
+var DIST_STATIC_IMAGES = DIST_STATIC + 'images/';
 
 var TMP = './web/.tmp/';
 var TMP_JS = TMP + 'js/';
@@ -18,8 +20,8 @@ var APP_JS = APP + 'js/';
 var APP_STYLE = APP + 'style/';
 var APP_STYLE_CSS = APP_STYLE + 'css/';
 var APP_STYLE_SASS = APP_STYLE + 'sass/';
-// var APP_IMAGES = APP + 'images';
-// var APP_FONTS = APP + 'fonts';
+var APP_IMAGES = APP + 'images/';
+// var APP_FONTS = APP + 'fonts/';
 
 var ALL = '**/*';
 var ALL_HTML = '.html';
@@ -27,7 +29,12 @@ var ALL_CSS = ALL + '.css';
 var ALL_JS = ALL + '.js';
 var ALL_SCSS = ALL + '.scss';
 
-gulp.task('build', ['scripts', 'styles', 'html']);
+gulp.task('build', [
+  'html',
+  'images',
+  'scripts',
+  'styles',
+]);
 
 /* ========== Dev Tasks ========== */
 gulp.task('dev', ['build'], () => {
@@ -99,7 +106,7 @@ gulp.task('_minify-css', ['_sass', '_css'], () => {
     ;
 });
 
-/* ========== Server Tasks ========== */
+/* ========== HTML Tasks ========== */
 gulp.task('html', ['_minify-html']);
 
 gulp.task('_minify-html', function() {
@@ -109,6 +116,24 @@ gulp.task('_minify-html', function() {
     .pipe($.plumber.stop())
     .pipe(gulp.dest('./web/dist'))
 });
+
+
+/* ========== Image Tasks ========== */
+gulp.task('images', ['_minify-images']);
+
+gulp.task('_minify-images', function() {
+  return gulp.src(APP_IMAGES + '*')
+    .pipe($.plumber())
+    .pipe($.debug())
+    .pipe($.imagemin({
+      progressive: true,
+      use: [pngquant()],
+    }))
+    .pipe($.plumber.stop())
+    .pipe($.debug())
+    .pipe(gulp.dest(DIST_STATIC_IMAGES));
+});
+
 
 /* ========== Server Tasks ========== */
 gulp.task('serve', () => {
