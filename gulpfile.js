@@ -123,7 +123,6 @@ gulp.task('_minify-html', function() {
     .pipe(gulp.dest('./web/dist'))
 });
 
-
 /* ========== Image Tasks ========== */
 gulp.task('images', ['_minify-images']);
 
@@ -139,7 +138,6 @@ gulp.task('_minify-images', function() {
     .pipe($.debug())
     .pipe(gulp.dest(DIST_STATIC_IMAGES));
 });
-
 
 /* ========== Server Tasks ========== */
 gulp.task('serve', () => {
