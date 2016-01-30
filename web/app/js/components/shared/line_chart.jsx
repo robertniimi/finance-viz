@@ -19,7 +19,6 @@ class LineChart extends React.Component {
     if (!object || !options || _.isEmpty(options)) {
       return;
     }
-
     _.forEach(options, (optionValue, optionKey) => {
       object[optionKey](optionValue);
     });

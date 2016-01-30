@@ -38,23 +38,19 @@ const defaultFetch = (actionType, propName) => {
   return (propName) ? Object.assign(action, {propName}) : action;
 };
 
-const defaultThunk = (actionName, actionTuple, args = []) => {
-  const [actionType, daoAction, propName] = actionTuple;
-  return (dispatch) => {
-    dispatch(defaultFetch(actionType, propName));
-    return daoAction.apply(null, args)
-      .then((result) => {
-        dispatch(defaultSuccess(result, actionType, propName));
-      })
-      .catch((err) => {
-        dispatch(defaultError(err, actionType, propName));
-      });
-  }
-};
-
 let thunks = _.reduce(ASYNC_ACTIONS, (result, actionTuple, actionName) => {
+  const [actionType, daoAction, propName] = actionTuple;
   result[actionName] = (...args) => {
-    return defaultThunk(actionName, actionTuple, args);
+    return (dispatch) => {
+      dispatch(defaultFetch(actionType, propName));
+      return daoAction.apply(null, args)
+        .then((result) => {
+          dispatch(defaultSuccess(result, actionType, propName));
+        })
+        .catch((err) => {
+          dispatch(defaultError(err, actionType, propName));
+        });
+    }
   };
   return result;
 }, {
