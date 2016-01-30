@@ -24,6 +24,7 @@ class FinancesContainer extends React.Component {
   }
 
   _fetchNetIncome(dateRange) {
+    console.log('[finances_container] @_fetchNetIncome -> arguments: ', arguments);
     this.props.dispatch(FinancesActions.fetchNetIncome(dateRange));
   }
 
@@ -71,7 +72,7 @@ class FinancesContainer extends React.Component {
   }
 
   render() {
-    console.log('[finances_container] this.props: ', this.props);
+    // console.log('[finances_container] this.props: ', this.props);
 
     let {
       dispatch,

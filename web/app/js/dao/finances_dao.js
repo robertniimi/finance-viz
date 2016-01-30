@@ -13,60 +13,60 @@ import querystring from 'querystring';
 
 module.exports = {
   // queryObj
-  fetchTransactions: (queryObj) => {
+  fetchTransactions(queryObj) {
     let query = querystring.stringify(queryObj);
     return request.get(`/mint/transactions?${ query }`);
   },
   // queryObj
-  fetchChartTransactions: (dateRange) => {
+  fetchChartTransactions(dateRange) {
     let query = {
       start: dateRange.start,
-      end: dateRange.end
+      end: dateRange.end,
     };
 
     return request.get(`/mint/chart/transactions?${ querystring.stringify(query) }`);
   },
 
-  fetchCategories: () => {
+  fetchCategories() {
     return request.get(`/mint/categories`);
   },
 
-  fetchNetIncome: (dateRange) => {
+  fetchNetIncome(dateRange) {
     let query = dateRange;
+    console.log('[finances_dao] @fetchNetIncome -> query: ', query);
     return request.get(`/mint/chart/netIncome?${ querystring.stringify(query) }`);
   },
 
-  fetchNetWorth: (dateRange) => {
+  fetchNetWorth(dateRange) {
     let query = dateRange;
     return request.get(`/mint/chart/netWorth?${ querystring.stringify(query) }`);
   },
 
-  fetchDebts: (dateRange) => {
+  fetchDebts(dateRange) {
     let query = dateRange;
     return request.get(`/mint/chart/debts?${ querystring.stringify(query) }`);
   },
 
-  fetchBankAssets: (dateRange) => {
+  fetchBankAssets(dateRange) {
     let query = dateRange;
     return request.get(`/mint/chart/bankAssets?${ querystring.stringify(query) }`);
   },
 
-  fetchInvestmentAssets: (dateRange) => {
+  fetchInvestmentAssets(dateRange) {
     let query = dateRange;
     return request.get(`/mint/chart/investmentAssets?${ querystring.stringify(query) }`);
   },
 
-  fetchAccounts: () => {
+  fetchAccounts() {
     return request.get('/mint/accounts');
   },
 
-  getAutosuggestFilters: (strQuery) => {
-    let query = { query: strQuery };
+  getAutosuggestFilters(strQuery) {
+    let query = {query: strQuery};
     return request.get(`/mint/autosuggestFilter?${ querystring.stringify(query) }`);
   },
 
-  updateTransaction: (transaction, category) => {
-    console.log('[finances_dao] @updateTransaction');
-    return request.post(`/mint/transactions`, { transaction, category });
-  }
+  updateTransaction(transaction, category) {
+    return request.post(`/mint/transactions`, {transaction, category});
+  },
 };

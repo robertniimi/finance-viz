@@ -7,43 +7,39 @@ import DATE_RANGES from 'date_ranges';
 import DisplayedAccountTypes from 'displayed_account_types';
 import ASYNC from 'async_status';
 
-// DAOs
-// import FinancesDao from '../dao/finances_dao';
-
 // Constants
 const DEFAULT_DATE_RANGE = 'L12M'; // Last 12 Months
-const NET_ASSET_GOAL = 54137; // net asset goal for the end of 2016
 const DEFAULT_TRANSACTION_QUERY = '';
+const NET_ASSET_GOAL = 54137; // net asset goal for the end of 2016
 const {isSuccess} = ASYNC;
 
-const defaultAsyncProps = (props) => {
-  let defaultProps = {
-    data: [],
-    loading: false,
+const asyncState = {
+  fetching: {
+    loading: true,
     error: false,
-  };
+  },
+  initial(props = {}) {
+    let defaultProps = {
+      data: [],
+      loading: false,
+      error: false,
+    };
 
-  return Object.assign({}, defaultProps, props || {});
-};
-
-const defaultFetching = {
-  loading: true,
-  error: false,
-};
-
-const defaultSuccess = (result) => {
-  return {
-    data: result,
-    error: false,
-    loading: false,
-  };
-};
-
-const defaultError = (error) => {
-  return {
-    loading: false,
-    error,
-  };
+    return Object.assign({}, defaultProps, props);
+  },
+  success(result) {
+    return {
+      data: result,
+      error: false,
+      loading: false,
+    };
+  },
+  error(error) {
+    return {
+      loading: false,
+      error,
+    };
+  },
 };
 
 const findDateRange = (rangeValue) => {
@@ -53,34 +49,38 @@ const findDateRange = (rangeValue) => {
 const initialState = {
   netAssets: 0,
   accounts: [],
-  transactions: defaultAsyncProps({query: DEFAULT_TRANSACTION_QUERY}),
-  stackedAreaChart: defaultAsyncProps(),
+  transactions: asyncState.initial({query: DEFAULT_TRANSACTION_QUERY}),
+  stackedAreaChart: asyncState.initial(),
   netAssetsChart: {
-    bankAssets: defaultAsyncProps(),
-    investmentAssets: defaultAsyncProps(),
-    debts: defaultAsyncProps(),
+    bankAssets: asyncState.initial(),
+    investmentAssets: asyncState.initial(),
+    debts: asyncState.initial(),
   },
-  netIncomeChart: defaultAsyncProps({goal: 0}),
+  netIncomeChart: asyncState.initial({goal: 0}),
   categories: [],
   dateRange: findDateRange(DEFAULT_DATE_RANGE),
 };
 
 const defaultFetchHandler = (state, propName, result, status, actionType) => {
   const {ERROR, SUCCESS, FETCHING} = ASYNC;
+  if (!propName) return state;
   switch (status) {
     case ERROR:
       console.error(`[FinancesReducer] @${actionType} -> error: `, result);
       return update(state, {
-        [propName]: {$merge: defaultError(result)},
+        [propName]: {$merge: asyncState.error(result)},
       });
+
     case SUCCESS:
       return update(state, {
-        [propName]: {$merge: defaultSuccess(result)},
+        [propName]: {$merge: asyncState.success(result)},
       });
+
     case FETCHING:
       return update(state, {
-        [propName]: {$merge: defaultFetching},
+        [propName]: {$merge: asyncState.fetching},
       });
+
     default:
       return state;
   }
@@ -89,6 +89,7 @@ const defaultFetchHandler = (state, propName, result, status, actionType) => {
 
 function financesReducer(state = initialState, action) {
   // console.log('[finances_reducer] @financesReducer -> action: ', action);
+
   switch (action.type) {
     case ActionTypes.CHANGE_DATE_RANGE:
       let dateRange = findDateRange(action.selectedDateRange);
@@ -116,7 +117,7 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_CATEGORIES:
       if (isSuccess(action.status)) {
-        // console.log('[finances_reducer] @FETCH_CATEGORIES_SUCCESS -> action.result: ', action.result);
+        console.log('[finances_reducer] @FETCH_CATEGORIES_SUCCESS -> action.result: ', action.result);
         let categories = _.find(action.result.set, (setObj) => {
           return setObj.id === 'categories';
         }).data;
@@ -128,19 +129,19 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_NET_INCOME:
       if (isSuccess(action.status)) {
-        // console.log('[finances_reducer] @FETCH_NET_INCOME_SUCCESS -> action.result: ', action.result);
+        console.log('[finances_reducer] @FETCH_NET_INCOME_SUCCESS -> action.result: ', action.result);
         return update(state, {
           netIncomeChart: {
             startDate: {$set: moment(action.result.startDate)},
             endDate: {$set: moment(action.result.endDate)},
-            $merge: defaultSuccess(action.result.trendList),
+            $merge: asyncState.success(action.result.trendList),
           },
         });
       };
 
     case ActionTypes.FETCH_BANK_ASSETS:
       if (isSuccess(action.status)) {
-        // console.log('[finances_reducer] @FETCH_BANK_ASSETS_SUCCESS -> action.result: ', action.result);
+        console.log('[finances_reducer] @FETCH_BANK_ASSETS_SUCCESS -> action.result: ', action.result);
 
         const {bankAssets, investmentAssets, debts} = action.result;
 
@@ -193,7 +194,7 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_ACCOUNTS:
       if (isSuccess(action.status)) {
-        // console.log('[finances_reducer] @FETCH_ACCOUNTS_SUCCESS -> action.result: ', action.result);
+        console.log('[finances_reducer] @FETCH_ACCOUNTS_SUCCESS -> action.result: ', action.result);
         let accounts = _.filter(action.result.response.accounts.response, (accountObj) => {
           return _.includes(DisplayedAccountTypes, accountObj.accountType) && accountObj.accountSystemStatus === 'ACTIVE';
         });
@@ -206,7 +207,7 @@ function financesReducer(state = initialState, action) {
           netAssets: {$set: netAssets},
           accounts: {$set: accounts},
         });
-      };
+      }
 
     case ActionTypes.CHANGE_TRANSACTION_CATEGORY:
       if (isSuccess(action.status)) {
@@ -214,9 +215,7 @@ function financesReducer(state = initialState, action) {
         return state;
       };
 
-    // case ActionTypes.FETCH_TRANSACTIONS:
     case ActionTypes.FETCH_CHART_TRANSACTIONS:
-    // case ActionTypes.FETCH_NET_INCOME:
       return defaultFetchHandler(state, action.propName, action.result, action.status, action.type);
 
     default:

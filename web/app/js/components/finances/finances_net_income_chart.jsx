@@ -23,20 +23,20 @@ class FinancesNetIncomeChart extends React.Component {
     let dataObj = _.reduce(data, (result, [incomeObj, expenseObj], idx) => {
       result.incomeData.push({
         x: incomeObj.startDate,
-        y: incomeObj.value
+        y: incomeObj.value,
       });
       result.expenseData.push({
         x: expenseObj.startDate,
-        y: expenseObj.value
+        y: expenseObj.value,
       });
       result.netIncomeData.push({
         x: incomeObj.startDate,
-        y: incomeObj.value + expenseObj.value
+        y: incomeObj.value + expenseObj.value,
       });
       if (this.props.goal) {
         result.netIncomeGoal.push({
           x: incomeObj.startDate,
-          y: this.props.goal
+          y: this.props.goal,
         })
       };
       return result;
@@ -44,29 +44,29 @@ class FinancesNetIncomeChart extends React.Component {
       incomeData: [],
       expenseData: [],
       netIncomeData: [],
-      netIncomeGoal: []
+      netIncomeGoal: [],
     });
 
     let returnData = [{
       key: 'Income',
       seriesIndex: 0,
-      values: dataObj.incomeData
+      values: dataObj.incomeData,
     }, {
       key: 'Expenses',
       seriesIndex: 1,
-      values: dataObj.expenseData
-    },{
+      values: dataObj.expenseData,
+    }, {
       key: 'Net Income',
       seriesIndex: 2,
       area: true,
-      values: dataObj.netIncomeData
+      values: dataObj.netIncomeData,
     }];
 
     if (this.props.goal) {
       returnData.push({
         key: 'Goal',
         seriesIndex: returnData.length,
-        values: dataObj.netIncomeGoal
+        values: dataObj.netIncomeGoal,
       });
     };
 
@@ -87,24 +87,24 @@ class FinancesNetIncomeChart extends React.Component {
         color: ['#008000', '#FF0000', '#0000FF', '#FFA500'],
         height: 400,
         showLegend: false,
-        useInteractiveGuideline: true
+        useInteractiveGuideline: true,
       },
       xAxis: {
         tickValues,
         tickFormat: function(d) {
           return d3.time.format('%b \'%y')(new Date(d));
-        }
+        },
       },
       yAxis: {
         tickFormat: function(d) {
           return ('$' + d3.format(',.0f')(d));
-        }
-      }
+        },
+      },
     }
   }
 
   render() {
-
+    // console.log('[finances_net_income_chart] this.props: ', this.props);
     let formattedData = this._formatData(this.props.data);
     let wrapperClass = 'finances-net-income-chart';
 
@@ -112,6 +112,7 @@ class FinancesNetIncomeChart extends React.Component {
       <div className='finances-net-income-chart'>
         <LineChart
           selector={'finances-net-income'}
+          loading={this.props.loading}
           data={formattedData}
           {...this._getChartOptions(formattedData)}
         />
@@ -123,10 +124,10 @@ class FinancesNetIncomeChart extends React.Component {
 FinancesNetIncomeChart.displayName = 'FinancesNetIncomeChart';
 
 FinancesNetIncomeChart.propTypes = {
-  goal: React.PropTypes.number,
   data: React.PropTypes.array,
   error: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.bool]),
-  loading: React.PropTypes.bool
+  goal: React.PropTypes.number,
+  loading: React.PropTypes.bool,
 };
 
 module.exports = FinancesNetIncomeChart;

@@ -12,7 +12,7 @@ import classnames from 'classnames';
 import Select from 'react-select';
 import TransactionsTable from './finances_transactions_table';
 import StackedAreaChart from './finances_stacked_area_chart';
-import NetIncomChart from './finances_net_income_chart';
+import NetIncomeChart from './finances_net_income_chart';
 import NetAssetsChart from './finances_net_assets_chart';
 import AccountsTable from './finances_accounts_table';
 
@@ -35,8 +35,9 @@ class Finances extends React.Component {
     this.props.onChangeDateRange(dateValue);
   }
 
-  _handleRefreshData() {
-  }
+  // _handleRefreshData() {
+
+  // }
 
   render() {
     return (
@@ -49,12 +50,6 @@ class Finances extends React.Component {
           </div>
         </header>
         <div className='content-wrapper'>
-{/*          <button
-            className={classnames('btn', 'waves-effect', 'waves-light')}
-            onClick={this._handleRefreshData.bind(this)}
-          >
-            {'Update Transactions'}
-          </button>*/}
           <AccountsTable accounts={this.props.accounts} />
           <Select
             className='finances-date-range-select'
@@ -63,7 +58,7 @@ class Finances extends React.Component {
             onChange={this._onChangeDate.bind(this)}
             value={this.props.dateRange.value}
           />
-          <NetIncomChart {...this.props.netIncomeChart} />
+          <NetIncomeChart {...this.props.netIncomeChart} />
           <StackedAreaChart {...this.props.stackedAreaChart} />
           <NetAssetsChart {...this.props.netAssetsChart} />
           <TransactionsTable

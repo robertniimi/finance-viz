@@ -25,6 +25,10 @@ class LineChart extends React.Component {
     });
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return !_.isEqual(nextProps, this.props);
+  }
+
   _updateChart() {
     nv.addGraph({
       generate: () => {
@@ -78,6 +82,12 @@ class LineChart extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return (
+        <div>{'Loading'}</div>
+      );
+    }
+
     if (!this.props.data || _.isEmpty(this.props.data)) {
       return (
         <div className={classnames(this.props.selector, 'no-data')}>{'No Data'}</div>
@@ -94,6 +104,7 @@ LineChart.displayName = 'LineChart';
 
 LineChart.propTypes = {
   chart: React.PropTypes.object,
+  loading: React.PropTypes.bool,
   data: React.PropTypes.array,
   selector: React.PropTypes.string,
   xAxis: React.PropTypes.object,
