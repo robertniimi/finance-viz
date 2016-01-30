@@ -211,7 +211,6 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.CHANGE_TRANSACTION_CATEGORY:
       if (isSuccess(action.status)) {
-        // console.log('[finances_reducer] @CHANGE_TRANSACTION_CATEGORY_SUCCESS -> action.result: ', action.result);
         return state;
       };
 

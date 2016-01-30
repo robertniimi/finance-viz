@@ -38,7 +38,7 @@ const defaultFetch = (actionType, propName) => {
   return (propName) ? Object.assign(action, {propName}) : action;
 };
 
-let thunks = _.reduce(ASYNC_ACTIONS, (result, actionTuple, actionName) => {
+const thunks = _.reduce(ASYNC_ACTIONS, (result, actionTuple, actionName) => {
   const [actionType, daoAction, propName] = actionTuple;
   result[actionName] = (...args) => {
     return (dispatch) => {

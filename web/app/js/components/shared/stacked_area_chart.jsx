@@ -19,10 +19,13 @@ class StackedAreaChart extends React.Component {
     if (!object || !options || _.isEmpty(options)) {
       return;
     }
-
     _.forEach(options, (optionValue, optionKey) => {
       object[optionKey](optionValue);
     });
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !_.isEqual(nextProps, this.props);
   }
 
   _updateChart() {
