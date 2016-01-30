@@ -4,260 +4,516 @@
 		"selected_items":
 		[
 			[
-				"fetch",
-				"fetchChartTransactionsError"
-			],
-			[
-				"fetchChart",
-				"fetchChartTransactions"
-			],
-			[
-				"Finances",
-				"FinancesDao"
-			],
-			[
-				"CHANGE",
-				"CHANGE_TRANSACTION_CATEGORY_ERROR	(finances_actions.js)"
-			],
-			[
 				"log",
-				"log	console.log('... : ', ...)"
+				"log	log('... : ', ...)"
 			],
 			[
-				"onChange",
-				"onChangeTransactionCategory"
+				"applied",
+				"appliedFilters"
 			],
 			[
-				"changeTransac",
-				"changeTransactionCategoryError"
+				"_onCopy",
+				"_onCopyError"
 			],
 			[
-				"thunk",
-				"thunkMiddleware"
+				"code",
+				"codeSnippet"
 			],
 			[
-				"create",
-				"createStoreWithMiddleware"
+				"has",
+				"hasExport	(account_list_awareness_accounts.jsx)"
 			],
 			[
-				"sst",
-				"sst	React: this.setState(…)"
+				"hasE",
+				"hasExport	(accounts_people_table.jsx)"
 			],
 			[
-				"updte",
-				"updateTransaction"
+				"export",
+				"exportData"
 			],
 			[
-				"_handl",
-				"_handleTransactionCategoryChange"
-			],
-			[
-				"_han",
-				"_handleTransactionCategoryChange"
-			],
-			[
-				"UPDATE_TRANSACTION_",
-				"UPDATE_TRANSACTION_ERROR	(finances_actions.js)"
-			],
-			[
-				"update",
-				"updateTransaction	(finances_dao.js)"
-			],
-			[
-				"updateTra",
-				"updateTransactionError"
-			],
-			[
-				"updateT",
-				"updateTransactionSuccess"
-			],
-			[
-				"tick",
-				"tickValues"
-			],
-			[
-				"stacked",
-				"stackedAreaChart"
-			],
-			[
-				"onChan",
-				"onChangeTableFilter"
-			],
-			[
-				"CHAN",
-				"CHANGE_TABLE_FILTER"
-			],
-			[
-				"cate",
-				"categories"
-			],
-			[
-				"_handle",
-				"_handleTableCategoryChange"
-			],
-			[
-				"Trans",
-				"TransactionsTable"
-			],
-			[
-				"FETCH",
-				"FETCH_CATEGORIES_SUCCESS"
-			],
-			[
-				"subcate",
-				"subcategory"
-			],
-			[
-				"subcat",
-				"subcategory	(generate_transaction_json.js)"
-			],
-			[
-				"FETCH_CATE",
-				"FETCH_CATEGORIES"
-			],
-			[
-				"fetc",
-				"fetchCategories"
+				"list",
+				"list"
 			],
 			[
 				"_fetch",
-				"_fetchCategories"
+				"_fetchAccounts"
 			],
 			[
-				"failure",
-				"failureAction"
+				"unfrozen",
+				"unfrozenColumns"
 			],
 			[
-				"Finance",
-				"FinancesDao"
+				"unfo",
+				"unfrozenColumnElements"
 			],
 			[
-				"stack",
-				"renderStackedAreaChart"
+				"debug",
+				"debug	debug, log = Debug(...)"
 			],
 			[
-				"bind",
-				"bindActionCreators"
+				"changeP",
+				"changePasswordError	(user_page_source.js)"
 			],
 			[
-				"fet",
-				"fetchTransactionsSuccess"
+				"execute",
+				"executeScheduledJob"
 			],
 			[
-				"FETH",
-				"FETCH_TRANSACTIONS_SUCCESS"
+				"onExecute",
+				"onExecuteScheduledJobSuccess"
 			],
 			[
-				"fetchTran",
-				"fetchTransactionsError	(finances_actions.js)"
+				"listene",
+				"listener	Alt: Async onListener: Action.LISTENER"
 			],
 			[
-				"FETCH_",
-				"FETCH_TRANSACTIONS"
+				"listen",
+				"listener	Alt: Async onListener: Action.LISTENER"
 			],
 			[
-				"FETCH_TRA",
-				"FETCH_TRANSACTIONS_ERROR"
+				"listener",
+				"listener	Alt: onListener: Action.LISTENER"
 			],
 			[
-				"success",
-				"successAction"
-			],
-			[
-				"fail",
-				"failureAction"
-			],
-			[
-				"succ",
-				"successAction"
-			],
-			[
-				"change",
-				"changeDateRange	(finances_actions.js)"
-			],
-			[
-				"FETCH_TRANSACTIONS_",
-				"FETCH_TRANSACTIONS_SUCCESS	(finances_reducer.js)"
-			],
-			[
-				"Action",
-				"ActionTypes"
-			],
-			[
-				"f",
-				"f	() => {}"
-			],
-			[
-				"uncate",
-				"uncategorizedRows"
-			],
-			[
-				"getJson",
-				"getJsonTransactions"
-			],
-			[
-				"listTran",
-				"listTransactionQuery"
-			],
-			[
-				"unca",
-				"uncategorized"
-			],
-			[
-				"unc",
-				"uncategorized"
-			],
-			[
-				"trans",
-				"transactionQuery"
-			],
-			[
-				"refresh",
-				"refreshAccounts"
-			],
-			[
-				"err",
-				"err"
-			],
-			[
-				"fun",
-				"function	(chart_utils.js)"
-			],
-			[
-				"web",
-				"webpack	Webpack: Config (React/ES6)"
+				"onFetchSched",
+				"onFetchScheduledJobsError"
 			],
 			[
 				"rcc",
 				"rcc	React: class extends React.Component"
 			],
 			[
-				"client",
-				"clientTmpltPath"
+				"onExe",
+				"onExecuteScheduledJobSuccess"
 			],
 			[
-				"server",
-				"serverOptions"
+				"Sched",
+				"ScheduledJobsStore"
 			],
 			[
-				"clientOp",
-				"clientOptions"
+				"action",
+				"action	Alt: Async Action"
 			],
 			[
-				"templatesPath",
-				"templatesPathLength"
+				"Sche",
+				"ScheduledJobsActions"
 			],
 			[
-				"doctype",
-				"doctype	HTML: <!doctype html>...</html>"
+				"source",
+				"source	Alt: Source"
 			],
 			[
-				"req",
-				"require	require \"...\""
+				"controller",
+				"controller	Alt: new Controller"
 			],
 			[
-				"apartmen",
-				"apartmentList"
+				"dele",
+				"deleteTenantId"
+			],
+			[
+				"controll",
+				"controller	Alt: new Controller"
+			],
+			[
+				"context",
+				"contextHasChanged"
+			],
+			[
+				"update",
+				"updateTimestamp"
+			],
+			[
+				"current",
+				"currentContext"
+			],
+			[
+				"people",
+				"peoplePreferences"
+			],
+			[
+				"onSave",
+				"onSaveDistributionPreferences"
+			],
+			[
+				"ditri",
+				"distributionTuple"
+			],
+			[
+				"f",
+				"f	() => {}"
+			],
+			[
+				"_fetC",
+				"_fetchCustomDistribution"
+			],
+			[
+				"AccountsPeople",
+				"AccountsPeopleFilters"
+			],
+			[
+				"PeopleEn",
+				"PeopleEngagedPageStore"
+			],
+			[
+				"PeopleN",
+				"PeopleNewPageStore"
+			],
+			[
+				"format",
+				"formatFilters"
+			],
+			[
+				"convert",
+				"convertLeadToContact"
+			],
+			[
+				"remove",
+				"removeFromList"
+			],
+			[
+				"en-co",
+				"en-color-negative"
+			],
+			[
+				"input__label-content",
+				"input__label-content--kozakura"
+			],
+			[
+				"waitForEle",
+				"waitForElementNotPresent	(preference_utils.js)"
+			],
+			[
+				"waitfor",
+				"waitForNthElementNotPresent"
+			],
+			[
+				"default",
+				"defaultLabels"
+			],
+			[
+				"tableE",
+				"tableEditColumnsButton	(engagio_table.js)"
+			],
+			[
+				"DEFA",
+				"DEFAULT_ACCOUNT_LOGO"
+			],
+			[
+				"logo",
+				"logo-diameter"
+			],
+			[
+				"DEFAUL",
+				"DEFAULT_PROFILE_LOGO"
+			],
+			[
+				"DEFAULT",
+				"DEFAULT_ACCOUNT_LOGO"
+			],
+			[
+				"querySour",
+				"querySourceUpdateObj"
+			],
+			[
+				"last",
+				"lastParams"
+			],
+			[
+				"is",
+				"isEmpty"
+			],
+			[
+				"justi",
+				"justify-content"
+			],
+			[
+				"colla",
+				"collapsible	(engagio_panel.jsx)"
+			],
+			[
+				"coll",
+				"collapsible	(engagio_panel.jsx)"
+			],
+			[
+				"tickValu",
+				"tickValueLimiter	(chart_utils.js)"
+			],
+			[
+				"AccountList",
+				"AccountListAccountsPageStore"
+			],
+			[
+				"onUpdate",
+				"onUpdateProfileSourceSuccess"
+			],
+			[
+				"onCreate",
+				"onCreateProfileSourceSuccess"
+			],
+			[
+				"GENERAL",
+				"GENERAL_FIELDS"
+			],
+			[
+				"_get",
+				"_getCredentials"
+			],
+			[
+				"onInit",
+				"onInitialize"
+			],
+			[
+				"ProfileSource",
+				"ProfileSourceDetail"
+			],
+			[
+				"engagio_table",
+				"engagio_table_commands	(people_page.js)"
+			],
+			[
+				"wait",
+				"wait"
+			],
+			[
+				"clickWhen",
+				"clickWhenElementPresent	(general_commands.js)"
+			],
+			[
+				"defaul",
+				"defaultLabels"
+			],
+			[
+				"updated",
+				"updatedLabels"
+			],
+			[
+				"defau",
+				"defaultLabels"
+			],
+			[
+				"refresh",
+				"refreshedLabels"
+			],
+			[
+				"lineCH",
+				"lineChartProps"
+			],
+			[
+				"accoun",
+				"accountMetadata"
+			],
+			[
+				"_format",
+				"_formatSeriesLabel"
+			],
+			[
+				"groupBys",
+				"groupBySelectOptions"
+			],
+			[
+				"totalCount",
+				"totalCountFormatted"
+			],
+			[
+				"waitFor",
+				"waitForElementVisible"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"onInitialize",
+				"onInitializeUserSuccess"
+			],
+			[
+				"_cleanup",
+				"_cleanupSortPreferences"
+			],
+			[
+				"component",
+				"componentDidUpdate"
+			],
+			[
+				"_onRe",
+				"_onResetActivities"
+			],
+			[
+				"_onReset",
+				"_onResetHeatmap"
+			],
+			[
+				"e",
+				"e"
+			],
+			[
+				"tooltip",
+				"tooltipTimeout"
+			],
+			[
+				"onFetchMoment",
+				"onFetchMomentFilterValuesSuccess"
+			],
+			[
+				"onFetchChann",
+				"onFetchChannelFilterValuesSuccess"
+			],
+			[
+				"sfAc",
+				"sfActivity"
+			],
+			[
+				"onInitial",
+				"onInitializeTenantDetailsSuccess"
+			],
+			[
+				"salesforce",
+				"salesforceActivityRule	(engagement_dao.js)"
+			],
+			[
+				"onInitia",
+				"onInitializeSuccess"
+			],
+			[
+				"onFetchSfA",
+				"onFetchSfActivityFilterValuesSuccess"
+			],
+			[
+				"sfA",
+				"sfActivities	(engagement_edit_actions.js)"
+			],
+			[
+				"sf",
+				"sfActivities"
+			],
+			[
+				"sfAct",
+				"sfActivities"
+			],
+			[
+				"sfActivity",
+				"sfActivityCategories"
+			],
+			[
+				"sfActi",
+				"sfActivityCategories	(engagement_edit_page_store.js)"
+			],
+			[
+				"sfAci",
+				"sfActivitiesNotifications"
+			],
+			[
+				"_getFil",
+				"_getFilteredAccountLists"
+			],
+			[
+				"toggl",
+				"toggleSelectAllRows	(accounts_actions.js)"
+			],
+			[
+				"lo",
+				"log	console.log('... : ', ...)"
+			],
+			[
+				"cancelSel",
+				"cancelSelectAllRowsHandler"
+			],
+			[
+				"cancel",
+				"cancelSelectAll"
+			],
+			[
+				"sst",
+				"sst	React: this.setState(update(...))"
+			],
+			[
+				"selectAll",
+				"selectAllRowsHandler"
+			],
+			[
+				"all",
+				"allRowsSelected"
+			],
+			[
+				"onSelect",
+				"onSelectAllRows"
+			],
+			[
+				"onSelec",
+				"onSelectAllRows	(engagio_table_body.jsx)"
+			],
+			[
+				"Engagio",
+				"EngagioTable"
+			],
+			[
+				"aware",
+				"awarenessFilters"
+			],
+			[
+				"DEFAULT_",
+				"DEFAULT_ACTIVITY_ICON_URL"
+			],
+			[
+				"section-width",
+				"section-wdith-activities"
+			],
+			[
+				"accounts_engagement_lin",
+				"accounts_engagement_line_chart_tooltip	(accounts_engagement_line_chart_tooltip.jsx)"
+			],
+			[
+				"_remove",
+				"_removeOldCharts"
+			],
+			[
+				"fill",
+				"fill-opacity"
+			],
+			[
+				"groupByse",
+				"groupBySelect"
+			],
+			[
+				"groupBySele",
+				"groupBySelectOptions"
+			],
+			[
+				"engagement-cirl",
+				"engagement-circle-rad"
+			],
+			[
+				"engagement-circle",
+				"engagement-circle-dia"
+			],
+			[
+				"table",
+				"table	JSX: <table></table>"
+			],
+			[
+				"onFetchTopAc",
+				"onFetchTopActivitiesSuccess"
+			],
+			[
+				"onFetch",
+				"onFetchTopActivitiesSuccess"
+			],
+			[
+				"FETCH_TOP_AC",
+				"FETCH_TOP_ACTIVITIES"
+			],
+			[
+				"GreatestHi",
+				"GreatestHitsActions"
+			],
+			[
+				"Greatest",
+				"GreatestHitsActions"
+			],
+			[
+				"Greate",
+				"GreatestHitsActions"
 			]
 		]
 	},
@@ -271,74 +527,151 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 227.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"move",
-				"File: Move"
-			],
-			[
-				"rename",
-				"File: Rename"
-			],
-			[
-				"del",
+				"delete",
 				"File: Delete"
+			],
+			[
+				"copy",
+				"File: Copy Path"
 			],
 			[
 				"duplic",
 				"File: Duplicate"
 			],
 			[
-				"snip",
-				"Snippet: readme"
+				"move",
+				"File: Move"
+			],
+			[
+				"dupli",
+				"File: Duplicate"
+			],
+			[
+				"UPPER",
+				"Convert Case: Upper Case"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"duplica",
+				"File: Duplicate"
+			],
+			[
+				"atol",
+				"Snippet: Alt: Action to Listeners"
+			],
+			[
+				"stol",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"file: move",
+				"File: Move"
+			],
+			[
+				"file",
+				"File: Reveal"
+			],
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
+				"default",
+				"Preferences: Settings - Default"
+			],
+			[
 				"remove",
 				"Package Control: Remove Package"
 			],
 			[
-				"snippet: HTML",
-				"Snippet: DOCTYPE HTML"
-			],
-			[
-				"snippet: <html",
-				"Snippet: JSX: <!DOCTYPE html>...</html>"
-			],
-			[
-				"ke",
-				"Preferences: Key Bindings - User"
-			],
-			[
-				"brow",
-				"Preferences: Browse Packages"
+				"prv",
+				"PackageResourceViewer: Open Resource"
 			],
 			[
 				"preferences",
-				"Preferences: Settings - Default"
+				"Preferences: Browse Packages"
 			],
 			[
-				"key",
-				"Preferences: Key Bindings - User"
+				"syntax: babel",
+				"Set Syntax: JavaScript (Babel)"
 			],
 			[
-				"find",
-				"Preferences: Key Bindings - Default"
+				"syntax: bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"syntax babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"linter set",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"lint mode",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"linter settings",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"prefs",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Objects: _.mapObject OBJECT, (VALUE, KEY) ->"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
 			]
 		],
 		"width": 539.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -350,155 +683,166 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/Robert/Github/finance-viz/web",
-		"/Users/Robert/Github/finance-viz/web/app",
-		"/Users/Robert/Github/finance-viz/web/app/js",
-		"/Users/Robert/Github/finance-viz/web/dist"
-	],
 	"file_history":
 	[
-		"/Users/Robert/Github/finance-viz/web/app/js/constants/date_ranges.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/components/running/running.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/containers/running_container.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/containers/finances_container.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/constants/action_types.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/main.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/app.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/dao/strava_dao.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/reducers/finances_reducer.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/reducers/running_reducer.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/actions/running_actions.js",
-		"/Users/Robert/Github/finance-viz/web/app/images",
-		"/Users/Robert/Github/finance-viz/web/app/js/components/shared/stacked_area_chart.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/actions/finances_actions.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/dao/finances_dao.js",
-		"/Users/Robert/Github/finance-viz/web/app/js/components/finances_stacked_area_chart.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/components/finances_transactions_table.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/components/finances.jsx",
-		"/Users/Robert/Github/finance-viz/web/app/js/containers/app.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/utils/ajax_utils.js",
-		"/Users/Robert/git/finance-viz/web/app/js/components/finances_transactions_table.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/main.jsx",
-		"/Users/Robert/git/finance-viz/web/app/style/sass/_finances.scss",
-		"/Users/Robert/git/finance-viz/web/app/js/components/shared/state_wrapper.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/components/finances.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/dao/finances_dao.js",
-		"/Users/Robert/git/finance-viz/web/app/js/reducers/finances_reducer.js",
-		"/Users/Robert/git/finance-viz/web/app/js/constants/action_types.js",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/finances_container.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/app.jsx",
-		"/Users/Robert/git/finance-viz/web/webpack.config.js",
-		"/Users/Robert/git/finance-viz/web/app/index.html",
-		"/Users/Robert/git/finance-viz/web/app/js/components/finances_stacked_area_chart.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/components/shared/stacked_area_chart.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/actions/finances_actions.js",
-		"/Users/Robert/git/finance-viz/web/app/js/utils/chart_utils.js",
-		"/Users/Robert/git/finance-viz/web/.gitignore",
-		"/Users/Robert/git/finance-viz/web/app/style/css/vendor_import.css",
-		"/Users/Robert/git/finance-viz/web/app/style/sass/main.scss",
-		"/Users/Robert/git/finance-viz/web/app/js/components/finances-transaction_table.jsx",
-		"/Users/Robert/git/finance-viz/web/app/style/vendor.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/tmp/main.css",
-		"/Users/Robert/git/finance-viz/gulpfile.js",
-		"/Users/Robert/git/finance-viz/package.json",
-		"/Users/Robert/git/finance-viz/web/app/style/_finances.scss",
-		"/Users/Robert/git/finance-viz/web/app/style/tmp/main.css",
-		"/Users/Robert/git/finance-viz/web/app/style/main.scss",
-		"/Users/Robert/git/finance-viz/web/app/style/tmp/vendor.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/vendor.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/style.css",
-		"/Users/Robert/git/finance-viz/web/app/style/css/main.css",
-		"/Users/Robert/git/finance-viz/node_modules/normalize-scss/sass/_normalize.scss",
-		"/Users/Robert/git/finance-viz/README.md",
-		"/Users/Robert/git/finance-viz/.eslintrc.js",
-		"/Users/Robert/git/finance-viz/.gitignore",
-		"/Users/Robert/git/finance-viz/web/app/vendor.bundle.js",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/time_container.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/health_container.jsx",
-		"/Users/Robert/git/finance-viz/web/app/js/stores/finances_store.js",
-		"/Users/Robert/git/finance-viz/server/server.js",
-		"/Users/Robert/git/finance-viz/server/utils/requester.js",
-		"/Users/Robert/git/finance-viz/web/package.json",
-		"/Users/Robert/git/finance-viz/node_modules/nvd3/build/nv.d3.js",
-		"/Users/Robert/git/finance-viz/node_modules/webpack/lib/NormalModuleFactory.js",
-		"/Users/Robert/git/finance-viz/node_modules/normalize-package-data/test/fixtures/movefile.json",
-		"/Users/Robert/git/finance-viz/server/.gitignore",
-		"/Users/Robert/git/finance-viz/web/app/js/containers/personal_app.jsx",
-		"/Users/Robert/git/finance-viz/server/package.json",
-		"/Users/Robert/git/finance-viz/web/app/js/reducers/personal_app.js",
-		"/Users/Robert/git/finance-viz/web/app/css/style.css",
-		"/Users/Robert/git/finance-viz/server/data/transactions_by_category.json",
-		"/Users/Robert/git/finance-viz/server/constants.js",
-		"/Users/Robert/git/finance-viz/server/data/generate_transaction_json.js",
-		"/Users/Robert/git/finance-viz/server/routes.js",
-		"/Users/Robert/git/finance-viz/server/api/mintApi.js",
-		"/Users/Robert/git/finance-viz/server/utils/client.js",
-		"/Users/Robert/git/finance-viz/server/data/transactions.csv",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Bluebird/new_promise.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_groupBy.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/select.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/fs_write_file.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/html.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Misc/webpack_config.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/Router/new_router.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/express/node_route.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Node/Express/node_route.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/NPM/package_json.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/Shell/require_bash.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/XML/snippet.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/XML/launchd.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/textarea.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/deconstruct_import.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/import.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/hr.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_checkbox.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_select.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_textarea.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/wrapped_function.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/className.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/Bootstrap/bootstrap_textbox.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/return.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/th.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/table.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/ul.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/td.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/p.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/img.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_pluck.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_uniq.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/function.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/for.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/if.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/return.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/tr.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_forEach.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_map.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Underscore/_assign.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/span.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/svg.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_actions.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Gulp/gulp_task.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/React/JSX/li.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_store.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_source.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/HTML/email_template.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/alt_new_source.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/CoffeeScript/log_var.sublime-snippet",
-		"/Users/Robert/Google Drive/Sync/Sublime/User/Snippets/JavaScript/Alt/dispatch.sublime-snippet"
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/all/all_account_lists_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/mixins/filter_mixin.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/account_list_awareness_page_store.js",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/account_list_accounts_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/dashboard/account_list_dashboard_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/account_list_accounts_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/accounts/account_list_accounts_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/awareness/account_list_awareness_controller.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_web_traffic_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_people_overview_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_people_new_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_people_engaged_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_program_impact_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_greatest_hits_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_engagement_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/accounts_context_bar_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/engagio_context_bar_date_selector_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/all_account_lists_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/account_list_awareness_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/account_list_dashboard_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/account_overview_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/test/mocha/components/controllers/all_accounts_controller_test.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/awareness/account_list_awareness_panel.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_filters/engagio_filters.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/engagement/accounts_engagement_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/utils/account_utils.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_filters/index.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_form.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/actions/notification_actions.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/notifications_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/tenant_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/tenantDetail/tenant_detail.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/generalEdit/general_edit_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/styles/components/admin/admin_general_edit.scss",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/generalEdit/general_edit.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/tenant_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_tenants_table/engagio_tenants_table_edit_tenant_modal.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_tenants_table/index.jsx",
+		"/Users/Robert/Github/engagio/web/package.json",
+		"/Users/Robert/Github/engagio/web/app/login.html",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_table/index.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/program_impact_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/dao/account_exports.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic_accounts.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/awareness/account_list_awareness_accounts.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/web_traffic_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/people_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/people/engaged/accounts_people_engaged.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/people/new/accounts_people_new.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_state_wrapper.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/people_new_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/people_engaged_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/people/accounts_people_table.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/all_accounts_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/mixins/table_mixin.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/account/all/all_accounts.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/impact/accounts_program_impact_table_panel.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/engagement/accounts_engagement_activities.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/all/all_account_lists.jsx",
+		"/Users/Robert/Github/engagio/web/app/styles/components/shared/engagio_state_wrapper.scss",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/impact/accounts_program_impact_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/dao/program_dao.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/sources/program_impact_page_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/constants/default_preferences.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/sources/account_list_awareness_page_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/sources/web_traffic_page_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/impact/accounts_program_impact.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/dao/account_dao.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/people/new/accounts_people_new_controller.jsx",
+		"/Users/Robert/Github/engagio/web/node_modules/react/lib/ReactCompositeComponent.js",
+		"/Users/Robert/Github/engagio/web/node_modules/react/lib/AutoFocusUtils.js",
+		"/Users/Robert/Github/engagio/web/node_modules/react/lib/ReactStateSetters.js",
+		"/Users/Robert/Github/engagio/web/node_modules/react/lib/ReactElement.js",
+		"/Users/Robert/Github/engagio/web/node_modules/react/lib/ReactComponent.js",
+		"/Users/Robert/Github/engagio/web/node_modules/react/lib/ReactClass.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/engagement_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/actions/preference_actions.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/people/overview/accounts_people_overview.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_table/engagio_table_columns_modal.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/awareness/account_list_awareness.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/sources/people_page_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/shared/people/overview/accounts_people_overview_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/accounts/account_context_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/services/telemetry_service.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/subscriptions/admin_subscriptions_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/subscriptions_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/subscriptions/admin_new_subscription_modal.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/subscriptions/admin_subscriptions.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_context_bar/engagio_context_bar_date_selector.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_date_range_selector.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/base_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/actions/admin/user_edit_actions.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/user_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/constants/data_types.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_table/engagio_table_cell.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/accounts/account_list_accounts_table.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/accounts/accountList/accounts/account_list_accounts.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/mainpage/appHeader/admin_tools.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/sources/user_page_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/profile_source_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/sources/user_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/scheduledJobs/scheduled_jobs.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/admin_page_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/dao/user_dao.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/scheduledJobs/scheduled_jobs_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/scheduled_jobs_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/sources/scheduled_jobs_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/main_router.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/adminNav/admin_nav.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/dao/dev_dao.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/actions/admin/scheduled_jobs_actions.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/adminNav/admin_nav_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/tenantDetail/tenant_edit_modal.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/admin/sources/tenant_page_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/sources/tenant_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/profile/tenants/profile_tenants_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/profile/tenants/profile_tenants.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/admin/tenantDetail/tenant_detail_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/profile/profileNav/profile_nav_controller.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/profile/profileNav/profile_nav.jsx",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/profile/profile_tenants_store.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/stores/profile/sources/profile_tenants_source.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/profile/profile_main.jsx",
+		"/Users/Robert/Github/engagio/web/gulpfile.js",
+		"/Users/Robert/Github/engagio/web/webpack.config.js",
+		"/Users/Robert/Github/engagio/web/app/scripts/components/shared/engagio_tenant_table.jsx"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
-			"/Users/Robert/git/finance-viz/",
-			"/Users/Robert/git/finance-viz/web/app/js",
+			"/Users/Robert/Github/engagio/web/",
+			"/Users/Robert/Github/engagio/web/node_modules/react",
+			"/Users/Robert/Github/engagio/web/node_modules/react/lib",
+			"/Users/Robert/Github/engagio/web/node_modules/react",
+			"/Users/Robert/Github/engagio/web",
+			"/Users/Robert/Github/engagio/web/app",
+			"/Users/Robert/Github/engagio/web/",
+			"/Users/Robert/Github/engagio/web/node_modules/nvd3",
+			"/Users/Robert/Github/engagio/web/",
+			"/Users/Robert/Github/engagio/web/app",
+			"/Users/Robert/Github/engagio/web/app/scripts",
+			"/Users/Robert/Github/engagio/web",
+			"/Users/Robert/Github/engagio",
+			"/Users/Robert/Github/engagio/web/app",
+			"/Users/Robert/Github/engagio/web",
+			"/Users/Robert/Github/engagio/web/app/scripts",
+			"/Users/Robert/Github/engagio/web",
+			"/Users/Robert/Github/engagio/web/node_modules/alt,/Users/Robert/Github/engagio/web",
+			"/Users/Robert/Github/engagio/web/node_modules/alt",
+			"/Users/Robert/Github/engagio/web/app/scripts",
 			""
 		]
 	},
@@ -507,141 +851,143 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"=",
-			"runningReducer",
-			"financesReducer",
-			"initialState",
-			"financesReducer",
-			"RunningActionTypes",
-			"ActionTypes",
-			" => {",
-			" =>",
-			": ",
+			"sendNotification",
+			"dirty",
+			"setTimeout",
+			"preferenceUpdateTimestamp",
+			"options",
+			"operatorTypes",
+			"log",
+			"updateTimestamp",
+			"getContext",
+			"getLastUpdated",
+			"getContext",
+			"currentContext",
+			"prevContext",
+			"log",
+			"o",
+			"() {",
+			"filterOptions",
+			"{ ",
+			"_getHeader",
+			"filters",
+			"_clearFilters",
+			"'success'",
+			"{ ",
+			"notification",
+			"pre",
+			"filteredTenants",
+			"_generateTenantTable",
+			"activeT",
+			"hasActions",
+			"EngagioForm",
+			"hasActions",
+			"editable",
+			"formProps",
+			"exportData",
+			"fetchAccountListAccountsExportData",
+			"fetchPeopleExportData",
+			"getActivitiesExportData",
+			"peopleRow",
+			"(this.props.people)",
 			"this.props",
-			"fetchChartTransactions",
-			"successAction",
-			"        .",
-			"successAction",
-			"_self",
-			"changeTransactionCategoryError",
-			"changeTransactionCategorySuccess",
-			"selectValue",
-			"result",
-			"_handleTransactionCategoryChange",
-			"changeTableFilter",
-			"onChangeTableFilter",
-			"_handleTableCategoryChange",
-			"_handleTransactionCategoryChange",
-			"className='date'",
-			"hammerjs",
-			" } >",
-			" }`",
-			"${ ",
-			"={ ",
-			"data",
-			"selectOptions",
-			"newCategory",
-			"_handleTransactionCategoryChange",
-			"selectOptions",
-			"updateTransactionError",
-			"fetchCategoriesError",
-			"selectValue",
-			"transactionObj",
-			"_handleTransactionCategoryChange",
-			"transactions",
-			"@FETCH_CHART",
-			"FETCH_CHART_TRANSACTIONS",
-			"transactions",
-			"FETCH_CHART_TRANSACTIONS",
-			"Action",
-			"successAction",
-			"this.props.chart && ",
-			"this.props.chart",
-			"if (",
-			"f (",
-			"width",
-			"chart",
-			"_renderFinances",
-			"querystring",
-			"moment",
-			"numeral",
-			"classnames",
-			"urlencode",
-			"promise",
-			"={",
-			"_handleSelectChange",
-			"state",
-			"_renderFinances",
-			"this",
-			"request",
-			"div",
-			"tickMarks",
-			"label",
+			" ?",
+			"? ",
+			"programs",
+			"loadingIndicator",
+			"panelClassName",
+			"accountCountsTitle",
+			"accountPreferences",
+			"displayedColumns",
+			"totalCount",
+			"loading",
+			"_fetchPrograms",
+			"awareness",
+			"onApplyFilters",
+			"programs",
 			"this.props",
-			"prevProps",
-			"onChangeDateRange",
-			"selectedDateRange",
-			"select",
-			"h2",
-			"categoryOptions",
-			"SomeApp",
-			"div",
-			"select",
-			"Select",
-			"uncatTransTable",
-			"uncategorizedRows",
-			"uncategorized",
-			", ",
-			"_handleInputChange",
-			"select",
-			"backgroun-color",
-			"content-wrapper",
-			"app-container",
-			"h1",
-			"postcssImport",
-			"categories",
-			"transactions",
-			"categories",
-			"rnd",
-			"categories",
-			"ChartTransactions",
-			"fetchChartTransactions",
-			"fetchTransactions",
-			"FETCH_CHART_TRANSACTIONS",
-			"SUCCESS",
-			"\n  ",
-			"FETCH_TRANSACTIONS",
-			"fetchChartTransactions",
-			"dateRange",
-			"query",
-			"dateRange",
+			"programs",
+			"_formatData",
+			"this.props",
+			"_fetchPrograms",
+			"getPrograms",
+			"queryObj",
+			"program_dao",
+			"AwarenessActions",
+			"fetchAccounts",
+			"accounts",
+			"table",
+			"formatFilters",
+			"filters",
+			"table",
+			"_fetchPrograms",
+			"onFetchPrograms",
+			"formatFilters",
+			"onApplyFilters",
+			"updateTimestamp",
+			"webcomponents",
+			"require(\\'webcomponents",
+			"webcomponents",
+			"\\.getElement",
+			"receiveComponent",
+			"updateComponent",
+			"nextParentElement",
+			"_performComponentUpdate",
+			"_currentElement",
+			"_processProps",
+			"componentDidUpdate",
+			"componentDidMount",
+			"validateMethodOverride",
+			"validateTypeDef",
+			"this.state.filter",
+			"getContext",
+			"context",
+			"_getFilters",
+			"formatFilters",
+			"this._getFilters",
+			"_getFilters",
+			"formatFilters",
+			"_getFilters",
+			"peoplePreferences",
+			"exportData",
+			"list",
+			"AccountExports",
+			"exportData",
+			"log",
+			"columnDef",
 			"props",
-			"dateRange",
-			"transactions: {",
-			"transactions",
-			"areaChart",
-			"@FETCH_TRANSACTIONS",
-			".FETCH",
-			"FETCH_TRANSACTIONS",
-			"fetchTransactions",
-			"Transactions",
-			"actions",
-			"successAction",
-			"fetchTransactions",
-			"personalApp",
-			", ",
-			"_onChangeDate",
-			"PersonalApp",
-			"FETCH_TRANSACTIONS",
-			"GET_TRANSACTIONS",
-			"getTransactions"
+			"columnDef",
+			"_getColDef",
+			"accountMetadata",
+			"colDef",
+			"this.props",
+			"accounts",
+			"this.props",
+			"accounts",
+			",",
+			"preferences",
+			"accounts",
+			"_fetchAccounts",
+			"getFormattedAccountContext",
+			"_fetchAwareness",
+			"tableName",
+			"onApplyFil",
+			"onGoToPage",
+			"_buildColumnRow",
+			"i",
+			"unfrozenColumnElements",
+			"BeginSub",
+			"onUpdateSub",
+			"updateSubscription"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"DESCRIPTION",
+			""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -663,7 +1009,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -706,176 +1052,560 @@
 		"selected_items":
 		[
 			[
-				"finances_contain",
-				"app/js/containers/finances_container.jsx"
+				"filter_mixin",
+				"app/scripts/stores/mixins/filter_mixin.js"
 			],
 			[
-				"running_container",
-				"app/js/containers/running_container.jsx"
+				"awareness_store",
+				"app/scripts/stores/accounts/account_list_awareness_page_store.js"
 			],
 			[
-				"running",
-				"app/js/components/running/running.jsx"
+				"account_list_accounts_store",
+				"app/scripts/stores/accounts/account_list_accounts_page_store.js"
 			],
 			[
-				"finances_redu",
-				"app/js/reducers/finances_reducer.js"
+				"account_list_accounts_controll",
+				"app/scripts/components/accounts/accountList/accounts/account_list_accounts_controller.jsx"
 			],
 			[
-				"finances_cont",
-				"app/js/containers/finances_container.jsx"
+				"account_utils",
+				"app/scripts/utils/account_utils.js"
 			],
 			[
-				"running_reducer",
-				"app/js/reducers/running_reducer.js"
+				"engagement_controller",
+				"app/scripts/components/accounts/shared/engagement/accounts_engagement_controller.jsx"
 			],
 			[
-				"action_types",
-				"app/js/constants/action_types.js"
+				"awareness_controll",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness_controller.jsx"
 			],
 			[
-				"date_ranges",
-				"app/js/constants/date_ranges.js"
+				"awareness_",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness_panel.jsx"
 			],
 			[
-				"running_redu",
-				"app/js/reducers/running_reducer.js"
+				"engagio_filter",
+				"app/scripts/components/shared/engagio_filters/engagio_filters.jsx"
 			],
 			[
-				"action_typ",
-				"app/js/constants/action_types.js"
+				"engagi_filter",
+				"app/scripts/components/shared/engagio_filters/index.jsx"
 			],
 			[
-				"web",
-				"webpack.config.js"
+				"general_edit",
+				"app/styles/components/admin/admin_general_edit.scss"
 			],
 			[
-				"index.html",
-				"app/index.html"
+				"engagio_form",
+				"app/scripts/components/shared/engagio_form.jsx"
 			],
 			[
-				"webpack",
-				"webpack.config.js"
+				"notification_actions",
+				"app/scripts/actions/notification_actions.js"
 			],
 			[
-				"finances_stack",
-				"app/js/components/finances_stacked_area_chart.jsx"
+				"notification",
+				"app/scripts/stores/notifications_store.js"
 			],
 			[
-				"stacked",
-				"app/js/components/shared/stacked_area_chart.jsx"
+				"tenant_page_s",
+				"app/scripts/stores/admin/tenant_page_store.js"
 			],
 			[
-				"ajax_utils",
-				"app/js/utils/ajax_utils.js"
+				"tenant_store",
+				"app/scripts/stores/tenant_store.js"
 			],
 			[
-				"finance_actions",
-				"app/js/actions/finances_actions.js"
+				"package",
+				"package.json"
 			],
 			[
-				"chart_utils",
-				"app/js/utils/chart_utils.js"
+				"engagio_tenants_table",
+				"app/scripts/components/shared/engagio_tenants_table/index.jsx"
 			],
 			[
-				"finances_dao",
-				"app/js/dao/finances_dao.js"
+				"tenant_detail",
+				"app/scripts/components/admin/tenantDetail/tenant_detail.jsx"
+			],
+			[
+				"tenant_page_store",
+				"app/scripts/stores/admin/tenant_page_store.js"
+			],
+			[
+				"enagio_form",
+				"app/scripts/components/shared/engagio_form.jsx"
+			],
+			[
+				"login",
+				"app/login.html"
+			],
+			[
+				"engagio_table/index",
+				"app/scripts/components/shared/engagio_table/index.jsx"
+			],
+			[
+				"account_exports",
+				"app/scripts/dao/account_exports.js"
+			],
+			[
+				"traffic_accounts",
+				"app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic_accounts.jsx"
+			],
+			[
+				"awareness_accounts",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness_accounts.jsx"
+			],
+			[
+				"traffic_store",
+				"app/scripts/stores/accounts/web_traffic_page_store.js"
+			],
+			[
+				"impact_store",
+				"app/scripts/stores/accounts/program_impact_page_store.js"
+			],
+			[
+				"people_new_store",
+				"app/scripts/stores/accounts/people_new_page_store.js"
+			],
+			[
+				"people_engaged_store",
+				"app/scripts/stores/accounts/people_engaged_page_store.js"
+			],
+			[
+				"engagio_state",
+				"app/scripts/components/shared/engagio_state_wrapper.jsx"
+			],
+			[
+				"people_engaged",
+				"app/scripts/components/accounts/shared/people/engaged/accounts_people_engaged.jsx"
+			],
+			[
+				"people_new",
+				"app/scripts/components/accounts/shared/people/new/accounts_people_new.jsx"
+			],
+			[
+				"people_page_store",
+				"app/scripts/stores/accounts/people_page_store.js"
+			],
+			[
+				"people_table",
+				"app/scripts/components/accounts/shared/people/accounts_people_table.jsx"
+			],
+			[
+				"all_accounts",
+				"app/scripts/components/accounts/account/all/all_accounts.jsx"
+			],
+			[
+				"impact_table",
+				"app/scripts/components/accounts/shared/impact/accounts_program_impact_table_panel.jsx"
+			],
+			[
+				"engagio_state_wrapper",
+				"app/styles/components/shared/engagio_state_wrapper.scss"
+			],
+			[
+				"engagement_activities",
+				"app/scripts/components/accounts/shared/engagement/accounts_engagement_activities.jsx"
+			],
+			[
+				"awareness_panel",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness_panel.jsx"
+			],
+			[
+				"table_mixin",
+				"app/scripts/stores/mixins/table_mixin.js"
+			],
+			[
+				"all_account_store",
+				"app/scripts/stores/accounts/all_accounts_page_store.js"
+			],
+			[
+				"all_account",
+				"app/scripts/components/accounts/accountList/all/all_account_lists.jsx"
+			],
+			[
+				"program_dao",
+				"app/scripts/dao/program_dao.js"
+			],
+			[
+				"impact_source",
+				"app/scripts/stores/accounts/sources/program_impact_page_source.js"
+			],
+			[
+				"impact_controller",
+				"app/scripts/components/accounts/shared/impact/accounts_program_impact_controller.jsx"
+			],
+			[
+				"awareness_controller",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness_controller.jsx"
+			],
+			[
+				"web_traffic_store",
+				"app/scripts/stores/accounts/web_traffic_page_store.js"
+			],
+			[
+				"web_traffic_controller",
+				"app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic_controller.jsx"
+			],
+			[
+				"web_traffic_accounts",
+				"app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic_accounts.jsx"
+			],
+			[
+				"web_traffic",
+				"app/scripts/components/accounts/shared/webTraffic/accounts_web_traffic.jsx"
+			],
+			[
+				"program_impact",
+				"app/scripts/components/accounts/shared/impact/accounts_program_impact.jsx"
+			],
+			[
+				"program_impact_table",
+				"app/scripts/components/accounts/shared/impact/accounts_program_impact_table_panel.jsx"
+			],
+			[
+				"account_dao",
+				"app/scripts/dao/account_dao.js"
+			],
+			[
+				"program_impact_source",
+				"app/scripts/stores/accounts/sources/program_impact_page_source.js"
+			],
+			[
+				"traffic_source",
+				"app/scripts/stores/accounts/sources/web_traffic_page_source.js"
+			],
+			[
+				"awareness_source",
+				"app/scripts/stores/accounts/sources/account_list_awareness_page_source.js"
+			],
+			[
+				"default_prefere",
+				"app/scripts/constants/default_preferences.js"
+			],
+			[
+				"program_impact_controll",
+				"app/scripts/components/accounts/shared/impact/accounts_program_impact_controller.jsx"
+			],
+			[
+				"program_impact_store",
+				"app/scripts/stores/accounts/program_impact_page_store.js"
+			],
+			[
+				"reactcomposite",
+				"node_modules/react/lib/ReactCompositeComponent.js"
+			],
+			[
+				"reactcompositecompon",
+				"node_modules/react/lib/ReactCompositeComponent.js"
+			],
+			[
+				"people_controll",
+				"app/scripts/components/accounts/shared/people/new/accounts_people_new_controller.jsx"
+			],
+			[
+				"account_people_table",
+				"app/scripts/components/accounts/shared/people/accounts_people_table.jsx"
+			],
+			[
+				"people_store",
+				"app/scripts/stores/accounts/people_new_page_store.js"
+			],
+			[
+				"account_awareness",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness.jsx"
+			],
+			[
+				"people_source",
+				"app/scripts/stores/accounts/sources/people_page_source.js"
+			],
+			[
+				"account_people",
+				"app/scripts/components/accounts/shared/people/overview/accounts_people_overview.jsx"
+			],
+			[
+				"account_context_store",
+				"app/scripts/stores/accounts/account_context_store.js"
+			],
+			[
+				"engagement_page_store",
+				"app/scripts/stores/accounts/engagement_page_store.js"
+			],
+			[
+				"engagement_activit",
+				"app/scripts/components/accounts/shared/engagement/accounts_engagement_activities.jsx"
+			],
+			[
+				"preferences",
+				"app/scripts/constants/default_preferences.js"
+			],
+			[
+				"people_controller",
+				"app/scripts/components/accounts/shared/people/overview/accounts_people_overview_controller.jsx"
+			],
+			[
+				"people_ta",
+				"app/scripts/components/accounts/shared/people/accounts_people_table.jsx"
+			],
+			[
+				"awareness",
+				"app/scripts/components/accounts/accountList/awareness/account_list_awareness.jsx"
+			],
+			[
+				"telemetry_ser",
+				"app/scripts/services/telemetry_service.js"
+			],
+			[
+				"preference_actions",
+				"app/scripts/actions/preference_actions.js"
+			],
+			[
+				"engagio_table_modal",
+				"app/scripts/components/shared/engagio_table/engagio_table_columns_modal.jsx"
+			],
+			[
+				"admin_new_sub",
+				"app/scripts/components/admin/subscriptions/admin_new_subscription_modal.jsx"
+			],
+			[
+				"admin_subscription_control",
+				"app/scripts/components/admin/subscriptions/admin_subscriptions_controller.jsx"
+			],
+			[
+				"subscription_store",
+				"app/scripts/stores/admin/subscriptions_page_store.js"
+			],
+			[
+				"subscription",
+				"app/scripts/components/admin/subscriptions/admin_subscriptions.jsx"
+			],
+			[
+				"engagio_date_range",
+				"app/scripts/components/shared/engagio_date_range_selector.jsx"
+			],
+			[
+				"context_bar",
+				"app/scripts/components/shared/engagio_context_bar/engagio_context_bar_date_selector.jsx"
+			],
+			[
+				"user_page_store",
+				"app/scripts/stores/admin/user_page_store.js"
+			],
+			[
+				"data_types",
+				"app/scripts/constants/data_types.js"
+			],
+			[
+				"engagio_table",
+				"app/scripts/components/shared/engagio_table/engagio_table_cell.jsx"
+			],
+			[
+				"account_list_accounts_table",
+				"app/scripts/components/accounts/accountList/accounts/account_list_accounts_table.jsx"
+			],
+			[
+				"account_list_accounts",
+				"app/scripts/components/accounts/accountList/accounts/account_list_accounts.jsx"
+			],
+			[
+				"profile_source_store",
+				"app/scripts/stores/admin/profile_source_page_store.js"
+			],
+			[
+				"user_actions",
+				"app/scripts/actions/admin/user_edit_actions.js"
+			],
+			[
+				"user_page_source",
+				"app/scripts/stores/admin/sources/user_page_source.js"
+			],
+			[
+				"user_source",
+				"app/scripts/stores/sources/user_source.js"
+			],
+			[
+				"user_store",
+				"app/scripts/stores/admin/user_page_store.js"
+			],
+			[
+				"base_store",
+				"app/scripts/stores/base_store.js"
+			],
+			[
+				"notification_store",
+				"app/scripts/stores/notifications_store.js"
+			],
+			[
+				"admin_tool",
+				"app/scripts/components/mainpage/appHeader/admin_tools.jsx"
+			],
+			[
+				"all_accounts_store",
+				"app/scripts/stores/accounts/all_accounts_page_store.js"
+			],
+			[
+				"scheduled_job",
+				"app/scripts/components/admin/scheduledJobs/scheduled_jobs.jsx"
+			],
+			[
+				"admin_page_store",
+				"app/scripts/stores/admin/admin_page_store.js"
+			],
+			[
+				"user_dao",
+				"app/scripts/dao/user_dao.js"
+			],
+			[
+				"scheduled_jobs.jsx",
+				"app/scripts/components/admin/scheduledJobs/scheduled_jobs.jsx"
+			],
+			[
+				"admin_nav",
+				"app/scripts/components/admin/adminNav/admin_nav.jsx"
+			],
+			[
+				"main_router",
+				"app/scripts/main_router.jsx"
+			],
+			[
+				"admin_controller",
+				"app/scripts/components/admin/adminNav/admin_nav_controller.jsx"
+			],
+			[
+				"profile_nav",
+				"app/scripts/components/profile/profileNav/profile_nav.jsx"
+			],
+			[
+				"admin_store",
+				"app/scripts/stores/admin/admin_page_store.js"
+			],
+			[
+				"tenant_page_source",
+				"app/scripts/stores/admin/sources/tenant_page_source.js"
+			],
+			[
+				"tenant_source",
+				"app/scripts/stores/sources/tenant_source.js"
+			],
+			[
+				"tenant_detail_con",
+				"app/scripts/components/admin/tenantDetail/tenant_detail_controller.jsx"
+			],
+			[
+				"profile_ten",
+				"app/scripts/components/profile/tenants/profile_tenants.jsx"
+			],
+			[
+				"profile_tenants_con",
+				"app/scripts/components/profile/tenants/profile_tenants_controller.jsx"
+			],
+			[
+				"profile_tena",
+				"app/scripts/components/profile/tenants/profile_tenants.jsx"
 			],
 			[
 				"gulpfile",
 				"gulpfile.js"
 			],
 			[
-				"app.jsx",
-				"web/app/js/containers/app.jsx"
+				"webpack",
+				"webpack.config.js"
 			],
 			[
-				"finances.jsx",
-				"web/app/js/components/finances.jsx"
+				"admin_nav_controller",
+				"app/scripts/components/admin/adminNav/admin_nav_controller.jsx"
 			],
 			[
-				"vendor_impo",
-				"web/app/style/css/vendor_import.css"
+				"profile_tenants_source",
+				"app/scripts/stores/profile/sources/profile_tenants_source.js"
 			],
 			[
-				"constants",
-				"server/constants.js"
+				"profile_tenants_store",
+				"app/scripts/stores/profile/profile_tenants_store.js"
 			],
 			[
-				"finances_actions",
-				"web/app/js/actions/finances_actions.js"
+				"people_overview_",
+				"app/scripts/components/accounts/shared/people/overview/accounts_people_overview_controller.jsx"
 			],
 			[
-				"finances",
-				"web/app/js/components/finances.jsx"
+				"nightwatch",
+				"nightwatch.js"
 			],
 			[
-				"nv.d3.js",
-				"node_modules/nvd3/build/nv.d3.js"
+				"people_overview",
+				"app/scripts/components/accounts/shared/people/overview/accounts_people_overview_controller.jsx"
 			],
 			[
-				"normalmodulefac",
-				"node_modules/webpack/lib/NormalModuleFactory.js"
+				"hits_controll",
+				"app/scripts/components/accounts/shared/greatestHits/accounts_greatest_hits_controller.jsx"
 			],
 			[
-				"requester",
-				"server/utils/requester.js"
+				"dashboard_controll",
+				"app/scripts/components/accounts/accountList/dashboard/account_list_dashboard_controller.jsx"
 			],
 			[
-				"move",
-				"node_modules/normalize-package-data/test/fixtures/movefile.json"
+				"all_accounts_controller",
+				"app/scripts/components/accounts/account/all/all_accounts_controller.jsx"
 			],
 			[
-				"package",
-				"web/package.json"
+				"profile_source",
+				"app/scripts/components/admin/profileSource/profile_source.jsx"
 			],
 			[
-				"package.json",
-				"server/package.json"
+				"people_new_con",
+				"app/scripts/components/accounts/shared/people/new/accounts_people_new_controller.jsx"
 			],
 			[
-				"actions",
-				"web/app/js/actions/finances_actions.js"
+				"people_test",
+				"test/nightwatch/tests/preference_people_test.js"
 			],
 			[
-				"mint",
-				"server/api/mintApi.js"
-			],
-			[
-				"constant",
-				"server/constants.js"
-			],
-			[
-				"ser",
-				"server/server.js"
-			],
-			[
-				"table",
-				"JavaScript/React/JSX/table.sublime-snippet"
-			],
-			[
-				"server",
-				"server.js"
-			],
-			[
-				"sublime-keymap",
-				"Backup/20150602212744/BracketHighlighter/Default.sublime-keymap"
-			],
-			[
-				"pack",
-				"package.json"
+				"nigh",
+				"nightwatch.js"
 			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 0.0,
-		"last_filter": "",
+		"height": 500.0,
+		"last_filter": "fin",
 		"selected_items":
 		[
+			[
+				"fin",
+				"~/Github/finance-viz/finance-viz_web.sublime-workspace"
+			],
+			[
+				"server",
+				"~/Google Drive/Sync/Sublime/Projects/Engagio/engagio_server.sublime-project"
+			],
+			[
+				"engagio",
+				"~/Google Drive/Sync/Sublime/Projects/Engagio/engagio_web_accounts.sublime-project"
+			],
+			[
+				"accoun",
+				"~/Google Drive/Sync/Sublime/Projects/Engagio/engagio_web_accounts.sublime-project"
+			],
+			[
+				"web",
+				"~/Sublime/Projects/Engagio/engagio_web.sublime-workspace"
+			],
+			[
+				"accounts",
+				"~/Sublime/Projects/Engagio/engagio_web_accounts.sublime-workspace"
+			],
+			[
+				"styles",
+				"~/Sublime/Projects/Engagio/engagio_web_styles.sublime-project"
+			],
+			[
+				"program",
+				"~/Sublime/Projects/Engagio/engagio_web_programs.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

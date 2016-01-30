@@ -3,7 +3,7 @@ var webpack = require('webpack-stream');
 var postcssImport = require('postcss-import');
 var pngquant = require('imagemin-pngquant');
 var $ = require('gulp-load-plugins')();
-
+var runSequence = require('run-sequence');
 var webpackConfig = require('./web/webpack.config');
 
 // DIRECTORY CONSTANTS
@@ -39,7 +39,7 @@ gulp.task('build', [
 
 /* ========== Dev Tasks ========== */
 gulp.task('dev', ['build'], () => {
-  gulp.watch([APP_JS + ALL_JS, APP_JS + ALL_JSX], ['scripts']);
+  gulp.watch([APP_JS + ALL_JS, APP_JS + ALL_JSX], ['_minify-bundle-js']);
   gulp.watch(APP_STYLE + ALL_CSS, ['styles']);
   gulp.watch(APP + '*.html', ['html']);
   gulp.watch([
@@ -50,10 +50,26 @@ gulp.task('dev', ['build'], () => {
 });
 
 /* ========== JS Tasks ========== */
-gulp.task('scripts', ['_minify-js']);
+gulp.task('scripts', (cb) => {
+  runSequence(
+    '_webpack',
+    ['_minify-bundle-js', '_minify-vendor-js'],
+    cb
+  );
+});
 
-gulp.task('_minify-js', ['_webpack'], () => {
-  return gulp.src(TMP_JS + '*.js')
+gulp.task('_minify-bundle-js', ['_webpack'], () => {
+  return gulp.src(TMP_JS + 'bundle.js')
+    .pipe($.plumber())
+    .pipe($.uglify())
+    .pipe($.rename({extname: '.min.js'}))
+    .pipe($.plumber.stop())
+    .pipe(gulp.dest(DIST_STATIC))
+    ;
+});
+
+gulp.task('_minify-vendor-js', () => {
+  return gulp.src(TMP_JS + 'vendor.bundle.js')
     .pipe($.plumber())
     .pipe($.uglify())
     .pipe($.rename({extname: '.min.js'}))

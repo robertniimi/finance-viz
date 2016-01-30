@@ -61,6 +61,7 @@
     "react-select": "^0.9.1",
     "redux-thunk": "^1.0.2",
     "request": "^2.64.0",
+    "run-sequence": "^1.1.5",
     "sass-mq": "^3.2.5",
     "tough-cookie": "^2.2.1",
     "urlencode": "^1.1.0",

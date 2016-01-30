@@ -3,36 +3,33 @@ import FinancesDao from '../dao/finances_dao';
 import Promise from 'bluebird';
 
 const ASYNC_ACTIONS = {
-  'fetchTransactions': 'FETCH_TRANSACTIONS',
-  'fetchChartTransactions': 'FETCH_CHART_TRANSACTIONS',
-  'fetchCategories': 'FETCH_CATEGORIES',
-  'fetchNetIncome': 'FETCH_NET_INCOME',
-  'changeTransactionCategory': 'CHANGE_TRANSACTION_CATEGORY',
-  'fetchBankAssets': 'FETCH_BANK_ASSETS',
-  'fetchAccounts': 'FETCH_ACCOUNTS',
+  fetchTransactions: [ActionTypes.FETCH_TRANSACTIONS, 'transactions'],
+  fetchChartTransactions: [ActionTypes.FETCH_CHART_TRANSACTIONS, 'stackedAreaChart'],
+  fetchCategories: [ActionTypes.FETCH_CATEGORIES],
+  fetchNetIncome: [ActionTypes.FETCH_NET_INCOME, 'netIncomeChart'],
+  changeTransactionCategory: [ActionTypes.CHANGE_TRANSACTION_CATEGORY],
+  fetchBankAssets: [ActionTypes.FETCH_BANK_ASSETS, 'netAssetsChart'],
+  fetchAccounts: [ActionTypes.FETCH_ACCOUNTS],
 };
 
-const asyncActions = _.reduce(ASYNC_ACTIONS, (result, actionType, actionName) => {
-  // const [actionName, actionType] = action
-  // result[actionName] = () => {
-  //   return {
-  //     type: ActionTypes[actionType],
-  //     status: 'fetching',
-  //   };
-  // };
+const asyncActions = _.reduce(ASYNC_ACTIONS, (result, actionTuple, actionName) => {
+  const [actionType, propName] = actionTuple;
+  const type = ActionTypes[actionType];
   result[actionName + 'Success'] = (result) => {
-    return {
-      type: ActionTypes[actionType + '_SUCCESS'],
+    let action = {
+      type,
       status: 'success',
       result,
     };
+    return (propName) ? Object.assign(action, {propName}) : action;
   };
   result[actionName + 'Error'] = (error) => {
-    return {
-      type: ActionTypes[actionType + '_ERROR'],
+    let action = {
+      type,
       status: 'error',
       result: error,
-    }
+    };
+    return (propName) ? Object.assign(action, {propName}) : action;
   };
   return result;
 }, {});
@@ -81,96 +78,30 @@ const thunks = {
     const args = arguments;
     console.log('[finances_actions] @changeTransactionCategory -> args: ', args);
     return defaultThunk(FinancesDao.updateTransaction, 'changeTransactionCategory', args);
-    // return (dispatch) => {
-    //   dispatch(asyncActions.changeTransactionCategory());
-    //   return FinancesDao.updateTransaction(transaction, category)
-    //     .then((result) => {
-    //       dispatch(asyncActions.changeTransactionCategorySuccess(result));
-    //     })
-    //     .catch((err) => {
-    //       dispatch(asyncActions.changeTransactionCategoryError(err));
-    //     });
-    // };
   },
   fetchCategories() {
     return defaultThunk(FinancesDao.fetchCategories, 'fetchCategories', []);
-    // return (dispatch) => {
-    //   dispatch(asyncActions.fetchCategories());
-    //   return FinancesDao.fetchCategories()
-    //     .then((result) => {
-    //       dispatch(asyncActions.fetchCategoriesSuccess(result));
-    //     })
-    //     .catch((err) => {
-    //       dispatch(asyncActions.fetchCategoriesError(err));
-    //     });
-    // };
   },
   fetchChartTransactions(query) {
     const args = arguments;
     return defaultThunk(FinancesDao.fetchChartTransactions, 'fetchChartTransactions', args);
-    // return (dispatch) => {
-    //   dispatch(() => {
-    //     return {
-    //       type: ActionTypes[actionType],
-    //       status: 'fetching',
-    //     }
-    //   })
-    //   return FinancesDao.fetchChartTransactions(query)
-    //     .then((result) => {
-    //       dispatch(asyncActions.fetchChartTransactionsSuccess(result));
-    //     })
-    //     .catch((err) => {
-    //       dispatch(asyncActions.fetchChartTransactionsError(err));
-    //     });
-    // };
   },
   fetchTransactions(query) {
     const args = arguments;
     return defaultThunk(FinancesDao.fetchTransactions, 'fetchTransactions', args);
-    // return (dispatch) => {
-    //   dispatch(asyncActions.fetchTransactions());
-    //   return FinancesDao.fetchTransactions(query)
-    //     .then((result) => {
-    //       dispatch(asyncActions.fetchTransactionsSuccess(result));
-    //     })
-    //     .catch((err) => {
-    //       dispatch(asyncActions.fetchTransactionsError(err));
-    //     });
-    // };
   },
   fetchNetIncome(dateRange) {
     const args = arguments;
     return defaultThunk(FinancesDao.fetchNetIncome, 'fetchNetIncome', args);
-    // return (dispatch) => {
-    //   dispatch(asyncActions.fetchNetIncome());
-    //   return FinancesDao.fetchNetIncome(dateRange)
-    //     .then((result) => {
-    //       dispatch(asyncActions.fetchNetIncomeSuccess(result));
-    //     })
-    //     .catch((err) => {
-    //       dispatch(asyncActions.fetchNetIncomeError(err));
-    //     });
-    // };
   },
   fetchAccounts() {
     return defaultThunk(FinancesDao.fetchAccounts, 'fetchAccounts', []);
-    // return (dispatch) => {
-    //   dispatch(asyncActions.fetchAccounts());
-    //   return FinancesDao.fetchAccounts()
-    //     .then((result) => {
-    //       dispatch(asyncActions.fetchAccountsSuccess(result));
-    //     })
-    //     .catch((err) => {
-    //       dispatch(asyncActions.fetchAccountsError(err));
-    //     });
-    // };
   },
   fetchBankAssets(dateRange) {
     const args = arguments;
     // return defaultThunk(FinancesDao.fetch, 'changeTransactionCategory', args);
     return (dispatch) => {
     //   dispatch(asyncActions.fetchBankAssets());
-      this.dispatch();
       const props = {
         bankAssets: FinancesDao.fetchBankAssets(dateRange),
         investmentAssets: FinancesDao.fetchInvestmentAssets(dateRange),
