@@ -5,6 +5,7 @@ import update from 'react-addons-update';
 import ActionTypes from 'action_types';
 import DATE_RANGES from 'date_ranges';
 import DisplayedAccountTypes from 'displayed_account_types';
+import ASYNC from 'async_status';
 
 // DAOs
 // import FinancesDao from '../dao/finances_dao';
@@ -13,28 +14,6 @@ import DisplayedAccountTypes from 'displayed_account_types';
 const DEFAULT_DATE_RANGE = 'L12M'; // Last 12 Months
 const NET_ASSET_GOAL = 54137; // net asset goal for the end of 2016
 const DEFAULT_TRANSACTION_QUERY = '';
-const ASYNC = (() => {
-  const statuses = {
-    SUCCESS: 'success',
-    FETCHING: 'fetching',
-    ERROR: 'error',
-  };
-
-  const checks = {
-    isSuccess(status) {
-      return status === statuses.SUCCESS;
-    },
-    isFetching(status) {
-      return status === statuses.FETCHING;
-    },
-    isError(status) {
-      return status === statuses.ERROR;
-    },
-  };
-
-  return Object.assign({}, statuses, checks);
-})();
-
 const {isSuccess} = ASYNC;
 
 const defaultAsyncProps = (props) => {
@@ -87,11 +66,6 @@ const initialState = {
 };
 
 const defaultFetchHandler = (state, propName, result, status, actionType) => {
-  if (actionType === 'FETCH_TRANSACTIONS') {
-    console.log('[finances_reducer] propName: ', propName);
-    console.log('[finances_reducer] result: ', result);
-    console.log('[finances_reducer] status: ', status);
-  };
   const {ERROR, SUCCESS, FETCHING} = ASYNC;
   switch (status) {
     case ERROR:
@@ -131,14 +105,12 @@ function financesReducer(state = initialState, action) {
 
     // ASYNC ACTIONS
     case ActionTypes.FETCH_TRANSACTIONS:
-      console.log('[finances_reducer] @FETCH_TRANSACTIONS -> action: ', action);
       if (isSuccess(action.status)) {
         console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.result: ', action.result);
         const result = _.find(action.result.set, (setObj) => {
           return setObj.id === 'transactions';
         }).data;
 
-        console.log('[finances_reducer] @FETCH_TRANSACTIONS -> result: ', result);
         return defaultFetchHandler(state, action.propName, result, action.status, action.type);
       }
 

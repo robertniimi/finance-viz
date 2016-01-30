@@ -1,15 +1,16 @@
 import ActionTypes from 'action_types';
 import FinancesDao from '../dao/finances_dao';
 import Promise from 'bluebird';
+import ASYNC from 'async_status';
 
 const ASYNC_ACTIONS = {
-  fetchTransactions: [ActionTypes.FETCH_TRANSACTIONS, 'transactions'],
-  fetchChartTransactions: [ActionTypes.FETCH_CHART_TRANSACTIONS, 'stackedAreaChart'],
-  fetchCategories: [ActionTypes.FETCH_CATEGORIES],
-  fetchNetIncome: [ActionTypes.FETCH_NET_INCOME, 'netIncomeChart'],
   changeTransactionCategory: [ActionTypes.CHANGE_TRANSACTION_CATEGORY],
-  fetchBankAssets: [ActionTypes.FETCH_BANK_ASSETS, 'netAssetsChart'],
   fetchAccounts: [ActionTypes.FETCH_ACCOUNTS],
+  fetchBankAssets: [ActionTypes.FETCH_BANK_ASSETS, 'netAssetsChart'],
+  fetchCategories: [ActionTypes.FETCH_CATEGORIES],
+  fetchChartTransactions: [ActionTypes.FETCH_CHART_TRANSACTIONS, 'stackedAreaChart'],
+  fetchNetIncome: [ActionTypes.FETCH_NET_INCOME, 'netIncomeChart'],
+  fetchTransactions: [ActionTypes.FETCH_TRANSACTIONS, 'transactions'],
 };
 
 const asyncActions = _.reduce(ASYNC_ACTIONS, (result, actionTuple, actionName) => {
@@ -34,8 +35,6 @@ const asyncActions = _.reduce(ASYNC_ACTIONS, (result, actionTuple, actionName) =
   return result;
 }, {});
 
-console.log('[finances_actions] asyncActions: ', asyncActions);
-
 const actions = {
   changeDateRange(selectedDateRange) {
     return {
@@ -55,7 +54,7 @@ const dispatchDefaultFetch = (dispatch, actionName) => {
   dispatch(() => {
     return {
       type: ASYNC_ACTIONS[actionName],
-      status: 'fetching',
+      status: ASYNC.FETCHING,
     };
   });
 };
@@ -76,7 +75,6 @@ const defaultThunk = (daoAction, actionName, args) => {
 const thunks = {
   changeTransactionCategory(transaction, category) {
     const args = arguments;
-    console.log('[finances_actions] @changeTransactionCategory -> args: ', args);
     return defaultThunk(FinancesDao.updateTransaction, 'changeTransactionCategory', args);
   },
   fetchCategories() {
