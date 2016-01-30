@@ -14,10 +14,7 @@ const DEFAULT_DATE_RANGE = 'L12M'; // Last 12 Months
 const NET_ASSET_GOAL = 54137; // net asset goal for the end of 2016
 const DEFAULT_TRANSACTION_QUERY = '';
 
-const defaultSuccess = {
-  loading: false,
-  error: false,
-};
+
 
 const defaultChartProps = (props) => {
   let defaultProps = {
@@ -27,6 +24,19 @@ const defaultChartProps = (props) => {
   };
 
   return _.assign({}, defaultProps, props || {});
+};
+
+const defaultFetching = {
+  loading: true,
+  error: false,
+};
+
+const defaultSuccess = (result) => {
+  return {
+    data: result,
+    error: false,
+    loading: false,
+  };
 };
 
 const defaultError = (error) => {
@@ -55,6 +65,33 @@ const initialState = {
   dateRange: findDateRange(DEFAULT_DATE_RANGE),
 };
 
+const defaultFetch = (propName, result, status, actionType) => {
+  switch (status) {
+    case 'error':
+      console.error(`[FinancesReducer] @${actionType} -> error: `, result);
+      return update(state, {
+        [propName]: {
+          $merge: defaultError(result),
+        },
+      });
+    case 'success':
+      return update(state, {
+        [propName]: {
+          $merge: defaultSuccess(result),
+        },
+      });
+    case 'fetching':
+      return update(state, {
+        [propName]: {
+          $merge: defaultFetching,
+        },
+      });
+    default:
+      return state;
+  }
+};
+
+
 function financesReducer(state = initialState, action) {
   // console.log('[finances_reducer] @financesReducer -> action: ', action);
   switch (action.type) {
@@ -71,8 +108,18 @@ function financesReducer(state = initialState, action) {
         },
       });
 
+    case ActionTypes.FETCH_TRANSACTIONS:
+    case ActionTypes.FETCH_TRANSACTIONS_ERROR:
     case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
-      console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.transactions: ', action.transactions);
+
+
+    case ActionTypes.FETCH_CHART_TRANSACTIONS:
+    case ActionTypes.FETCH_CHART_TRANSACTIONS_ERROR:
+    case ActionTypes.FETCH_CHART_TRANSACTIONS_SUCCESS:
+      return defaultFetch(action.propName, action.state, action.status, action.type);
+
+    case ActionTypes.FETCH_TRANSACTIONS_SUCCESS:
+      console.log('[finances_reducer] @FETCH_TRANSACTIONS_SUCCESS -> action.result: ', action.result);
       let transactions = _.find(action.result.set, (setObj) => {
         return setObj.id === 'transactions';
       }).data;
@@ -113,10 +160,6 @@ function financesReducer(state = initialState, action) {
           $merge: defaultSuccess,
         },
       });
-
-    case ActionTypes.FETCH_NET_WORTH_SUCCESS:
-      console.log('[finances_reducer] @FETCH_NET_WORTH_SUCCESS -> action.result: ', action.result);
-      return state;
 
     case ActionTypes.FETCH_BANK_ASSETS_SUCCESS:
       console.log('[finances_reducer] @FETCH_BANK_ASSETS_SUCCESS -> action.result: ', action.result);
@@ -216,10 +259,6 @@ function financesReducer(state = initialState, action) {
 
     case ActionTypes.FETCH_BANK_ASSETS_ERROR:
       console.error('[finances_reducer] @FETCH_BANK_ASSETS_ERROR -> action.error: ', action.error);
-      return state;
-
-    case ActionTypes.FETCH_NET_WORTH_ERROR:
-      console.error('[finances_reducer] @FETCH_NET_WORTH_ERROR -> action.error: ', action.error);
       return state;
 
     case ActionTypes.FETCH_NET_INCOME_ERROR:
